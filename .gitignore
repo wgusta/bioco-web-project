@@ -1,0 +1,32 @@
+# ProcessWire: Sensible Konfigurationsdatei
+# Diese Datei wird manuell auf Staging und Live gepflegt.
+/site/config.php
+/site/config-dev.php
+
+# ProcessWire: Cache, Logs, Sessions, Backups
+# Diese Ordner werden vom System generiert und sollen nicht ins Git.
+/site/assets/cache/
+/site/assets/logs/
+/site/assets/sessions/
+/site/assets/backups/
+
+# Benutzer-Uploads
+# Diese Dateien existieren nur auf dem jeweiligen Server (Live/Staging)
+# und gehören nicht in die Code-Versionskontrolle.
+/site/assets/files/
+/site/assets/images/
+
+# Matomo-Verzeichnis (wird separat verwaltet)
+/matomo/
+
+# Vendor-Verzeichnis (falls Composer genutzt wird)
+/vendor/
+/site/vendor/
+
+# Node.js / NPM (falls für Frontend-Builds genutzt)
+/node_modules/
+npm-debug.log
+
+# OS-spezifische Dateien
+.DS_Store
+Thumbs.db
