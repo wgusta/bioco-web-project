@@ -22,16 +22,31 @@ export default function ErntePage() {
             </section>
 
             <section id="B-03" className="wireframe-box">
+              <h2>Rezepte als Serviervorschläge</h2>
+              <p>Rezepte und Ideen für unsere Ernte</p>
+            </section>
+
+            <section id="B-04" className="wireframe-box">
               <h2>Saisonkalender</h2>
               <p>Tabs Jan–Dez → Listen: Jetzt/Bald/Lagerware</p>
             </section>
 
-            <section id="B-04" className="wireframe-box">
+            <section id="B-05" className="wireframe-box">
               <h2>Demeter-Qualität</h2>
               <p>„Warum Demeter?" – kurzer Text + Akkordeon</p>
             </section>
 
             <EventsBanner />
+            
+            <section id="B-06" className="wireframe-box">
+              <h2>Möchtest du uns kennenlernen?</h2>
+              <CTA
+                text="Anfragen"
+                href="/kontakt"
+                variant="primary"
+              />
+            </section>
+
             <CTA
               text="Jetzt Abo sichern"
               href="/mitmachen"

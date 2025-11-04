@@ -10,7 +10,7 @@ export function EventsBanner({ title = 'Nächste Events' }: EventsBannerProps) {
       <h2>{title}</h2>
       <p>Kompakter Banner mit 2–3 kommenden Terminen</p>
       <p>
-        <Link href="/hofpost">Link zur vollen Eventliste → Hofpost / G-02 Nächste Events</Link>
+        <Link href="/aktuelles">Link zur vollen Eventliste → Aktuelles / G-02 Nächste Events</Link>
       </p>
     </section>
   )

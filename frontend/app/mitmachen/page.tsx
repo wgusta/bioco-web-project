@@ -19,7 +19,7 @@ export default function MitmachenPage() {
             <section id="H-02" className="wireframe-box">
               <h2>Zuerst testen?</h2>
               <ul>
-                <li>Info-Event → <Link href="/hofpost">Hofpost / G-02 Nächste Events</Link></li>
+                <li>Info-Event → <Link href="/aktuelles">Aktuelles / G-02 Nächste Events</Link></li>
                 <li>Probe-Abo → <Link href="/abos">Abos / C-02</Link></li>
               </ul>
             </section>

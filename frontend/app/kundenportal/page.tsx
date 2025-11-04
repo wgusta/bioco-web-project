@@ -12,11 +12,19 @@ export default function KundenportalPage() {
             <h1>Kundenportal</h1>
 
             <section id="I-01" className="wireframe-box">
-              <h2>Gateway via 👤</h2>
-              <ul>
-                <li>Kachel: Mitglieder-Portal (extern)</li>
-                <li>Kachel: Einsatzplanung (extern)</li>
-              </ul>
+              <h2>Gateway</h2>
+              <div className="portal-gateway">
+                <div className="portal-tile">
+                  <div className="portal-icon">🦆</div>
+                  <h3>Mitglieder-Portal</h3>
+                  <p>Extern</p>
+                </div>
+                <div className="portal-tile">
+                  <div className="portal-icon">🦆</div>
+                  <h3>Einsatzplanung</h3>
+                  <p>Extern</p>
+                </div>
+              </div>
             </section>
 
             <EventsBanner />

@@ -47,7 +47,7 @@ export default function Home() {
             <section id="A-05" className="wireframe-box">
               <h2>Dual-Funnel CTA</h2>
               <ul>
-                <li>Info-Event → <Link href="/depots">Depots / E-02 Nächste Events</Link> <span className="dim">(oder Eventliste)</span></li>
+                <li>Info-Event → <Link href="/aktuelles">Aktuelles / G-02 Nächste Events</Link> <span className="dim">(oder Eventliste)</span></li>
                 <li>Probe-Abo → <Link href="/abos">Abos / C-02 Probe-Abo</Link> · <Link href="/mitmachen">Mitmachen! / H-02</Link></li>
               </ul>
             </section>

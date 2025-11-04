@@ -14,12 +14,27 @@ export default function AnpackenPage() {
 
             <section id="D-01" className="wireframe-box">
               <h2>Anpacken – Info</h2>
-              <p>Umfang ~4 Halbtage/Jahr; Beispiele: Feld/Logistik</p>
+              <p>Umfang:</p>
+              <ul>
+                <li>20 Stunden pro halbem Korb</li>
+                <li>40 Stunden bei ganzem Gemüsekorb</li>
+              </ul>
+              <p>Beispiele: Feld/Logistik</p>
               <CTA
                 text="Anmeldung"
                 href="/mitmachen"
                 variant="primary"
               />
+            </section>
+
+            <section id="D-02" className="wireframe-box">
+              <h2>Gruppen</h2>
+              <ul>
+                <li>Stammtisch</li>
+                <li>BG</li>
+                <li>Elki</li>
+                <li>Kräutergruppe</li>
+              </ul>
             </section>
 
             <EventsBanner />
