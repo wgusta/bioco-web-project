@@ -12,9 +12,17 @@ export default function DepotsPage() {
             <h1>Depots</h1>
 
             <section id="E-01" className="wireframe-box">
-              <h2>Depots – Map & Liste</h2>
-              <p>Karte Baden/Brugg/Wettingen/Windisch/Ennetbaden</p>
-              <p>Adressliste + Zeiten (falls vorhanden)</p>
+              <h2>Depots – Abholorte</h2>
+              <p>Unsere Mitglieder holen ihre wöchentlichen Gemüsekörbe in einem der folgenden Depots ab:</p>
+              <ul>
+                <li><strong>Baden</strong></li>
+                <li><strong>Brugg</strong></li>
+                <li><strong>Wettingen</strong></li>
+                <li><strong>Windisch</strong></li>
+                <li><strong>Ennetbaden</strong></li>
+              </ul>
+              <p>Bei der Anmeldung kannst du dein bevorzugtes Depot wählen. Die genauen Adressen und Abholzeiten erhältst du nach der Anmeldung.</p>
+              <p className="dim">Karte und detaillierte Adressliste folgen in Phase 2</p>
             </section>
 
             <EventsBanner />

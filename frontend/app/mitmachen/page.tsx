@@ -18,15 +18,23 @@ export default function MitmachenPage() {
           <div className="wireframe-box content">
             <section id="H-02" className="wireframe-box">
               <h2>Zuerst testen?</h2>
+              <p>Für Unentschlossene bieten wir Schnuppernachmittage auf dem Geisshof an, um einen Einblick in die Arbeit und Gemeinschaft zu erhalten.</p>
               <ul>
-                <li>Info-Event → <Link href="/aktuelles">Aktuelles / G-02 Nächste Events</Link></li>
-                <li>Probe-Abo → <Link href="/abos">Abos / C-02</Link></li>
+                <li><strong>Info-Event:</strong> Besuche einen <Link href="/aktuelles">Schnuppertag auf dem Geisshof</Link> und lerne biocò kennen</li>
+                <li><strong>Probe-Abo:</strong> Teste mit einem <Link href="/abos">3-Monats-Probe-Abo</Link> bevor du dich festlegst</li>
               </ul>
             </section>
 
             <section id="H-03" className="wireframe-box">
               <h2>Commitment-Check</h2>
-              <p>Checkliste: Anteile, Beitrag, Bindung, Mitarbeit, Risiko</p>
+              <p>Bevor du dich anmeldest, überlege dir folgendes:</p>
+              <ul>
+                <li><strong>Anteile:</strong> Halber oder ganzer Gemüsekorb?</li>
+                <li><strong>Beitrag:</strong> Betriebsbeitrag für ein ganzes Jahr</li>
+                <li><strong>Bindung:</strong> Das Abo läuft ein Jahr (entspricht der Anbauplanung)</li>
+                <li><strong>Mitarbeit:</strong> ~4 Halbtage/Jahr (20 Stunden bei halbem Korb, 40 Stunden bei ganzem Korb)</li>
+                <li><strong>Risiko:</strong> Wir teilen Ernte, Ertrag und Risiko gemeinsam</li>
+              </ul>
             </section>
 
             <section id="H-04" className="wireframe-box">
@@ -39,7 +47,11 @@ export default function MitmachenPage() {
 
             <section id="H-06" className="wireframe-box">
               <h2>Nächstes (3 Schritte)</h2>
-              <p>Bestätigungs-Mail → Rechnung → Start</p>
+              <ol>
+                <li><strong>Bestätigungs-Mail:</strong> Du erhältst eine E-Mail zur Bestätigung deiner Anmeldung (Double Opt-In)</li>
+                <li><strong>Rechnung:</strong> Du erhältst die Rechnung für dein Gemüseabo</li>
+                <li><strong>Start:</strong> Abholung des ersten Gemüsekorbes in deinem gewählten Depot</li>
+              </ol>
             </section>
 
             <section id="H-07" className="wireframe-box">

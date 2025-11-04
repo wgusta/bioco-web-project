@@ -13,14 +13,35 @@ export default function AbosPage() {
 
             <section id="C-01" className="wireframe-box">
               <h2>Gemüse-Abos</h2>
-              <p>Halb/Standard/Doppel – Leistungen & Preise</p>
-              <p>Link → <a href="/mitmachen">Mitmachen! / H-04</a></p>
+              <p>Wähle die Grösse, die zu dir passt:</p>
+              <ul>
+                <li><strong>Halb:</strong> Für kleinere Haushalte oder wenn du weniger Gemüse benötigst</li>
+                <li><strong>Standard:</strong> Für durchschnittliche Haushalte</li>
+                <li><strong>Doppel:</strong> Für grössere Haushalte oder wenn du mehr Gemüse möchtest</li>
+              </ul>
+              <p>Alle Abos enthalten wöchentlich frisches, saisonales Demeter-Gemüse aus unserem Anbau auf dem Geisshof.</p>
+              <p><em>Preise und Details erhältst du bei der Anmeldung.</em></p>
+              <CTA
+                text="Jetzt anmelden"
+                href="/mitmachen"
+                variant="primary"
+              />
             </section>
 
             <section id="C-02" className="wireframe-box">
               <h2>Probe-Abo</h2>
-              <p>3-Monats-Test</p>
-              <p>Link → <a href="/mitmachen">Mitmachen! / H-02</a></p>
+              <p>Möchtest du biocò erst einmal testen? Unser 3-Monats-Probe-Abo gibt dir die Möglichkeit, die Genossenschaft kennenzulernen, bevor du dich für ein ganzes Jahr festlegst.</p>
+              <p>Im Probe-Abo erhältst du:</p>
+              <ul>
+                <li>3 Monate lang wöchentlich einen Gemüsekorb</li>
+                <li>Einblick in die Solidarische Landwirtschaft</li>
+                <li>Möglichkeit zur Mitarbeit auf dem Feld</li>
+              </ul>
+              <CTA
+                text="Probe-Abo anfragen"
+                href="/mitmachen#testen"
+                variant="secondary"
+              />
             </section>
 
             <EventsBanner />

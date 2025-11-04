@@ -90,7 +90,7 @@ function DOIConfirmContent() {
               <div className="doi-error wireframe-box">
                 <h2>Bestätigung fehlgeschlagen</h2>
                 <p>{error}</p>
-                <p><a href="/">Zurück zur Startseite</a></p>
+                <p><a href="/" className="button-link primary">Zurück zur Startseite</a></p>
               </div>
             )}
           </div>
