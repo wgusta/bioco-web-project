@@ -1,0 +1,16 @@
+# Allow API access
+RewriteEngine On
+RewriteBase /api/
+
+# Route to appropriate PHP file
+RewriteCond %{REQUEST_URI} ^/api/pages
+RewriteRule ^pages$ pages.php [L]
+
+RewriteCond %{REQUEST_URI} ^/api/navigation
+RewriteRule ^navigation$ navigation.php [L]
+
+RewriteCond %{REQUEST_URI} ^/api/forms/(contact|subscribe|visit|waiting-list)
+RewriteRule ^forms/(.*)$ forms.php?form_type=$1 [L]
+
+RewriteCond %{REQUEST_URI} ^/api/doi/confirm
+RewriteRule ^doi/confirm$ doi.php?action=confirm [L]

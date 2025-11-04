@@ -1,0 +1,17 @@
+import Link from 'next/link'
+
+interface EventsBannerProps {
+  title?: string
+}
+
+export function EventsBanner({ title = 'Nächste Events' }: EventsBannerProps) {
+  return (
+    <section className="wireframe-box events-banner">
+      <h2>{title}</h2>
+      <p>Kompakter Banner mit 2–3 kommenden Terminen</p>
+      <p>
+        <Link href="/hofpost">Link zur vollen Eventliste → Hofpost / G-02 Nächste Events</Link>
+      </p>
+    </section>
+  )
+}
