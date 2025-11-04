@@ -1,15 +1,16 @@
 <?php namespace ProcessWire;
 
-// Template file for “home” template used by the homepage
-// ------------------------------------------------------
+// Template file for "home" template used by the homepage
+// Uses wireframe structure from _main.php
 // The #content div in this file will replace the #content div in _main.php
-// when the Markup Regions feature is enabled, as it is by default. 
-// You can also append to (or prepend to) the #content div, and much more. 
-// See the Markup Regions documentation:
-// https://processwire.com/docs/front-end/output/markup-regions/
 
 ?>
 
 <div id="content">
-	Homepage content 
+	<?php if($page->body): ?>
+		<?php echo $page->body; ?>
+	<?php else: ?>
+		<h2>Willkommen auf bioco.ch</h2>
+		<p>Homepage content</p>
+	<?php endif; ?>
 </div>	

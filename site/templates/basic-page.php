@@ -1,15 +1,16 @@
 <?php namespace ProcessWire; 
 
-// Template file for pages using the “basic-page” template
-// -------------------------------------------------------
+// Template file for pages using the "basic-page" template
+// Uses wireframe structure from _main.php
 // The #content div in this file will replace the #content div in _main.php
-// when the Markup Regions feature is enabled, as it is by default. 
-// You can also append to (or prepend to) the #content div, and much more. 
-// See the Markup Regions documentation:
-// https://processwire.com/docs/front-end/output/markup-regions/
 
 ?>
 
 <div id="content">
-	Basic page content 
+	<?php if($page->body): ?>
+		<?php echo $page->body; ?>
+	<?php else: ?>
+		<h2><?php echo $page->title; ?></h2>
+		<p>Basic page content</p>
+	<?php endif; ?>
 </div>	
