@@ -14,7 +14,7 @@ const navigationItems = [
 
 export function Navigation() {
   return (
-    <nav id="header-nav" className="wireframe-box header-nav">
+    <nav id="header-nav" className="header-nav">
       <ul>
         {navigationItems.map((item) => (
           <li key={item.id}>

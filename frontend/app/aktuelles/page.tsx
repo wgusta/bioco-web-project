@@ -17,7 +17,27 @@ export default function AktuellesPage() {
 
             <section id="G-02" className="wireframe-box">
               <h2>Nächste Events</h2>
-              <p>Zentrale Eventliste (Quelle für Banner); Filter/Tags optional</p>
+              <div className="events-list">
+                <div className="event-item wireframe-box">
+                  <h3>24. Oktober 2025</h3>
+                  <p><strong>Letzter biocò Schnuppertag des Jahres</strong></p>
+                  <p>Auf dem Geisshof in Gebenstorf</p>
+                  <p>Komm vorbei und lerne biocò kennen! Erfahre mehr über unsere Gemüsegenossenschaft, die Solidarische Landwirtschaft und wie du Mitglied werden kannst.</p>
+                </div>
+                
+                <div className="event-item wireframe-box">
+                  <h3>15. November 2025</h3>
+                  <p><strong>Fondue-Abend</strong></p>
+                  <p>Gemeinsamer Anlass für alle Mitglieder</p>
+                </div>
+                
+                <div className="event-item wireframe-box">
+                  <h3>27. November 2025</h3>
+                  <p><strong>Außerordentliche Generalversammlung</strong></p>
+                  <p>Wichtige Informationen für alle Genossenschafter/innen</p>
+                </div>
+              </div>
+              <p className="dim">Weitere Events werden regelmässig aktualisiert</p>
             </section>
           </div>
         </div>
