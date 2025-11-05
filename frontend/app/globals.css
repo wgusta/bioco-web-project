@@ -190,6 +190,31 @@ p {
   font-weight: 500;
 }
 
+.card-header h3 {
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 500;
+  font-size: 1.25rem;
+  margin: 0 0 0.5rem 0;
+  padding: 0;
+  color: var(--text-primary);
+}
+
+.card-header .card-header-divider {
+  height: 2px;
+  background: #333;
+  margin: 0.5rem 0;
+  width: 100%;
+}
+
+.card-header h4.card-title {
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 500;
+  font-size: 1rem;
+  margin: 0.5rem 0 0 0;
+  padding: 0;
+  color: var(--text-primary);
+}
+
 /* Ensure card-header separation in colored cards */
 .bento-card.bg-primary .card-header,
 .bento-card.bg-secondary .card-header,
@@ -202,6 +227,33 @@ p {
   background-color: rgba(255, 255, 255, 0.1);
 }
 
+.bento-card.bg-primary .card-header h3,
+.bento-card.bg-secondary .card-header h3,
+.bento-card.bg-success .card-header h3,
+.bento-card.bg-warning .card-header h3,
+.bento-card.bg-danger .card-header h3,
+.bento-card.bg-info .card-header h3,
+.bento-card.bg-dark .card-header h3,
+.bento-card.bg-primary .card-header h4.card-title,
+.bento-card.bg-secondary .card-header h4.card-title,
+.bento-card.bg-success .card-header h4.card-title,
+.bento-card.bg-warning .card-header h4.card-title,
+.bento-card.bg-danger .card-header h4.card-title,
+.bento-card.bg-info .card-header h4.card-title,
+.bento-card.bg-dark .card-header h4.card-title {
+  color: white;
+}
+
+.bento-card.bg-primary .card-header .card-header-divider,
+.bento-card.bg-secondary .card-header .card-header-divider,
+.bento-card.bg-success .card-header .card-header-divider,
+.bento-card.bg-warning .card-header .card-header-divider,
+.bento-card.bg-danger .card-header .card-header-divider,
+.bento-card.bg-info .card-header .card-header-divider,
+.bento-card.bg-dark .card-header .card-header-divider {
+  background: rgba(255, 255, 255, 0.3);
+}
+
 .card-body {
   flex: 1 1 auto;
   padding: 1rem;
@@ -209,10 +261,16 @@ p {
   z-index: 1;
 }
 
-.card-title {
+.card-title,
+h4.card-title {
   margin-bottom: 0.5rem;
   font-family: 'Cabin Sketch', cursive;
   font-weight: 500;
+}
+
+.card-body .card-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
 }
 
 .card-subtitle {
@@ -797,18 +855,29 @@ a:hover {
 header {
   font-family: 'Neucha', sans-serif;
   font-weight: 700;
-  background: var(--bioco-green);
-  border-bottom: 2px solid var(--bioco-green-dark);
+  background: transparent;
+  border-bottom: none;
   padding: var(--spacing-sm) var(--spacing-md);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: var(--shadow-sm);
+  box-shadow: none;
   color: white;
 }
 
+header .header-nav-container {
+  background: var(--bioco-green);
+  border: 2px solid var(--bioco-green-dark);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+  padding: var(--spacing-xs) var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  display: inline-flex;
+  align-items: center;
+  width: auto;
+}
+
 header .logo {
-  color: white;
+  color: var(--bioco-green);
 }
 
 header .logo-b,
@@ -816,6 +885,18 @@ header .logo-o1,
 header .logo-c,
 header .carrot-leaves,
 header .beet-leaves {
+  color: var(--bioco-green);
+}
+
+header .header-nav-container .logo {
+  color: white;
+}
+
+header .header-nav-container .logo-b,
+header .header-nav-container .logo-o1,
+header .header-nav-container .logo-c,
+header .header-nav-container .carrot-leaves,
+header .header-nav-container .beet-leaves {
   color: white;
 }
 
@@ -833,6 +914,14 @@ header .beet-leaves {
   align-items: center;
   max-width: 1200px;
   margin: 0 auto;
+  flex-wrap: wrap;
+  gap: var(--spacing-md);
+}
+
+.header-nav-container {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
 }
 
 .header-logo {
@@ -844,8 +933,8 @@ header .beet-leaves {
 .mobile-menu-toggle {
   font-family: 'Neucha', sans-serif;
   font-weight: 700;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  background: var(--bioco-green);
+  border: 2px solid var(--bioco-green-dark);
   padding: 8px 12px;
   cursor: pointer;
   font-size: 1.25rem;
@@ -857,8 +946,8 @@ header .beet-leaves {
 }
 
 .mobile-menu-toggle:hover {
-  background: rgba(255, 255, 255, 0.2);
-  border-color: white;
+  background: var(--bioco-green-dark);
+  border-color: var(--bioco-green-dark);
   color: white;
 }
 
@@ -932,6 +1021,8 @@ header .beet-leaves {
   display: flex;
   flex-direction: column;
   gap: 4px;
+  margin: 0;
+  padding: 0;
 }
 
 .header-nav li {
@@ -1252,6 +1343,18 @@ select:focus,
   color: #dc3545;
   font-family: 'Neucha', sans-serif;
   font-weight: 700;
+}
+
+.is-invalid-group {
+  border: 2px solid #dc3545;
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+  padding: 8px;
+  background-color: rgba(220, 53, 69, 0.05);
+}
+
+.is-invalid-group .checkbox-option,
+.is-invalid-group .radio-option {
+  border-color: #dc3545;
 }
 
 .form-control:disabled,
@@ -2570,10 +2673,14 @@ footer a:hover {
     display: block;
   }
 
+  .header-nav-container {
+    display: inline-flex;
+  }
+
   .header-nav ul {
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: 4px;
     align-items: center;
   }
 

@@ -15,7 +15,9 @@ export function Header() {
           </div>
           <MobileMenu />
           <div className="desktop-nav">
-            <Navigation />
+            <div className="header-nav-container">
+              <Navigation />
+            </div>
           </div>
         </div>
       </header>

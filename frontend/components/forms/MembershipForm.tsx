@@ -77,7 +77,7 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
   const router = useRouter()
   const [currentStep, setCurrentStep] = useState(0)
   const [submitted, setSubmitted] = useState(false)
-  const [error, setError] = useState('')
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({})
   
   // Read URL parameters
   const getInitialDataFromURL = () => {
@@ -172,71 +172,96 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
   const totals = calculateTotals()
 
   const validateStep = (step: number): boolean => {
+    const errors: Record<string, string> = {}
+    let isValid = true
+
     switch (step) {
       case 0:
         // Commitment check - all items must be checked
         if (formData.commitmentAccepted.some(accepted => !accepted)) {
-          setError('Bitte bestätige alle Punkte, bevor du fortfährst.')
-          return false
+          errors.commitment = 'Bitte bestätige alle Punkte, bevor du fortfährst.'
+          isValid = false
         }
-        return true
+        break
       case 1:
-        if (!formData.firstName || !formData.lastName || !formData.address || !formData.zip || !formData.city || !formData.email) {
-          setError('Bitte füllen Sie alle Pflichtfelder aus.')
-          return false
+        if (!formData.firstName) {
+          errors.firstName = 'Bitte geben Sie Ihren Vornamen ein.'
+          isValid = false
         }
-        if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
-          setError('Bitte geben Sie eine gültige E-Mail-Adresse ein.')
-          return false
+        if (!formData.lastName) {
+          errors.lastName = 'Bitte geben Sie Ihren Nachnamen ein.'
+          isValid = false
         }
-        return true
+        if (!formData.address) {
+          errors.address = 'Bitte geben Sie Ihre Adresse ein.'
+          isValid = false
+        }
+        if (!formData.zip) {
+          errors.zip = 'Bitte geben Sie Ihre PLZ ein.'
+          isValid = false
+        }
+        if (!formData.city) {
+          errors.city = 'Bitte geben Sie Ihren Ort ein.'
+          isValid = false
+        }
+        if (!formData.email) {
+          errors.email = 'Bitte geben Sie Ihre E-Mail-Adresse ein.'
+          isValid = false
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+          errors.email = 'Bitte geben Sie eine gültige E-Mail-Adresse ein.'
+          isValid = false
+        }
+        break
       case 2:
         if (!formData.depot) {
-          setError('Bitte wählen Sie ein Depot für die Abholung.')
-          return false
+          errors.depot = 'Bitte wählen Sie ein Depot für die Abholung.'
+          isValid = false
         }
         if (!formData.paymentType) {
-          setError('Bitte wählen Sie eine Zahlungsweise.')
-          return false
+          errors.paymentType = 'Bitte wählen Sie eine Zahlungsweise.'
+          isValid = false
         }
-        return true
+        break
       case 3:
         if (formData.preferredDays.length === 0) {
-          setError('Bitte wählen Sie mindestens einen bevorzugten Tag.')
-          return false
+          errors.preferredDays = 'Bitte wählen Sie mindestens einen bevorzugten Tag.'
+          isValid = false
         }
         if (formData.preferredTimes.length === 0) {
-          setError('Bitte wählen Sie mindestens eine bevorzugte Zeit.')
-          return false
+          errors.preferredTimes = 'Bitte wählen Sie mindestens eine bevorzugte Zeit.'
+          isValid = false
         }
         if (formData.activityAreas.length === 0) {
-          setError('Bitte wählen Sie mindestens einen Tätigkeitsbereich.')
-          return false
+          errors.activityAreas = 'Bitte wählen Sie mindestens einen Tätigkeitsbereich.'
+          isValid = false
         }
-        return true
+        break
       case 4:
         // Zusatzabos - no validation needed, optional
-        return true
+        break
       case 5:
         if (!formData.privacyAccept) {
-          setError('Bitte akzeptieren Sie die Datenschutzbestimmungen.')
-          return false
+          errors.privacyAccept = 'Bitte akzeptieren Sie die Datenschutzbestimmungen.'
+          isValid = false
         }
-        return true
+        break
       default:
-        return true
+        break
     }
+
+    setFieldErrors(errors)
+    return isValid
   }
 
   const handleNext = () => {
     if (validateStep(currentStep)) {
-      setError('')
+      setFieldErrors({})
       setCurrentStep(prev => Math.min(prev + 1, 6))
     }
   }
 
   const handlePrevious = () => {
-    setError('')
+    setFieldErrors({})
     setCurrentStep(prev => Math.max(prev - 1, 0))
   }
 
@@ -261,10 +286,10 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
         // Redirect to thank you page
         router.push('/anmeldung/danke')
       } else {
-        setError(data.error || 'Es ist ein Fehler aufgetreten.')
+        setFieldErrors({ submit: data.error || 'Es ist ein Fehler aufgetreten.' })
       }
     } catch (err) {
-      setError('Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.')
+      setFieldErrors({ submit: 'Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.' })
     }
   }
 
@@ -285,9 +310,9 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
         {/* Main Form */}
         <div className="form-main">
           <form onSubmit={handleSubmit} className="membership-form">
-            {error && (
+            {fieldErrors.submit && (
               <div className="form-error bento-card" style={{ marginBottom: '16px' }}>
-                <p>{error}</p>
+                <p>{fieldErrors.submit}</p>
               </div>
             )}
 
@@ -296,7 +321,10 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
               <div className="form-step">
                 <h3>Lies das und bestätige bevor du weiterklickst</h3>
                 <p>Bevor du dich anmeldest, überprüfe bitte diese Punkte:</p>
-                <div className="commitment-checklist">
+                {fieldErrors.commitment && (
+                  <div className="invalid-feedback" style={{ marginBottom: '16px', fontSize: '1rem' }}>{fieldErrors.commitment}</div>
+                )}
+                <div className={`commitment-checklist ${fieldErrors.commitment ? 'is-invalid-group' : ''}`}>
                   <label className="commitment-item">
                     <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
                       <input
@@ -383,20 +411,42 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                     <input
                       type="text"
                       id="firstName"
+                      className={`form-control ${fieldErrors.firstName ? 'is-invalid' : ''}`}
                       required
                       value={formData.firstName}
-                      onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                      onChange={(e) => {
+                        setFormData({ ...formData, firstName: e.target.value })
+                        if (fieldErrors.firstName) {
+                          const newErrors = { ...fieldErrors }
+                          delete newErrors.firstName
+                          setFieldErrors(newErrors)
+                        }
+                      }}
                     />
+                    {fieldErrors.firstName && (
+                      <div className="invalid-feedback">{fieldErrors.firstName}</div>
+                    )}
                   </div>
                   <div className="form-group">
                     <label htmlFor="lastName">Name *</label>
                     <input
                       type="text"
                       id="lastName"
+                      className={`form-control ${fieldErrors.lastName ? 'is-invalid' : ''}`}
                       required
                       value={formData.lastName}
-                      onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                      onChange={(e) => {
+                        setFormData({ ...formData, lastName: e.target.value })
+                        if (fieldErrors.lastName) {
+                          const newErrors = { ...fieldErrors }
+                          delete newErrors.lastName
+                          setFieldErrors(newErrors)
+                        }
+                      }}
                     />
+                    {fieldErrors.lastName && (
+                      <div className="invalid-feedback">{fieldErrors.lastName}</div>
+                    )}
                   </div>
                 </div>
                 <div className="form-group">
@@ -404,10 +454,21 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                   <input
                     type="text"
                     id="address"
+                    className={`form-control ${fieldErrors.address ? 'is-invalid' : ''}`}
                     required
                     value={formData.address}
-                    onChange={(e) => setFormData({ ...formData, address: e.target.value })}
+                    onChange={(e) => {
+                      setFormData({ ...formData, address: e.target.value })
+                      if (fieldErrors.address) {
+                        const newErrors = { ...fieldErrors }
+                        delete newErrors.address
+                        setFieldErrors(newErrors)
+                      }
+                    }}
                   />
+                  {fieldErrors.address && (
+                    <div className="invalid-feedback">{fieldErrors.address}</div>
+                  )}
                 </div>
                 <div className="form-row">
                   <div className="form-group">
@@ -415,20 +476,42 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                     <input
                       type="text"
                       id="zip"
+                      className={`form-control ${fieldErrors.zip ? 'is-invalid' : ''}`}
                       required
                       value={formData.zip}
-                      onChange={(e) => setFormData({ ...formData, zip: e.target.value })}
+                      onChange={(e) => {
+                        setFormData({ ...formData, zip: e.target.value })
+                        if (fieldErrors.zip) {
+                          const newErrors = { ...fieldErrors }
+                          delete newErrors.zip
+                          setFieldErrors(newErrors)
+                        }
+                      }}
                     />
+                    {fieldErrors.zip && (
+                      <div className="invalid-feedback">{fieldErrors.zip}</div>
+                    )}
                   </div>
                   <div className="form-group">
                     <label htmlFor="city">Ort *</label>
                     <input
                       type="text"
                       id="city"
+                      className={`form-control ${fieldErrors.city ? 'is-invalid' : ''}`}
                       required
                       value={formData.city}
-                      onChange={(e) => setFormData({ ...formData, city: e.target.value })}
+                      onChange={(e) => {
+                        setFormData({ ...formData, city: e.target.value })
+                        if (fieldErrors.city) {
+                          const newErrors = { ...fieldErrors }
+                          delete newErrors.city
+                          setFieldErrors(newErrors)
+                        }
+                      }}
                     />
+                    {fieldErrors.city && (
+                      <div className="invalid-feedback">{fieldErrors.city}</div>
+                    )}
                   </div>
                 </div>
                 <div className="form-row">
@@ -437,6 +520,7 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                     <input
                       type="tel"
                       id="phone"
+                      className="form-control"
                       value={formData.phone}
                       onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     />
@@ -446,10 +530,21 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                     <input
                       type="email"
                       id="email"
+                      className={`form-control ${fieldErrors.email ? 'is-invalid' : ''}`}
                       required
                       value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      onChange={(e) => {
+                        setFormData({ ...formData, email: e.target.value })
+                        if (fieldErrors.email) {
+                          const newErrors = { ...fieldErrors }
+                          delete newErrors.email
+                          setFieldErrors(newErrors)
+                        }
+                      }}
                     />
+                    {fieldErrors.email && (
+                      <div className="invalid-feedback">{fieldErrors.email}</div>
+                    )}
                   </div>
                 </div>
               </div>
@@ -501,15 +596,26 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                   </p>
                   <select
                     id="depot"
+                    className={`form-control ${fieldErrors.depot ? 'is-invalid' : ''}`}
                     required
                     value={formData.depot}
-                    onChange={(e) => setFormData({ ...formData, depot: e.target.value })}
+                    onChange={(e) => {
+                      setFormData({ ...formData, depot: e.target.value })
+                      if (fieldErrors.depot) {
+                        const newErrors = { ...fieldErrors }
+                        delete newErrors.depot
+                        setFieldErrors(newErrors)
+                      }
+                    }}
                   >
                     <option value="">Bitte wählen...</option>
                     {DEPOTS.map(depot => (
                       <option key={depot} value={depot}>{depot}</option>
                     ))}
                   </select>
+                  {fieldErrors.depot && (
+                    <div className="invalid-feedback">{fieldErrors.depot}</div>
+                  )}
                   <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
                     Abholzeiten: Dienstag und Freitag, 17:00-19:00 Uhr
                   </p>
@@ -520,14 +626,21 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                   <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
                     Die erste Rechnung wird per 31. Januar fällig.
                   </p>
-                  <div className="radio-group">
+                  <div className={`radio-group ${fieldErrors.paymentType ? 'is-invalid-group' : ''}`}>
                     <label className="radio-option">
                       <input
                         type="radio"
                         name="paymentType"
                         value="quarterly"
                         checked={formData.paymentType === 'quarterly'}
-                        onChange={(e) => setFormData({ ...formData, paymentType: 'quarterly' })}
+                        onChange={(e) => {
+                          setFormData({ ...formData, paymentType: 'quarterly' })
+                          if (fieldErrors.paymentType) {
+                            const newErrors = { ...fieldErrors }
+                            delete newErrors.paymentType
+                            setFieldErrors(newErrors)
+                          }
+                        }}
                       />
                       <span>Quartalsweise (vierteljährlich)</span>
                     </label>
@@ -537,11 +650,21 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                         name="paymentType"
                         value="yearly"
                         checked={formData.paymentType === 'yearly'}
-                        onChange={(e) => setFormData({ ...formData, paymentType: 'yearly' })}
+                        onChange={(e) => {
+                          setFormData({ ...formData, paymentType: 'yearly' })
+                          if (fieldErrors.paymentType) {
+                            const newErrors = { ...fieldErrors }
+                            delete newErrors.paymentType
+                            setFieldErrors(newErrors)
+                          }
+                        }}
                       />
                       <span>Ganzes Jahr (einmalig)</span>
                     </label>
                   </div>
+                  {fieldErrors.paymentType && (
+                    <div className="invalid-feedback">{fieldErrors.paymentType}</div>
+                  )}
                 </div>
               </div>
             )}
@@ -554,7 +677,7 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                 
                 <div className="form-group">
                   <label>Bevorzugte Tage *</label>
-                  <div className="checkbox-group">
+                  <div className={`checkbox-group ${fieldErrors.preferredDays ? 'is-invalid-group' : ''}`}>
                     {DAYS.map(day => (
                       <label key={day} className="checkbox-option">
                         <input
@@ -566,17 +689,25 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                             } else {
                               setFormData({ ...formData, preferredDays: formData.preferredDays.filter(d => d !== day) })
                             }
+                            if (fieldErrors.preferredDays) {
+                              const newErrors = { ...fieldErrors }
+                              delete newErrors.preferredDays
+                              setFieldErrors(newErrors)
+                            }
                           }}
                         />
                         <span>{day}</span>
                       </label>
                     ))}
                   </div>
+                  {fieldErrors.preferredDays && (
+                    <div className="invalid-feedback">{fieldErrors.preferredDays}</div>
+                  )}
                 </div>
 
                 <div className="form-group">
                   <label>Bevorzugte Zeiten *</label>
-                  <div className="checkbox-group">
+                  <div className={`checkbox-group ${fieldErrors.preferredTimes ? 'is-invalid-group' : ''}`}>
                     {TIMES.map(time => (
                       <label key={time} className="checkbox-option">
                         <input
@@ -588,17 +719,25 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                             } else {
                               setFormData({ ...formData, preferredTimes: formData.preferredTimes.filter(t => t !== time) })
                             }
+                            if (fieldErrors.preferredTimes) {
+                              const newErrors = { ...fieldErrors }
+                              delete newErrors.preferredTimes
+                              setFieldErrors(newErrors)
+                            }
                           }}
                         />
                         <span>{time}</span>
                       </label>
                     ))}
                   </div>
+                  {fieldErrors.preferredTimes && (
+                    <div className="invalid-feedback">{fieldErrors.preferredTimes}</div>
+                  )}
                 </div>
 
                 <div className="form-group">
                   <label>Tätigkeitsbereiche * (Mehrfachauswahl möglich)</label>
-                  <div className="checkbox-group">
+                  <div className={`checkbox-group ${fieldErrors.activityAreas ? 'is-invalid-group' : ''}`}>
                     {ACTIVITY_AREAS.map(area => (
                       <label key={area} className="checkbox-option">
                         <input
@@ -610,12 +749,20 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                             } else {
                               setFormData({ ...formData, activityAreas: formData.activityAreas.filter(a => a !== area) })
                             }
+                            if (fieldErrors.activityAreas) {
+                              const newErrors = { ...fieldErrors }
+                              delete newErrors.activityAreas
+                              setFieldErrors(newErrors)
+                            }
                           }}
                         />
                         <span>{area}</span>
                       </label>
                     ))}
                   </div>
+                  {fieldErrors.activityAreas && (
+                    <div className="invalid-feedback">{fieldErrors.activityAreas}</div>
+                  )}
                 </div>
 
                 {formData.activityAreas.includes('Andere') && (
@@ -732,15 +879,27 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                 </div>
 
                 <div className="form-group" style={{ marginTop: '24px' }}>
-                  <label>
-                    <input
-                      type="checkbox"
-                      required
-                      checked={formData.privacyAccept}
-                      onChange={(e) => setFormData({ ...formData, privacyAccept: e.target.checked })}
-                    />
-                    Ich akzeptiere die <Link href="/datenschutz">Datenschutzbestimmungen</Link> *
-                  </label>
+                  <div className={`checkbox-group ${fieldErrors.privacyAccept ? 'is-invalid-group' : ''}`}>
+                    <label className="checkbox-option">
+                      <input
+                        type="checkbox"
+                        required
+                        checked={formData.privacyAccept}
+                        onChange={(e) => {
+                          setFormData({ ...formData, privacyAccept: e.target.checked })
+                          if (fieldErrors.privacyAccept) {
+                            const newErrors = { ...fieldErrors }
+                            delete newErrors.privacyAccept
+                            setFieldErrors(newErrors)
+                          }
+                        }}
+                      />
+                      Ich akzeptiere die <Link href="/datenschutz">Datenschutzbestimmungen</Link> *
+                    </label>
+                  </div>
+                  {fieldErrors.privacyAccept && (
+                    <div className="invalid-feedback">{fieldErrors.privacyAccept}</div>
+                  )}
                 </div>
               </div>
             )}
