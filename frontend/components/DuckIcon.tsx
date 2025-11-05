@@ -1,11 +1,19 @@
-// Duck icon for intranet link
+// Duck icon for intranet link - sketchy style
 export function DuckIcon({ className = '', size = 20 }: { className?: string, size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className={className}>
-      <path d="M12 2C8 2 5 5 5 9C5 11 6 13 7 14C7 15 6 16 5 16C4 16 3 17 3 18C3 19 4 20 5 20C6 20 7 19 8 18C9 19 10 20 11 20C12 20 13 19 14 18C15 19 16 20 17 20C18 20 19 19 19 18C19 17 18 16 17 16C16 16 15 15 15 14C16 13 17 11 17 9C17 5 14 2 12 2Z" fill="#F29200" stroke="#39A933" strokeWidth="1.5"/>
-      <circle cx="10" cy="9" r="1" fill="#1F2A1B"/>
-      <circle cx="14" cy="9" r="1" fill="#1F2A1B"/>
-      <path d="M10 12C10 13 11 14 12 14C13 14 14 13 14 12" stroke="#1F2A1B" strokeWidth="1.5" strokeLinecap="round"/>
+      {/* Duck body */}
+      <ellipse cx="12" cy="14" rx="8" ry="6" fill="#F29200" stroke="#E88200" strokeWidth="2"/>
+      {/* Duck head */}
+      <circle cx="8" cy="10" r="5" fill="#F29200" stroke="#E88200" strokeWidth="2"/>
+      {/* Duck bill */}
+      <path d="M3 10 Q3 8 5 9 Q7 10 8 10" fill="#E88200" stroke="#D67A00" strokeWidth="1.5" strokeLinecap="round"/>
+      {/* Duck eye */}
+      <circle cx="7" cy="9" r="1.5" fill="#1F2A1B"/>
+      {/* Duck wing */}
+      <ellipse cx="14" cy="13" rx="3" ry="4" fill="#E88200" stroke="#D67A00" strokeWidth="1.5"/>
+      {/* Duck tail */}
+      <path d="M20 14 Q22 12 22 16 Q22 18 20 16" fill="#E88200" stroke="#D67A00" strokeWidth="1.5" strokeLinecap="round"/>
     </svg>
   )
 }

@@ -39,13 +39,16 @@ export function MobileMenu() {
           aria-label="Navigation menu"
         >
           <nav className="mobile-menu" onClick={(e) => e.stopPropagation()}>
-            <button
-              className="mobile-menu-close"
-              onClick={() => setIsOpen(false)}
-              aria-label="Close menu"
-            >
-              ×
-            </button>
+            <div className="mobile-menu-header">
+              <h3 className="mobile-menu-title">Menü</h3>
+              <button
+                className="mobile-menu-close"
+                onClick={() => setIsOpen(false)}
+                aria-label="Close menu"
+              >
+                ×
+              </button>
+            </div>
             <Navigation onLinkClick={() => setIsOpen(false)} hideMitmachen={true} />
             <div className="mobile-menu-secondary">
               <SecondaryNavigation />
