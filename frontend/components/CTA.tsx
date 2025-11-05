@@ -1,4 +1,6 @@
-import Link from 'next/link'
+'use client'
+
+import { useRouter } from 'next/navigation'
 
 interface CTAProps {
   text: string
@@ -8,11 +10,24 @@ interface CTAProps {
 }
 
 export function CTA({ text, href, variant = 'primary', onClick }: CTAProps) {
-  const className = variant === 'primary' ? 'cta-button' : 'cta-button-secondary'
+  const router = useRouter()
+  const className = variant === 'primary' ? 'btn-primary' : 'btn-secondary'
+  
+  const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault()
+    if (onClick) {
+      onClick()
+    }
+    router.push(href)
+  }
   
   return (
-    <Link href={href} className={className} onClick={onClick}>
+    <button
+      type="button"
+      className={className}
+      onClick={handleClick}
+    >
       {text}
-    </Link>
+    </button>
   )
 }

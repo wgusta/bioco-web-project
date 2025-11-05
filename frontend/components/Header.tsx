@@ -4,14 +4,12 @@ import { MobileMenu } from './MobileMenu'
 
 export function Header() {
   return (
-    <header id="header" className="wireframe-box">
-      <div className="wireframe-content">
-        <div className="header-top">
-          <div id="header-logo" className="header-logo">
-            <Logo />
-          </div>
-          <MobileMenu />
+    <header id="header">
+      <div className="header-top">
+        <div id="header-logo" className="header-logo">
+          <Logo />
         </div>
+        <MobileMenu />
         <div className="desktop-nav">
           <Navigation />
         </div>

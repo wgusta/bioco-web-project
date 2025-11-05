@@ -6,7 +6,7 @@ interface EventsBannerProps {
 
 export function EventsBanner({ title = 'Nächste Events' }: EventsBannerProps) {
   return (
-    <section className="wireframe-box events-banner">
+      <section className="events-banner">
       <h2>{title}</h2>
       <p>Kompakter Banner mit 2–3 kommenden Terminen</p>
       <p>
