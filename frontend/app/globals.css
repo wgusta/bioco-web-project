@@ -957,33 +957,31 @@ header .header-nav-container .beet-leaves {
 .mobile-menu-toggle {
   font-family: 'Neucha', sans-serif;
   font-weight: 700;
-  background: var(--bioco-green);
-  border: 2px solid var(--bioco-green-dark);
-  padding: 8px 12px;
+  background: transparent;
+  border: none;
+  padding: 8px;
   cursor: pointer;
   font-size: 1.25rem;
   display: block;
-  border-radius: 3px 3px 3px 3px/15px 15px 15px 3px;
   transition: all 0.2s ease;
-  box-shadow: var(--shadow-sm);
-  color: white;
+  box-shadow: none;
   line-height: 1;
 }
 
 .mobile-menu-toggle:hover {
-  background: var(--bioco-green-dark);
-  border-color: var(--bioco-green-dark);
-  color: white;
+  background: transparent;
 }
 
 .hamburger-icon {
   display: block;
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
 }
 
 .hamburger-icon path {
   transition: all 0.3s ease;
+  stroke: var(--bioco-green);
+  stroke-width: 3;
 }
 
 .desktop-nav {
@@ -1111,6 +1109,26 @@ header .header-nav-container .beet-leaves {
   background: var(--bg-secondary);
   border-color: var(--text-primary);
   color: var(--text-primary);
+}
+
+@media (max-width: 767px) {
+  .mobile-menu-close {
+    background: var(--bioco-green);
+    border: 2px solid var(--bioco-green-dark);
+    color: white;
+    font-size: 1.25rem;
+    padding: 8px 12px;
+    min-width: 40px;
+    width: auto;
+    height: 40px;
+    font-weight: 700;
+  }
+
+  .mobile-menu-close:hover {
+    background: var(--bioco-green-dark);
+    border-color: var(--bioco-green-dark);
+    color: white;
+  }
 }
 
 .header-nav {
@@ -1418,6 +1436,9 @@ select,
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   transition: all 0.2s ease;
   box-shadow: var(--shadow-sm);
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  appearance: none;
 }
 
 input:focus,
