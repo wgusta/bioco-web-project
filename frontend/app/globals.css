@@ -130,15 +130,32 @@ p {
 .bento-card {
   font-family: 'Neucha', sans-serif;
   font-weight: 700;
-  background: var(--bg-primary);
-  border: 2px solid #333;
-  border-radius: var(--radius-md);
-  padding: var(--spacing-lg);
   position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-color: var(--bg-primary);
+  border: 2px solid #333;
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+  padding: 0;
   overflow: visible;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-sm);
   margin-bottom: var(--spacing-md);
+}
+
+/* Backwards compatibility: add padding to direct children if they're not card structure elements */
+.bento-card > *:not(.plant-pattern):not(.card-header):not(.card-body):not(.card-footer):not(.card-img):not(.card-img-top):not(.card-img-bottom) {
+  padding: var(--spacing-lg);
+}
+
+/* If card structure is used, remove padding from direct children that come after card elements */
+.bento-card > .card-header ~ *:not(.card-body):not(.card-footer):not(.plant-pattern) {
+  padding: 0;
+}
+
+.bento-card > .card-body ~ *:not(.card-footer):not(.plant-pattern) {
+  padding-top: 0;
 }
 
 .bento-card::before {
@@ -151,6 +168,7 @@ p {
   background: radial-gradient(circle, var(--bioco-green-light) 0%, transparent 70%);
   opacity: 0.1;
   pointer-events: none;
+  z-index: 0;
 }
 
 .bento-card:nth-child(2n)::before {
@@ -159,6 +177,193 @@ p {
 
 .bento-card:nth-child(3n)::before {
   background: radial-gradient(circle, var(--bioco-green-dark) 0%, transparent 70%);
+}
+
+/* Card structure elements */
+.card-header {
+  padding: 0.5rem 1rem;
+  margin-bottom: 0;
+  background-color: rgba(33, 37, 41, 0.03);
+  border-bottom: 2px solid #333;
+  border-radius: 3px 3px 0 0/23px 23px 0 0;
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 500;
+}
+
+.card-body {
+  flex: 1 1 auto;
+  padding: 1rem;
+  position: relative;
+  z-index: 1;
+}
+
+.card-title {
+  margin-bottom: 0.5rem;
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 500;
+}
+
+.card-subtitle {
+  margin-top: -0.25rem;
+  margin-bottom: 0;
+  font-family: 'Neucha', sans-serif;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.card-text:last-child {
+  margin-bottom: 0;
+}
+
+.card-link {
+  color: var(--bioco-green);
+  text-decoration: underline;
+}
+
+.card-link + .card-link {
+  margin-left: 1rem;
+}
+
+.card-link:hover {
+  color: var(--bioco-green-dark);
+}
+
+.card-footer {
+  padding: 0.5rem 1rem;
+  background-color: rgba(33, 37, 41, 0.03);
+  border-top: 2px solid #333;
+  border-radius: 0 0 3px 3px/0 0 23px 5px;
+  font-family: 'Neucha', sans-serif;
+  font-weight: 700;
+}
+
+/* Colored card variants with bioco colors */
+.bento-card.bg-primary,
+.bento-card.text-white.bg-primary {
+  background-color: var(--bioco-green);
+  color: white;
+  border-color: var(--bioco-green-dark);
+}
+
+.bento-card.bg-primary .card-header,
+.bento-card.text-white.bg-primary .card-header {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: var(--bioco-green-dark);
+}
+
+.bento-card.bg-primary .card-footer,
+.bento-card.text-white.bg-primary .card-footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top-color: var(--bioco-green-dark);
+}
+
+.bento-card.bg-secondary,
+.bento-card.text-white.bg-secondary {
+  background-color: var(--bioco-green-dark);
+  color: white;
+  border-color: var(--bioco-green);
+}
+
+.bento-card.bg-secondary .card-header,
+.bento-card.text-white.bg-secondary .card-header {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: var(--bioco-green);
+}
+
+.bento-card.bg-secondary .card-footer,
+.bento-card.text-white.bg-secondary .card-footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top-color: var(--bioco-green);
+}
+
+.bento-card.bg-success {
+  background-color: var(--bioco-green-light);
+  color: white;
+  border-color: var(--bioco-green);
+}
+
+.bento-card.bg-success .card-header {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: var(--bioco-green);
+}
+
+.bento-card.bg-success .card-footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top-color: var(--bioco-green);
+}
+
+.bento-card.bg-warning {
+  background-color: var(--bioco-orange);
+  color: white;
+  border-color: #E88200;
+}
+
+.bento-card.bg-warning .card-header {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: #E88200;
+}
+
+.bento-card.bg-warning .card-footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top-color: #E88200;
+}
+
+.bento-card.bg-danger {
+  background-color: var(--bioco-beet);
+  color: white;
+  border-color: var(--bioco-beet-light);
+}
+
+.bento-card.bg-danger .card-header {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: var(--bioco-beet-light);
+}
+
+.bento-card.bg-danger .card-footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top-color: var(--bioco-beet-light);
+}
+
+.bento-card.bg-info {
+  background-color: var(--bioco-green-light);
+  color: white;
+  border-color: var(--bioco-green);
+}
+
+.bento-card.bg-info .card-header {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: var(--bioco-green);
+}
+
+.bento-card.bg-info .card-footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top-color: var(--bioco-green);
+}
+
+.bento-card.bg-light {
+  background-color: var(--bg-secondary);
+  color: var(--text-primary);
+  border-color: #333;
+}
+
+.bento-card.bg-dark {
+  background-color: #333;
+  color: white;
+  border-color: #555;
+}
+
+.bento-card.bg-dark .card-header {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-bottom-color: #555;
+}
+
+.bento-card.bg-dark .card-footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top-color: #555;
+}
+
+.bento-card.text-white {
+  color: white;
 }
 
 .bento-card:hover {
@@ -186,7 +391,7 @@ button,
   padding: 12px 24px;
   font-size: 1rem;
   text-align: center;
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   transition: all 0.2s ease;
   text-decoration: none;
   cursor: pointer;
@@ -459,7 +664,7 @@ header {
   cursor: pointer;
   font-size: 1.25rem;
   display: block;
-  border-radius: var(--radius-sm);
+  border-radius: 3px 3px 3px 3px/15px 15px 15px 3px;
   transition: all 0.2s ease;
   box-shadow: var(--shadow-sm);
 }
@@ -495,7 +700,7 @@ header {
   width: 100%;
   max-width: 320px;
   position: relative;
-  border-radius: var(--radius-lg);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   box-shadow: var(--shadow-lg);
   max-height: 90vh;
   overflow-y: auto;
@@ -693,7 +898,7 @@ header {
   border: 2px solid rgba(46, 125, 50, 0.3);
   padding: var(--spacing-lg);
   margin: var(--spacing-lg) 0;
-  border-radius: var(--radius-lg);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   position: relative;
   overflow: visible;
   box-shadow: var(--shadow-md);
@@ -749,7 +954,7 @@ header {
   color: white;
   padding: 4px 12px;
   border: 2px solid #E88200;
-  border-radius: var(--radius-sm);
+  border-radius: 3px 3px 3px 3px/15px 15px 15px 3px;
   font-size: 0.75rem;
   transform: rotate(10deg);
   transform-origin: center;
@@ -773,7 +978,7 @@ select {
   width: 100%;
   margin: 4px 0;
   font-size: 1rem;
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   transition: all 0.2s ease;
   box-shadow: var(--shadow-sm);
 }
@@ -791,7 +996,7 @@ input[type="radio"] {
   width: 20px;
   height: 20px;
   border: 2px solid #333;
-  border-radius: var(--radius-sm);
+  border-radius: 3px 3px 3px 3px/15px 15px 15px 3px;
   cursor: pointer;
   appearance: none;
   position: relative;
@@ -840,7 +1045,7 @@ input[type="radio"]:checked::after {
   color: #155724;
   padding: var(--spacing-sm);
   margin-bottom: var(--spacing-md);
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -852,7 +1057,7 @@ input[type="radio"]:checked::after {
   color: #721c24;
   padding: var(--spacing-sm);
   margin-bottom: var(--spacing-md);
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   box-shadow: var(--shadow-sm);
 }
 
@@ -945,7 +1150,7 @@ footer a:hover {
   padding: var(--spacing-sm) var(--spacing-md);
   background: var(--bg-primary);
   border: 2px solid var(--bioco-green);
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   color: var(--bioco-green);
   font-size: 0.875rem;
   transition: all 0.2s ease;
@@ -1005,7 +1210,7 @@ footer a:hover {
   font-weight: 700;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   border: 2px solid #333;
   box-shadow: var(--shadow-sm);
 }
@@ -1050,7 +1255,7 @@ footer a:hover {
   padding: var(--spacing-xs) var(--spacing-md);
   background: var(--bg-secondary);
   border: 2px solid #333;
-  border-radius: var(--radius-sm);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   font-size: 0.875rem;
   color: var(--text-secondary);
   cursor: pointer;
@@ -1080,7 +1285,7 @@ footer a:hover {
 .gallery-item {
   aspect-ratio: 4/3;
   overflow: hidden;
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   border: 2px solid #333;
   box-shadow: var(--shadow-sm);
 }
@@ -1105,7 +1310,7 @@ footer a:hover {
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
   border: 2px solid #333;
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   overflow: visible;
   box-shadow: var(--shadow-sm);
 }
@@ -1163,7 +1368,7 @@ footer a:hover {
   font-weight: 700;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   border: 2px solid #333;
   transition: all 0.2s ease;
   box-shadow: var(--shadow-sm);
@@ -1214,7 +1419,7 @@ footer a:hover {
   font-weight: 700;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   border: 2px solid #333;
   border-left: 4px solid var(--bioco-green);
   box-shadow: var(--shadow-sm);
@@ -1411,7 +1616,7 @@ footer a:hover {
   gap: var(--spacing-md);
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   border: 2px solid #333;
   box-shadow: var(--shadow-sm);
   transition: all 0.2s ease;
@@ -1495,7 +1700,7 @@ footer a:hover {
   border-spacing: 0;
   background: var(--bg-primary);
   border: 2px solid #333;
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   overflow: visible;
   box-shadow: var(--shadow-md);
 }
@@ -1557,7 +1762,7 @@ footer a:hover {
   background: var(--bioco-green);
   color: white;
   border: 2px solid var(--bioco-green);
-  border-radius: var(--radius-sm);
+  border-radius: 3px 3px 3px 3px/15px 15px 15px 3px;
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -1576,7 +1781,7 @@ footer a:hover {
   background: var(--text-secondary);
   color: white;
   border: 2px solid var(--text-secondary);
-  border-radius: var(--radius-sm);
+  border-radius: 3px 3px 3px 3px/15px 15px 15px 3px;
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -1625,7 +1830,7 @@ footer a:hover {
   padding: var(--spacing-md);
   background: var(--bg-secondary);
   border: 2px solid #333;
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -1678,7 +1883,7 @@ footer a:hover {
   height: 8px;
   background: var(--bg-secondary);
   border: 2px solid #333;
-  border-radius: var(--radius-sm);
+  border-radius: 3px 3px 3px 3px/15px 15px 15px 3px;
   overflow: hidden;
   margin-bottom: var(--spacing-sm);
   box-shadow: var(--shadow-sm);
@@ -1772,7 +1977,7 @@ footer a:hover {
   font-weight: 700;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   border: 2px solid #333;
   border-left: 4px solid var(--bioco-green);
   cursor: pointer;
@@ -1858,7 +2063,7 @@ footer a:hover {
   font-weight: 700;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   border: 2px solid #333;
   box-shadow: var(--shadow-sm);
 }
@@ -1915,7 +2120,7 @@ footer a:hover {
   background: var(--text-primary);
   color: white;
   border: 2px solid rgba(0, 0, 0, 0.3);
-  border-radius: var(--radius-sm);
+  border-radius: 3px 3px 3px 3px/15px 15px 15px 3px;
   font-size: 0.875rem;
   line-height: 1.4;
   white-space: nowrap;
@@ -1948,7 +2153,7 @@ footer a:hover {
   font-weight: 700;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   border: 2px solid #333;
   box-shadow: var(--shadow-sm);
 }
