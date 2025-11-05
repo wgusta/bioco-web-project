@@ -32,60 +32,9 @@ export default function MitmachenPage() {
             <PricingCalculator />
           </section>
 
-          <section id="H-03b" className="bento-card bento-card-large">
-            <div className="plant-pattern"></div>
-            <h2>Commitment-Check</h2>
-            <p>Bevor du dich anmeldest, überprüfe diese Punkte:</p>
-            <div className="commitment-checklist">
-              <div className="commitment-item">
-                <h3>Anteile</h3>
-                <p>Für jeden Gemüsekorb benötigst du eine bestimmte Anzahl Anteilsscheine:</p>
-                <ul>
-                  <li>Halb: 1 Anteil (CHF 250)</li>
-                  <li>Standard: 2 Anteile (CHF 500)</li>
-                  <li>Doppel: 4 Anteile (CHF 1'000)</li>
-                </ul>
-                <p>Zusätzliche Anteilsscheine können erworben werden (CHF 250 pro Anteil).</p>
-              </div>
-              <div className="commitment-item">
-                <h3>Beitrag</h3>
-                <p>Jahresbeiträge für Gemüsekörbe:</p>
-                <ul>
-                  <li>Halb: CHF 750.-</li>
-                  <li>Standard: CHF 1'280.-</li>
-                  <li>Doppel: CHF 2'350.-</li>
-                </ul>
-                <p>Zahlung quartalsweise oder ganzes Jahr möglich.</p>
-              </div>
-              <div className="commitment-item">
-                <h3>Bindung</h3>
-                <p>Das Abo läuft vom 1. Januar bis 31. Dezember. Die Kündigungsfrist beträgt <strong>zwei Monate auf Ende eines Kalenderjahres</strong>. Ohne Kündigung verlängert sich das Abo automatisch.</p>
-              </div>
-              <div className="commitment-item">
-                <h3>Mitarbeit</h3>
-                <p>Jede(r) Mitglied bringt sich ein:</p>
-                <ul>
-                  <li>Halb: 20 Stunden pro Jahr (5 Halbtage alias "10 Rüebli")</li>
-                  <li>Standard/Doppel: 40 Stunden pro Jahr</li>
-                </ul>
-                <p>Einsatzbereiche: Feld/Anbau, Logistik, Administration, Events. <Link href="/anpacken">Mehr erfahren →</Link></p>
-              </div>
-              <div className="commitment-item">
-                <h3>Risiko</h3>
-                <p>Wir teilen <strong>Arbeit, Ertrag und Risiko</strong> gemeinsam. Das bedeutet:</p>
-                <ul>
-                  <li>Bei Ernteausfall teilen wir das Risiko</li>
-                  <li>Bei Überschuss teilen wir die Freude</li>
-                  <li>Transparenz über Finanzen und Ernte</li>
-                </ul>
-                <p>Das ist das Prinzip der Solidarischen Landwirtschaft (CSA).</p>
-              </div>
-            </div>
-          </section>
-
           <section id="H-04" className="bento-card bento-card-fullwidth">
             <div className="plant-pattern"></div>
-            <h2>Anmeldung</h2>
+            <h2 id="anmeldung">Anmeldung</h2>
             <MembershipForm />
           </section>
 

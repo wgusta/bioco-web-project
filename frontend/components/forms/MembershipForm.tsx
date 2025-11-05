@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { trackEvent } from '../MatomoScript'
 import { InfoTooltip } from '../InfoTooltip'
 import Link from 'next/link'
@@ -57,10 +57,40 @@ const ACTIVITY_AREAS = [
   'Andere'
 ]
 
-export function MembershipForm() {
-  const [currentStep, setCurrentStep] = useState(1)
+interface MembershipFormProps {
+  initialData?: {
+    aboType?: string
+    additionalShares?: number
+    membershipType?: string
+  }
+}
+
+export function MembershipForm({ initialData }: MembershipFormProps = {}) {
+  const [currentStep, setCurrentStep] = useState(0)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
+  
+  // Read URL parameters
+  const getInitialDataFromURL = () => {
+    if (typeof window === 'undefined') return null
+    const params = new URLSearchParams(window.location.search)
+    const abo = params.get('abo')
+    const shares = params.get('shares')
+    const additional = params.get('additional')
+    
+    if (abo || shares || additional) {
+      return {
+        aboType: abo || undefined,
+        additionalShares: additional ? parseInt(additional) : undefined,
+        membershipType: abo === 'kein' ? 'shares-only' : 'abo',
+      }
+    }
+    return null
+  }
+
+  const urlData = getInitialDataFromURL()
+  const effectiveInitialData = initialData || urlData
+
   const [formData, setFormData] = useState<FormData>({
     firstName: '',
     lastName: '',
@@ -69,9 +99,9 @@ export function MembershipForm() {
     city: '',
     phone: '',
     email: '',
-    membershipType: 'abo',
-    aboType: 'standard',
-    additionalShares: 0,
+    membershipType: effectiveInitialData?.membershipType || 'abo',
+    aboType: (effectiveInitialData?.aboType as AboType) || 'standard',
+    additionalShares: effectiveInitialData?.additionalShares || 0,
     sharesOnly: 1,
     depot: '',
     paymentType: 'yearly',
@@ -81,6 +111,18 @@ export function MembershipForm() {
     otherActivity: '',
     privacyAccept: false,
   })
+
+  // Update form data when initialData changes or URL params are present
+  useEffect(() => {
+    if (effectiveInitialData) {
+      setFormData(prev => ({
+        ...prev,
+        membershipType: effectiveInitialData.membershipType || prev.membershipType,
+        aboType: (effectiveInitialData.aboType as AboType) || prev.aboType,
+        additionalShares: effectiveInitialData.additionalShares ?? prev.additionalShares,
+      }))
+    }
+  }, [effectiveInitialData])
 
   // Calculate totals
   const calculateTotals = () => {
@@ -114,6 +156,9 @@ export function MembershipForm() {
 
   const validateStep = (step: number): boolean => {
     switch (step) {
+      case 0:
+        // Commitment check - no validation needed, just acknowledge
+        return true
       case 1:
         if (!formData.firstName || !formData.lastName || !formData.address || !formData.zip || !formData.city || !formData.email) {
           setError('Bitte füllen Sie alle Pflichtfelder aus.')
@@ -174,18 +219,18 @@ export function MembershipForm() {
   const handleNext = () => {
     if (validateStep(currentStep)) {
       setError('')
-      setCurrentStep(prev => Math.min(prev + 1, 6))
+      setCurrentStep(prev => Math.min(prev + 1, 7))
     }
   }
 
   const handlePrevious = () => {
     setError('')
-    setCurrentStep(prev => Math.max(prev - 1, 1))
+    setCurrentStep(prev => Math.max(prev - 1, 0))
   }
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!validateStep(6)) return
+    if (!validateStep(7)) return
 
     trackEvent('Form', 'Membership', 'Submit')
 
@@ -227,10 +272,10 @@ export function MembershipForm() {
         <div className="progress-bar">
           <div 
             className="progress-fill" 
-            style={{ width: `${(currentStep / 6) * 100}%` }}
+            style={{ width: `${(currentStep / 7) * 100}%` }}
           ></div>
         </div>
-        <p className="progress-text">Schritt {currentStep} von 6</p>
+        <p className="progress-text">Schritt {currentStep + 1} von 7</p>
       </div>
 
       <div className="form-layout">
@@ -240,6 +285,37 @@ export function MembershipForm() {
             {error && (
               <div className="form-error bento-card" style={{ marginBottom: '16px' }}>
                 <p>{error}</p>
+              </div>
+            )}
+
+            {/* Step 0: Commitment Check */}
+            {currentStep === 0 && (
+              <div className="form-step">
+                <h3>Commitment-Check</h3>
+                <p>Bevor du dich anmeldest, überprüfe bitte diese Punkte:</p>
+                <div className="commitment-checklist">
+                  <div className="commitment-item">
+                    <h4>Anteile & Beitrag</h4>
+                    <p>Jedes Mitglied erwirbt Anteilsscheine zu je CHF 250.- (einmalige Zahlung). Die Anzahl der Anteile hängt von deinem gewählten Abo ab. Der Jahresbeitrag für dein Gemüse-Abo (jährlicher Beitrag) wird per 31. Januar fällig und kann quartalsweise oder jährlich bezahlt werden.</p>
+                  </div>
+                  <div className="commitment-item">
+                    <h4>Bindung & Kündigung</h4>
+                    <p>Das Gemüseabo läuft vom 1. Januar bis zum 31. Dezember. Ohne Kündigung verlängert es sich jeweils um ein Kalenderjahr. Die Kündigungsfrist beträgt zwei Monate auf Ende eines Kalenderjahres.</p>
+                  </div>
+                  <div className="commitment-item">
+                    <h4>Mitarbeit</h4>
+                    <p>Wir sind eine Mitmach-Genossenschaft! Jedes Mitglied leistet pro Jahr 20 Stunden (bei halbem Korb) bzw. 40 Stunden (bei ganzem Korb) Mitarbeit. Dies kann auf dem Feld, in der Logistik oder bei Events sein.</p>
+                  </div>
+                  <div className="commitment-item">
+                    <h4>Risiko & Ertrag</h4>
+                    <p>Als Teil der Solidarischen Landwirtschaft teilen wir das Risiko von Ernteausfällen und freuen uns gemeinsam über reiche Ernten. Du erhältst wöchentlich frisches Demeter-Gemüse, das direkt vom Feld kommt.</p>
+                  </div>
+                </div>
+                <div style={{ marginTop: '24px', padding: '16px', background: 'var(--bg-secondary)', borderRadius: '12px' }}>
+                  <p style={{ margin: 0, fontWeight: 600 }}>
+                    ✓ Ich habe die Bedingungen verstanden und bin bereit, Teil der biocò-Gemeinschaft zu werden.
+                  </p>
+                </div>
               </div>
             )}
 
@@ -577,7 +653,7 @@ export function MembershipForm() {
             )}
 
             {/* Step 6: Summary & Confirmation */}
-            {currentStep === 6 && (
+            {currentStep === 7 && (
               <div className="form-step">
                 <h3>Zusammenfassung & Bestätigung</h3>
                 <div className="summary-content">
@@ -636,7 +712,7 @@ export function MembershipForm() {
 
             {/* Navigation Buttons */}
             <div className="form-navigation">
-              {currentStep > 1 && (
+              {currentStep > 0 && (
                 <button
                   type="button"
                   className="btn btn-secondary"
@@ -645,7 +721,7 @@ export function MembershipForm() {
                   Zurück
                 </button>
               )}
-              {currentStep < 6 ? (
+              {currentStep < 7 ? (
                 <button
                   type="button"
                   className="btn btn-primary"

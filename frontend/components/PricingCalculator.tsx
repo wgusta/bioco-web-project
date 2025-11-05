@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Link from 'next/link'
 
 const ABO_PRICES = {
   'halb': { name: 'Halb Gemüsekorb', price: 750, shares: 1 },
@@ -11,7 +12,11 @@ const ABO_PRICES = {
 
 const SHARE_PRICE = 250
 
-export function PricingCalculator() {
+interface PricingCalculatorProps {
+  onStartForm?: (data: { aboType: string, additionalShares: number, membershipType: string }) => void
+}
+
+export function PricingCalculator({ onStartForm }: PricingCalculatorProps) {
   const [selectedAbo, setSelectedAbo] = useState<'halb' | 'standard' | 'doppel' | 'kein'>('kein')
   const [additionalShares, setAdditionalShares] = useState(0)
 
@@ -38,7 +43,12 @@ export function PricingCalculator() {
           <tbody>
             {selectedAbo !== 'kein' && (
               <tr>
-                <td>{aboData.name}</td>
+                <td>
+                  {aboData.name}
+                  <span className="payment-type-label" style={{ display: 'block', marginTop: '4px' }}>
+                    <strong style={{ color: 'var(--bioco-green)', fontSize: '0.875rem' }}>Jährlicher Beitrag</strong>
+                  </span>
+                </td>
                 <td>1</td>
                 <td>CHF {aboData.price.toLocaleString('de-CH')}.-</td>
                 <td><strong>CHF {aboData.price.toLocaleString('de-CH')}.-</strong></td>
@@ -48,6 +58,9 @@ export function PricingCalculator() {
             <tr>
               <td>
                 Anteilsscheine
+                <span className="payment-type-label" style={{ display: 'block', marginTop: '4px' }}>
+                  <strong style={{ color: 'var(--bioco-beet)', fontSize: '0.875rem' }}>Einmalige Zahlung</strong>
+                </span>
                 {selectedAbo !== 'kein' && requiredShares > 0 && (
                   <span className="text-sm" style={{ display: 'block', color: 'var(--text-secondary)', marginTop: '4px' }}>
                     ({requiredShares} erforderlich{additionalShares > 0 && ` + ${additionalShares} zusätzlich`})
@@ -63,25 +76,32 @@ export function PricingCalculator() {
               <td>CHF {SHARE_PRICE}.-</td>
               <td><strong>CHF {sharesCost.toLocaleString('de-CH')}.-</strong></td>
               <td>
-                <div style={{ display: 'flex', gap: '8px', alignItems: 'center' }}>
-                  {additionalShares > 0 && (
+                <div className="share-buttons-container">
+                  <div className="share-buttons-label">
+                    <strong>Zusätzliche Anteilsscheine hinzufügen:</strong>
+                  </div>
+                  <div className="share-buttons">
+                    {additionalShares > 0 && (
+                      <button
+                        type="button"
+                        className="btn-remove-share"
+                        onClick={() => setAdditionalShares(prev => Math.max(0, prev - 1))}
+                        aria-label="Ein Anteilsschein entfernen"
+                        title="Ein Anteilsschein entfernen"
+                      >
+                        -1
+                      </button>
+                    )}
                     <button
                       type="button"
-                      className="btn-remove-share"
-                      onClick={() => setAdditionalShares(prev => Math.max(0, prev - 1))}
-                      aria-label="Ein Anteilsschein entfernen"
+                      className="btn-add-share"
+                      onClick={() => setAdditionalShares(prev => prev + 1)}
+                      aria-label="Ein zusätzlicher Anteilsschein hinzufügen"
+                      title="Ein zusätzlicher Anteilsschein hinzufügen"
                     >
-                      -1
+                      +1
                     </button>
-                  )}
-                  <button
-                    type="button"
-                    className="btn-add-share"
-                    onClick={() => setAdditionalShares(prev => prev + 1)}
-                    aria-label="Ein Anteilsschein hinzufügen"
-                  >
-                    +1
-                  </button>
+                  </div>
                 </div>
               </td>
             </tr>
@@ -148,6 +168,30 @@ export function PricingCalculator() {
           <p style={{ margin: 0, fontSize: '0.875rem' }}>
             <strong>💡 Info:</strong> Du kannst Anteilsscheine auch ohne Gemüsekorb erwerben. 
             Genossenschafter/innen haben Vorrang auf der Warteliste für einen Gemüsekorb.
+          </p>
+        </div>
+      )}
+
+      {(selectedAbo !== 'kein' || additionalShares > 0) && (
+        <div style={{ marginTop: '24px', textAlign: 'center' }}>
+          <Link
+            href={`/mitmachen?abo=${selectedAbo === 'kein' ? 'kein' : selectedAbo}&shares=${totalShares}&additional=${additionalShares}#anmeldung`}
+            className="btn btn-primary"
+            style={{ display: 'inline-block', fontSize: '1.125rem', padding: '16px 32px' }}
+            onClick={() => {
+              // Scroll to form after navigation
+              setTimeout(() => {
+                const element = document.getElementById('anmeldung')
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' })
+                }
+              }, 300)
+            }}
+          >
+            Jetzt Anmelden →
+          </Link>
+          <p style={{ marginTop: '12px', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+            Deine Auswahl wird automatisch ins Anmeldeformular übernommen
           </p>
         </div>
       )}
