@@ -1,6 +1,5 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-import { Hero } from '@/components/Hero'
 import { EventsBanner } from '@/components/EventsBanner'
 import { CTA } from '@/components/CTA'
 import { Gallery } from '@/components/Gallery'

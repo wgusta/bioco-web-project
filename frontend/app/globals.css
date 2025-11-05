@@ -3078,4 +3078,177 @@ footer a:hover {
     display: flex;
     gap: var(--spacing-xs);
   }
+
+  /* Form inputs fit mobile screen */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  input[type="number"],
+  input[type="password"],
+  input[type="search"],
+  textarea,
+  select,
+  .form-control {
+    font-size: 16px; /* Prevents zoom on iOS */
+    padding: 10px 12px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Flip abos table axes for mobile - display as vertical cards */
+  #C-01 .pricing-table {
+    display: block;
+  }
+
+  #C-01 .pricing-table table,
+  #C-01 .pricing-table thead,
+  #C-01 .pricing-table tbody,
+  #C-01 .pricing-table th,
+  #C-01 .pricing-table td,
+  #C-01 .pricing-table tr {
+    display: block;
+  }
+
+  #C-01 .pricing-table thead {
+    display: none;
+  }
+
+  #C-01 .pricing-table tr {
+    border: 2px solid #333;
+    border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  #C-01 .pricing-table td {
+    border: none;
+    padding: var(--spacing-xs) 0;
+    text-align: left;
+  }
+
+  #C-01 .pricing-table td {
+    position: relative;
+    padding-left: 120px;
+  }
+
+  #C-01 .pricing-table td:before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: var(--bioco-green);
+    position: absolute;
+    left: 0;
+    width: 110px;
+  }
+
+  #C-01 .pricing-table td:first-child:before {
+    content: "Gemüsekorb:";
+  }
+
+  #C-01 .pricing-table td:nth-child(2):before {
+    content: "Personen:";
+  }
+
+  #C-01 .pricing-table td:nth-child(3):before {
+    content: "Jahrespreis:";
+  }
+
+  #C-01 .pricing-table td:nth-child(4):before {
+    content: "Anteilsscheine:";
+  }
+
+  #C-01 .pricing-table td:empty {
+    display: none;
+  }
+
+  /* Flip pricing calculator table axes for mobile */
+  .pricing-calculator .pricing-table {
+    display: block;
+  }
+
+  .pricing-calculator .pricing-table table,
+  .pricing-calculator .pricing-table thead,
+  .pricing-calculator .pricing-table tbody,
+  .pricing-calculator .pricing-table th,
+  .pricing-calculator .pricing-table td,
+  .pricing-calculator .pricing-table tr {
+    display: block;
+  }
+
+  .pricing-calculator .pricing-table thead {
+    display: none;
+  }
+
+  .pricing-calculator .pricing-table tr {
+    border: 2px solid #333;
+    border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-md);
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+  }
+
+  .pricing-calculator .pricing-table td {
+    border: none;
+    padding: var(--spacing-xs) 0;
+    text-align: left;
+  }
+
+  .pricing-calculator .pricing-table td {
+    position: relative;
+    padding-left: 100px;
+  }
+
+  .pricing-calculator .pricing-table td:before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: var(--bioco-green);
+    position: absolute;
+    left: 0;
+    width: 90px;
+  }
+
+  .pricing-calculator .pricing-table td:first-child:before {
+    content: "Artikel:";
+  }
+
+  .pricing-calculator .pricing-table td:nth-child(2):before {
+    content: "Anzahl:";
+  }
+
+  .pricing-calculator .pricing-table td:nth-child(3):before {
+    content: "Einzelpreis:";
+  }
+
+  .pricing-calculator .pricing-table td:nth-child(4):before {
+    content: "Total:";
+  }
+
+  .pricing-calculator .pricing-table td:empty {
+    display: none;
+  }
+
+  .pricing-calculator .pricing-table .total-row {
+    background: var(--bg-secondary);
+    border-top: 2px solid var(--bioco-green);
+    padding: var(--spacing-md);
+  }
+
+  .pricing-calculator .pricing-table .total-row td {
+    display: block;
+    padding: var(--spacing-xs) 0;
+    padding-left: 0;
+  }
+
+  .pricing-calculator .pricing-table .total-row td:before {
+    display: none;
+  }
+
+  .pricing-calculator .pricing-table .total-row td:first-child {
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-xs);
+  }
 }
