@@ -6,12 +6,13 @@ export default function VisitDayPage() {
   return (
     <>
       <Header />
-      <main className="wireframe-box main-content">
-        <div className="wireframe-content">
-          <div className="wireframe-box content">
-            <h2>Tag der offenen Tür - Anmeldung</h2>
+      <main className="main-content">
+        <div className="bento-grid">
+          <section className="bento-card bento-card-large">
+            <div className="plant-pattern"></div>
+            <h1>Tag der offenen Tür - Anmeldung</h1>
             <VisitDayForm />
-          </div>
+          </section>
         </div>
       </main>
       <Footer />

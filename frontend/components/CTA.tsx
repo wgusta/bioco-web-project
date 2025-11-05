@@ -11,7 +11,7 @@ interface CTAProps {
 
 export function CTA({ text, href, variant = 'primary', onClick }: CTAProps) {
   const router = useRouter()
-  const className = variant === 'primary' ? 'btn-primary' : 'btn-secondary'
+  const className = variant === 'primary' ? 'btn btn-primary' : 'btn btn-secondary'
   
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.preventDefault()

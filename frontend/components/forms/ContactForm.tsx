@@ -43,7 +43,7 @@ export function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="form-success wireframe-box">
+      <div className="form-success bento-card">
         <p>Vielen Dank! Sie erhalten in Kürze eine Bestätigungs-E-Mail.</p>
       </div>
     )
@@ -52,7 +52,7 @@ export function ContactForm() {
   return (
     <form onSubmit={handleSubmit} className="contact-form">
       {error && (
-        <div className="form-error wireframe-box">
+        <div className="form-error bento-card">
           <p>{error}</p>
         </div>
       )}

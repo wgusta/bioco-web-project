@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react'
 import { trackEvent } from '@/components/MatomoScript'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import Link from 'next/link'
 
 function DOIConfirmContent() {
   const searchParams = useSearchParams()
@@ -50,11 +51,12 @@ function DOIConfirmContent() {
     return (
       <>
         <Header />
-        <main className="wireframe-box main-content">
-          <div className="wireframe-content">
-            <div className="wireframe-box content">
+        <main className="main-content">
+          <div className="bento-grid">
+            <section className="bento-card">
+              <div className="plant-pattern"></div>
               <p>Bitte warten...</p>
-            </div>
+            </section>
           </div>
         </main>
         <Footer />
@@ -65,35 +67,35 @@ function DOIConfirmContent() {
   return (
     <>
       <Header />
-      <main className="wireframe-box main-content">
-        <div className="wireframe-content">
-          <div className="wireframe-box content">
-            {confirmed ? (
-              <div className="doi-confirmed wireframe-box">
-                <h2>Anmeldung bestätigt</h2>
-                <p>Vielen Dank! Ihre Anmeldung wurde erfolgreich bestätigt.</p>
-                
-                {formType === 'subscribe' && (
-                  <p>Sie erhalten ab sofort unseren Newsletter.</p>
-                )}
-                {formType === 'visit' && (
-                  <p>Wir haben Ihre Anmeldung für den Tag der offenen Tür erhalten und werden uns bald bei Ihnen melden.</p>
-                )}
-                {formType === 'waiting_list' && (
-                  <p>Wir haben Sie auf die Warteliste gesetzt und werden uns bei Verfügbarkeit bei Ihnen melden.</p>
-                )}
-                {formType === 'contact' && (
-                  <p>Wir haben Ihre Nachricht erhalten und werden uns bald bei Ihnen melden.</p>
-                )}
-              </div>
-            ) : (
-              <div className="doi-error wireframe-box">
-                <h2>Bestätigung fehlgeschlagen</h2>
-                <p>{error}</p>
-                <p><a href="/">Zurück zur Startseite</a></p>
-              </div>
-            )}
-          </div>
+      <main className="main-content">
+        <div className="bento-grid">
+          {confirmed ? (
+            <section className="bento-card bento-card-large">
+              <div className="plant-pattern"></div>
+              <h1>Anmeldung bestätigt</h1>
+              <p>Vielen Dank! Ihre Anmeldung wurde erfolgreich bestätigt.</p>
+              
+              {formType === 'subscribe' && (
+                <p>Sie erhalten ab sofort unseren Newsletter.</p>
+              )}
+              {formType === 'visit' && (
+                <p>Wir haben Ihre Anmeldung für den Tag der offenen Tür erhalten und werden uns bald bei Ihnen melden.</p>
+              )}
+              {formType === 'waiting_list' && (
+                <p>Wir haben Sie auf die Warteliste gesetzt und werden uns bei Verfügbarkeit bei Ihnen melden.</p>
+              )}
+              {formType === 'contact' && (
+                <p>Wir haben Ihre Nachricht erhalten und werden uns bald bei Ihnen melden.</p>
+              )}
+            </section>
+          ) : (
+            <section className="bento-card bento-card-large">
+              <div className="plant-pattern"></div>
+              <h1>Bestätigung fehlgeschlagen</h1>
+              <p>{error}</p>
+              <p><Link href="/">Zurück zur Startseite</Link></p>
+            </section>
+          )}
         </div>
       </main>
       <Footer />
@@ -106,11 +108,12 @@ export default function DOIConfirmPage() {
     <Suspense fallback={
       <>
         <Header />
-        <main className="wireframe-box main-content">
-          <div className="wireframe-content">
-            <div className="wireframe-box content">
+        <main className="main-content">
+          <div className="bento-grid">
+            <section className="bento-card">
+              <div className="plant-pattern"></div>
               <p>Bitte warten...</p>
-            </div>
+            </section>
           </div>
         </main>
         <Footer />

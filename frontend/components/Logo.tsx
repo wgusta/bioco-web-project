@@ -1,21 +1,17 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export function Logo() {
   return (
     <Link href="/" className="logo-link">
-      <div className="logo">
-        <span className="logo-b">b</span>
-        <span className="logo-carrot">
-          <span className="carrot-leaves">🌿</span>
-          <span className="carrot-body">🥕</span>
-        </span>
-        <span className="logo-o1">o</span>
-        <span className="logo-c">c</span>
-        <span className="logo-beet">
-          <span className="beet-leaves">🌿</span>
-          <span className="beet-body">🫘</span>
-        </span>
-      </div>
+      <Image
+        src="https://bioco.ch/wp-content/uploads/2017/02/bioco_logo_gemuesegenossenschaft.png"
+        alt="biocò Logo"
+        width={200}
+        height={60}
+        priority
+        style={{ height: 'auto', width: 'auto', maxHeight: '60px' }}
+      />
     </Link>
   )
 }

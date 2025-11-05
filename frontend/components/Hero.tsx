@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import Image from 'next/image'
 
 interface HeroProps {
@@ -29,6 +30,14 @@ export function Hero({ title, subtitle, image }: HeroProps) {
           {subtitle && (
             <p id="hero-subtitle" className="hero-subtitle">{subtitle}</p>
           )}
+          <div className="hero-buttons">
+            <Link href="/ernte" className="btn btn-primary">
+              Was wir anbauen
+            </Link>
+            <Link href="/wir" className="btn btn-secondary">
+              Uns kennenlernen
+            </Link>
+          </div>
         </div>
       </div>
     </section>
