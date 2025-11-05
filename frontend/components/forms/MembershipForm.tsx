@@ -31,11 +31,15 @@ interface FormData {
   // Step 4: Payment
   paymentType: PaymentType
   
-  // Step 5: Mitarbeit
+  // Step 3: Mitarbeit
   preferredDays: string[]
   preferredTimes: string[]
   activityAreas: string[]
   otherActivity: string
+  
+  // Step 4: Zusatzabos
+  zusatzabos: string[]
+  weitereProdukte: string
   
   // General
   privacyAccept: boolean
@@ -101,9 +105,9 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
     city: '',
     phone: '',
     email: '',
-    membershipType: (effectiveInitialData?.membershipType as 'abo' | 'shares-only') || 'abo',
-    aboType: (effectiveInitialData?.aboType as AboType) || 'standard',
-    additionalShares: effectiveInitialData?.additionalShares || 0,
+    membershipType: 'abo', // Always abo, no choice
+    aboType: 'standard', // Always standard, pre-selected
+    additionalShares: 0, // Always 0, no choice
     sharesOnly: 1,
     depot: '',
     paymentType: 'yearly',
@@ -111,6 +115,8 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
     preferredTimes: [],
     activityAreas: [],
     otherActivity: '',
+    zusatzabos: [],
+    weitereProdukte: '',
     privacyAccept: false,
   })
 
@@ -172,19 +178,11 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
         }
         return true
       case 2:
-        if (formData.membershipType === 'abo' && formData.aboType === 'none') {
-          setError('Bitte wählen Sie einen Gemüsekorb-Typ oder wählen Sie "Nur Anteilsscheine".')
-          return false
-        }
-        if (formData.membershipType === 'shares-only' && formData.sharesOnly < 1) {
-          setError('Bitte wählen Sie mindestens 1 Anteilsschein.')
-          return false
-        }
-        if (formData.membershipType === 'abo' && !formData.depot) {
+        if (!formData.depot) {
           setError('Bitte wählen Sie ein Depot für die Abholung.')
           return false
         }
-        if (formData.membershipType === 'abo' && !formData.paymentType) {
+        if (!formData.paymentType) {
           setError('Bitte wählen Sie eine Zahlungsweise.')
           return false
         }
@@ -204,6 +202,9 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
         }
         return true
       case 4:
+        // Zusatzabos - no validation needed, optional
+        return true
+      case 5:
         if (!formData.privacyAccept) {
           setError('Bitte akzeptieren Sie die Datenschutzbestimmungen.')
           return false
@@ -217,7 +218,7 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
   const handleNext = () => {
     if (validateStep(currentStep)) {
       setError('')
-      setCurrentStep(prev => Math.min(prev + 1, 5))
+      setCurrentStep(prev => Math.min(prev + 1, 6))
     }
   }
 
@@ -228,7 +229,7 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!validateStep(4)) return
+    if (!validateStep(5)) return
 
     trackEvent('Form', 'Membership', 'Submit')
 
@@ -261,10 +262,10 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
         <div className="progress-bar">
           <div 
             className="progress-fill" 
-            style={{ width: `${(currentStep / 5) * 100}%` }}
+            style={{ width: `${(currentStep / 6) * 100}%` }}
           ></div>
         </div>
-        <p className="progress-text">Schritt {currentStep + 1} von 5</p>
+        <p className="progress-text">Schritt {currentStep + 1} von 6</p>
       </div>
 
       <div className="form-layout">
@@ -395,164 +396,77 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
               <div className="form-step">
                 <h3>Mitgliedschaft & Gemüsekorb</h3>
                 
+                <div className="form-group abo-select-group">
+                  <label htmlFor="aboType">
+                    Gemüsekorb-Typ
+                    <span className="recommended-badge" style={{ marginLeft: '8px' }}>Empfohlen</span>
+                  </label>
+                  <div style={{ position: 'relative' }}>
+                    <select
+                      id="aboType"
+                      required
+                      value={formData.aboType}
+                      onChange={(e) => setFormData({ ...formData, aboType: e.target.value as AboType })}
+                    >
+                      <option value="halb">Halb (1 Person, CHF 750.-, 1 Anteil)</option>
+                      <option value="standard">Standard (2-3 Personen, CHF 1'280.-, 2 Anteile)</option>
+                      <option value="doppel">Doppel (4-6 Personen, CHF 2'350.-, 4 Anteile)</option>
+                    </select>
+                  </div>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
+                    Standard-Gemüsekorb ist für 2-3 Personen ausgelegt und wird empfohlen.
+                  </p>
+                </div>
+
                 <div className="form-group">
-                  <label>Ich möchte:</label>
+                  <label htmlFor="depot">Depot-Auswahl *</label>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+                    Wo möchtest du deinen Gemüsekorb abholen?
+                  </p>
+                  <select
+                    id="depot"
+                    required
+                    value={formData.depot}
+                    onChange={(e) => setFormData({ ...formData, depot: e.target.value })}
+                  >
+                    <option value="">Bitte wählen...</option>
+                    {DEPOTS.map(depot => (
+                      <option key={depot} value={depot}>{depot}</option>
+                    ))}
+                  </select>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
+                    Abholzeiten: Dienstag und Freitag, 17:00-19:00 Uhr
+                  </p>
+                </div>
+
+                <div className="form-group">
+                  <label>Zahlungsweise *</label>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+                    Die erste Rechnung wird per 31. Januar fällig.
+                  </p>
                   <div className="radio-group">
                     <label className="radio-option">
                       <input
                         type="radio"
-                        name="membershipType"
-                        value="abo"
-                        checked={formData.membershipType === 'abo'}
-                        onChange={(e) => setFormData({ ...formData, membershipType: 'abo', aboType: 'standard' })}
+                        name="paymentType"
+                        value="quarterly"
+                        checked={formData.paymentType === 'quarterly'}
+                        onChange={(e) => setFormData({ ...formData, paymentType: 'quarterly' })}
                       />
-                      <span>Gemüsekorb mit Anteilsscheinen</span>
+                      <span>Quartalsweise (vierteljährlich)</span>
                     </label>
                     <label className="radio-option">
                       <input
                         type="radio"
-                        name="membershipType"
-                        value="shares-only"
-                        checked={formData.membershipType === 'shares-only'}
-                        onChange={(e) => setFormData({ ...formData, membershipType: 'shares-only', aboType: 'none' })}
+                        name="paymentType"
+                        value="yearly"
+                        checked={formData.paymentType === 'yearly'}
+                        onChange={(e) => setFormData({ ...formData, paymentType: 'yearly' })}
                       />
-                      <span>
-                        Nur Anteilsscheine (ohne Gemüsekorb)
-                        <InfoTooltip content="Wer uns unterstützen möchte, ohne ein Abo kann dies gerne tun. Zudem haben Genossenschafterinnen Vorrang auf der Warteliste für einen Gemüsekorb.">
-                          ?
-                        </InfoTooltip>
-                      </span>
+                      <span>Ganzes Jahr (einmalig)</span>
                     </label>
                   </div>
                 </div>
-
-                {formData.membershipType === 'abo' && (
-                  <>
-                    <div className="form-group abo-select-group">
-                      <label htmlFor="aboType">Gemüsekorb-Typ *</label>
-                      <div style={{ position: 'relative' }}>
-                        <select
-                          id="aboType"
-                          required
-                          value={formData.aboType}
-                          onChange={(e) => setFormData({ ...formData, aboType: e.target.value as AboType, additionalShares: 0 })}
-                        >
-                          <option value="halb">Halb (1 Person, CHF 750.-, 1 Anteil)</option>
-                          <option value="standard">Standard (2-3 Personen, CHF 1'280.-, 2 Anteile)</option>
-                          <option value="doppel">Doppel (4-6 Personen, CHF 2'350.-, 4 Anteile)</option>
-                        </select>
-                        {formData.aboType === 'standard' && (
-                          <span className="recommended-badge">Empfohlen</span>
-                        )}
-                      </div>
-                    </div>
-
-                    <div className="form-group">
-                      <label htmlFor="additionalShares">
-                        Zusätzliche Anteilsscheine
-                        <InfoTooltip content="Du kannst zusätzliche Anteilsscheine erwerben (CHF 250 pro Anteil). Mehr Anteile bedeuten mehr Mitspracherecht.">
-                          ?
-                        </InfoTooltip>
-                      </label>
-                      <div className="share-counter">
-                        <button
-                          type="button"
-                          className="counter-btn"
-                          onClick={() => setFormData({ ...formData, additionalShares: Math.max(0, formData.additionalShares - 1) })}
-                        >
-                          −
-                        </button>
-                        <span className="counter-value">{formData.additionalShares}</span>
-                        <button
-                          type="button"
-                          className="counter-btn"
-                          onClick={() => setFormData({ ...formData, additionalShares: formData.additionalShares + 1 })}
-                        >
-                          +
-                        </button>
-                      </div>
-                    </div>
-                  </>
-                )}
-
-                {formData.membershipType === 'shares-only' && (
-                  <div className="form-group">
-                    <label htmlFor="sharesOnly">
-                      Anzahl Anteilsscheine * (CHF 250 pro Anteil)
-                    </label>
-                    <div className="share-counter">
-                      <button
-                        type="button"
-                        className="counter-btn"
-                        onClick={() => setFormData({ ...formData, sharesOnly: Math.max(1, formData.sharesOnly - 1) })}
-                      >
-                        −
-                      </button>
-                      <span className="counter-value">{formData.sharesOnly}</span>
-                      <button
-                        type="button"
-                        className="counter-btn"
-                        onClick={() => setFormData({ ...formData, sharesOnly: formData.sharesOnly + 1 })}
-                      >
-                        +
-                      </button>
-                    </div>
-                  </div>
-                )}
-
-                {formData.membershipType === 'abo' && (
-                  <>
-                    <div className="form-group">
-                      <label htmlFor="depot">Depot-Auswahl *</label>
-                      <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
-                        Wo möchtest du deinen Gemüsekorb abholen?
-                      </p>
-                      <select
-                        id="depot"
-                        required
-                        value={formData.depot}
-                        onChange={(e) => setFormData({ ...formData, depot: e.target.value })}
-                      >
-                        <option value="">Bitte wählen...</option>
-                        {DEPOTS.map(depot => (
-                          <option key={depot} value={depot}>{depot}</option>
-                        ))}
-                      </select>
-                      <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
-                        Abholzeiten: Dienstag und Freitag, 17:00-19:00 Uhr
-                      </p>
-                    </div>
-
-                    <div className="form-group">
-                      <label>Zahlungsweise *</label>
-                      <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
-                        Die erste Rechnung wird per 31. Januar fällig.
-                      </p>
-                      <div className="radio-group">
-                        <label className="radio-option">
-                          <input
-                            type="radio"
-                            name="paymentType"
-                            value="quarterly"
-                            checked={formData.paymentType === 'quarterly'}
-                            onChange={(e) => setFormData({ ...formData, paymentType: 'quarterly' })}
-                          />
-                          <span>Quartalsweise (vierteljährlich)</span>
-                        </label>
-                        <label className="radio-option">
-                          <input
-                            type="radio"
-                            name="paymentType"
-                            value="yearly"
-                            checked={formData.paymentType === 'yearly'}
-                            onChange={(e) => setFormData({ ...formData, paymentType: 'yearly' })}
-                          />
-                          <span>Ganzes Jahr (einmalig)</span>
-                        </label>
-                      </div>
-                    </div>
-                  </>
-                )}
               </div>
             )}
 
@@ -642,8 +556,51 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
               </div>
             )}
 
-            {/* Step 4: Summary & Confirmation */}
+            {/* Step 4: Zusatzabos */}
             {currentStep === 4 && (
+              <div className="form-step">
+                <h3>Zusatzabos</h3>
+                <p>Ich bin interessiert, zusätzlich:</p>
+                
+                <div className="form-group">
+                  <div className="checkbox-group">
+                    {['Milch', 'Fleisch', 'Käse', 'Kräutersalz'].map(product => (
+                      <label key={product} className="checkbox-option">
+                        <input
+                          type="checkbox"
+                          checked={formData.zusatzabos.includes(product)}
+                          onChange={(e) => {
+                            if (e.target.checked) {
+                              setFormData({ ...formData, zusatzabos: [...formData.zusatzabos, product] })
+                            } else {
+                              setFormData({ ...formData, zusatzabos: formData.zusatzabos.filter(p => p !== product) })
+                            }
+                          }}
+                        />
+                        <span>{product}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="weitereProdukte">Weitere Produkte von Partnern aus der Region</label>
+                  <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+                    Hast du Wünsche für weitere Produkte? Teile uns deine Ideen mit:
+                  </p>
+                  <textarea
+                    id="weitereProdukte"
+                    rows={4}
+                    value={formData.weitereProdukte}
+                    onChange={(e) => setFormData({ ...formData, weitereProdukte: e.target.value })}
+                    placeholder="z.B. Eier, Brot, Tofu, Honig..."
+                  />
+                </div>
+              </div>
+            )}
+
+            {/* Step 5: Summary & Confirmation */}
+            {currentStep === 5 && (
               <div className="form-step">
                 <h3>Zusammenfassung & Bestätigung</h3>
                 <div className="summary-content">
@@ -660,7 +617,7 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
                     {formData.membershipType === 'abo' ? (
                       <>
                         <p><strong>Gemüsekorb:</strong> {formData.aboType === 'halb' ? 'Halb' : formData.aboType === 'standard' ? 'Standard' : 'Doppel'}</p>
-                        <p><strong>Anteilsscheine:</strong> {totals.totalShares} ({totals.requiredShares} erforderlich + {formData.additionalShares} zusätzlich)</p>
+                        <p><strong>Anteilsscheine:</strong> {totals.totalShares} ({totals.requiredShares} erforderlich)</p>
                         {formData.depot && <p><strong>Depot:</strong> {formData.depot}</p>}
                         <p><strong>Zahlungsweise:</strong> {formData.paymentType === 'quarterly' ? 'Quartalsweise' : 'Ganzes Jahr'}</p>
                       </>
@@ -675,6 +632,18 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
                     <p><strong>Zeiten:</strong> {formData.preferredTimes.join(', ')}</p>
                     <p><strong>Bereiche:</strong> {formData.activityAreas.join(', ')}</p>
                   </div>
+
+                  {(formData.zusatzabos.length > 0 || formData.weitereProdukte) && (
+                    <div className="summary-section">
+                      <h4>Zusatzabos</h4>
+                      {formData.zusatzabos.length > 0 && (
+                        <p><strong>Interesse an:</strong> {formData.zusatzabos.join(', ')}</p>
+                      )}
+                      {formData.weitereProdukte && (
+                        <p><strong>Weitere Wünsche:</strong> {formData.weitereProdukte}</p>
+                      )}
+                    </div>
+                  )}
 
                   <div className="summary-section summary-total">
                     <h4>Kostenübersicht</h4>
@@ -711,7 +680,7 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
                   Zurück
                 </button>
               )}
-              {currentStep < 4 ? (
+              {currentStep < 5 ? (
                 <button
                   type="button"
                   className="btn btn-primary"

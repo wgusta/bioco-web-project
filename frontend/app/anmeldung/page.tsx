@@ -1,11 +1,11 @@
-import { Header } from '@/components/Header'
+import { MinimalHeader } from '@/components/MinimalHeader'
 import { Footer } from '@/components/Footer'
 import { MembershipForm } from '@/components/forms/MembershipForm'
 
 export default function AnmeldungPage() {
   return (
     <>
-      <Header />
+      <MinimalHeader />
       <main className="main-content">
         <div className="bento-grid">
           <section className="bento-card bento-card-fullwidth">
@@ -15,7 +15,6 @@ export default function AnmeldungPage() {
           </section>
         </div>
       </main>
-      <Footer />
     </>
   )
 }

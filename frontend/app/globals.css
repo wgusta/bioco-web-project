@@ -382,6 +382,14 @@ header {
   background: rgba(255, 255, 255, 0.95);
 }
 
+.minimal-header {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.minimal-header .header-top {
+  justify-content: center;
+}
+
 .header-top {
   display: flex;
   justify-content: space-between;
@@ -680,20 +688,18 @@ header {
 }
 
 .recommended-badge {
-  position: absolute;
-  top: -8px;
-  right: -8px;
+  display: inline-block;
   background: var(--bioco-orange);
   color: white;
   padding: 4px 12px;
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
   font-weight: 700;
-  transform: rotate(140deg);
+  transform: rotate(-10deg);
   transform-origin: center;
   box-shadow: var(--shadow-sm);
-  z-index: 10;
-  pointer-events: none;
+  vertical-align: middle;
+  margin-left: 8px;
 }
 
 input[type="text"],
