@@ -37,11 +37,11 @@ export function SecondaryNavigation() {
           <li>
             <Link 
               href="/intranet" 
-              className={pathname === '/intranet' ? 'active' : ''}
+              className={`duck-icon-link ${pathname === '/intranet' ? 'active' : ''}`}
               title="Intranet"
+              aria-label="Intranet"
             >
-              <DuckIcon size={16} />
-              <span>Intranet</span>
+              <DuckIcon size={20} />
             </Link>
           </li>
         </ul>

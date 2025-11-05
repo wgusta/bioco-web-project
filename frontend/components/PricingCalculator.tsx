@@ -175,18 +175,9 @@ export function PricingCalculator({ onStartForm }: PricingCalculatorProps) {
       {(selectedAbo !== 'kein' || additionalShares > 0) && (
         <div style={{ marginTop: '24px', textAlign: 'center' }}>
           <Link
-            href={`/mitmachen?abo=${selectedAbo === 'kein' ? 'kein' : selectedAbo}&shares=${totalShares}&additional=${additionalShares}#anmeldung`}
+            href={`/anmeldung?abo=${selectedAbo === 'kein' ? 'kein' : selectedAbo}&shares=${totalShares}&additional=${additionalShares}`}
             className="btn btn-primary"
             style={{ display: 'inline-block', fontSize: '1.125rem', padding: '16px 32px' }}
-            onClick={() => {
-              // Scroll to form after navigation
-              setTimeout(() => {
-                const element = document.getElementById('anmeldung')
-                if (element) {
-                  element.scrollIntoView({ behavior: 'smooth', block: 'start' })
-                }
-              }, 300)
-            }}
           >
             Jetzt Anmelden →
           </Link>

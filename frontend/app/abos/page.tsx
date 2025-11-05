@@ -2,6 +2,8 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { EventsBanner } from '@/components/EventsBanner'
 import { CTA } from '@/components/CTA'
+import { PersonIcons } from '@/components/PersonIcons'
+import { BasketVisualization } from '@/components/BasketVisualization'
 import Link from 'next/link'
 
 export default function AbosPage() {
@@ -20,32 +22,65 @@ export default function AbosPage() {
                 <thead>
                   <tr>
                     <th>Gemüsekorb</th>
+                    <th>Grösse</th>
                     <th>Personen</th>
                     <th>Jahrespreis</th>
-                    <th>Anteilsscheine</th>
                     <th>Anteilsscheine Kosten</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td><strong>Halb</strong></td>
-                    <td>1 Person</td>
+                    <td>
+                      <strong>Halb</strong>
+                      <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
+                        1 Anteilsschein
+                      </div>
+                    </td>
+                    <td>
+                      <BasketVisualization size="halb" />
+                    </td>
+                    <td>
+                      <PersonIcons count={1} />
+                    </td>
                     <td>CHF 750.-</td>
-                    <td>1 Anteilsschein</td>
                     <td>CHF 250.-</td>
                   </tr>
                   <tr>
-                    <td><strong>Standard</strong></td>
-                    <td>2-3 Personen</td>
+                    <td>
+                      <strong>Standard</strong>
+                      <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
+                        2 Anteilsscheine
+                      </div>
+                    </td>
+                    <td>
+                      <BasketVisualization size="standard" />
+                    </td>
+                    <td>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <PersonIcons count={2} />
+                        <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>– 3</span>
+                      </div>
+                    </td>
                     <td>CHF 1'280.-</td>
-                    <td>2 Anteilsscheine</td>
                     <td>CHF 500.-</td>
                   </tr>
                   <tr>
-                    <td><strong>Doppel</strong></td>
-                    <td>4-6 Personen</td>
+                    <td>
+                      <strong>Doppel</strong>
+                      <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
+                        4 Anteilsscheine
+                      </div>
+                    </td>
+                    <td>
+                      <BasketVisualization size="doppel" />
+                    </td>
+                    <td>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <PersonIcons count={4} />
+                        <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>– 6</span>
+                      </div>
+                    </td>
                     <td>CHF 2'350.-</td>
-                    <td>4 Anteilsscheine</td>
                     <td>CHF 1'000.-</td>
                   </tr>
                 </tbody>

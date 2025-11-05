@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { useRouter } from 'next/navigation'
 import { trackEvent } from '../MatomoScript'
 import { InfoTooltip } from '../InfoTooltip'
 import Link from 'next/link'
@@ -66,6 +67,7 @@ interface MembershipFormProps {
 }
 
 export function MembershipForm({ initialData }: MembershipFormProps = {}) {
+  const router = useRouter()
   const [currentStep, setCurrentStep] = useState(0)
   const [submitted, setSubmitted] = useState(false)
   const [error, setError] = useState('')
@@ -178,20 +180,16 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
           setError('Bitte wählen Sie mindestens 1 Anteilsschein.')
           return false
         }
-        return true
-      case 3:
         if (formData.membershipType === 'abo' && !formData.depot) {
           setError('Bitte wählen Sie ein Depot für die Abholung.')
           return false
         }
-        return true
-      case 4:
         if (formData.membershipType === 'abo' && !formData.paymentType) {
           setError('Bitte wählen Sie eine Zahlungsweise.')
           return false
         }
         return true
-      case 5:
+      case 3:
         if (formData.preferredDays.length === 0) {
           setError('Bitte wählen Sie mindestens einen bevorzugten Tag.')
           return false
@@ -205,7 +203,7 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
           return false
         }
         return true
-      case 6:
+      case 4:
         if (!formData.privacyAccept) {
           setError('Bitte akzeptieren Sie die Datenschutzbestimmungen.')
           return false
@@ -219,7 +217,7 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
   const handleNext = () => {
     if (validateStep(currentStep)) {
       setError('')
-      setCurrentStep(prev => Math.min(prev + 1, 7))
+      setCurrentStep(prev => Math.min(prev + 1, 5))
     }
   }
 
@@ -230,7 +228,7 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!validateStep(7)) return
+    if (!validateStep(4)) return
 
     trackEvent('Form', 'Membership', 'Submit')
 
@@ -246,23 +244,14 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
       const data = await response.json()
 
       if (data.success) {
-        setSubmitted(true)
+        // Redirect to thank you page
+        router.push('/anmeldung/danke')
       } else {
         setError(data.error || 'Es ist ein Fehler aufgetreten.')
       }
     } catch (err) {
       setError('Es ist ein Fehler aufgetreten. Bitte versuchen Sie es erneut.')
     }
-  }
-
-  if (submitted) {
-    return (
-      <div className="form-success bento-card">
-        <h3>Vielen Dank für deine Anmeldung!</h3>
-        <p>Du erhältst in Kürze eine Bestätigungs-E-Mail mit einem Link zur Bestätigung deiner Anmeldung (Double Opt-In).</p>
-        <p>Nach der Bestätigung erhältst du eine Rechnung per 31. Januar und kannst deine Arbeitseinsätze im Intranet planen.</p>
-      </div>
-    )
   }
 
   return (
@@ -272,10 +261,10 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
         <div className="progress-bar">
           <div 
             className="progress-fill" 
-            style={{ width: `${(currentStep / 7) * 100}%` }}
+            style={{ width: `${(currentStep / 5) * 100}%` }}
           ></div>
         </div>
-        <p className="progress-text">Schritt {currentStep + 1} von 7</p>
+        <p className="progress-text">Schritt {currentStep + 1} von 5</p>
       </div>
 
       <div className="form-layout">
@@ -439,18 +428,23 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
 
                 {formData.membershipType === 'abo' && (
                   <>
-                    <div className="form-group">
+                    <div className="form-group abo-select-group">
                       <label htmlFor="aboType">Gemüsekorb-Typ *</label>
-                      <select
-                        id="aboType"
-                        required
-                        value={formData.aboType}
-                        onChange={(e) => setFormData({ ...formData, aboType: e.target.value as AboType, additionalShares: 0 })}
-                      >
-                        <option value="halb">Halb (1 Person, CHF 750.-, 1 Anteil)</option>
-                        <option value="standard">Standard (2-3 Personen, CHF 1'280.-, 2 Anteile)</option>
-                        <option value="doppel">Doppel (4-6 Personen, CHF 2'350.-, 4 Anteile)</option>
-                      </select>
+                      <div style={{ position: 'relative' }}>
+                        <select
+                          id="aboType"
+                          required
+                          value={formData.aboType}
+                          onChange={(e) => setFormData({ ...formData, aboType: e.target.value as AboType, additionalShares: 0 })}
+                        >
+                          <option value="halb">Halb (1 Person, CHF 750.-, 1 Anteil)</option>
+                          <option value="standard">Standard (2-3 Personen, CHF 1'280.-, 2 Anteile)</option>
+                          <option value="doppel">Doppel (4-6 Personen, CHF 2'350.-, 4 Anteile)</option>
+                        </select>
+                        {formData.aboType === 'standard' && (
+                          <span className="recommended-badge">Empfohlen</span>
+                        )}
+                      </div>
                     </div>
 
                     <div className="form-group">
@@ -505,69 +499,65 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
                     </div>
                   </div>
                 )}
+
+                {formData.membershipType === 'abo' && (
+                  <>
+                    <div className="form-group">
+                      <label htmlFor="depot">Depot-Auswahl *</label>
+                      <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+                        Wo möchtest du deinen Gemüsekorb abholen?
+                      </p>
+                      <select
+                        id="depot"
+                        required
+                        value={formData.depot}
+                        onChange={(e) => setFormData({ ...formData, depot: e.target.value })}
+                      >
+                        <option value="">Bitte wählen...</option>
+                        {DEPOTS.map(depot => (
+                          <option key={depot} value={depot}>{depot}</option>
+                        ))}
+                      </select>
+                      <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
+                        Abholzeiten: Dienstag und Freitag, 17:00-19:00 Uhr
+                      </p>
+                    </div>
+
+                    <div className="form-group">
+                      <label>Zahlungsweise *</label>
+                      <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
+                        Die erste Rechnung wird per 31. Januar fällig.
+                      </p>
+                      <div className="radio-group">
+                        <label className="radio-option">
+                          <input
+                            type="radio"
+                            name="paymentType"
+                            value="quarterly"
+                            checked={formData.paymentType === 'quarterly'}
+                            onChange={(e) => setFormData({ ...formData, paymentType: 'quarterly' })}
+                          />
+                          <span>Quartalsweise (vierteljährlich)</span>
+                        </label>
+                        <label className="radio-option">
+                          <input
+                            type="radio"
+                            name="paymentType"
+                            value="yearly"
+                            checked={formData.paymentType === 'yearly'}
+                            onChange={(e) => setFormData({ ...formData, paymentType: 'yearly' })}
+                          />
+                          <span>Ganzes Jahr (einmalig)</span>
+                        </label>
+                      </div>
+                    </div>
+                  </>
+                )}
               </div>
             )}
 
-            {/* Step 3: Depot */}
-            {currentStep === 3 && formData.membershipType === 'abo' && (
-              <div className="form-step">
-                <h3>Depot-Auswahl</h3>
-                <p>Wo möchtest du deinen Gemüsekorb abholen?</p>
-                <div className="form-group">
-                  <label htmlFor="depot">Depot *</label>
-                  <select
-                    id="depot"
-                    required
-                    value={formData.depot}
-                    onChange={(e) => setFormData({ ...formData, depot: e.target.value })}
-                  >
-                    <option value="">Bitte wählen...</option>
-                    {DEPOTS.map(depot => (
-                      <option key={depot} value={depot}>{depot}</option>
-                    ))}
-                  </select>
-                </div>
-                <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                  Abholzeiten: Dienstag und Freitag, 17:00-19:00 Uhr
-                </p>
-              </div>
-            )}
-
-            {/* Step 4: Payment */}
-            {currentStep === 4 && formData.membershipType === 'abo' && (
-              <div className="form-step">
-                <h3>Zahlungsweise</h3>
-                <p>Die erste Rechnung wird per 31. Januar fällig.</p>
-                <div className="form-group">
-                  <label>Zahlungsweise *</label>
-                  <div className="radio-group">
-                    <label className="radio-option">
-                      <input
-                        type="radio"
-                        name="paymentType"
-                        value="quarterly"
-                        checked={formData.paymentType === 'quarterly'}
-                        onChange={(e) => setFormData({ ...formData, paymentType: 'quarterly' })}
-                      />
-                      <span>Quartalsweise (vierteljährlich)</span>
-                    </label>
-                    <label className="radio-option">
-                      <input
-                        type="radio"
-                        name="paymentType"
-                        value="yearly"
-                        checked={formData.paymentType === 'yearly'}
-                        onChange={(e) => setFormData({ ...formData, paymentType: 'yearly' })}
-                      />
-                      <span>Ganzes Jahr (einmalig)</span>
-                    </label>
-                  </div>
-                </div>
-              </div>
-            )}
-
-            {/* Step 5: Mitarbeit */}
-            {currentStep === 5 && (
+            {/* Step 3: Mitarbeit */}
+            {currentStep === 3 && (
               <div className="form-step">
                 <h3>Mitarbeit</h3>
                 <p>Jede(r) Mitglied bringt sich ein. Bitte teile uns deine Präferenzen mit:</p>
@@ -652,8 +642,8 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
               </div>
             )}
 
-            {/* Step 6: Summary & Confirmation */}
-            {currentStep === 7 && (
+            {/* Step 4: Summary & Confirmation */}
+            {currentStep === 4 && (
               <div className="form-step">
                 <h3>Zusammenfassung & Bestätigung</h3>
                 <div className="summary-content">
@@ -721,7 +711,7 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
                   Zurück
                 </button>
               )}
-              {currentStep < 7 ? (
+              {currentStep < 4 ? (
                 <button
                   type="button"
                   className="btn btn-primary"
@@ -734,7 +724,7 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
                   type="submit"
                   className="btn btn-primary"
                 >
-                  Anmeldung absenden
+                  Anmeldung einreichen
                 </button>
               )}
             </div>

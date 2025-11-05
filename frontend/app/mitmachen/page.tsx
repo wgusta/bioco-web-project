@@ -2,7 +2,6 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
 import { EventsBanner } from '@/components/EventsBanner'
-import { MembershipForm } from '@/components/forms/MembershipForm'
 import { PricingCalculator } from '@/components/PricingCalculator'
 import Link from 'next/link'
 
@@ -32,10 +31,13 @@ export default function MitmachenPage() {
             <PricingCalculator />
           </section>
 
-          <section id="H-04" className="bento-card bento-card-fullwidth">
+          <section id="H-04" className="bento-card">
             <div className="plant-pattern"></div>
-            <h2 id="anmeldung">Anmeldung</h2>
-            <MembershipForm />
+            <h2>Bereit anzufangen?</h2>
+            <p>Fülle das Anmeldeformular aus, um Mitglied der Gemüsegenossenschaft biocò zu werden.</p>
+            <Link href="/anmeldung" className="btn btn-primary" style={{ display: 'inline-block', marginTop: '16px' }}>
+              Zur Anmeldung →
+            </Link>
           </section>
 
           <EventsBanner />
