@@ -32,10 +32,10 @@ export function Hero({ title, subtitle, image }: HeroProps) {
           )}
           <div className="hero-buttons">
             <Link href="/ernte" className="btn btn-primary">
-              Was wir anbauen
+              Was wächst gerade
             </Link>
             <Link href="/wir" className="btn btn-secondary">
-              Uns kennenlernen
+              Lerne uns kennen
             </Link>
           </div>
         </div>

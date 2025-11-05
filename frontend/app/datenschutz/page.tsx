@@ -9,8 +9,10 @@ export default function DatenschutzPage() {
         <div className="bento-grid">
           <section className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h1>Datenschutzerklärung</h1>
-            
+            <div className="card-header">
+              <h3>Datenschutzerklärung</h3>
+            </div>
+            <div className="card-body">
             <div style={{ marginTop: '24px' }}>
               <h2>1. Datenschutz auf einen Blick</h2>
               <h3>Allgemeine Hinweise</h3>
@@ -76,6 +78,7 @@ export default function DatenschutzPage() {
                 Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte 
                 eine SSL-Verschlüsselung.
               </p>
+            </div>
             </div>
           </section>
         </div>

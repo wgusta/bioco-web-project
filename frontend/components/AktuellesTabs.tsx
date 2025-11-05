@@ -9,7 +9,10 @@ export function AktuellesTabs() {
   return (
     <section id="A-07" className="bento-card bento-card-large">
       <div className="plant-pattern"></div>
-      <h2>Was gerade läuft</h2>
+      <div className="card-header">
+        <h3>Was gerade läuft</h3>
+      </div>
+      <div className="card-body">
       <div className="tabs-container">
         <div className="tabs-header">
           <button
@@ -72,6 +75,7 @@ export function AktuellesTabs() {
             </div>
           )}
         </div>
+      </div>
       </div>
     </section>
   )

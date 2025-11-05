@@ -11,9 +11,13 @@ export default function StandortePage() {
         <div className="standorte-layout">
           <section id="E-01" className="bento-card standorte-map-section">
             <div className="plant-pattern"></div>
-            <h1>Standorte</h1>
-            <h2>Gemüsekorb-Abholung</h2>
-            <p>Hier findest du alle Standorte, an denen du deinen wöchentlichen Gemüsekorb abholen kannst.</p>
+            <div className="card-header">
+              <h3>Standorte</h3>
+              <div className="card-header-divider"></div>
+              <h4 className="card-title">Gemüsekorb-Abholung</h4>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Hier findest du alle Standorte, an denen du deinen wöchentlichen Gemüsekorb abholen kannst.</p>
             <DepotMap />
             <div style={{ marginTop: '16px' }}>
               <h3>Abholzeiten</h3>
@@ -22,13 +26,18 @@ export default function StandortePage() {
                 <li><strong>Freitag:</strong> 17:00 - 19:00 Uhr</li>
               </ul>
             </div>
+            </div>
           </section>
 
           <section id="E-02" className="bento-card standorte-map-section">
             <div className="plant-pattern"></div>
-            <h2>Anfahrt zum Geisshof</h2>
-            <p>Der Geisshof ist unser Betrieb in Gebenstorf, wo wir das Gemüse anbauen. Hier kannst du auch direkt vorbeikommen.</p>
-            <GeisshofMap />
+            <div className="card-header">
+              <h3>Anfahrt zum Geisshof</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Der Geisshof ist unser Betrieb in Gebenstorf, wo wir das Gemüse anbauen. Hier kannst du auch direkt vorbeikommen.</p>
+              <GeisshofMap />
+            </div>
           </section>
         </div>
       </main>

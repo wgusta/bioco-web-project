@@ -12,9 +12,13 @@ export default function AnpackenPage() {
         <div className="bento-grid">
           <section id="D-01" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h1>Anpacken</h1>
-            <h2>Mitarbeit bei biocò</h2>
-            <p>Jede(r) Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv. Die Mitarbeit ist ein wichtiger Teil des CSA-Prinzips.</p>
+            <div className="card-header">
+              <h3>Anpacken</h3>
+              <div className="card-header-divider"></div>
+              <h4 className="card-title">Mitarbeit bei biocò</h4>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Jede(r) Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv. Die Mitarbeit ist ein wichtiger Teil des CSA-Prinzips.</p>
             
             <div style={{ marginTop: '16px' }}>
               <h3>Umfang</h3>
@@ -54,19 +58,24 @@ export default function AnpackenPage() {
                 variant="primary"
               />
             </div>
+            </div>
           </section>
 
           <section id="D-02" className="bento-card">
             <div className="plant-pattern"></div>
-            <h2>Gruppen & Gemeinschaft</h2>
-            <p>Bei biocò gibt es verschiedene Arbeitsgruppen und Gemeinschaftsaktivitäten:</p>
+            <div className="card-header">
+              <h3>Gruppen & Gemeinschaft</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Bei biocò gibt es verschiedene Arbeitsgruppen und Gemeinschaftsaktivitäten:</p>
             <ul>
               <li><strong>Stammtisch:</strong> Regelmäßige Treffen für Austausch und Gemeinschaft</li>
               <li><strong>BG (Betriebsgruppe):</strong> Aktive Mitarbeit in der Betriebsorganisation</li>
               <li><strong>Elki:</strong> Familienaktivitäten und gemeinsame Anlässe</li>
               <li><strong>Kräutergruppe:</strong> Spezialisiert auf Kräuter und Gewürze</li>
             </ul>
-            <p style={{ marginTop: '16px' }}>Die Mitarbeit ist nicht nur Arbeit, sondern auch Gemeinschaft und Austausch!</p>
+            <p className="card-text" style={{ marginTop: '16px' }}>Die Mitarbeit ist nicht nur Arbeit, sondern auch Gemeinschaft und Austausch!</p>
+            </div>
           </section>
 
           <EventsBanner />

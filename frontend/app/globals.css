@@ -50,10 +50,25 @@ body {
   font-weight: 700;
   line-height: 1.6;
   color: var(--text-primary);
-  background: var(--bg-secondary);
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.05) 0%, rgba(255, 140, 0, 0.05) 100%);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  position: relative;
+  min-height: 100vh;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  top: -50%;
+  right: -20%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--bioco-green-light) 0%, transparent 70%);
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Typography */
@@ -1161,7 +1176,9 @@ header .header-nav-container .beet-leaves {
   padding: var(--spacing-xl) var(--spacing-md);
   max-width: 1200px;
   margin: 0 auto;
-  background: var(--bg-secondary);
+  background: transparent;
+  position: relative;
+  z-index: 1;
 }
 
 .content {

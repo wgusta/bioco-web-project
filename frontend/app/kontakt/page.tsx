@@ -10,8 +10,12 @@ export default function ContactPage() {
         <div className="bento-grid">
           <section className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h1>Kontakt</h1>
-            <ContactForm />
+            <div className="card-header">
+              <h3>Kontakt</h3>
+            </div>
+            <div className="card-body">
+              <ContactForm />
+            </div>
           </section>
         </div>
       </main>

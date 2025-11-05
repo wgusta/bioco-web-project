@@ -14,8 +14,11 @@ export default function AbosPage() {
         <div className="bento-grid">
           <section id="C-01" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h1>Gemüse-Abos</h1>
-            <p>Das Gemüseabo läuft vom 1. Januar bis zum 31. Dezember. Ohne Kündigung verlängert sich das Gemüseabo jeweils um ein Kalenderjahr. Die Kündigungsfrist beträgt zwei Monate auf Ende eines Kalenderjahres.</p>
+            <div className="card-header">
+              <h3>Gemüse-Abos</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Das Gemüseabo läuft vom 1. Januar bis zum 31. Dezember. Ohne Kündigung verlängert sich das Gemüseabo jeweils um ein Kalenderjahr. Die Kündigungsfrist beträgt zwei Monate auf Ende eines Kalenderjahres.</p>
             
             <div className="pricing-table">
               <table>
@@ -122,12 +125,16 @@ export default function AbosPage() {
                 variant="primary"
               />
             </div>
+            </div>
           </section>
 
           <section id="C-02" className="bento-card">
             <div className="plant-pattern"></div>
-            <h2>Probe-Abo</h2>
-            <p>Möchtest du biocò erst einmal kennenlernen? Teste unser Gemüseabo für 3 Monate.</p>
+            <div className="card-header">
+              <h3>Probe-Abo</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Möchtest du biocò erst einmal kennenlernen? Teste unser Gemüseabo für 3 Monate.</p>
             <p><strong>Details:</strong></p>
             <ul>
               <li>3 Monate Gemüsekorb</li>
@@ -139,12 +146,16 @@ export default function AbosPage() {
               href="/mitmachen"
               variant="secondary"
             />
+            </div>
           </section>
 
           <section id="C-03" className="bento-card">
             <div className="plant-pattern"></div>
-            <h2>Anteilsscheine ohne Gemüsekorb</h2>
-            <p>Du möchtest biocò unterstützen, ohne ein Gemüseabo zu beziehen? Das ist möglich!</p>
+            <div className="card-header">
+              <h3>Anteilsscheine ohne Gemüsekorb</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Du möchtest biocò unterstützen, ohne ein Gemüseabo zu beziehen? Das ist möglich!</p>
             <p><strong>Vorteile:</strong></p>
             <ul>
               <li>Unterstützung der Genossenschaft</li>
@@ -157,15 +168,20 @@ export default function AbosPage() {
               href="/mitmachen"
               variant="secondary"
             />
+            </div>
           </section>
 
           <EventsBanner />
 
           <section id="C-04" className="bento-card">
             <div className="plant-pattern"></div>
-            <h2>Zusatz-Abos</h2>
-            <p>In Planung: Partnerangebote wie Eier, Brot, Tofu und weitere regionale Produkte.</p>
-            <p>Diese werden in Zukunft zusätzlich zum Gemüsekorb angeboten.</p>
+            <div className="card-header">
+              <h3>Zusatz-Abos</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">In Planung: Partnerangebote wie Eier, Brot, Tofu und weitere regionale Produkte.</p>
+              <p className="card-text">Diese werden in Zukunft zusätzlich zum Gemüsekorb angeboten.</p>
+            </div>
           </section>
         </div>
       </main>

@@ -19,21 +19,32 @@ export default function ErntePage() {
         <div className="bento-grid">
           <section id="B-02" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h2>Galerie</h2>
-            <p>Einblicke in unsere Ernte, den Anbau und die Gemeinschaft</p>
-            <Gallery />
+            <div className="card-header">
+              <h3>Galerie</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Einblicke in unsere Ernte, den Anbau und die Gemeinschaft</p>
+              <Gallery />
+            </div>
           </section>
 
           <section id="B-04" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h2>Saisonkalender</h2>
-            <p>Wann ist welches Gemüse verfügbar? Entdecke unsere saisonale Vielfalt.</p>
-            <Saisonkalender />
+            <div className="card-header">
+              <h3>Saisonkalender</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Wann ist welches Gemüse verfügbar? Entdecke unsere saisonale Vielfalt.</p>
+              <Saisonkalender />
+            </div>
           </section>
 
           <section id="B-05" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h2>Demeter-Qualität</h2>
+            <div className="card-header">
+              <h3>Demeter-Qualität</h3>
+            </div>
+            <div className="card-body">
             <div className="demeter-info">
               <h3>Warum Demeter?</h3>
               <p>
@@ -90,30 +101,37 @@ export default function ErntePage() {
                 </a>
               </p>
             </div>
+            </div>
           </section>
 
           <EventsBanner />
           
           <section id="B-06" className="bento-card">
             <div className="plant-pattern"></div>
-            <h2>Möchtest du uns kennenlernen?</h2>
-            <p>Besuche einen unserer Schnuppertage oder melde dich direkt an.</p>
-            <div style={{ marginTop: '16px' }}>
-              <CTA
-                text="Anfragen"
-                href="/kontakt"
-                variant="primary"
-              />
+            <div className="card-header">
+              <h3>Möchtest du uns kennenlernen?</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Besuche einen unserer Schnuppertage oder melde dich direkt an.</p>
+              <div style={{ marginTop: '16px' }}>
+                <CTA
+                  text="Anfragen"
+                  href="/kontakt"
+                  variant="primary"
+                />
+              </div>
             </div>
           </section>
 
           <section className="bento-card">
             <div className="plant-pattern"></div>
-            <CTA
-              text="Jetzt Abo sichern"
-              href="/mitmachen"
-              variant="primary"
-            />
+            <div className="card-body">
+              <CTA
+                text="Jetzt Abo sichern"
+                href="/mitmachen"
+                variant="primary"
+              />
+            </div>
           </section>
         </div>
       </main>

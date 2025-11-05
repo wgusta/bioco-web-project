@@ -12,9 +12,13 @@ export default function WirPage() {
         <div className="bento-grid">
           <section id="F-01" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h1>Wir</h1>
-            <h2>Team & Hof</h2>
-            <p>biocò ist eine Gemeinschaft von engagierten Menschen, die gemeinsam für frisches, regionales Demeter-Gemüse sorgen.</p>
+            <div className="card-header">
+              <h3>Wir</h3>
+              <div className="card-header-divider"></div>
+              <h4 className="card-title">Team & Hof</h4>
+            </div>
+            <div className="card-body">
+              <p className="card-text">biocò ist eine Gemeinschaft von engagierten Menschen, die gemeinsam für frisches, regionales Demeter-Gemüse sorgen.</p>
             
             <div className="team-grid">
               <div className="team-card">
@@ -54,11 +58,15 @@ export default function WirPage() {
                 </Link>
               </p>
             </div>
+            </div>
           </section>
 
           <section id="F-02" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h2>Mission & Leitbild</h2>
+            <div className="card-header">
+              <h3>Mission & Leitbild</h3>
+            </div>
+            <div className="card-body">
             
             <div className="mission-values">
               <div className="mission-item">
@@ -102,30 +110,38 @@ export default function WirPage() {
                 die Abläufe und Möglichkeiten der Mitarbeit.
               </p>
             </div>
+            </div>
           </section>
 
           <section id="F-03" className="bento-card">
             <div className="plant-pattern"></div>
-            <h2>Geschichte</h2>
-            <p>
-              Die Gemüsegenossenschaft biocò wurde 2014 gegründet. Aus einer kleinen Gruppe 
-              engagierter Menschen wurde eine lebendige Gemeinschaft mit über 100 Mitgliedern.
-            </p>
-            <p>
-              Gestartet wurde auf dem Geisshof in Gebenstorf, wo wir bis heute unser Gemüse anbauen. 
-              Über die Jahre haben wir die Anbaufläche erweitert, neue Standorte (Depots) für die 
-              Gemüseabholung geschaffen und die Strukturen der Genossenschaft weiterentwickelt.
-            </p>
-            <p>
-              Heute versorgen wir Mitglieder in der Region Baden-Brugg wöchentlich mit frischem, 
-              saisonalem Demeter-Gemüse und leben gemeinsam die Prinzipien der Solidarischen Landwirtschaft.
-            </p>
+            <div className="card-header">
+              <h3>Geschichte</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">
+                Die Gemüsegenossenschaft biocò wurde 2014 gegründet. Aus einer kleinen Gruppe 
+                engagierter Menschen wurde eine lebendige Gemeinschaft mit über 100 Mitgliedern.
+              </p>
+              <p className="card-text">
+                Gestartet wurde auf dem Geisshof in Gebenstorf, wo wir bis heute unser Gemüse anbauen. 
+                Über die Jahre haben wir die Anbaufläche erweitert, neue Standorte (Depots) für die 
+                Gemüseabholung geschaffen und die Strukturen der Genossenschaft weiterentwickelt.
+              </p>
+              <p className="card-text">
+                Heute versorgen wir Mitglieder in der Region Baden-Brugg wöchentlich mit frischem, 
+                saisonalem Demeter-Gemüse und leben gemeinsam die Prinzipien der Solidarischen Landwirtschaft.
+              </p>
+            </div>
           </section>
 
           <section id="F-04" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h2>Timeline</h2>
-            <div className="timeline">
+            <div className="card-header">
+              <h3>Timeline</h3>
+            </div>
+            <div className="card-body">
+              <div className="timeline">
               <div className="timeline-item">
                 <div className="timeline-year">2014</div>
                 <div className="timeline-content">
@@ -166,19 +182,24 @@ export default function WirPage() {
                 </div>
               </div>
             </div>
+            </div>
           </section>
 
           <EventsBanner />
           
           <section className="bento-card">
             <div className="plant-pattern"></div>
-            <h2>Mitmachen?</h2>
-            <p>Werde Teil unserer Gemeinschaft und unterstütze die solidarische Landwirtschaft.</p>
+            <div className="card-header">
+              <h3>Mitmachen?</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Werde Teil unserer Gemeinschaft und unterstütze die solidarische Landwirtschaft.</p>
             <CTA
               text="Jetzt Mitglied werden"
               href="/mitmachen"
               variant="primary"
             />
+            </div>
           </section>
         </div>
       </main>

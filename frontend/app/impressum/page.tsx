@@ -9,8 +9,10 @@ export default function ImpressumPage() {
         <div className="bento-grid">
           <section className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h1>Impressum</h1>
-            
+            <div className="card-header">
+              <h3>Impressum</h3>
+            </div>
+            <div className="card-body">
             <div style={{ marginTop: '24px' }}>
               <h2>Kontakt</h2>
               <p>
@@ -47,6 +49,7 @@ export default function ImpressumPage() {
                 Art der Verwertung ausserhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen 
                 Zustimmung des jeweiligen Autors bzw. Erstellers.
               </p>
+            </div>
             </div>
           </section>
         </div>

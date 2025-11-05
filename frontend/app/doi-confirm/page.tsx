@@ -55,7 +55,9 @@ function DOIConfirmContent() {
           <div className="bento-grid">
             <section className="bento-card">
               <div className="plant-pattern"></div>
-              <p>Bitte warten...</p>
+              <div className="card-body">
+                <p className="card-text">Bitte warten...</p>
+              </div>
             </section>
           </div>
         </main>
@@ -72,28 +74,36 @@ function DOIConfirmContent() {
           {confirmed ? (
             <section className="bento-card bento-card-large">
               <div className="plant-pattern"></div>
-              <h1>Anmeldung bestätigt</h1>
-              <p>Vielen Dank! Ihre Anmeldung wurde erfolgreich bestätigt.</p>
-              
-              {formType === 'subscribe' && (
-                <p>Sie erhalten ab sofort unseren Newsletter.</p>
-              )}
-              {formType === 'visit' && (
-                <p>Wir haben Ihre Anmeldung für den Tag der offenen Tür erhalten und werden uns bald bei Ihnen melden.</p>
-              )}
-              {formType === 'waiting_list' && (
-                <p>Wir haben Sie auf die Warteliste gesetzt und werden uns bei Verfügbarkeit bei Ihnen melden.</p>
-              )}
-              {formType === 'contact' && (
-                <p>Wir haben Ihre Nachricht erhalten und werden uns bald bei Ihnen melden.</p>
-              )}
+              <div className="card-header">
+                <h3>Anmeldung bestätigt</h3>
+              </div>
+              <div className="card-body">
+                <p className="card-text">Vielen Dank! Ihre Anmeldung wurde erfolgreich bestätigt.</p>
+                
+                {formType === 'subscribe' && (
+                  <p className="card-text">Sie erhalten ab sofort unseren Newsletter.</p>
+                )}
+                {formType === 'visit' && (
+                  <p className="card-text">Wir haben Ihre Anmeldung für den Tag der offenen Tür erhalten und werden uns bald bei Ihnen melden.</p>
+                )}
+                {formType === 'waiting_list' && (
+                  <p className="card-text">Wir haben Sie auf die Warteliste gesetzt und werden uns bei Verfügbarkeit bei Ihnen melden.</p>
+                )}
+                {formType === 'contact' && (
+                  <p className="card-text">Wir haben Ihre Nachricht erhalten und werden uns bald bei Ihnen melden.</p>
+                )}
+              </div>
             </section>
           ) : (
             <section className="bento-card bento-card-large">
               <div className="plant-pattern"></div>
-              <h1>Bestätigung fehlgeschlagen</h1>
-              <p>{error}</p>
-              <p><Link href="/">Zurück zur Startseite</Link></p>
+              <div className="card-header">
+                <h3>Bestätigung fehlgeschlagen</h3>
+              </div>
+              <div className="card-body">
+                <p className="card-text">{error}</p>
+                <p className="card-text"><Link href="/">Zurück zur Startseite</Link></p>
+              </div>
             </section>
           )}
         </div>
@@ -112,7 +122,9 @@ export default function DOIConfirmPage() {
           <div className="bento-grid">
             <section className="bento-card">
               <div className="plant-pattern"></div>
-              <p>Bitte warten...</p>
+              <div className="card-body">
+                <p className="card-text">Bitte warten...</p>
+              </div>
             </section>
           </div>
         </main>

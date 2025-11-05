@@ -17,34 +17,49 @@ export default function MitmachenPage() {
         <div className="bento-grid">
           <section id="H-02" className="bento-card">
             <div className="plant-pattern"></div>
-            <h2>Zuerst testen?</h2>
-            <ul>
-              <li><strong>Info-Event:</strong> Besuche einen unserer <Link href="/aktuelles">Schnuppertage</Link> und lerne biocò kennen</li>
-              <li><strong>Probe-Abo:</strong> Teste unser Gemüseabo für 3 Monate – <Link href="/abos">mehr Infos</Link></li>
-            </ul>
+            <div className="card-header">
+              <h3>Zuerst testen?</h3>
+            </div>
+            <div className="card-body">
+              <ul>
+                <li><strong>Info-Event:</strong> Besuche einen unserer <Link href="/aktuelles">Schnuppertage</Link> und lerne biocò kennen</li>
+                <li><strong>Probe-Abo:</strong> Teste unser Gemüseabo für 3 Monate – <Link href="/abos">mehr Infos</Link></li>
+              </ul>
+            </div>
           </section>
 
           <section id="H-03" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h2>Kostenübersicht</h2>
-            <p>Wähle dein Abo und berechne sofort deine Kosten:</p>
-            <PricingCalculator />
+            <div className="card-header">
+              <h3>Kostenübersicht</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Wähle dein Abo und berechne sofort deine Kosten:</p>
+              <PricingCalculator />
+            </div>
           </section>
 
           <section id="H-04" className="bento-card">
             <div className="plant-pattern"></div>
-            <h2>Bereit anzufangen?</h2>
-            <p>Fülle das Anmeldeformular aus, um Mitglied der Gemüsegenossenschaft biocò zu werden.</p>
-            <Link href="/anmeldung" className="btn btn-primary" style={{ display: 'inline-block', marginTop: '16px' }}>
-              Zur Anmeldung →
-            </Link>
+            <div className="card-header">
+              <h3>Bereit anzufangen?</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Fülle das Anmeldeformular aus, um Mitglied der Gemüsegenossenschaft biocò zu werden.</p>
+              <Link href="/anmeldung" className="btn btn-primary" style={{ display: 'inline-block', marginTop: '16px' }}>
+                Zur Anmeldung →
+              </Link>
+            </div>
           </section>
 
           <EventsBanner />
 
           <section id="H-06" className="bento-card">
             <div className="plant-pattern"></div>
-            <h2>Nächste Schritte nach der Anmeldung</h2>
+            <div className="card-header">
+              <h3>Nächste Schritte nach der Anmeldung</h3>
+            </div>
+            <div className="card-body">
             <div className="next-steps">
               <div className="step-item">
                 <div className="step-number">1</div>
@@ -68,11 +83,15 @@ export default function MitmachenPage() {
                 </div>
               </div>
             </div>
+            </div>
           </section>
 
           <section id="H-07" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
-            <h2>Häufige Fragen (FAQ)</h2>
+            <div className="card-header">
+              <h3>Häufige Fragen (FAQ)</h3>
+            </div>
+            <div className="card-body">
             <div className="faq-list">
               <div className="faq-item">
                 <h3>Was passiert, wenn ich nicht genug Gemüse bekomme?</h3>
@@ -107,16 +126,21 @@ export default function MitmachenPage() {
                 <p>Ein Probe-Abo läuft über 3 Monate und ermöglicht dir, biocò kennenzulernen. Du zahlst den proportionalen Anteil am Jahrespreis. Eine Umstellung auf ein Jahresabo ist jederzeit möglich.</p>
               </div>
             </div>
+            </div>
           </section>
 
           <section id="H-08" className="bento-card">
             <div className="plant-pattern"></div>
-            <h2>Warteliste</h2>
-            <p>Wenn alle Gemüsekörbe vergeben sind, kannst du dich auf die Warteliste setzen lassen. Du erhältst Vorrang, wenn ein Platz frei wird.</p>
-            <p>Genossenschafter/innen mit Anteilsscheinen (auch ohne Abo) haben Vorrang auf der Warteliste.</p>
-            <Link href="/warteliste" className="btn btn-secondary" style={{ marginTop: '16px', display: 'inline-block' }}>
-              Auf Warteliste setzen
-            </Link>
+            <div className="card-header">
+              <h3>Warteliste</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Wenn alle Gemüsekörbe vergeben sind, kannst du dich auf die Warteliste setzen lassen. Du erhältst Vorrang, wenn ein Platz frei wird.</p>
+              <p className="card-text">Genossenschafter/innen mit Anteilsscheinen (auch ohne Abo) haben Vorrang auf der Warteliste.</p>
+              <Link href="/warteliste" className="btn btn-secondary" style={{ marginTop: '16px', display: 'inline-block' }}>
+                Auf Warteliste setzen
+              </Link>
+            </div>
           </section>
         </div>
       </main>
