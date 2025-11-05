@@ -70,7 +70,7 @@ interface MembershipFormProps {
   }
 }
 
-export function MembershipForm({ initialData }: MembershipFormProps = {}) {
+export function MembershipForm({ initialData }: MembershipFormProps) {
   const router = useRouter()
   const [currentStep, setCurrentStep] = useState(0)
   const [submitted, setSubmitted] = useState(false)
@@ -78,7 +78,14 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
   
   // Read URL parameters
   const getInitialDataFromURL = () => {
-    if (typeof window === 'undefined') return null
+    if (typeof window === 'undefined') {
+      // Server-side: return default values
+      return {
+        aboType: 'standard' as AboType,
+        additionalShares: 0,
+        membershipType: 'abo' as 'abo' | 'shares-only',
+      }
+    }
     const params = new URLSearchParams(window.location.search)
     const abo = params.get('abo')
     const shares = params.get('shares')
@@ -398,8 +405,8 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
                   <p style={{ margin: 0, fontWeight: 600 }}>
                     <strong>Ausgewählter Gemüsekorb:</strong> {
                       formData.aboType === 'halb' ? 'Halb (1 Person, CHF 750.-, 1 Anteil)' :
-                      formData.aboType === 'standard' ? 'Standard (2-3 Personen, CHF 1'280.-, 2 Anteile)' :
-                      'Doppel (4-6 Personen, CHF 2'350.-, 4 Anteile)'
+                      formData.aboType === 'standard' ? 'Standard (2-3 Personen, CHF 1\'280.-, 2 Anteile)' :
+                      'Doppel (4-6 Personen, CHF 2\'350.-, 4 Anteile)'
                     }
                   </p>
                   <p style={{ marginTop: '8px', marginBottom: 0, fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
