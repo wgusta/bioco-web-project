@@ -41,6 +41,9 @@ interface FormData {
   zusatzabos: string[]
   weitereProdukte: string
   
+  // Step 0: Commitment Check
+  commitmentAccepted: boolean[]
+  
   // General
   privacyAccept: boolean
 }
@@ -122,6 +125,7 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
     otherActivity: '',
     zusatzabos: [],
     weitereProdukte: '',
+    commitmentAccepted: [false, false, false, false], // 4 commitment items
     privacyAccept: false,
   })
 
@@ -170,7 +174,11 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
   const validateStep = (step: number): boolean => {
     switch (step) {
       case 0:
-        // Commitment check - no validation needed, just acknowledge
+        // Commitment check - all items must be checked
+        if (formData.commitmentAccepted.some(accepted => !accepted)) {
+          setError('Bitte bestätige alle Punkte, bevor du fortfährst.')
+          return false
+        }
         return true
       case 1:
         if (!formData.firstName || !formData.lastName || !formData.address || !formData.zip || !formData.city || !formData.email) {
@@ -286,30 +294,81 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
             {/* Step 0: Commitment Check */}
             {currentStep === 0 && (
               <div className="form-step">
-                <h3>Commitment-Check</h3>
+                <h3>Lies das und bestätige bevor du weiterklickst</h3>
                 <p>Bevor du dich anmeldest, überprüfe bitte diese Punkte:</p>
                 <div className="commitment-checklist">
-                  <div className="commitment-item">
-                    <h4>Anteile & Beitrag</h4>
-                    <p>Jedes Mitglied erwirbt Anteilsscheine zu je CHF 250.- (einmalige Zahlung). Die Anzahl der Anteile hängt von deinem gewählten Abo ab. Der Jahresbeitrag für dein Gemüse-Abo (jährlicher Beitrag) wird per 31. Januar fällig und kann quartalsweise oder jährlich bezahlt werden.</p>
-                  </div>
-                  <div className="commitment-item">
-                    <h4>Bindung & Kündigung</h4>
-                    <p>Das Gemüseabo läuft vom 1. Januar bis zum 31. Dezember. Ohne Kündigung verlängert es sich jeweils um ein Kalenderjahr. Die Kündigungsfrist beträgt zwei Monate auf Ende eines Kalenderjahres.</p>
-                  </div>
-                  <div className="commitment-item">
-                    <h4>Mitarbeit</h4>
-                    <p>Wir sind eine Mitmach-Genossenschaft! Jedes Mitglied leistet pro Jahr 20 Stunden (bei halbem Korb) bzw. 40 Stunden (bei ganzem Korb) Mitarbeit. Dies kann auf dem Feld, in der Logistik oder bei Events sein.</p>
-                  </div>
-                  <div className="commitment-item">
-                    <h4>Risiko & Ertrag</h4>
-                    <p>Als Teil der Solidarischen Landwirtschaft teilen wir das Risiko von Ernteausfällen und freuen uns gemeinsam über reiche Ernten. Du erhältst wöchentlich frisches Demeter-Gemüse, das direkt vom Feld kommt.</p>
-                  </div>
-                </div>
-                <div style={{ marginTop: '24px', padding: '16px', background: 'var(--bg-secondary)', borderRadius: '12px' }}>
-                  <p style={{ margin: 0, fontWeight: 600 }}>
-                    ✓ Ich habe die Bedingungen verstanden und bin bereit, Teil der biocò-Gemeinschaft zu werden.
-                  </p>
+                  <label className="commitment-item">
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <input
+                        type="checkbox"
+                        checked={formData.commitmentAccepted[0]}
+                        onChange={(e) => {
+                          const newAccepted = [...formData.commitmentAccepted]
+                          newAccepted[0] = e.target.checked
+                          setFormData({ ...formData, commitmentAccepted: newAccepted })
+                        }}
+                        style={{ marginTop: '4px', flexShrink: 0 }}
+                      />
+                      <div style={{ flex: 1 }}>
+                        <h4>Anteile & Beitrag</h4>
+                        <p>Jedes Mitglied erwirbt <strong>Anteilsscheine zu je CHF 250.- (einmalige Zahlung)</strong>. Die Anzahl der Anteile hängt von deinem gewählten Abo ab. Der <strong>Jahresbeitrag für dein Gemüse-Abo (jährlicher Beitrag) wird per 31. Januar fällig</strong> und kann quartalsweise oder jährlich bezahlt werden.</p>
+                      </div>
+                    </div>
+                  </label>
+                  <label className="commitment-item">
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <input
+                        type="checkbox"
+                        checked={formData.commitmentAccepted[1]}
+                        onChange={(e) => {
+                          const newAccepted = [...formData.commitmentAccepted]
+                          newAccepted[1] = e.target.checked
+                          setFormData({ ...formData, commitmentAccepted: newAccepted })
+                        }}
+                        style={{ marginTop: '4px', flexShrink: 0 }}
+                      />
+                      <div style={{ flex: 1 }}>
+                        <h4>Bindung & Kündigung</h4>
+                        <p>Das Gemüseabo läuft <strong>vom 1. Januar bis zum 31. Dezember</strong>. Ohne Kündigung verlängert es sich jeweils um ein Kalenderjahr. Die <strong>Kündigungsfrist beträgt zwei Monate auf Ende eines Kalenderjahres</strong>.</p>
+                      </div>
+                    </div>
+                  </label>
+                  <label className="commitment-item">
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <input
+                        type="checkbox"
+                        checked={formData.commitmentAccepted[2]}
+                        onChange={(e) => {
+                          const newAccepted = [...formData.commitmentAccepted]
+                          newAccepted[2] = e.target.checked
+                          setFormData({ ...formData, commitmentAccepted: newAccepted })
+                        }}
+                        style={{ marginTop: '4px', flexShrink: 0 }}
+                      />
+                      <div style={{ flex: 1 }}>
+                        <h4>Mitarbeit</h4>
+                        <p>Wir sind eine Mitmach-Genossenschaft! Jedes Mitglied leistet pro Jahr <strong>20 Stunden (bei halbem Korb) bzw. 40 Stunden (bei ganzem Korb) Mitarbeit</strong>. Dies kann auf dem Feld, in der Logistik oder bei Events sein.</p>
+                      </div>
+                    </div>
+                  </label>
+                  <label className="commitment-item">
+                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px' }}>
+                      <input
+                        type="checkbox"
+                        checked={formData.commitmentAccepted[3]}
+                        onChange={(e) => {
+                          const newAccepted = [...formData.commitmentAccepted]
+                          newAccepted[3] = e.target.checked
+                          setFormData({ ...formData, commitmentAccepted: newAccepted })
+                        }}
+                        style={{ marginTop: '4px', flexShrink: 0 }}
+                      />
+                      <div style={{ flex: 1 }}>
+                        <h4>Risiko & Ertrag</h4>
+                        <p>Als Teil der Solidarischen Landwirtschaft <strong>teilen wir das Risiko von Ernteausfällen</strong> und freuen uns gemeinsam über reiche Ernten. Du erhältst <strong>wöchentlich frisches Demeter-Gemüse</strong>, das direkt vom Feld kommt.</p>
+                      </div>
+                    </div>
+                  </label>
                 </div>
               </div>
             )}
@@ -410,7 +469,20 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                     }
                   </p>
                   <p style={{ marginTop: '8px', marginBottom: 0, fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
-                    Du kannst diese Auswahl auf der <Link href="/mitmachen" style={{ color: 'var(--bioco-green)', textDecoration: 'underline' }}>Mitmachen-Seite</Link> ändern.
+                    Du kannst diese Auswahl auf der{' '}
+                    <Link 
+                      href="/mitmachen" 
+                      style={{ 
+                        color: 'var(--bioco-green)', 
+                        textDecoration: 'underline',
+                        fontWeight: 600,
+                        cursor: 'pointer'
+                      }}
+                      className="form-link"
+                    >
+                      Mitmachen-Seite
+                    </Link>{' '}
+                    ändern.
                   </p>
                 </div>
 

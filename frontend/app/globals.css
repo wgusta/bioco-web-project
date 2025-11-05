@@ -228,6 +228,16 @@ a:hover {
 .logo-link {
   text-decoration: none;
   display: inline-block;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+.logo-link:hover {
+  opacity: 0.8;
+}
+
+.minimal-header .logo-link {
+  cursor: pointer;
 }
 
 .logo {
@@ -695,7 +705,7 @@ header {
   border-radius: var(--radius-sm);
   font-size: 0.75rem;
   font-weight: 700;
-  transform: rotate(-10deg);
+  transform: rotate(10deg);
   transform-origin: center;
   box-shadow: var(--shadow-sm);
   vertical-align: middle;
@@ -1586,6 +1596,19 @@ footer a:hover {
   order: 2;
 }
 
+.form-link {
+  color: var(--bioco-green) !important;
+  text-decoration: underline !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: color 0.2s ease;
+}
+
+.form-link:hover {
+  color: var(--bioco-green-dark) !important;
+  text-decoration: underline !important;
+}
+
 /* Commitment Checklist */
 .commitment-checklist {
   display: flex;
@@ -1599,6 +1622,20 @@ footer a:hover {
   background: var(--bg-secondary);
   border-radius: var(--radius-md);
   border-left: 3px solid var(--bioco-green);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  display: block;
+}
+
+.commitment-item:hover {
+  background: var(--bg-tertiary);
+}
+
+.commitment-item input[type="checkbox"] {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
 }
 
 .commitment-item h3 {

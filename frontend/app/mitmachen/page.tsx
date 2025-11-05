@@ -96,7 +96,7 @@ export default function MitmachenPage() {
               </div>
               <div className="faq-item">
                 <h3>Kann ich mehrere Anteilsscheine kaufen?</h3>
-                <p>Ja! Du kannst zusätzliche Anteilsscheine erwerben, auch ohne Gemüsekorb. Mehr Anteile bedeuten mehr Mitspracherecht und stärkere Unterstützung der Genossenschaft.</p>
+                <p>Ja! Du kannst zusätzliche Anteilsscheine erwerben, auch ohne Gemüsekorb.</p>
               </div>
               <div className="faq-item">
                 <h3>Wie plane ich meine Arbeitseinsätze?</h3>
