@@ -1,4 +1,4 @@
-/* Bento Design - Mode.com-inspired with plant illustrations */
+/* Sketchy Design - Bootswatch Sketchy-inspired with bioco colors */
 /* Colors: Green #2e7d32, Orange #ff8c00, Deep Red #8b0000 */
 
 /* Reset & Base Styles */
@@ -18,7 +18,7 @@
   --bioco-beet: #8b0000;
   --bioco-beet-light: #b71c1c;
   
-  /* Mode.com-inspired neutrals with earthy tones */
+  /* Sketchy neutrals with earthy tones */
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9f5;
   --bg-tertiary: #f1f3ed;
@@ -26,22 +26,27 @@
   --text-secondary: #4a4a4a;
   --text-tertiary: #6b6b6b;
   --border-color: #e1e4e8;
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.15), 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2), 0 4px 8px rgba(0, 0, 0, 0.15);
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
   --spacing-xs: 8px;
   --spacing-sm: 16px;
   --spacing-md: 24px;
   --spacing-lg: 32px;
   --spacing-xl: 48px;
   --spacing-2xl: 64px;
+  
+  /* Sketchy border SVG patterns - very pronounced hand-drawn style */
+  --sketchy-border-thin: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,10 Q20,5 40,10 T80,10 Q90,8 100,10 M100,20 Q80,25 60,20 T20,20 Q10,22 0,20 M0,30 Q15,28 30,30 T70,30 Q85,32 100,30 M100,40 Q90,38 80,40 T40,40 Q25,42 0,40 M0,50 Q20,48 50,50 T100,50 M100,60 Q85,62 70,60 T30,60 Q15,58 0,60 M0,70 Q25,68 50,70 T100,70 M100,80 Q80,82 60,80 T20,80 Q10,78 0,80 M0,90 Q30,88 60,90 T100,90' stroke='%23e1e4e8' fill='none' stroke-width='2'/%3E%3C/svg%3E");
+  --sketchy-border-medium: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,15 Q25,8 50,15 T100,15 Q95,10 100,15 M100,25 Q75,32 50,25 T0,25 Q5,30 0,25 M0,35 Q30,28 60,35 T100,35 M100,45 Q70,52 40,45 T0,45 Q10,40 0,45 M0,55 Q35,48 70,55 T100,55 M100,65 Q65,72 30,65 T0,65 Q15,60 0,65 M0,75 Q40,68 80,75 T100,75 M100,85 Q60,92 20,85 T0,85' stroke='%23e1e4e8' fill='none' stroke-width='4'/%3E%3C/svg%3E");
+  --sketchy-border-thick: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,20 Q30,10 60,20 T100,20 Q95,12 100,20 M100,30 Q70,40 40,30 T0,30 Q5,38 0,30 M0,40 Q35,30 70,40 T100,40 M100,50 Q65,60 30,50 T0,50 Q15,42 0,50 M0,60 Q40,50 80,60 T100,60 M100,70 Q60,80 20,70 T0,70 Q25,62 0,70 M0,80 Q45,70 90,80 T100,80' stroke='%23e1e4e8' fill='none' stroke-width='6'/%3E%3C/svg%3E");
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   line-height: 1.6;
   color: var(--text-primary);
   background: var(--bg-secondary);
@@ -52,10 +57,12 @@ body {
 
 /* Typography */
 h1, h2, h3, h4, h5, h6 {
+  font-family: 'Caveat', cursive;
   font-weight: 600;
   line-height: 1.2;
   margin: 0 0 var(--spacing-sm);
   color: var(--text-primary);
+  text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.05);
 }
 
 h1 {
@@ -72,6 +79,7 @@ h3 {
 }
 
 p {
+  font-family: 'Montserrat', sans-serif;
   margin: 0 0 var(--spacing-sm);
   color: var(--text-secondary);
 }
@@ -102,14 +110,21 @@ p {
 
 .bento-card {
   background: var(--bg-primary);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-lg);
+  border: 4px solid var(--border-color);
+  border-radius: 0;
   padding: var(--spacing-lg);
   position: relative;
-  overflow: hidden;
+  overflow: visible;
   transition: all 0.3s ease;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm), 
+              2px 2px 0 rgba(0, 0, 0, 0.1),
+              -1px -1px 0 rgba(0, 0, 0, 0.05),
+              3px 1px 0 rgba(0, 0, 0, 0.08);
   margin-bottom: var(--spacing-md);
+  clip-path: polygon(
+    0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px)
+  );
 }
 
 .bento-card::before {
@@ -133,7 +148,10 @@ p {
 }
 
 .bento-card:hover {
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md),
+              3px 3px 0 rgba(0, 0, 0, 0.15),
+              -2px -2px 0 rgba(0, 0, 0, 0.08),
+              4px 2px 0 rgba(0, 0, 0, 0.12);
   transform: translateY(-2px);
   border-color: var(--bioco-green);
 }
@@ -146,37 +164,51 @@ p {
   grid-column: 1 / -1;
 }
 
-/* Buttons - Actual button elements */
+/* Buttons - Actual button elements with sketchy borders */
 button,
 .btn,
 .btn-primary,
 .btn-secondary {
+  font-family: 'Montserrat', sans-serif;
   display: inline-block;
   padding: 12px 24px;
   font-weight: 600;
   font-size: 0.9375rem;
   text-align: center;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   transition: all 0.2s ease;
   text-decoration: none;
   cursor: pointer;
-  border: none;
+  border: 5px solid;
   line-height: 1.5;
-  font-family: inherit;
+  position: relative;
+  overflow: visible;
+  clip-path: polygon(
+    0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+  );
+  box-shadow: var(--shadow-sm),
+              3px 3px 0 rgba(0, 0, 0, 0.2),
+              -2px -1px 0 rgba(0, 0, 0, 0.1),
+              4px 2px 0 rgba(0, 0, 0, 0.15);
 }
 
 .btn-primary,
 button.btn-primary {
   background: var(--bioco-green);
   color: #ffffff;
-  box-shadow: var(--shadow-sm);
+  border-color: var(--bioco-green-dark);
 }
 
 .btn-primary:hover,
 button.btn-primary:hover {
   background: var(--bioco-green-dark);
   color: #ffffff;
-  box-shadow: var(--shadow-md);
+  border-color: var(--bioco-green);
+  box-shadow: var(--shadow-md),
+              4px 4px 0 rgba(0, 0, 0, 0.25),
+              -3px -2px 0 rgba(0, 0, 0, 0.15),
+              5px 3px 0 rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
 }
 
@@ -184,15 +216,18 @@ button.btn-primary:hover {
 button.btn-secondary {
   background: var(--bg-primary);
   color: var(--bioco-green);
-  border: 2px solid var(--bioco-green);
-  box-shadow: var(--shadow-sm);
+  border-color: var(--bioco-green);
 }
 
 .btn-secondary:hover,
 button.btn-secondary:hover {
   background: var(--bioco-green);
   color: #ffffff;
-  box-shadow: var(--shadow-md);
+  border-color: var(--bioco-green-dark);
+  box-shadow: var(--shadow-md),
+              4px 4px 0 rgba(0, 0, 0, 0.25),
+              -3px -2px 0 rgba(0, 0, 0, 0.15),
+              5px 3px 0 rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
 }
 
@@ -201,14 +236,18 @@ button.btn-secondary:hover {
 button.btn-orange {
   background: var(--bioco-orange);
   color: #ffffff;
-  box-shadow: var(--shadow-sm);
+  border-color: #E88200;
 }
 
 .btn-orange:hover,
 button.btn-orange:hover {
   background: #E88200;
   color: #ffffff;
-  box-shadow: var(--shadow-md);
+  border-color: var(--bioco-orange);
+  box-shadow: var(--shadow-md),
+              4px 4px 0 rgba(0, 0, 0, 0.25),
+              -3px -2px 0 rgba(0, 0, 0, 0.15),
+              5px 3px 0 rgba(0, 0, 0, 0.2);
   transform: translateY(-1px);
 }
 
@@ -246,7 +285,7 @@ a:hover {
   font-size: 2rem;
   font-weight: 700;
   line-height: 1;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: 'Caveat', cursive;
 }
 
 .logo-b {
@@ -339,7 +378,7 @@ a:hover {
   align-items: center;
   gap: 8px;
   padding: 8px 16px;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   font-weight: 500;
   font-size: 0.875rem;
   color: var(--text-secondary);
@@ -382,18 +421,20 @@ a:hover {
 
 header {
   background: var(--bg-primary);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 5px solid var(--border-color);
   padding: var(--spacing-sm) var(--spacing-md);
   position: sticky;
   top: 0;
   z-index: 100;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm),
+              0 3px 0 rgba(0, 0, 0, 0.1),
+              0 -2px 0 rgba(0, 0, 0, 0.05);
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.95);
 }
 
 .minimal-header {
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 5px solid var(--border-color);
 }
 
 .minimal-header .header-top {
@@ -415,14 +456,20 @@ header {
 }
 
 .mobile-menu-toggle {
+  font-family: 'Montserrat', sans-serif;
   background: var(--bg-secondary);
-  border: 1px solid var(--border-color);
+  border: 4px solid var(--border-color);
   padding: 8px 12px;
   cursor: pointer;
   font-size: 1.25rem;
   display: block;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
   transition: all 0.2s ease;
+  clip-path: polygon(
+    0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .mobile-menu-toggle:hover {
@@ -448,16 +495,23 @@ header {
 }
 
 .mobile-menu {
+  font-family: 'Montserrat', sans-serif;
   background: var(--bg-primary);
-  border: 1px solid var(--border-color);
+  border: 5px solid var(--border-color);
   padding: 24px;
   width: 100%;
   max-width: 320px;
   position: relative;
-  border-radius: var(--radius-lg);
-  box-shadow: var(--shadow-lg);
+  border-radius: 0;
+  box-shadow: var(--shadow-lg),
+              4px 4px 0 rgba(0, 0, 0, 0.2),
+              -2px -2px 0 rgba(0, 0, 0, 0.1);
   max-height: 90vh;
   overflow-y: auto;
+  clip-path: polygon(
+    0% 12px, 12px 0%, calc(100% - 12px) 0%, 100% 12px,
+    100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px)
+  );
 }
 
 .mobile-menu-cta {
@@ -481,7 +535,7 @@ header {
   cursor: pointer;
   padding: 8px;
   color: var(--text-secondary);
-  border-radius: var(--radius-sm);
+  border-radius: 0;
 }
 
 .mobile-menu-close:hover {
@@ -545,7 +599,7 @@ header {
   align-items: center !important;
   justify-content: center !important;
   padding: 8px !important;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
 }
 
 .nav-link-duck:hover {
@@ -646,13 +700,21 @@ header {
 
 /* Events Banner */
 .events-banner {
+  font-family: 'Montserrat', sans-serif;
   background: linear-gradient(135deg, rgba(46, 125, 50, 0.08) 0%, rgba(46, 125, 50, 0.03) 100%);
-  border: 1px solid rgba(46, 125, 50, 0.2);
+  border: 5px solid rgba(46, 125, 50, 0.3);
   padding: var(--spacing-lg);
   margin: var(--spacing-lg) 0;
-  border-radius: var(--radius-lg);
+  border-radius: 0;
   position: relative;
-  overflow: hidden;
+  overflow: visible;
+  clip-path: polygon(
+    0% 12px, 12px 0%, calc(100% - 12px) 0%, 100% 12px,
+    100% calc(100% - 12px), calc(100% - 12px) 100%, 12px 100%, 0% calc(100% - 12px)
+  );
+  box-shadow: var(--shadow-md),
+              3px 3px 0 rgba(46, 125, 50, 0.2),
+              -2px -2px 0 rgba(46, 125, 50, 0.1);
 }
 
 .events-banner::before {
@@ -698,18 +760,26 @@ header {
 }
 
 .recommended-badge {
+  font-family: 'Montserrat', sans-serif;
   display: inline-block;
   background: var(--bioco-orange);
   color: white;
   padding: 4px 12px;
-  border-radius: var(--radius-sm);
+  border: 3px solid #E88200;
+  border-radius: 0;
   font-size: 0.75rem;
   font-weight: 700;
   transform: rotate(10deg);
   transform-origin: center;
-  box-shadow: var(--shadow-sm);
+  box-shadow: var(--shadow-sm),
+              2px 2px 0 rgba(0, 0, 0, 0.2),
+              -1px -1px 0 rgba(0, 0, 0, 0.1);
   vertical-align: middle;
   margin-left: 8px;
+  clip-path: polygon(
+    0% 6px, 6px 0%, calc(100% - 6px) 0%, 100% 6px,
+    100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px)
+  );
 }
 
 input[type="text"],
@@ -719,15 +789,21 @@ input[type="date"],
 input[type="number"],
 textarea,
 select {
-  border: 1px solid var(--border-color);
+  font-family: 'Montserrat', sans-serif;
+  border: 4px solid var(--border-color);
   padding: 12px 16px;
-  font-family: inherit;
   background: var(--bg-primary);
   width: 100%;
   margin: 4px 0;
   font-size: 1rem;
-  border-radius: var(--radius-md);
+  border-radius: 0;
   transition: all 0.2s ease;
+  clip-path: polygon(
+    0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1),
+              -1px -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 input:focus,
@@ -735,33 +811,101 @@ textarea:focus,
 select:focus {
   outline: none;
   border-color: var(--bioco-green);
-  box-shadow: 0 0 0 3px rgba(46, 125, 50, 0.1);
+  box-shadow: 3px 3px 0 rgba(46, 125, 50, 0.3),
+              -2px -1px 0 rgba(46, 125, 50, 0.2),
+              4px 2px 0 rgba(46, 125, 50, 0.25);
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--border-color);
+  border-radius: 0;
+  cursor: pointer;
+  appearance: none;
+  position: relative;
+  margin-right: 8px;
+  clip-path: polygon(
+    0% 4px, 4px 0%, calc(100% - 4px) 0%, 100% 4px,
+    100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0% calc(100% - 4px)
+  );
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background: var(--bioco-green);
+  border-color: var(--bioco-green-dark);
+}
+
+input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+input[type="radio"] {
+  border-radius: 50%;
+  clip-path: none;
+}
+
+input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 8px;
+  height: 8px;
+  background: white;
+  border-radius: 50%;
 }
 
 .form-success {
+  font-family: 'Montserrat', sans-serif;
   background: #d4edda;
-  border: 1px solid #28a745;
+  border: 4px solid #28a745;
   color: #155724;
   padding: var(--spacing-sm);
   margin-bottom: var(--spacing-md);
-  border-radius: var(--radius-md);
+  border-radius: 0;
+  clip-path: polygon(
+    0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .form-error {
+  font-family: 'Montserrat', sans-serif;
   background: #f8d7da;
-  border: 1px solid #dc3545;
+  border: 4px solid #dc3545;
   color: #721c24;
   padding: var(--spacing-sm);
   margin-bottom: var(--spacing-md);
-  border-radius: var(--radius-md);
+  border-radius: 0;
+  clip-path: polygon(
+    0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* Footer */
 footer {
-  border-top: 1px solid var(--border-color);
+  font-family: 'Montserrat', sans-serif;
+  border-top: 5px solid var(--border-color);
   background: var(--bg-secondary);
   margin-top: var(--spacing-xl);
   padding: var(--spacing-xl) var(--spacing-md);
+  box-shadow: 0 -3px 0 rgba(0, 0, 0, 0.1),
+              0 2px 0 rgba(0, 0, 0, 0.05);
 }
 
 footer ul {
@@ -836,15 +980,21 @@ footer a:hover {
 }
 
 .partner-badge {
+  font-family: 'Montserrat', sans-serif;
   display: inline-block;
   padding: var(--spacing-sm) var(--spacing-md);
   background: var(--bg-primary);
-  border: 2px solid var(--bioco-green);
-  border-radius: var(--radius-md);
+  border: 4px solid var(--bioco-green);
+  border-radius: 0;
   color: var(--bioco-green);
   font-weight: 600;
   font-size: 0.875rem;
   transition: all 0.2s ease;
+  clip-path: polygon(
+    0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .partner-badge:hover {
@@ -862,21 +1012,22 @@ footer a:hover {
   flex-wrap: wrap;
   gap: var(--spacing-xs);
   margin-bottom: var(--spacing-md);
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 4px solid var(--border-color);
   padding-bottom: var(--spacing-sm);
 }
 
 .kalender-tab {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-xs) var(--spacing-sm);
   background: transparent;
   border: none;
-  border-bottom: 3px solid transparent;
+  border-bottom: 5px solid transparent;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-bottom: -2px;
+  margin-bottom: -4px;
 }
 
 .kalender-tab:hover {
@@ -886,6 +1037,7 @@ footer a:hover {
 .kalender-tab.active {
   color: var(--bioco-green);
   border-bottom-color: var(--bioco-green);
+  border-bottom-width: 6px;
 }
 
 .kalender-content {
@@ -895,9 +1047,16 @@ footer a:hover {
 }
 
 .kalender-section {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
+  border-radius: 0;
+  border: 4px solid var(--border-color);
+  clip-path: polygon(
+    0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .kalender-section h4 {
@@ -935,26 +1094,34 @@ footer a:hover {
 }
 
 .gallery-filter {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-xs) var(--spacing-md);
   background: var(--bg-secondary);
-  border: 2px solid var(--border-color);
-  border-radius: var(--radius-md);
+  border: 4px solid var(--border-color);
+  border-radius: 0;
   font-size: 0.875rem;
   font-weight: 600;
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s ease;
+  clip-path: polygon(
+    0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .gallery-filter:hover {
   border-color: var(--bioco-green);
   color: var(--bioco-green);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15);
 }
 
 .gallery-filter.active {
   background: var(--bioco-green);
   color: white;
-  border-color: var(--bioco-green);
+  border-color: var(--bioco-green-dark);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
 }
 
 .gallery-grid {
@@ -966,7 +1133,13 @@ footer a:hover {
 .gallery-item {
   aspect-ratio: 4/3;
   overflow: hidden;
-  border-radius: var(--radius-md);
+  border-radius: 0;
+  border: 4px solid var(--border-color);
+  clip-path: polygon(
+    0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .gallery-placeholder {
@@ -985,10 +1158,16 @@ footer a:hover {
 }
 
 .demeter-accordion details {
+  font-family: 'Montserrat', sans-serif;
   margin-bottom: var(--spacing-sm);
-  border: 1px solid var(--border-color);
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  border: 4px solid var(--border-color);
+  border-radius: 0;
+  overflow: visible;
+  clip-path: polygon(
+    0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .demeter-accordion summary {
@@ -1040,11 +1219,18 @@ footer a:hover {
 }
 
 .team-card {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
+  border-radius: 0;
+  border: 4px solid var(--border-color);
   transition: all 0.2s ease;
+  clip-path: polygon(
+    0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1),
+              -1px -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .team-card:hover {
@@ -1088,10 +1274,18 @@ footer a:hover {
 }
 
 .mission-item {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
-  border-left: 3px solid var(--bioco-green);
+  border-radius: 0;
+  border-left: 6px solid var(--bioco-green);
+  border: 4px solid var(--border-color);
+  border-left: 6px solid var(--bioco-green);
+  clip-path: polygon(
+    0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .mission-item h3 {
@@ -1206,21 +1400,22 @@ footer a:hover {
 .tabs-header {
   display: flex;
   gap: var(--spacing-xs);
-  border-bottom: 2px solid var(--border-color);
+  border-bottom: 4px solid var(--border-color);
   margin-bottom: var(--spacing-md);
 }
 
 .tab-button {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-sm) var(--spacing-md);
   background: transparent;
   border: none;
-  border-bottom: 3px solid transparent;
+  border-bottom: 5px solid transparent;
   font-size: 1rem;
   font-weight: 600;
   color: var(--text-secondary);
   cursor: pointer;
   transition: all 0.2s ease;
-  margin-bottom: -2px;
+  margin-bottom: -4px;
 }
 
 .tab-button:hover {
@@ -1230,6 +1425,7 @@ footer a:hover {
 .tab-button.active {
   color: var(--bioco-green);
   border-bottom-color: var(--bioco-green);
+  border-bottom-width: 6px;
 }
 
 .tabs-content {
@@ -1282,7 +1478,13 @@ footer a:hover {
   gap: var(--spacing-md);
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
+  border-radius: 0;
+  border: 4px solid var(--border-color);
+  clip-path: polygon(
+    0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
   transition: all 0.2s ease;
 }
 
@@ -1357,24 +1559,36 @@ footer a:hover {
 }
 
 .pricing-table table {
+  font-family: 'Montserrat', sans-serif;
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
   background: var(--bg-primary);
-  border-radius: var(--radius-md);
-  overflow: hidden;
+  border: 4px solid var(--border-color);
+  border-radius: 0;
+  overflow: visible;
+  clip-path: polygon(
+    0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+  );
+  box-shadow: var(--shadow-md),
+              3px 3px 0 rgba(0, 0, 0, 0.15);
 }
 
 .pricing-table th {
+  font-family: 'Caveat', cursive;
   background: var(--bioco-green);
   color: white;
   padding: var(--spacing-sm) var(--spacing-md);
   text-align: left;
   font-weight: 600;
+  border-bottom: 4px solid var(--bioco-green-dark);
 }
 
 .pricing-table td {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-sm) var(--spacing-md);
-  border-bottom: 1px solid var(--border-color);
+  border-bottom: 3px solid var(--border-color);
   vertical-align: middle;
 }
 
@@ -1411,15 +1625,21 @@ footer a:hover {
 }
 
 .btn-add-share {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-xs) var(--spacing-sm);
   background: var(--bioco-green);
   color: white;
-  border: none;
-  border-radius: var(--radius-sm);
+  border: 4px solid var(--bioco-green-dark);
+  border-radius: 0;
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  clip-path: polygon(
+    0% 6px, 6px 0%, calc(100% - 6px) 0%, 100% 6px,
+    100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .btn-add-share:hover {
@@ -1428,15 +1648,21 @@ footer a:hover {
 }
 
 .btn-remove-share {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-xs) var(--spacing-sm);
   background: var(--text-secondary);
   color: white;
-  border: none;
-  border-radius: var(--radius-sm);
+  border: 4px solid var(--text-primary);
+  border-radius: 0;
   font-weight: 600;
   font-size: 0.875rem;
   cursor: pointer;
   transition: all 0.2s ease;
+  clip-path: polygon(
+    0% 6px, 6px 0%, calc(100% - 6px) 0%, 100% 6px,
+    100% calc(100% - 6px), calc(100% - 6px) 100%, 6px 100%, 0% calc(100% - 6px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .btn-remove-share:hover {
@@ -1476,10 +1702,11 @@ footer a:hover {
 }
 
 .abo-button {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border: 2px solid var(--border-color);
-  border-radius: var(--radius-md);
+  border: 5px solid var(--border-color);
+  border-radius: 0;
   text-align: center;
   cursor: pointer;
   transition: all 0.2s ease;
@@ -1487,17 +1714,27 @@ footer a:hover {
   font-weight: 600;
   position: relative;
   overflow: visible;
+  clip-path: polygon(
+    0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1),
+              -1px -1px 0 rgba(0, 0, 0, 0.05);
 }
 
 .abo-button:hover {
   border-color: var(--bioco-green);
   background: var(--bg-tertiary);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.15),
+              -2px -2px 0 rgba(0, 0, 0, 0.08);
 }
 
 .abo-button.active {
   background: var(--bioco-green);
   color: white;
-  border-color: var(--bioco-green);
+  border-color: var(--bioco-green-dark);
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2),
+              -2px -2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .abo-button .price {
@@ -1529,16 +1766,22 @@ footer a:hover {
   width: 100%;
   height: 8px;
   background: var(--bg-secondary);
-  border-radius: var(--radius-sm);
+  border: 3px solid var(--border-color);
+  border-radius: 0;
   overflow: hidden;
   margin-bottom: var(--spacing-sm);
+  clip-path: polygon(
+    0% 4px, 4px 0%, calc(100% - 4px) 0%, 100% 4px,
+    100% calc(100% - 4px), calc(100% - 4px) 100%, 4px 100%, 0% calc(100% - 4px)
+  );
+  box-shadow: 1px 1px 0 rgba(0, 0, 0, 0.1);
 }
 
 .progress-fill {
   height: 100%;
   background: var(--bioco-green);
   transition: width 0.3s ease;
-  border-radius: var(--radius-sm);
+  border-radius: 0;
 }
 
 .progress-text {
@@ -1618,13 +1861,20 @@ footer a:hover {
 }
 
 .commitment-item {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
-  border-left: 3px solid var(--bioco-green);
+  border-radius: 0;
+  border: 4px solid var(--border-color);
+  border-left: 6px solid var(--bioco-green);
   cursor: pointer;
   transition: background-color 0.2s ease;
   display: block;
+  clip-path: polygon(
+    0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .commitment-item:hover {
@@ -1700,9 +1950,16 @@ footer a:hover {
 }
 
 .faq-item {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
+  border-radius: 0;
+  border: 4px solid var(--border-color);
+  clip-path: polygon(
+    0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .faq-item h3 {
@@ -1746,6 +2003,7 @@ footer a:hover {
 }
 
 .info-tooltip-content {
+  font-family: 'Montserrat', sans-serif;
   position: absolute;
   bottom: 100%;
   left: 50%;
@@ -1754,14 +2012,20 @@ footer a:hover {
   padding: var(--spacing-sm) var(--spacing-md);
   background: var(--text-primary);
   color: white;
-  border-radius: var(--radius-sm);
+  border: 3px solid rgba(0, 0, 0, 0.3);
+  border-radius: 0;
   font-size: 0.875rem;
   line-height: 1.4;
   white-space: nowrap;
   max-width: 250px;
   white-space: normal;
   z-index: 1000;
-  box-shadow: var(--shadow-md);
+  box-shadow: var(--shadow-md),
+              2px 2px 0 rgba(0, 0, 0, 0.2);
+  clip-path: polygon(
+    0% 8px, 8px 0%, calc(100% - 8px) 0%, 100% 8px,
+    100% calc(100% - 8px), calc(100% - 8px) 100%, 8px 100%, 0% calc(100% - 8px)
+  );
 }
 
 .info-tooltip-content::after {
@@ -1783,10 +2047,16 @@ footer a:hover {
 }
 
 .document-item {
+  font-family: 'Montserrat', sans-serif;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
-  border-radius: var(--radius-md);
-  border: 1px solid var(--border-color);
+  border-radius: 0;
+  border: 4px solid var(--border-color);
+  clip-path: polygon(
+    0% 10px, 10px 0%, calc(100% - 10px) 0%, 100% 10px,
+    100% calc(100% - 10px), calc(100% - 10px) 100%, 10px 100%, 0% calc(100% - 10px)
+  );
+  box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.1);
 }
 
 .document-item h3 {
