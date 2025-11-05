@@ -17,7 +17,7 @@ interface PricingCalculatorProps {
 }
 
 export function PricingCalculator({ onStartForm }: PricingCalculatorProps) {
-  const [selectedAbo, setSelectedAbo] = useState<'halb' | 'standard' | 'doppel' | 'kein'>('kein')
+  const [selectedAbo, setSelectedAbo] = useState<'halb' | 'standard' | 'doppel' | 'kein'>('halb')
   const [additionalShares, setAdditionalShares] = useState(0)
 
   const aboData = ABO_PRICES[selectedAbo]
@@ -30,7 +30,6 @@ export function PricingCalculator({ onStartForm }: PricingCalculatorProps) {
   return (
     <div className="pricing-calculator">
       <div className="abo-selector" style={{ marginBottom: '24px' }}>
-        <h3 style={{ marginBottom: '16px' }}>Gemüseabo wählen:</h3>
         <div className="abo-buttons">
           <button
             type="button"

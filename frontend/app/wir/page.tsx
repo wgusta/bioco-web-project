@@ -15,9 +15,9 @@ export default function WirPage() {
             <div className="card-header">
               <h3>Wir</h3>
               <div className="card-header-divider"></div>
-              <h4 className="card-title">Team & Hof</h4>
             </div>
             <div className="card-body">
+              <h4 className="card-title">Team & Hof</h4>
               <p className="card-text">biocò ist eine Gemeinschaft von engagierten Menschen, die gemeinsam für frisches, regionales Demeter-Gemüse sorgen.</p>
             
             <div className="team-grid">

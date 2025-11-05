@@ -15,9 +15,9 @@ export default function AnpackenPage() {
             <div className="card-header">
               <h3>Anpacken</h3>
               <div className="card-header-divider"></div>
-              <h4 className="card-title">Mitarbeit bei biocò</h4>
             </div>
             <div className="card-body">
+              <h4 className="card-title">Mitarbeit bei biocò</h4>
               <p className="card-text">Jede(r) Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv. Die Mitarbeit ist ein wichtiger Teil des CSA-Prinzips.</p>
             
             <div style={{ marginTop: '16px' }}>

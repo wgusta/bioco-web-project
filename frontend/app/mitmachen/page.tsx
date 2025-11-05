@@ -13,7 +13,7 @@ export default function MitmachenPage() {
           <section id="H-03" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
             <div className="card-header">
-              <h3>Gemüseabo wählen</h3>
+              <h3>Es gibt bei bioco vier Möglichkeiten der Partizipation</h3>
             </div>
             <div className="card-body">
               <PricingCalculator />
