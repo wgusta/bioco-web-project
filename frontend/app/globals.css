@@ -20,8 +20,8 @@
   
   /* Sketchy neutrals with earthy tones */
   --bg-primary: #ffffff;
-  --bg-secondary: #f8f9f5;
-  --bg-tertiary: #f1f3ed;
+  --bg-secondary: #f5f1e8;
+  --bg-tertiary: #ede8df;
   --text-primary: #1a1a1a;
   --text-secondary: #4a4a4a;
   --text-tertiary: #6b6b6b;
@@ -50,25 +50,12 @@ body {
   font-weight: 700;
   line-height: 1.6;
   color: var(--text-primary);
-  background: linear-gradient(135deg, rgba(46, 125, 50, 0.05) 0%, rgba(255, 140, 0, 0.05) 100%);
+  background: var(--bg-secondary);
   font-size: 16px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   position: relative;
   min-height: 100vh;
-}
-
-body::before {
-  content: '';
-  position: fixed;
-  top: -50%;
-  right: -20%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--bioco-green-light) 0%, transparent 70%);
-  opacity: 0.1;
-  pointer-events: none;
-  z-index: 0;
 }
 
 /* Typography */
@@ -196,7 +183,7 @@ p {
 
 /* Card structure elements */
 .card-header {
-  padding: 0.5rem 1rem;
+  padding: 1.25rem 1rem;
   margin-bottom: 0;
   background-color: rgba(33, 37, 41, 0.03);
   border-bottom: 2px solid #333;
@@ -209,7 +196,7 @@ p {
   font-family: 'Cabin Sketch', cursive;
   font-weight: 500;
   font-size: 1.25rem;
-  margin: 0 0 0.5rem 0;
+  margin: 0 0 0.75rem 0;
   padding: 0;
   color: var(--text-primary);
 }
@@ -1123,23 +1110,11 @@ header .header-nav-container .beet-leaves {
 
 /* Hero Section */
 .hero {
-  background: linear-gradient(135deg, rgba(46, 125, 50, 0.05) 0%, rgba(255, 140, 0, 0.05) 100%);
+  background: var(--bg-secondary);
   padding: var(--spacing-xl) var(--spacing-md);
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-.hero::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  right: -20%;
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, var(--bioco-green-light) 0%, transparent 70%);
-  opacity: 0.1;
-  pointer-events: none;
 }
 
 .hero-content {
@@ -1203,6 +1178,23 @@ header .header-nav-container .beet-leaves {
 .content li {
   margin: 8px 0;
   color: var(--text-secondary);
+}
+
+/* List alignment - ensure proper spacing from headings */
+.card-body h3 + ul,
+.card-body h4 + ul,
+.card-body h2 + ul,
+.card-body h1 + ul,
+.card-body .card-title + ul,
+.card-body p + ul {
+  margin-top: var(--spacing-sm);
+  padding-left: var(--spacing-lg);
+}
+
+.card-body ul {
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  padding-left: var(--spacing-lg);
 }
 
 /* Legacy wireframe classes - kept for backwards compatibility but not used */
@@ -1924,19 +1916,25 @@ footer a:hover {
 }
 
 .aktuelles-item {
-  padding: var(--spacing-sm);
-  border-left: 3px solid var(--bioco-green);
-  padding-left: var(--spacing-md);
+  background: var(--bg-primary);
+  border: 2px solid #333;
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .aktuelles-item h3 {
   color: var(--bioco-green);
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
   font-size: 1rem;
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 500;
 }
 
 .aktuelles-item p {
   margin: var(--spacing-xs) 0;
+  color: var(--text-secondary);
 }
 
 /* Tabs Styles */
@@ -1994,20 +1992,25 @@ footer a:hover {
 }
 
 .event-item {
-  padding: var(--spacing-sm);
-  border-left: 3px solid var(--bioco-orange);
-  padding-left: var(--spacing-md);
+  background: var(--bg-primary);
+  border: 2px solid #333;
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+  padding: var(--spacing-md);
   margin-bottom: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
 }
 
 .event-item h3 {
   color: var(--bioco-orange);
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
   font-size: 1rem;
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 500;
 }
 
 .event-item p {
   margin: var(--spacing-xs) 0;
+  color: var(--text-secondary);
 }
 
 /* Procedure Steps Styles */

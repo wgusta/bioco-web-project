@@ -6,6 +6,13 @@ import { PersonIcons } from '@/components/PersonIcons'
 import { BasketVisualization } from '@/components/BasketVisualization'
 import Link from 'next/link'
 
+// Helper function to determine basket size based on person count
+function getBasketSizeForPersons(personCount: number): 'halb' | 'standard' | 'doppel' {
+  if (personCount === 1) return 'halb'
+  if (personCount <= 3) return 'standard'
+  return 'doppel'
+}
+
 export default function AbosPage() {
   return (
     <>
@@ -56,7 +63,7 @@ export default function AbosPage() {
                       </div>
                     </td>
                     <td>
-                      <BasketVisualization size="standard" />
+                      <BasketVisualization size={getBasketSizeForPersons(2)} />
                     </td>
                     <td>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -75,7 +82,7 @@ export default function AbosPage() {
                       </div>
                     </td>
                     <td>
-                      <BasketVisualization size="doppel" />
+                      <BasketVisualization size={getBasketSizeForPersons(4)} />
                     </td>
                     <td>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
