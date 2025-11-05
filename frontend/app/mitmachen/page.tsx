@@ -9,12 +9,18 @@ export default function MitmachenPage() {
   return (
     <>
       <Header />
-      <Hero
-        title="Werde jetzt Teil von biocò"
-        subtitle="Kurze Einleitung; Foto Hände+Gemüse"
-      />
       <main className="main-content">
         <div className="bento-grid">
+          <section id="H-03" className="bento-card bento-card-large">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Gemüseabo wählen</h3>
+            </div>
+            <div className="card-body">
+              <PricingCalculator />
+            </div>
+          </section>
+
           <section id="H-02" className="bento-card">
             <div className="plant-pattern"></div>
             <div className="card-header">
@@ -25,17 +31,6 @@ export default function MitmachenPage() {
                 <li><strong>Info-Event:</strong> Besuche einen unserer <Link href="/aktuelles">Schnuppertage</Link> und lerne biocò kennen</li>
                 <li><strong>Probe-Abo:</strong> Teste unser Gemüseabo für 3 Monate – <Link href="/abos">mehr Infos</Link></li>
               </ul>
-            </div>
-          </section>
-
-          <section id="H-03" className="bento-card bento-card-large">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Kostenübersicht</h3>
-            </div>
-            <div className="card-body">
-              <p className="card-text">Wähle dein Abo und berechne sofort deine Kosten:</p>
-              <PricingCalculator />
             </div>
           </section>
 

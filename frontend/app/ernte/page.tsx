@@ -11,16 +11,12 @@ export default function ErntePage() {
   return (
     <>
       <Header />
-      <Hero
-        title="Unser Gemüse: Frisch, lokal, Demeter."
-        subtitle="Vielfalt & Qualität"
-      />
       <main className="main-content">
         <div className="bento-grid">
           <section id="B-02" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
             <div className="card-header">
-              <h3>Galerie</h3>
+              <h3>Was wir anbauen</h3>
             </div>
             <div className="card-body">
               <p className="card-text">Einblicke in unsere Ernte, den Anbau und die Gemeinschaft</p>
