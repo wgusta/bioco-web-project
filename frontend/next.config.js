@@ -7,7 +7,7 @@ const nextConfig = {
     MATOMO_SITE_ID: process.env.MATOMO_SITE_ID || '',
   },
   images: {
-    domains: ['localhost', 'staging.bioco.ch'],
+    domains: ['localhost', 'staging.bioco.ch', 'bioco.ch'],
     remotePatterns: [
       {
         protocol: 'http',
@@ -16,6 +16,10 @@ const nextConfig = {
       {
         protocol: 'https',
         hostname: 'staging.bioco.ch',
+      },
+      {
+        protocol: 'https',
+        hostname: 'bioco.ch',
       },
       {
         protocol: 'https',

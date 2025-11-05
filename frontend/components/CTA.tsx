@@ -8,7 +8,7 @@ interface CTAProps {
 }
 
 export function CTA({ text, href, variant = 'primary', onClick }: CTAProps) {
-  const className = variant === 'primary' ? 'cta-button' : 'cta-button-secondary'
+  const className = variant === 'primary' ? 'btn btn-primary' : 'btn btn-secondary'
   
   return (
     <Link href={href} className={className} onClick={onClick}>

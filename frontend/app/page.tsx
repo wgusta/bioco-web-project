@@ -4,68 +4,118 @@ import { Hero } from '@/components/Hero'
 import { EventsBanner } from '@/components/EventsBanner'
 import { CTA } from '@/components/CTA'
 import Link from 'next/link'
+import { CarrotIcon, LeafIcon, PlantIcon, SeedIcon } from '@/components/Icon'
 
 export default function Home() {
   return (
     <>
       <Header />
       <Hero
-        title="Frisches Demeter-Gemüse. Jede Woche …"
+        title="Frisches Demeter-Gemüse – fast jede Woche."
         subtitle=""
       />
-      <main className="wireframe-box main-content">
-        <div className="wireframe-content">
-          <div className="wireframe-box content">
-            <section id="A-02" className="wireframe-box">
-              <h2>Hero</h2>
-              <p>CTA: <strong>Jetzt Mitglied werden</strong> → <Link href="/mitmachen">Mitmachen! / H-04 Anmeldung</Link></p>
-              <p>CTA: <strong>Zuerst testen?</strong> → <Link href="/mitmachen">Mitmachen! / H-02 Zuerst testen?</Link></p>
-              <p className="dim">Foto: authentischer Hof-/Ernte-Shot</p>
-            </section>
+      <main className="main-content">
+        <div className="content-grid">
+          <section id="A-02" className="content-card">
+            <h2>Willkommen bei biocò</h2>
+            <p>biocò ist eine Gemüsegenossenschaft in der Region Baden-Brugg, die seit 2014 auf dem Geisshof in Gebenstorf eine Vielzahl von Biogemüse in Demeter-Qualität anbaut und wöchentlich an ihre Mitglieder verteilt.</p>
+          </section>
 
-            <section id="A-03" className="wireframe-box">
-              <h2>Value Prop – Produkt</h2>
-              <p>„Das ist drin: Saisonal & Demeter."</p>
-              <p>Cards: Wöchentlicher Korb; Saisonalität; Demeter</p>
-              <CTA
-                text="Ernte entdecken"
-                href="/ernte"
-                variant="primary"
-              />
-            </section>
+          <section id="A-03" className="content-card">
+            <h2>Das ist drin: Saisonal & Demeter</h2>
+            <p>Wöchentlich erhalten unsere Mitglieder einen Gemüsekorb mit frischem, saisonalem Gemüse in Demeter-Qualität.</p>
+            <ul className="icon-list">
+              <li>
+                <span className="icon-list-icon"><CarrotIcon /></span>
+                <span>Wöchentlicher Gemüsekorb</span>
+              </li>
+              <li>
+                <span className="icon-list-icon"><LeafIcon /></span>
+                <span>Saisonalität – das Gemüse der Jahreszeit</span>
+              </li>
+              <li>
+                <span className="icon-list-icon"><SeedIcon /></span>
+                <span>Demeter-Qualität – höchste Bio-Standards</span>
+              </li>
+            </ul>
+            <CTA
+              text="Ernte entdecken"
+              href="/ernte"
+              variant="primary"
+            />
+          </section>
 
-            <section id="A-04" className="wireframe-box">
-              <h2>Value Prop – Gemeinschaft</h2>
-              <ul>
-                <li>Mitarbeit → <Link href="/anpacken">Anpacken / D-01 Info</Link></li>
-                <li>Transparenz (CSA) → <Link href="#A-06">Homepage / A-06 Konzept-Überblick</Link></li>
-                <li>Gotti-System → <Link href="/wir">Wir / F-02 Mission/Leitbild</Link></li>
-                <li>Lokal/Region → <Link href="/wir">Wir / F-01 Team & Hof</Link></li>
-              </ul>
-            </section>
+          <section id="A-04" className="content-card">
+            <h2>Gemeinschaft & Solidarität</h2>
+            <p>biocò basiert auf den Prinzipien der Solidarischen Landwirtschaft.</p>
+            <ul className="icon-list">
+              <li>
+                <span className="icon-list-icon"><PlantIcon /></span>
+                <span><strong>Mitarbeit</strong> – <Link href="/anpacken">Anpacken auf dem Feld</Link></span>
+              </li>
+              <li>
+                <span className="icon-list-icon"><LeafIcon /></span>
+                <span><strong>Transparenz</strong> – Solidarische Landwirtschaft (CSA)</span>
+              </li>
+              <li>
+                <span className="icon-list-icon"><SeedIcon /></span>
+                <span><strong>Gemeinschaft</strong> – Jede(r) bringt sich ein</span>
+              </li>
+              <li>
+                <span className="icon-list-icon"><CarrotIcon /></span>
+                <span><strong>Lokal/Region</strong> – <Link href="/wir">Hof: Geisshof</Link></span>
+              </li>
+            </ul>
+          </section>
 
-            <section id="A-05" className="wireframe-box">
-              <h2>Dual-Funnel CTA</h2>
-              <ul>
-                <li>Info-Event → <Link href="/depots">Depots / E-02 Nächste Events</Link> <span className="dim">(oder Eventliste)</span></li>
-                <li>Probe-Abo → <Link href="/abos">Abos / C-02 Probe-Abo</Link> · <Link href="/mitmachen">Mitmachen! / H-02</Link></li>
-              </ul>
-            </section>
+          <section id="A-05" className="content-card">
+            <h2>Wie funktioniert's?</h2>
+            <ul className="icon-list">
+              <li>
+                <span className="icon-list-icon"><CarrotIcon /></span>
+                <span>Info-Event besuchen – <Link href="/depots">Schnuppertage</Link></span>
+              </li>
+              <li>
+                <span className="icon-list-icon"><LeafIcon /></span>
+                <span>Probe-Abo testen – <Link href="/abos">3-Monats-Test</Link></span>
+              </li>
+              <li>
+                <span className="icon-list-icon"><PlantIcon /></span>
+                <span>Mitglied werden – <Link href="/mitmachen">Anmeldung</Link></span>
+              </li>
+            </ul>
+          </section>
 
-            <section id="A-06" className="wireframe-box">
-              <h2>Konzept-Überblick (CSA, 3 Schritte)</h2>
-              <p>Schritte: Anmeldung → Bestätigung/Rechnung → Abholen</p>
-              <p>Hinweis: geteiltes Risiko & Mitarbeit</p>
-              <p className="dim">Piktos, kurze Absätze</p>
-            </section>
+          <section id="A-06" className="content-card">
+            <h2>Konzept-Überblick (CSA, 3 Schritte)</h2>
+            <ol className="numbered-list">
+              <li><strong>Anmeldung</strong> – Werde Genossenschafter/in</li>
+              <li><strong>Bestätigung/Rechnung</strong> – Du erhältst eine Bestätigung</li>
+              <li><strong>Abholen</strong> – Wöchentlich Gemüsekorb in einem der <Link href="/depots">Depots</Link></li>
+            </ol>
+            <p><strong>Hinweis:</strong> Wir teilen Arbeit, Ertrag und Risiko.</p>
+          </section>
 
-            <EventsBanner />
+          <section id="A-07" className="content-card aktuelles-block">
+            <h2>Aktuelles</h2>
+            <div className="aktuelles-item">
+              <h3>24. Oktober 2025</h3>
+              <p>Letzter biocò Schnuppertag des Jahres auf dem Geisshof</p>
+            </div>
+            <div className="aktuelles-item">
+              <h3>15. November 2025</h3>
+              <p>Fondue-Abend</p>
+            </div>
+            <div className="aktuelles-item">
+              <h3>27. November 2025</h3>
+              <p>Außerordentliche Generalversammlung</p>
+            </div>
+            <Link href="/hofpost" className="btn btn-primary" style={{ marginTop: '16px' }}>
+              Alle Aktuelles ansehen
+            </Link>
+          </section>
 
-            <section id="A-08" className="wireframe-box">
-              <h2>Trust Bar</h2>
-              <p>Demeter · Bio Suisse · lokale Partner (einfarbige Logos)</p>
-            </section>
-          </div>
+          <EventsBanner />
         </div>
       </main>
       <Footer />
