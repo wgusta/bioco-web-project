@@ -8,6 +8,7 @@ const navigationItems = [
   { title: 'Anpacken', href: '/anpacken', id: 'D' },
   { title: 'Abos', href: '/abos', id: 'C' },
   { title: 'Wir', href: '/wir', id: 'F' },
+  { title: 'Aktuelles', href: '/aktuelles', id: 'G' },
 ]
 
 interface NavigationProps {

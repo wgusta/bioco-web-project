@@ -3,13 +3,11 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { LocationIcon } from './Icons'
-import { NewsIcon } from './Icons'
 import { ContactIcon } from './Icons'
 import { DuckIcon } from './DuckIcon'
 
 const secondaryNavItems = [
   { title: 'Standorte', href: '/depots', icon: LocationIcon },
-  { title: 'Aktuelles', href: '/aktuelles', icon: NewsIcon },
   { title: 'Kontakt', href: '/kontakt', icon: ContactIcon },
 ]
 
