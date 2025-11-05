@@ -3,15 +3,7 @@ import { Footer } from '@/components/Footer'
 import { EventsBanner } from '@/components/EventsBanner'
 import { CTA } from '@/components/CTA'
 import { PersonIcons } from '@/components/PersonIcons'
-import { BasketVisualization } from '@/components/BasketVisualization'
 import Link from 'next/link'
-
-// Helper function to determine basket size based on person count
-function getBasketSizeForPersons(personCount: number): 'halb' | 'standard' | 'doppel' {
-  if (personCount === 1) return 'halb'
-  if (personCount <= 3) return 'standard'
-  return 'doppel'
-}
 
 export default function AbosPage() {
   return (
@@ -32,7 +24,6 @@ export default function AbosPage() {
                 <thead>
                   <tr>
                     <th>Gemüsekorb</th>
-                    <th>Grösse</th>
                     <th>Personen</th>
                     <th>Jahrespreis</th>
                     <th>Anteilsscheine Kosten</th>
@@ -47,9 +38,6 @@ export default function AbosPage() {
                       </div>
                     </td>
                     <td>
-                      <BasketVisualization size="halb" />
-                    </td>
-                    <td>
                       <PersonIcons count={1} />
                     </td>
                     <td>CHF 750.-</td>
@@ -61,9 +49,6 @@ export default function AbosPage() {
                       <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
                         2 Anteilsscheine
                       </div>
-                    </td>
-                    <td>
-                      <BasketVisualization size={getBasketSizeForPersons(2)} />
                     </td>
                     <td>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
@@ -80,9 +65,6 @@ export default function AbosPage() {
                       <div style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', marginTop: '4px' }}>
                         4 Anteilsscheine
                       </div>
-                    </td>
-                    <td>
-                      <BasketVisualization size={getBasketSizeForPersons(4)} />
                     </td>
                     <td>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>

@@ -1091,16 +1091,17 @@ header .header-nav-container .beet-leaves {
 .mobile-menu-close {
   background: transparent;
   border: 2px solid var(--border-color);
-  font-size: 0.75rem;
+  font-size: 1rem;
   cursor: pointer;
-  padding: 1px 4px;
+  padding: 4px 6px;
   color: var(--text-secondary);
   border-radius: 3px 3px 3px 3px/15px 15px 15px 3px;
   font-weight: 700;
   line-height: 1;
   transition: all 0.2s ease;
-  min-width: 14px;
-  height: 14px;
+  min-width: 20px;
+  width: 20px;
+  height: 28px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1150,6 +1151,18 @@ header .header-nav-container .beet-leaves {
 .mobile-menu .header-nav a:hover {
   background: var(--bg-secondary);
   color: var(--bioco-green);
+}
+
+.mobile-menu .header-nav a.nav-active {
+  color: white !important;
+  font-weight: 700 !important;
+  background: var(--bioco-green) !important;
+  border-bottom: 2px solid var(--bioco-green-dark) !important;
+}
+
+.mobile-menu .header-nav a.nav-active:hover {
+  background: var(--bioco-green-dark) !important;
+  color: white !important;
 }
 
 .header-nav a:hover {
@@ -2081,6 +2094,9 @@ footer a:hover {
 .tab-button.active {
   color: var(--bioco-green);
   border-bottom-color: var(--bioco-green);
+  border-bottom-width: 3px;
+  font-weight: 700;
+  background: var(--bg-secondary);
 }
 
 .tabs-content {
@@ -2986,5 +3002,59 @@ footer a:hover {
 
   .hero-title {
     font-size: 2.5rem;
+  }
+
+  /* Better readability for pricing table on mobile */
+  .pricing-table {
+    font-size: 0.875rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .pricing-table table {
+    min-width: 100%;
+    font-size: 0.875rem;
+  }
+
+  .pricing-table th {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  .pricing-table td {
+    padding: var(--spacing-xs) var(--spacing-sm);
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  .pricing-table td:first-child {
+    min-width: 100px;
+    max-width: 140px;
+    white-space: normal;
+  }
+
+  .pricing-table .total-row td {
+    padding: var(--spacing-sm);
+    font-size: 1rem;
+    white-space: nowrap;
+  }
+
+  .total-amount {
+    font-size: 1.125rem;
+  }
+
+  .share-buttons-container {
+    margin-top: var(--spacing-xs);
+  }
+
+  .share-buttons-label {
+    font-size: 0.75rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .share-buttons {
+    display: flex;
+    gap: var(--spacing-xs);
   }
 }

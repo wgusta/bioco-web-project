@@ -29,6 +29,59 @@ export function PricingCalculator({ onStartForm }: PricingCalculatorProps) {
 
   return (
     <div className="pricing-calculator">
+      <div className="abo-selector" style={{ marginBottom: '24px' }}>
+        <h3 style={{ marginBottom: '16px' }}>Gemüseabo wählen:</h3>
+        <div className="abo-buttons">
+          <button
+            type="button"
+            className={`abo-button ${selectedAbo === 'halb' ? 'active' : ''}`}
+            onClick={() => {
+              setSelectedAbo('halb')
+              setAdditionalShares(0)
+            }}
+          >
+            Halb (1 Person)<br />
+            <span className="price">CHF 750.-</span>
+          </button>
+          <button
+            type="button"
+            className={`abo-button ${selectedAbo === 'standard' ? 'active' : ''}`}
+            onClick={() => {
+              setSelectedAbo('standard')
+              setAdditionalShares(0)
+            }}
+            style={{ position: 'relative' }}
+          >
+            Standard (2-3 Personen)
+            <span className="recommended-badge" style={{ position: 'absolute', top: '-8px', right: '-8px' }}>Empfohlen</span>
+            <br />
+            <span className="price">CHF 1'280.-</span>
+          </button>
+          <button
+            type="button"
+            className={`abo-button ${selectedAbo === 'doppel' ? 'active' : ''}`}
+            onClick={() => {
+              setSelectedAbo('doppel')
+              setAdditionalShares(0)
+            }}
+          >
+            Doppel (4-6 Personen)<br />
+            <span className="price">CHF 2'350.-</span>
+          </button>
+          <button
+            type="button"
+            className={`abo-button ${selectedAbo === 'kein' ? 'active' : ''}`}
+            onClick={() => {
+              setSelectedAbo('kein')
+              setAdditionalShares(0)
+            }}
+          >
+            Kein Abo<br />
+            <span className="price">Nur Anteilsscheine</span>
+          </button>
+        </div>
+      </div>
+
       <div className="pricing-table">
         <table>
           <thead>
@@ -113,59 +166,6 @@ export function PricingCalculator({ onStartForm }: PricingCalculatorProps) {
         </table>
       </div>
 
-      <div className="abo-selector" style={{ marginTop: '24px' }}>
-        <h3 style={{ marginBottom: '16px' }}>Gemüseabo wählen:</h3>
-        <div className="abo-buttons">
-          <button
-            type="button"
-            className={`abo-button ${selectedAbo === 'halb' ? 'active' : ''}`}
-            onClick={() => {
-              setSelectedAbo('halb')
-              setAdditionalShares(0)
-            }}
-          >
-            Halb (1 Person)<br />
-            <span className="price">CHF 750.-</span>
-          </button>
-          <button
-            type="button"
-            className={`abo-button ${selectedAbo === 'standard' ? 'active' : ''}`}
-            onClick={() => {
-              setSelectedAbo('standard')
-              setAdditionalShares(0)
-            }}
-            style={{ position: 'relative' }}
-          >
-            Standard (2-3 Personen)
-            <span className="recommended-badge" style={{ position: 'absolute', top: '-8px', right: '-8px' }}>Empfohlen</span>
-            <br />
-            <span className="price">CHF 1'280.-</span>
-          </button>
-          <button
-            type="button"
-            className={`abo-button ${selectedAbo === 'doppel' ? 'active' : ''}`}
-            onClick={() => {
-              setSelectedAbo('doppel')
-              setAdditionalShares(0)
-            }}
-          >
-            Doppel (4-6 Personen)<br />
-            <span className="price">CHF 2'350.-</span>
-          </button>
-          <button
-            type="button"
-            className={`abo-button ${selectedAbo === 'kein' ? 'active' : ''}`}
-            onClick={() => {
-              setSelectedAbo('kein')
-              setAdditionalShares(0)
-            }}
-          >
-            Kein Abo<br />
-            <span className="price">Nur Anteilsscheine</span>
-          </button>
-        </div>
-      </div>
-
       {selectedAbo === 'kein' && additionalShares === 0 && (
         <div style={{ marginTop: '16px', padding: '16px', background: 'var(--bg-secondary)', borderRadius: '12px' }}>
           <p style={{ margin: 0, fontSize: '0.875rem' }}>
@@ -182,7 +182,7 @@ export function PricingCalculator({ onStartForm }: PricingCalculatorProps) {
             className="btn btn-primary"
             style={{ display: 'inline-block', fontSize: '1.125rem', padding: '16px 32px' }}
           >
-            Jetzt Anmelden →
+            Jetzt mitmachen!
           </Link>
           <p style={{ marginTop: '12px', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
             Deine Auswahl wird automatisch ins Anmeldeformular übernommen
