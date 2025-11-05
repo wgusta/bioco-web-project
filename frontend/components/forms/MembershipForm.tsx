@@ -84,14 +84,12 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
     const shares = params.get('shares')
     const additional = params.get('additional')
     
-    if (abo || shares || additional) {
-      return {
-        aboType: abo || undefined,
-        additionalShares: additional ? parseInt(additional) : undefined,
-        membershipType: abo === 'kein' ? 'shares-only' : 'abo',
-      }
+    // Always return default values (standard is pre-selected)
+    return {
+      aboType: (abo || 'standard') as AboType,
+      additionalShares: additional ? parseInt(additional) : 0,
+      membershipType: (abo === 'kein' ? 'shares-only' : 'abo') as 'abo' | 'shares-only',
     }
-    return null
   }
 
   const urlData = getInitialDataFromURL()
@@ -125,9 +123,9 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
     if (effectiveInitialData) {
       setFormData(prev => ({
         ...prev,
-        membershipType: (effectiveInitialData.membershipType as 'abo' | 'shares-only') || prev.membershipType,
-        aboType: (effectiveInitialData.aboType as AboType) || prev.aboType,
-        additionalShares: effectiveInitialData.additionalShares ?? prev.additionalShares,
+        membershipType: (effectiveInitialData.membershipType as 'abo' | 'shares-only') || 'abo',
+        aboType: (effectiveInitialData.aboType as AboType) || 'standard',
+        additionalShares: effectiveInitialData.additionalShares ?? 0,
       }))
     }
   }, [effectiveInitialData])
@@ -396,32 +394,31 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
               <div className="form-step">
                 <h3>Mitgliedschaft & Gemüsekorb</h3>
                 
-                <div className="form-group abo-select-group">
-                  <label htmlFor="aboType">
-                    Gemüsekorb-Typ
-                    <span className="recommended-badge" style={{ marginLeft: '8px' }}>Empfohlen</span>
-                  </label>
-                  <div style={{ position: 'relative' }}>
-                    <select
-                      id="aboType"
-                      required
-                      value={formData.aboType}
-                      onChange={(e) => setFormData({ ...formData, aboType: e.target.value as AboType })}
-                    >
-                      <option value="halb">Halb (1 Person, CHF 750.-, 1 Anteil)</option>
-                      <option value="standard">Standard (2-3 Personen, CHF 1'280.-, 2 Anteile)</option>
-                      <option value="doppel">Doppel (4-6 Personen, CHF 2'350.-, 4 Anteile)</option>
-                    </select>
-                  </div>
-                  <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginTop: '8px' }}>
-                    Standard-Gemüsekorb ist für 2-3 Personen ausgelegt und wird empfohlen.
+                <div className="form-group" style={{ padding: '16px', background: 'var(--bg-secondary)', borderRadius: '12px', marginBottom: '24px' }}>
+                  <p style={{ margin: 0, fontWeight: 600 }}>
+                    <strong>Ausgewählter Gemüsekorb:</strong> {
+                      formData.aboType === 'halb' ? 'Halb (1 Person, CHF 750.-, 1 Anteil)' :
+                      formData.aboType === 'standard' ? 'Standard (2-3 Personen, CHF 1'280.-, 2 Anteile)' :
+                      'Doppel (4-6 Personen, CHF 2'350.-, 4 Anteile)'
+                    }
+                  </p>
+                  <p style={{ marginTop: '8px', marginBottom: 0, fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+                    Du kannst diese Auswahl auf der <Link href="/mitmachen" style={{ color: 'var(--bioco-green)', textDecoration: 'underline' }}>Mitmachen-Seite</Link> ändern.
                   </p>
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="depot">Depot-Auswahl *</label>
                   <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', marginBottom: '8px' }}>
-                    Wo möchtest du deinen Gemüsekorb abholen?
+                    Wo möchtest du deinen Gemüsekorb abholen?{' '}
+                    <Link 
+                      href="/depots" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      style={{ color: 'var(--bioco-green)', textDecoration: 'underline' }}
+                    >
+                      Standorte ansehen →
+                    </Link>
                   </p>
                   <select
                     id="depot"

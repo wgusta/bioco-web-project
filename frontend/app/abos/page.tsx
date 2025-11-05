@@ -58,7 +58,7 @@ export default function AbosPage() {
                     <td>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <PersonIcons count={2} />
-                        <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>– 3</span>
+                        <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>+</span>
                       </div>
                     </td>
                     <td>CHF 1'280.-</td>
@@ -77,7 +77,7 @@ export default function AbosPage() {
                     <td>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <PersonIcons count={4} />
-                        <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>– 6</span>
+                        <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>+</span>
                       </div>
                     </td>
                     <td>CHF 2'350.-</td>

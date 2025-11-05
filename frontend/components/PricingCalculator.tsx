@@ -134,8 +134,11 @@ export function PricingCalculator({ onStartForm }: PricingCalculatorProps) {
               setSelectedAbo('standard')
               setAdditionalShares(0)
             }}
+            style={{ position: 'relative' }}
           >
-            Standard (2-3 Personen)<br />
+            Standard (2-3 Personen)
+            <span className="recommended-badge" style={{ position: 'absolute', top: '-8px', right: '-8px' }}>Empfohlen</span>
+            <br />
             <span className="price">CHF 1'280.-</span>
           </button>
           <button
