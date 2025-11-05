@@ -13,9 +13,10 @@ const navigationItems = [
 
 interface NavigationProps {
   onLinkClick?: () => void
+  hideMitmachen?: boolean
 }
 
-export function Navigation({ onLinkClick }: NavigationProps = {}) {
+export function Navigation({ onLinkClick, hideMitmachen = false }: NavigationProps = {}) {
   const pathname = usePathname()
 
   return (
@@ -36,15 +37,17 @@ export function Navigation({ onLinkClick }: NavigationProps = {}) {
             </li>
           )
         })}
-        <li>
-          <Link 
-            href="/mitmachen" 
-            className="btn btn-orange"
-            onClick={onLinkClick}
-          >
-            Mitmachen!
-          </Link>
-        </li>
+        {!hideMitmachen && (
+          <li>
+            <Link 
+              href="/mitmachen" 
+              className="btn btn-orange"
+              onClick={onLinkClick}
+            >
+              Mitmachen!
+            </Link>
+          </li>
+        )}
       </ul>
     </nav>
   )
