@@ -5,7 +5,6 @@ export function Footer() {
     <footer id="footer">
       <div id="footer-content">
         <section id="J-01">
-          <h3>Footer-Links</h3>
           <ul>
             <li><Link href="/kontakt">Kontakt</Link></li>
             <li><Link href="/impressum">Impressum</Link></li>

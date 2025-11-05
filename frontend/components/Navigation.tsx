@@ -2,16 +2,12 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { DuckIcon } from './DuckIcon'
 
 const navigationItems = [
   { title: 'Ernte', href: '/ernte', id: 'B' },
   { title: 'Anpacken', href: '/anpacken', id: 'D' },
   { title: 'Abos', href: '/abos', id: 'C' },
-  { title: 'Standorte', href: '/depots', id: 'E' },
   { title: 'Wir', href: '/wir', id: 'F' },
-  { title: 'Aktuelles', href: '/aktuelles', id: 'G' },
-  { title: 'Kontakt', href: '/kontakt', id: 'K' },
 ]
 
 interface NavigationProps {
@@ -46,16 +42,6 @@ export function Navigation({ onLinkClick }: NavigationProps = {}) {
             onClick={onLinkClick}
           >
             Mitmachen!
-          </Link>
-        </li>
-        <li>
-          <Link 
-            href="/intranet" 
-            className="nav-link-duck" 
-            title="Intranet"
-            onClick={onLinkClick}
-          >
-            <DuckIcon size={20} />
           </Link>
         </li>
       </ul>

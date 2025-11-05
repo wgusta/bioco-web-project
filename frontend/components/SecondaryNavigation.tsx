@@ -2,11 +2,15 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
+import { LocationIcon } from './Icons'
+import { NewsIcon } from './Icons'
+import { ContactIcon } from './Icons'
+import { DuckIcon } from './DuckIcon'
 
 const secondaryNavItems = [
-  { title: 'Standorte', href: '/depots' },
-  { title: 'Aktuelles', href: '/aktuelles' },
-  { title: 'Kontakt', href: '/kontakt' },
+  { title: 'Standorte', href: '/depots', icon: LocationIcon },
+  { title: 'Aktuelles', href: '/aktuelles', icon: NewsIcon },
+  { title: 'Kontakt', href: '/kontakt', icon: ContactIcon },
 ]
 
 export function SecondaryNavigation() {
@@ -18,6 +22,7 @@ export function SecondaryNavigation() {
         <ul>
           {secondaryNavItems.map((item) => {
             const isActive = pathname === item.href
+            const IconComponent = item.icon
             
             return (
               <li key={item.href}>
@@ -25,11 +30,22 @@ export function SecondaryNavigation() {
                   href={item.href}
                   className={isActive ? 'active' : ''}
                 >
-                  {item.title}
+                  <IconComponent size={16} />
+                  <span>{item.title}</span>
                 </Link>
               </li>
             )
           })}
+          <li>
+            <Link 
+              href="/intranet" 
+              className={pathname === '/intranet' ? 'active' : ''}
+              title="Intranet"
+            >
+              <DuckIcon size={16} />
+              <span>Intranet</span>
+            </Link>
+          </li>
         </ul>
       </div>
     </nav>

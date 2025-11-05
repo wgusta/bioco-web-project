@@ -325,7 +325,9 @@ a:hover {
 }
 
 .secondary-nav a {
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 8px;
   padding: 8px 16px;
   border-radius: var(--radius-sm);
   font-weight: 500;
@@ -333,6 +335,16 @@ a:hover {
   color: var(--text-secondary);
   text-decoration: none;
   transition: all 0.2s ease;
+}
+
+.secondary-nav a svg {
+  flex-shrink: 0;
+  width: 16px;
+  height: 16px;
+}
+
+.secondary-nav a.active svg {
+  color: var(--bioco-green);
 }
 
 .secondary-nav a:hover {
@@ -478,14 +490,19 @@ header {
 }
 
 .header-nav a.nav-active {
-  color: var(--bioco-green) !important;
-  font-weight: 600 !important;
-  background: rgba(46, 125, 50, 0.1) !important;
+  font-weight: 700 !important;
+  background: var(--bioco-green) !important;
+  color: white !important;
+  border: 2px solid var(--bioco-green-dark) !important;
+  box-shadow: 0 2px 8px rgba(46, 125, 50, 0.3) !important;
 }
 
 .header-nav a.nav-active:hover {
-  background: rgba(46, 125, 50, 0.15) !important;
-  color: var(--bioco-green-dark) !important;
+  background: var(--bioco-green-dark) !important;
+  color: white !important;
+  border-color: var(--bioco-green-dark) !important;
+  box-shadow: 0 4px 12px rgba(46, 125, 50, 0.4) !important;
+  transform: translateY(-1px);
 }
 
 .nav-link-orange {
