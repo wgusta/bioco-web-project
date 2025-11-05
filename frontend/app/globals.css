@@ -1337,6 +1337,109 @@ footer a:hover {
   background: var(--bg-secondary);
 }
 
+.pricing-table .total-row {
+  background: var(--bg-secondary);
+  border-top: 2px solid var(--bioco-green);
+}
+
+.pricing-table .total-row td {
+  padding: var(--spacing-md);
+  font-weight: 600;
+}
+
+.total-amount {
+  font-size: 1.25rem;
+  color: var(--bioco-green);
+}
+
+/* Pricing Calculator */
+.pricing-calculator {
+  margin-top: var(--spacing-md);
+}
+
+.btn-add-share {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--bioco-green);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-add-share:hover {
+  background: var(--bioco-green-dark);
+  transform: scale(1.05);
+}
+
+.btn-remove-share {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  background: var(--text-secondary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-remove-share:hover {
+  background: var(--text-primary);
+  transform: scale(1.05);
+}
+
+.abo-selector {
+  margin-top: var(--spacing-lg);
+}
+
+.abo-buttons {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-sm);
+}
+
+.abo-button {
+  padding: var(--spacing-md);
+  background: var(--bg-secondary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.abo-button:hover {
+  border-color: var(--bioco-green);
+  background: var(--bg-tertiary);
+}
+
+.abo-button.active {
+  background: var(--bioco-green);
+  color: white;
+  border-color: var(--bioco-green);
+}
+
+.abo-button .price {
+  display: block;
+  margin-top: var(--spacing-xs);
+  font-size: 0.75rem;
+  font-weight: 400;
+  opacity: 0.9;
+}
+
+.abo-button.active .price {
+  opacity: 1;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
 /* Commitment Checklist */
 .commitment-checklist {
   display: flex;
@@ -1654,6 +1757,10 @@ footer a:hover {
   .gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
+
+  .abo-buttons {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 /* Desktop Styles - 1024px and up */
@@ -1728,6 +1835,10 @@ footer a:hover {
 
   .gallery-grid {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  }
+
+  .abo-buttons {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 

@@ -23,6 +23,7 @@ export default function AbosPage() {
                     <th>Personen</th>
                     <th>Jahrespreis</th>
                     <th>Anteilsscheine</th>
+                    <th>Anteilsscheine Kosten</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -30,22 +31,29 @@ export default function AbosPage() {
                     <td><strong>Halb</strong></td>
                     <td>1 Person</td>
                     <td>CHF 750.-</td>
-                    <td>1 Anteil</td>
+                    <td>1 Anteilsschein</td>
+                    <td>CHF 250.-</td>
                   </tr>
                   <tr>
                     <td><strong>Standard</strong></td>
                     <td>2-3 Personen</td>
                     <td>CHF 1'280.-</td>
-                    <td>2 Anteile</td>
+                    <td>2 Anteilsscheine</td>
+                    <td>CHF 500.-</td>
                   </tr>
                   <tr>
                     <td><strong>Doppel</strong></td>
                     <td>4-6 Personen</td>
                     <td>CHF 2'350.-</td>
-                    <td>4 Anteile</td>
+                    <td>4 Anteilsscheine</td>
+                    <td>CHF 1'000.-</td>
                   </tr>
                 </tbody>
               </table>
+            </div>
+            
+            <div style={{ marginTop: '16px', padding: '16px', background: 'var(--bg-secondary)', borderRadius: '12px' }}>
+              <p><strong>Anteilsscheine:</strong> Jeder Anteilsschein kostet CHF 250.- und ist eine Bedingung für den Bezug eines Gemüsekorbes. Du kannst zusätzliche Anteilsscheine erwerben, um die Genossenschaft stärker zu unterstützen.</p>
             </div>
 
             <div style={{ marginTop: '16px', padding: '16px', background: 'var(--bg-secondary)', borderRadius: '12px' }}>

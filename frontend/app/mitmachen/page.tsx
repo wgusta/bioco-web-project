@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
 import { EventsBanner } from '@/components/EventsBanner'
 import { MembershipForm } from '@/components/forms/MembershipForm'
+import { PricingCalculator } from '@/components/PricingCalculator'
 import Link from 'next/link'
 
 export default function MitmachenPage() {
@@ -25,6 +26,13 @@ export default function MitmachenPage() {
           </section>
 
           <section id="H-03" className="bento-card bento-card-large">
+            <div className="plant-pattern"></div>
+            <h2>Kostenübersicht</h2>
+            <p>Wähle dein Abo und berechne sofort deine Kosten:</p>
+            <PricingCalculator />
+          </section>
+
+          <section id="H-03b" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
             <h2>Commitment-Check</h2>
             <p>Bevor du dich anmeldest, überprüfe diese Punkte:</p>
