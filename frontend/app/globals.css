@@ -297,6 +297,56 @@ a:hover {
 }
 
 /* Header */
+/* Secondary Navigation */
+.secondary-nav {
+  background: var(--bg-secondary);
+  border-bottom: 1px solid var(--border-color);
+  padding: var(--spacing-xs) var(--spacing-md);
+  position: relative;
+  z-index: 90;
+  display: none; /* Hidden on mobile by default */
+}
+
+.secondary-nav-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.secondary-nav ul {
+  list-style: none;
+  display: flex;
+  gap: var(--spacing-md);
+  margin: 0;
+  padding: 0;
+}
+
+.secondary-nav li {
+  padding: 0;
+}
+
+.secondary-nav a {
+  display: block;
+  padding: 8px 16px;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.secondary-nav a:hover {
+  color: var(--bioco-green);
+  background: var(--bg-primary);
+  text-decoration: none;
+}
+
+.secondary-nav a.active {
+  color: var(--bioco-green);
+  font-weight: 600;
+  background: var(--bg-primary);
+}
+
 header {
   background: var(--bg-primary);
   border-bottom: 1px solid var(--border-color);
@@ -425,6 +475,17 @@ header {
   background: var(--bg-secondary);
   color: var(--text-primary);
   text-decoration: none;
+}
+
+.header-nav a.nav-active {
+  color: var(--bioco-green) !important;
+  font-weight: 600 !important;
+  background: rgba(46, 125, 50, 0.1) !important;
+}
+
+.header-nav a.nav-active:hover {
+  background: rgba(46, 125, 50, 0.15) !important;
+  color: var(--bioco-green-dark) !important;
 }
 
 .nav-link-orange {
@@ -876,6 +937,14 @@ footer a:hover {
 
 /* Tablet Styles - 768px and up */
 @media (min-width: 768px) {
+  .secondary-nav {
+    display: block;
+  }
+
+  .secondary-nav ul {
+    justify-content: flex-end;
+  }
+
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
@@ -946,6 +1015,14 @@ footer a:hover {
     padding: 8px 16px;
     font-size: 0.875rem;
     white-space: nowrap;
+  }
+
+  .secondary-nav {
+    display: block;
+  }
+
+  .secondary-nav ul {
+    justify-content: flex-end;
   }
 
   .header-cta {

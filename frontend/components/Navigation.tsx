@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { DuckIcon } from './DuckIcon'
 
 const navigationItems = [
@@ -18,19 +19,26 @@ interface NavigationProps {
 }
 
 export function Navigation({ onLinkClick }: NavigationProps = {}) {
+  const pathname = usePathname()
+
   return (
     <nav id="header-nav" className="header-nav">
       <ul>
-        {navigationItems.map((item) => (
-          <li key={item.id}>
-            <Link 
-              href={item.href} 
-              onClick={onLinkClick}
-            >
-              {item.title}
-            </Link>
-          </li>
-        ))}
+        {navigationItems.map((item) => {
+          const isActive = pathname === item.href
+          
+          return (
+            <li key={item.id}>
+              <Link 
+                href={item.href} 
+                className={isActive ? 'nav-active' : ''}
+                onClick={onLinkClick}
+              >
+                {item.title}
+              </Link>
+            </li>
+          )
+        })}
         <li>
           <Link 
             href="/mitmachen" 
