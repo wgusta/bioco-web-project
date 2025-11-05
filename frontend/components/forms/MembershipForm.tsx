@@ -99,7 +99,7 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
     city: '',
     phone: '',
     email: '',
-    membershipType: effectiveInitialData?.membershipType || 'abo',
+    membershipType: (effectiveInitialData?.membershipType as 'abo' | 'shares-only') || 'abo',
     aboType: (effectiveInitialData?.aboType as AboType) || 'standard',
     additionalShares: effectiveInitialData?.additionalShares || 0,
     sharesOnly: 1,
@@ -117,7 +117,7 @@ export function MembershipForm({ initialData }: MembershipFormProps = {}) {
     if (effectiveInitialData) {
       setFormData(prev => ({
         ...prev,
-        membershipType: effectiveInitialData.membershipType || prev.membershipType,
+        membershipType: (effectiveInitialData.membershipType as 'abo' | 'shares-only') || prev.membershipType,
         aboType: (effectiveInitialData.aboType as AboType) || prev.aboType,
         additionalShares: effectiveInitialData.additionalShares ?? prev.additionalShares,
       }))
