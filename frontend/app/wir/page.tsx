@@ -24,7 +24,7 @@ export default function WirPage() {
           <section id="F-03" className="bento-card">
             <div className="plant-pattern"></div>
             <h2>Geschichte (Text)</h2>
-            <p>Gründung 2014; Entwicklung in Region Baden-Brugg; Depots</p>
+            <p>Gründung 2014; Entwicklung in Region Baden-Brugg; Standorte</p>
           </section>
 
           <section id="F-04" className="bento-card bento-card-large">

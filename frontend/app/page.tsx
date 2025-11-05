@@ -1,7 +1,7 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
-import { EventsBanner } from '@/components/EventsBanner'
+import { AktuellesTabs } from '@/components/AktuellesTabs'
 import { CTA } from '@/components/CTA'
 import Link from 'next/link'
 
@@ -61,53 +61,49 @@ export default function Home() {
             </ul>
           </section>
 
-          <section id="A-05" className="bento-card">
+          <section id="A-05" className="bento-card bento-card-fullwidth">
             <div className="plant-pattern"></div>
             <h2>Wie funktioniert's?</h2>
-            <ul>
-              <li>Info-Event besuchen – <Link href="/aktuelles">Schnuppertage</Link></li>
-              <li>Probe-Abo testen – <Link href="/abos">3-Monats-Test</Link></li>
-              <li>Mitglied werden – <Link href="/mitmachen">Anmeldung</Link></li>
-            </ul>
-          </section>
-
-          <section id="A-06" className="bento-card bento-card-large">
-            <div className="plant-pattern"></div>
-            <h2>Konzept-Überblick (CSA, 3 Schritte)</h2>
-            <ol>
-              <li><strong>Anmeldung</strong> – Werde Genossenschafter/in</li>
-              <li><strong>Bestätigung/Rechnung</strong> – Du erhältst eine Bestätigung</li>
-              <li><strong>Abholen</strong> – Wöchentlich Gemüsekorb in einem der <Link href="/depots">Depots</Link></li>
-            </ol>
-            <p><strong>Hinweis:</strong> Wir teilen Arbeit, Ertrag und Risiko.</p>
-          </section>
-
-          <section id="A-07" className="bento-card">
-            <div className="plant-pattern"></div>
-            <h2>Aktuelles</h2>
-            <div className="aktuelles-list">
-              <div className="aktuelles-item">
-                <h3>24. Oktober 2025</h3>
-                <p><strong>Letzter biocò Schnuppertag des Jahres</strong></p>
-                <p>Auf dem Geisshof in Gebenstorf</p>
+            <div className="procedure-steps">
+              <div className="procedure-step">
+                <div className="step-icon">1</div>
+                <div className="step-content">
+                  <h3>Anmelden als Mitglied oder Schnupperabo</h3>
+                  <p>Entscheide dich für ein <Link href="/abos">Abo</Link> oder teste mit einem <Link href="/mitmachen">Schnupperabo</Link></p>
+                </div>
               </div>
-              <div className="aktuelles-item">
-                <h3>15. November 2025</h3>
-                <p><strong>Fondue-Abend</strong></p>
-                <p>Gemeinsamer Anlass für alle Mitglieder</p>
+              <div className="procedure-step">
+                <div className="step-icon">2</div>
+                <div className="step-content">
+                  <h3>Rechnung bezahlen</h3>
+                  <p>Du erhältst eine Rechnung und bezahlst den Beitrag für dein Abo</p>
+                </div>
               </div>
-              <div className="aktuelles-item">
-                <h3>27. November 2025</h3>
-                <p><strong>Außerordentliche Generalversammlung</strong></p>
-                <p>Wichtige Informationen für alle Genossenschafter/innen</p>
+              <div className="procedure-step">
+                <div className="step-icon">3</div>
+                <div className="step-content">
+                  <h3>Arbeitseinsätze planen</h3>
+                  <p>Organisiere deine <Link href="/anpacken">Mitarbeit auf dem Feld</Link> oder in der Logistik</p>
+                </div>
+              </div>
+              <div className="procedure-step">
+                <div className="step-icon">4</div>
+                <div className="step-content">
+                  <h3>Gemüse abholen</h3>
+                  <p>Wöchentlich holst du deinen Gemüsekorb in einem der <Link href="/depots">Standorte</Link> ab</p>
+                </div>
+              </div>
+              <div className="procedure-step">
+                <div className="step-icon">5</div>
+                <div className="step-content">
+                  <h3>Geniessen und teilen</h3>
+                  <p>Geniesse dein frisches Gemüse und teile deine Erlebnisse mit uns auf <a href="https://www.instagram.com/bioco.ch" target="_blank" rel="noopener noreferrer">Instagram</a></p>
+                </div>
               </div>
             </div>
-            <Link href="/aktuelles" className="btn btn-primary" style={{ marginTop: '16px', display: 'inline-block' }}>
-              Alle Aktuelles ansehen
-            </Link>
           </section>
 
-          <EventsBanner />
+          <AktuellesTabs />
         </div>
       </main>
       <Footer />

@@ -7,7 +7,7 @@ const navigationItems = [
   { title: 'Ernte', href: '/ernte', id: 'B' },
   { title: 'Anpacken', href: '/anpacken', id: 'D' },
   { title: 'Abos', href: '/abos', id: 'C' },
-  { title: 'Depots', href: '/depots', id: 'E' },
+  { title: 'Standorte', href: '/depots', id: 'E' },
   { title: 'Wir', href: '/wir', id: 'F' },
   { title: 'Aktuelles', href: '/aktuelles', id: 'G' },
   { title: 'Mitmachen!', href: '/mitmachen', id: 'H', isOrange: true },

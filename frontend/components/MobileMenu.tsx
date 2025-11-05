@@ -33,15 +33,6 @@ export function MobileMenu() {
             >
               ×
             </button>
-            <div className="mobile-menu-cta">
-              <Link 
-                href="/mitmachen" 
-                className="btn btn-orange"
-                onClick={() => setIsOpen(false)}
-              >
-                Mitmachen!
-              </Link>
-            </div>
             <Navigation onLinkClick={() => setIsOpen(false)} />
           </nav>
         </div>
