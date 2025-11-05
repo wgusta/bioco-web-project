@@ -10,7 +10,6 @@ const navigationItems = [
   { title: 'Standorte', href: '/depots', id: 'E' },
   { title: 'Wir', href: '/wir', id: 'F' },
   { title: 'Aktuelles', href: '/aktuelles', id: 'G' },
-  { title: 'Mitmachen!', href: '/mitmachen', id: 'H', isOrange: true },
   { title: 'Kontakt', href: '/kontakt', id: 'K' },
 ]
 
@@ -26,13 +25,21 @@ export function Navigation({ onLinkClick }: NavigationProps = {}) {
           <li key={item.id}>
             <Link 
               href={item.href} 
-              className={item.isOrange ? 'nav-link-orange' : ''}
               onClick={onLinkClick}
             >
               {item.title}
             </Link>
           </li>
         ))}
+        <li>
+          <Link 
+            href="/mitmachen" 
+            className="btn btn-orange"
+            onClick={onLinkClick}
+          >
+            Mitmachen!
+          </Link>
+        </li>
         <li>
           <Link 
             href="/intranet" 

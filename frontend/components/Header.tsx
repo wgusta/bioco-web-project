@@ -10,11 +10,6 @@ export function Header() {
         <div id="header-logo" className="header-logo">
           <Logo />
         </div>
-        <div className="header-cta">
-          <Link href="/mitmachen" className="btn btn-orange">
-            Mitmachen!
-          </Link>
-        </div>
         <MobileMenu />
         <div className="desktop-nav">
           <Navigation />

@@ -61,6 +61,8 @@ export default function Home() {
             </ul>
           </section>
 
+          <AktuellesTabs />
+
           <section id="A-05" className="bento-card bento-card-fullwidth">
             <div className="plant-pattern"></div>
             <h2>Wie funktioniert's?</h2>
@@ -102,8 +104,6 @@ export default function Home() {
               </div>
             </div>
           </section>
-
-          <AktuellesTabs />
         </div>
       </main>
       <Footer />
