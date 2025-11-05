@@ -865,36 +865,11 @@ header {
   z-index: 100;
   box-shadow: none;
   color: white;
-  transition: transform 0.3s ease-in-out;
 }
 
 @media (max-width: 767px) {
   header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background: var(--bg-secondary);
-    border-bottom: 2px solid var(--border-color);
-    box-shadow: var(--shadow-sm);
-  }
-  
-  header.hidden {
-    transform: translateY(-100%);
-  }
-  
-  header.visible {
-    transform: translateY(0);
-  }
-  
-  /* Add padding to hero section instead of main-content */
-  .hero {
-    padding-top: calc(var(--spacing-xl) + 80px);
-  }
-  
-  /* Reduce main-content padding since hero handles its own */
-  .main-content {
-    padding-top: var(--spacing-xl);
+    position: relative;
   }
 }
 
@@ -1116,16 +1091,16 @@ header .header-nav-container .beet-leaves {
 .mobile-menu-close {
   background: transparent;
   border: 2px solid var(--border-color);
-  font-size: 1rem;
+  font-size: 0.75rem;
   cursor: pointer;
-  padding: 2px 8px;
+  padding: 1px 4px;
   color: var(--text-secondary);
   border-radius: 3px 3px 3px 3px/15px 15px 15px 3px;
   font-weight: 700;
   line-height: 1;
   transition: all 0.2s ease;
-  min-width: 28px;
-  height: 28px;
+  min-width: 14px;
+  height: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
