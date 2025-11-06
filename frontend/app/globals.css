@@ -972,7 +972,8 @@ header .header-nav-container .beet-leaves {
   background: transparent;
 }
 
-.hamburger-icon {
+.hamburger-icon,
+.bean-menu-icon {
   display: block;
   width: 32px;
   height: 32px;
@@ -982,6 +983,19 @@ header .header-nav-container .beet-leaves {
   transition: all 0.3s ease;
   stroke: var(--bioco-green);
   stroke-width: 3;
+}
+
+.bean-menu-icon {
+  transition: all 0.3s ease;
+}
+
+.bean-menu-icon path {
+  transition: all 0.3s ease;
+}
+
+.mobile-menu-toggle:hover .bean-menu-icon {
+  transform: scale(1.1);
+  opacity: 0.9;
 }
 
 .desktop-nav {
