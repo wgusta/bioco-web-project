@@ -13,8 +13,6 @@ export default function StandortePage() {
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Standorte</h3>
-              <div className="card-header-divider"></div>
-              <h4 className="card-title">Gemüsekorb-Abholung</h4>
             </div>
             <div className="card-body">
               <p className="card-text">Hier findest du alle Standorte, an denen du deinen wöchentlichen Gemüsekorb abholen kannst.</p>

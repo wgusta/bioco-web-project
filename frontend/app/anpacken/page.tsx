@@ -14,7 +14,6 @@ export default function AnpackenPage() {
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Anpacken</h3>
-              <div className="card-header-divider"></div>
             </div>
             <div className="card-body">
               <h4 className="card-title">Mitarbeit bei biocò</h4>

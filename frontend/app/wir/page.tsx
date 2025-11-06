@@ -14,7 +14,6 @@ export default function WirPage() {
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Wir</h3>
-              <div className="card-header-divider"></div>
             </div>
             <div className="card-body">
               <h4 className="card-title">Team & Hof</h4>

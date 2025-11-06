@@ -11,8 +11,6 @@ export default function AktuellesPage() {
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Aktuelles</h3>
-              <div className="card-header-divider"></div>
-              <h4 className="card-title">Aktuelles Übersicht</h4>
             </div>
             <div className="card-body">
               <p className="card-text">Phase 2: Blog/News mit Karten-Grid; Einzelansichten</p>
