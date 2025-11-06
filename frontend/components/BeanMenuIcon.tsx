@@ -27,23 +27,26 @@ export function BeanMenuIcon({
   // Create deterministic bean paths (no randomness for consistent menu icon)
   const paths = Array.from({ length: beans }, (_, i) => {
     const y = startY + i * spread
-    const amp = (H * thickness) * curvature
+    const amp = (H * thickness) * curvature * 1.2 // Increased curvature
     const tipInsetL = W * 0.15
     const tipInsetR = W * 0.85
+    const isMiddle = i === 1 // Middle bean (index 1)
 
-    // Bean pod shape
+    // Bean pod shape - more curved
     const pod = `M ${tipInsetL},${y}
-      C ${W*0.35},${y-amp} ${W*0.65},${y-amp} ${tipInsetR},${y}
-      C ${W*0.65},${y+amp*0.45} ${W*0.35},${y+amp*0.45} ${tipInsetL},${y} Z`
+      C ${W*0.30},${y-amp} ${W*0.70},${y-amp} ${tipInsetR},${y}
+      C ${W*0.70},${y+amp*0.5} ${W*0.30},${y+amp*0.5} ${tipInsetL},${y} Z`
 
-    // Midrib line
+    // Midrib line - more curved
     const midrib = `M ${W*0.18},${y-0.3}
-      C ${W*0.38},${y-amp*0.5} ${W*0.62},${y-amp*0.5} ${W*0.82},${y-0.3}`
+      C ${W*0.35},${y-amp*0.6} ${W*0.65},${y-amp*0.6} ${W*0.82},${y-0.3}`
 
-    // Stem
-    const stem = `M ${tipInsetL},${y} c -1.5,-3.0 -1.2,-4.5 -0.5,-6.0`
+    // Stem - positioned based on which side (flipped for middle)
+    const stem = isMiddle 
+      ? `M ${tipInsetR},${y} c 1.5,3.0 1.2,4.5 0.5,6.0` // Flipped: stem on right
+      : `M ${tipInsetL},${y} c -1.5,-3.0 -1.2,-4.5 -0.5,-6.0` // Normal: stem on left
 
-    return { pod, midrib, stem, y }
+    return { pod, midrib, stem, y, isMiddle }
   })
 
   return (
@@ -57,7 +60,10 @@ export function BeanMenuIcon({
       className="bean-menu-icon"
     >
       {paths.map((p, idx) => (
-        <g key={idx}>
+        <g 
+          key={idx}
+          transform={p.isMiddle ? `rotate(180 ${W/2} ${p.y})` : ''}
+        >
           <path 
             d={p.pod} 
             fill={fill} 
