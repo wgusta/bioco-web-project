@@ -27,6 +27,7 @@ export default function AbosPage() {
                     <th>Personen</th>
                     <th>Jahrespreis</th>
                     <th>Anteilsscheine Kosten</th>
+                    <th>Mitarbeit pro Jahr</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -42,6 +43,10 @@ export default function AbosPage() {
                     </td>
                     <td>CHF 750.-</td>
                     <td>CHF 250.-</td>
+                    <td>
+                      20 Stunden<br />
+                      <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>oder 10 Halbtage</span>
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -58,6 +63,10 @@ export default function AbosPage() {
                     </td>
                     <td>CHF 1'280.-</td>
                     <td>CHF 500.-</td>
+                    <td>
+                      40 Stunden<br />
+                      <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>oder 20 Halbtage</span>
+                    </td>
                   </tr>
                   <tr>
                     <td>
@@ -74,6 +83,10 @@ export default function AbosPage() {
                     </td>
                     <td>CHF 2'350.-</td>
                     <td>CHF 1'000.-</td>
+                    <td>
+                      80 Stunden<br />
+                      <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>oder 40 Halbtage</span>
+                    </td>
                   </tr>
                 </tbody>
               </table>

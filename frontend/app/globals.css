@@ -3160,6 +3160,10 @@ footer a:hover {
     content: "Anteilsscheine:";
   }
 
+  #C-01 .pricing-table td:nth-child(5):before {
+    content: "Mitarbeit pro Jahr:";
+  }
+
   #C-01 .pricing-table td:empty {
     display: none;
   }
