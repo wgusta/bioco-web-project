@@ -14,7 +14,7 @@ export default function AnpackenPage() {
           <section id="D-01" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
             <div className="card-header">
-              <h3>Anpacken</h3>
+              <h3>Was es braucht, damit wir gesundes Gemüse haben</h3>
             </div>
             <div className="card-body">
               <div style={{ marginBottom: 'var(--spacing-md)' }}>
@@ -85,7 +85,14 @@ export default function AnpackenPage() {
                   style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
                 />
               </div>
-              <p className="card-text">Bei biocò gibt es verschiedene Arbeitsgruppen: Stammtisch, Betriebsgruppe (BG), Elki und Kräutergruppe.</p>
+              <p className="card-text">Bei biocò gibt es verschiedene Arbeitsgruppen und Gemeinschaftsaktivitäten, die das Herzstück unserer Genossenschaft bilden:</p>
+              <ul>
+                <li><strong>Stammtisch:</strong> Regelmäßige Treffen für Austausch und Gemeinschaft. Hier kommen Mitglieder zusammen, um sich über aktuelle Themen auszutauschen, Erfahrungen zu teilen und die Gemeinschaft zu stärken. Der Stammtisch ist ein wichtiger Ort für den informellen Austausch und das Knüpfen von Kontakten.</li>
+                <li><strong>BG (Betriebsgruppe):</strong> Aktive Mitarbeit in der Betriebsorganisation. Die Betriebsgruppe koordiniert die strategischen Entscheidungen, plant die Anbauzyklen, organisiert die Logistik und sorgt für die reibungslose Abwicklung des täglichen Betriebs. Mitglieder der BG bringen ihre Expertise in verschiedenen Bereichen ein und gestalten die Zukunft der Genossenschaft aktiv mit.</li>
+                <li><strong>Elki:</strong> Familienaktivitäten und gemeinsame Anlässe. Die Elki-Gruppe organisiert speziell für Familien mit Kindern ausgerichtete Aktivitäten auf dem Hof. Kinder können spielerisch den Anbau kennenlernen, gemeinsam ernten und die Natur entdecken. Diese Aktivitäten stärken das Gemeinschaftsgefühl und ermöglichen es, auch den jüngsten Mitgliedern die Werte der solidarischen Landwirtschaft zu vermitteln.</li>
+                <li><strong>Kräutergruppe:</strong> Spezialisiert auf Kräuter und Gewürze. Diese Gruppe widmet sich dem Anbau, der Pflege und der Verarbeitung von Kräutern und Gewürzen. Mitglieder lernen verschiedene Kräuterarten kennen, erfahren mehr über deren Verwendung in der Küche und können ihre eigenen Kräuterprodukte herstellen. Die Kräutergruppe trägt zur Vielfalt unseres Angebots bei und bietet eine spezielle Nische für interessierte Mitglieder.</li>
+              </ul>
+              <p className="card-text" style={{ marginTop: '16px' }}>Diese Gruppen ermöglichen es, sich nach eigenen Interessen und Fähigkeiten einzubringen und die Genossenschaft aktiv mitzugestalten. Jede Gruppe trägt auf ihre Weise zum Erfolg und zur Gemeinschaft bei biocò bei.</p>
             </div>
           </section>
 

@@ -258,7 +258,7 @@ p {
   font-size: 1.25rem;
   margin: 0;
   padding: 0;
-  color: var(--text-primary);
+  color: var(--bioco-green);
 }
 
 .card-header .card-header-divider {
@@ -274,7 +274,7 @@ p {
   font-size: 1rem;
   margin: 0.5rem 0 0 0;
   padding: 0;
-  color: var(--text-primary);
+  color: var(--bioco-green);
 }
 
 /* Ensure card-header separation in colored cards */
@@ -323,16 +323,26 @@ p {
   z-index: 1;
 }
 
+/* Alle Überschriften in Cards grün färben */
+.bento-card .card-body h3,
+.bento-card .card-body h4,
+.bento-card .card-body h5,
+.bento-card .card-body h6 {
+  color: var(--bioco-green);
+}
+
 .card-title,
 h4.card-title {
   margin-bottom: 0.5rem;
   font-family: 'Fredoka One', cursive;
   font-weight: 500;
+  color: var(--bioco-green);
 }
 
 .card-body .card-title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  color: var(--bioco-green);
 }
 
 .card-subtitle {
@@ -673,6 +683,12 @@ h4.card-title {
 
 .bento-card-fullwidth {
   grid-column: 1 / -1;
+}
+
+/* Kennenlernen Card - Red border matching logo (Randrot) */
+.kennenlernen-card {
+  border: 3px solid #c62828 !important;
+  box-shadow: 0 4px 8px rgba(198, 40, 40, 0.2), 0 2px 4px rgba(198, 40, 40, 0.1) !important;
 }
 
 /* Buttons - Actual button elements with sketchy borders */

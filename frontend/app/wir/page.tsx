@@ -13,77 +13,74 @@ export default function WirPage() {
       <Header />
       <main className="main-content">
         <div className="bento-grid">
-          {/* Erste Zeile: Wir und Events nebeneinander */}
-          <div className="wir-top-row">
-            <section id="F-01" className="bento-card bento-card-large">
-              <div className="plant-pattern"></div>
-              <div className="card-header">
-                <h3>Wir</h3>
-              </div>
-              <div className="card-body">
-                <h4 className="card-title">Team & Hof</h4>
-                <p className="card-text">biocò ist eine Gemeinschaft von engagierten Menschen, die gemeinsam für frisches, regionales Demeter-Gemüse sorgen.</p>
-              
-              <div className="team-grid">
-                <div className="team-card">
-                  <div className="team-card-image">
-                    <div className="team-placeholder">Foto</div>
-                  </div>
-                  <h3>Betriebsgruppe (BG)</h3>
-                  <p>Die Betriebsgruppe koordiniert den Anbau, die Logistik und die Organisation der Genossenschaft.</p>
-                </div>
-                
-                <div className="team-card">
-                  <div className="team-card-image" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-                    <Image
-                      src="/images/team/bioco_hofteam_christian.JPG"
-                      alt="Christian vom Hofteam"
-                      width={300}
-                      height={300}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
-                    />
-                    <Image
-                      src="/images/team/hofteam_matthias.JPG"
-                      alt="Matthias vom Hofteam"
-                      width={300}
-                      height={300}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
-                    />
-                  </div>
-                  <h3>Gärtnerteam</h3>
-                  <p>Unser erfahrenes Gärtnerteam sorgt für die Anbauplanung und die tägliche Feldarbeit auf dem Geisshof.</p>
-                </div>
-                
-                <div className="team-card">
-                  <div className="team-card-image">
-                    <div className="team-placeholder">Foto</div>
-                  </div>
-                  <h3>Alle Mitglieder</h3>
-                  <p>Jede(r) Genossenschafter/in bringt sich ein – ob bei der Feldarbeit, in der Logistik oder bei Events.</p>
-                </div>
-              </div>
-              </div>
-            </section>
-
-            <div className="wir-events-wrapper">
-              <section className="bento-card events-card">
-                <div className="plant-pattern"></div>
-                <div className="card-header">
-                  <h3>Nächste Events</h3>
-                </div>
-                <div className="card-body">
-                  <div className="events-list">
-                    {getEventItems().slice(0, 3).map((item, index) => (
-                      <AktuellesItemComponent key={index} item={item} variant="event" />
-                    ))}
-                  </div>
-                  <Link href="/aktuelles" className="btn btn-primary" style={{ marginTop: '16px', display: 'inline-block' }}>
-                    Alle Events ansehen
-                  </Link>
-                </div>
-              </section>
+          {/* Erste Zeile: Wir */}
+          <section id="F-01" className="bento-card bento-card-large">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Wir</h3>
             </div>
-          </div>
+            <div className="card-body">
+              <h4 className="card-title">Team & Hof</h4>
+              <p className="card-text">biocò ist eine Gemeinschaft von engagierten Menschen, die gemeinsam für frisches, regionales Demeter-Gemüse sorgen.</p>
+            
+            <div className="team-grid">
+              <div className="team-card">
+                <div className="team-card-image">
+                  <div className="team-placeholder">Foto</div>
+                </div>
+                <h3>Betriebsgruppe (BG)</h3>
+                <p>Die Betriebsgruppe koordiniert den Anbau, die Logistik und die Organisation der Genossenschaft.</p>
+              </div>
+              
+              <div className="team-card">
+                <div className="team-card-image" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+                  <Image
+                    src="/images/team/bioco_hofteam_christian.JPG"
+                    alt="Christian vom Hofteam"
+                    width={300}
+                    height={300}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
+                  />
+                  <Image
+                    src="/images/team/hofteam_matthias.JPG"
+                    alt="Matthias vom Hofteam"
+                    width={300}
+                    height={300}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
+                  />
+                </div>
+                <h3>Gärtnerteam</h3>
+                <p>Unser erfahrenes Gärtnerteam sorgt für die Anbauplanung und die tägliche Feldarbeit auf dem Geisshof.</p>
+              </div>
+              
+              <div className="team-card">
+                <div className="team-card-image">
+                  <div className="team-placeholder">Foto</div>
+                </div>
+                <h3>Alle Mitglieder</h3>
+                <p>Jede(r) Genossenschafter/in bringt sich ein – ob bei der Feldarbeit, in der Logistik oder bei Events.</p>
+              </div>
+            </div>
+            </div>
+          </section>
+
+          {/* Nächste Events - Full Width */}
+          <section className="bento-card events-card bento-card-fullwidth">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Nächste Events</h3>
+            </div>
+            <div className="card-body">
+              <div className="events-list">
+                {getEventItems().slice(0, 3).map((item, index) => (
+                  <AktuellesItemComponent key={index} item={item} variant="event" />
+                ))}
+              </div>
+              <Link href="/aktuelles" className="btn btn-primary" style={{ marginTop: '16px', display: 'inline-block' }}>
+                Alle Events ansehen
+              </Link>
+            </div>
+          </section>
 
           <section id="F-01b" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>

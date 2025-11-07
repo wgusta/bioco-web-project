@@ -46,17 +46,17 @@ export default function ErntePage() {
             </div>
           </div>
 
-          {/* Zweite Zeile: Möchtest du uns kennenlernen */}
-          <section id="B-06" className="bento-card">
+          {/* Zweite Zeile: Möchtest du uns kennenlernen - Full Width */}
+          <section id="B-06" className="bento-card bento-card-fullwidth kennenlernen-card">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Möchtest du uns kennenlernen?</h3>
             </div>
             <div className="card-body">
-              <p className="card-text">Besuche einen unserer Schnuppertage oder melde dich direkt an.</p>
+              <p className="card-text">Es können viele Fragen auftauchen, die wir auf dieser Website nicht allesamt beantworten können. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via <Link href="/kontakt">Kontaktformular</Link> bei uns melden und wir beantworten deine Fragen persönlich.</p>
               <div style={{ marginTop: '16px' }}>
                 <CTA
-                  text="Anfragen"
+                  text="Kontaktformular"
                   href="/kontakt"
                   variant="primary"
                 />
