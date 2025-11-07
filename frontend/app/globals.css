@@ -1024,16 +1024,16 @@ header {
   }
   
   .main-content {
-    padding: var(--spacing-md) var(--spacing-xs);
+    padding: var(--spacing-md) 0; /* No horizontal padding on mobile for full-width cards */
     max-width: 100%;
     width: 100%;
   }
   
   .bento-grid {
     gap: var(--spacing-sm);
-    margin: var(--spacing-xs) calc(-1 * var(--spacing-xs)); /* Negative margin to compensate for main-content padding */
-    width: calc(100% + 2 * var(--spacing-xs)); /* Extend width to compensate for negative margin */
-    max-width: calc(100% + 2 * var(--spacing-xs));
+    margin: var(--spacing-xs) var(--spacing-xs); /* Small margin for visual breathing room */
+    width: calc(100% - 2 * var(--spacing-xs)); /* Full width minus small margins */
+    max-width: calc(100% - 2 * var(--spacing-xs));
     padding: 0;
   }
   
