@@ -1024,24 +1024,29 @@ header {
   }
   
   .main-content {
-    padding: var(--spacing-md) 0; /* No horizontal padding on mobile for full-width cards */
+    padding: var(--spacing-md) 0 !important; /* Force no horizontal padding */
     max-width: 100%;
     width: 100%;
+    margin: 0;
   }
   
   .bento-grid {
     gap: var(--spacing-sm);
-    margin: 0; /* No margins on mobile - cards go to edge */
-    width: 100%;
-    max-width: 100%;
-    padding: 0;
+    margin: 0 !important; /* Force no margins */
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    border: none;
   }
   
   .bento-card {
-    width: 100%;
-    max-width: 100%;
-    margin: 0;
-    box-sizing: border-box; /* Border wird in die Breite eingerechnet */
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important; /* Force all margins to 0 */
+    padding: 0 !important;
+    box-sizing: border-box;
+    border: none !important; /* Remove all borders on mobile */
+    border-radius: 0 !important; /* Remove border radius for edge-to-edge */
   }
 }
 
