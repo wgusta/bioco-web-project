@@ -24,10 +24,16 @@ export default function MitmachenPage() {
           <section id="H-02" className="bento-card">
             <div className="plant-pattern"></div>
             <div className="card-header">
-              <h3>Zuerst testen?</h3>
+              <h3>Zuerst testen? (Probeabo)</h3>
             </div>
             <div className="card-body">
-              <p className="card-text">Besuche einen unserer <Link href="/aktuelles">Schnuppertage</Link> oder teste unser <Link href="/abos">Probe-Abo</Link> für 3 Monate.</p>
+              <p className="card-text">Besuche einen unserer <Link href="/aktuelles">Schnuppertage</Link> oder teste unser Probe-Abo.</p>
+              <p className="card-text" style={{ marginTop: '16px' }}><strong>Bedingungen für das Probeabo:</strong></p>
+              <ul>
+                <li>3 Monate lang</li>
+                <li>Für CHF 300.-</li>
+                <li>3 Einsätze</li>
+              </ul>
             </div>
           </section>
 
@@ -60,19 +66,6 @@ export default function MitmachenPage() {
                 </div>
               </div>
             </div>
-            </div>
-          </section>
-
-          <section id="H-04" className="bento-card">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Bereit anzufangen?</h3>
-            </div>
-            <div className="card-body">
-              <p className="card-text">Fülle das Anmeldeformular aus, um Mitglied der Gemüsegenossenschaft biocò zu werden.</p>
-              <Link href="/anmeldung" className="btn btn-primary" style={{ display: 'inline-block', marginTop: '16px' }}>
-                Zur Anmeldung →
-              </Link>
             </div>
           </section>
 

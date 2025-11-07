@@ -793,6 +793,23 @@ button.btn-orange:hover {
   transform: translateY(-1px);
 }
 
+/* Pricing Calculator - "Jetzt mitmachen!" Button in Orange */
+.pricing-calculator .btn-primary,
+.pricing-calculator button.btn-primary {
+  background: var(--bioco-orange) !important;
+  border-color: var(--bioco-orange) !important;
+  color: #ffffff !important;
+}
+
+.pricing-calculator .btn-primary:hover,
+.pricing-calculator button.btn-primary:hover {
+  background: #E88200 !important;
+  border-color: #E88200 !important;
+  color: #ffffff !important;
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
 /* Links - Keep as links for navigation */
 a {
   color: var(--bioco-green);
