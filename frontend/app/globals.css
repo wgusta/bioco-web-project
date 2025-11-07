@@ -693,6 +693,35 @@ h4.card-title {
   box-shadow: 0 4px 8px rgba(198, 40, 40, 0.2), 0 2px 4px rgba(198, 40, 40, 0.1) !important;
 }
 
+.kennenlernen-card .card-text,
+.kennenlernen-card .card-header h3 {
+  color: #c62828 !important;
+}
+
+.kennenlernen-card .btn-primary {
+  background: #c62828 !important;
+  border-color: #c62828 !important;
+  color: white !important;
+}
+
+.kennenlernen-card .btn-primary:hover {
+  background: #b71c1c !important;
+  border-color: #b71c1c !important;
+  color: white !important;
+}
+
+.kennenlernen-card .btn-secondary {
+  background: white !important;
+  border-color: #c62828 !important;
+  color: #c62828 !important;
+}
+
+.kennenlernen-card .btn-secondary:hover {
+  background: #c62828 !important;
+  border-color: #c62828 !important;
+  color: white !important;
+}
+
 /* Buttons - Actual button elements with sketchy borders */
 button,
 .btn,
@@ -873,7 +902,7 @@ a:hover {
   max-width: 100%;
   width: 100%;
   margin: 0;
-  padding: 0 100px;
+  padding: 0 150px;
 }
 
 .secondary-nav ul {
@@ -939,7 +968,7 @@ header {
   font-weight: 700;
   background: transparent;
   border-bottom: none;
-  padding: var(--spacing-sm) 100px;
+  padding: var(--spacing-sm) 150px;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -1372,6 +1401,10 @@ header .header-nav-container .beet-leaves {
   margin-top: -120px;
   padding-top: 140px;
   margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .hero-overlay {
@@ -1419,7 +1452,7 @@ header .header-nav-container .beet-leaves {
 
 /* Main Content */
 .main-content {
-  padding: var(--spacing-xl) 100px;
+  padding: var(--spacing-xl) 150px;
   max-width: 100%;
   width: 100%;
   margin: 0;
@@ -3153,7 +3186,7 @@ footer a:hover {
   }
 
   .hero {
-    padding: var(--spacing-xl) var(--spacing-lg);
+    padding: var(--spacing-xl) 0;
   }
 
   .hero-title {
@@ -3166,7 +3199,7 @@ footer a:hover {
   }
 
   .main-content {
-    padding: var(--spacing-xl) 100px;
+    padding: var(--spacing-xl) 150px;
     max-width: 100%;
     width: 100%;
   }

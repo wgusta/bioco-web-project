@@ -43,12 +43,17 @@ export default function StandortePage() {
               <h3>Möchtest du uns kennenlernen?</h3>
             </div>
             <div className="card-body">
-              <p className="card-text">Es können viele Fragen auftauchen, die wir auf dieser Website nicht allesamt beantworten können. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via <Link href="/kontakt">Kontaktformular</Link> bei uns melden und wir beantworten deine Fragen persönlich.</p>
-              <div style={{ marginTop: '16px' }}>
+              <p className="card-text">Es können viele Fragen auftauchen, die wir auf dieser Website nicht allesamt beantworten können. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via Kontaktformular bei uns melden und wir beantworten deine Fragen persönlich.</p>
+              <div style={{ marginTop: '16px', display: 'flex', gap: 'var(--spacing-md)', flexWrap: 'wrap' }}>
                 <CTA
-                  text="Kontaktformular"
+                  text="Nimm Kontakt auf"
                   href="/kontakt"
                   variant="primary"
+                />
+                <CTA
+                  text="Zu uns finden"
+                  href="/depots"
+                  variant="secondary"
                 />
               </div>
             </div>
