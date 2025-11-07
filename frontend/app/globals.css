@@ -168,6 +168,14 @@ p {
   grid-column: 1 / -1; /* Take full width in parent grid */
 }
 
+/* Home Page Layout */
+.home-middle-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  grid-column: 1 / -1; /* Take full width in parent grid */
+}
+
 /* Wir Page Layout */
 .wir-top-row {
   display: grid;
@@ -2991,10 +2999,15 @@ footer a:hover {
     align-content: start;
   }
 
+  .home-middle-row {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-md);
+    grid-column: 1 / -1; /* Take full width in parent grid */
+  }
+
   .aktuelles-events-row {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-md);
-    grid-column: 1 / -1; /* Take full width in parent grid */
   }
 
   .ernte-top-row {
@@ -3161,10 +3174,15 @@ footer a:hover {
     align-content: start;
   }
 
+  .home-middle-row {
+    grid-template-columns: 1fr 2fr;
+    gap: var(--spacing-lg);
+    grid-column: 1 / -1; /* Take full width in parent grid */
+  }
+
   .aktuelles-events-row {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
-    grid-column: 1 / -1; /* Take full width in parent grid */
   }
 
   .ernte-top-row {

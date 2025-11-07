@@ -62,32 +62,34 @@ export default function Home() {
             </div>
           </section>
 
-          <section id="A-04" className="bento-card">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Gemeinschaft & Solidarität</h3>
-            </div>
-            <div className="card-body">
-              <div style={{ marginBottom: '16px' }}>
-                <Image
-                  src="/images/gemeinschaft/bioco_gemeinschaft.JPG"
-                  alt="Gemeinschaft bei biocò"
-                  width={800}
-                  height={600}
-                  style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
-                />
+          <div className="home-middle-row">
+            <section id="A-04" className="bento-card">
+              <div className="plant-pattern"></div>
+              <div className="card-header">
+                <h3>Gemeinschaft & Solidarität</h3>
               </div>
-              <p className="card-text">biocò basiert auf den Prinzipien der Solidarischen Landwirtschaft.</p>
-              <ul>
-                <li><strong>Mitarbeit</strong> – <Link href="/anpacken">Anpacken auf dem Feld</Link></li>
-                <li><strong>Transparenz</strong> – Solidarische Landwirtschaft (CSA)</li>
-                <li><strong>Gemeinschaft</strong> – Jede(r) bringt sich ein</li>
-                <li><strong>Lokal/Region</strong> – <Link href="/wir">Hof: Geisshof</Link></li>
-              </ul>
-            </div>
-          </section>
+              <div className="card-body">
+                <div style={{ marginBottom: '16px' }}>
+                  <Image
+                    src="/images/gemeinschaft/bioco_gemeinschaft.JPG"
+                    alt="Gemeinschaft bei biocò"
+                    width={800}
+                    height={600}
+                    style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                  />
+                </div>
+                <p className="card-text">biocò basiert auf den Prinzipien der Solidarischen Landwirtschaft.</p>
+                <ul>
+                  <li><strong>Mitarbeit</strong> – <Link href="/anpacken">Anpacken auf dem Feld</Link></li>
+                  <li><strong>Transparenz</strong> – Solidarische Landwirtschaft (CSA)</li>
+                  <li><strong>Gemeinschaft</strong> – Jede(r) bringt sich ein</li>
+                  <li><strong>Lokal/Region</strong> – <Link href="/wir">Hof: Geisshof</Link></li>
+                </ul>
+              </div>
+            </section>
 
-          <AktuellesTabs />
+            <AktuellesTabs />
+          </div>
 
           <section id="A-05" className="bento-card bento-card-fullwidth">
             <div className="plant-pattern"></div>

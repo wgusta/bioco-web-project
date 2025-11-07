@@ -60,6 +60,7 @@ const GALLERY_IMAGES: GalleryImage[] = [
 
 export function Gallery() {
   const [activeFilter, setActiveFilter] = useState<FilterType>('all')
+  const [showAll, setShowAll] = useState(false)
 
   const filters: { id: FilterType; label: string }[] = [
     { id: 'all', label: 'Alles' },
@@ -72,6 +73,9 @@ export function Gallery() {
     ? GALLERY_IMAGES 
     : GALLERY_IMAGES.filter(img => img.category === activeFilter)
 
+  const displayedImages = showAll ? filteredImages : filteredImages.slice(0, 4)
+  const hasMoreImages = filteredImages.length > 4
+
   return (
     <div className="gallery-container">
       <div className="gallery-filters">
@@ -79,7 +83,10 @@ export function Gallery() {
           <button
             key={filter.id}
             className={`gallery-filter ${activeFilter === filter.id ? 'active' : ''}`}
-            onClick={() => setActiveFilter(filter.id)}
+            onClick={() => {
+              setActiveFilter(filter.id)
+              setShowAll(false) // Reset showAll when filter changes
+            }}
           >
             {filter.label}
           </button>
@@ -87,19 +94,31 @@ export function Gallery() {
       </div>
 
       {GALLERY_IMAGES.length > 0 ? (
-        <div className="gallery-grid">
-          {filteredImages.map(image => (
-            <div key={image.id} className="gallery-item">
-              <Image
-                src={image.src}
-                alt={image.alt}
-                width={400}
-                height={300}
-                style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: '8px' }}
-              />
+        <>
+          <div className="gallery-grid">
+            {displayedImages.map(image => (
+              <div key={image.id} className="gallery-item">
+                <Image
+                  src={image.src}
+                  alt={image.alt}
+                  width={400}
+                  height={300}
+                  style={{ objectFit: 'cover', width: '100%', height: '100%', borderRadius: '8px' }}
+                />
+              </div>
+            ))}
+          </div>
+          {hasMoreImages && (
+            <div style={{ marginTop: 'var(--spacing-md)', textAlign: 'center' }}>
+              <button
+                className="btn btn-secondary"
+                onClick={() => setShowAll(!showAll)}
+              >
+                {showAll ? 'Weniger anzeigen' : 'Mehr sehen'}
+              </button>
             </div>
-          ))}
-        </div>
+          )}
+        </>
       ) : (
         <div className="gallery-placeholder">
           <p>Galerie-Bilder werden geladen...</p>
