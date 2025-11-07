@@ -1031,9 +1031,10 @@ header {
   
   .bento-grid {
     gap: var(--spacing-sm);
-    margin: var(--spacing-xs) 0;
-    width: 100%;
-    max-width: 100%;
+    margin: var(--spacing-xs) calc(-1 * var(--spacing-xs)); /* Negative margin to compensate for main-content padding */
+    width: calc(100% + 2 * var(--spacing-xs)); /* Extend width to compensate for negative margin */
+    max-width: calc(100% + 2 * var(--spacing-xs));
+    padding: 0;
   }
   
   .bento-card {
