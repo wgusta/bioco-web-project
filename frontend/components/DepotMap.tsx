@@ -76,9 +76,17 @@ export function DepotMap() {
     script.crossOrigin = ''
     
     script.onload = () => {
-      // Initialize map
+      // Initialize map - non-interactive
       const L = (window as any).L
-      const map = L.map(mapContainerRef.current!).setView([47.4734, 8.3089], 12)
+      const map = L.map(mapContainerRef.current!, {
+        dragging: false,
+        touchZoom: false,
+        doubleClickZoom: false,
+        scrollWheelZoom: false,
+        boxZoom: false,
+        keyboard: false,
+        zoomControl: false,
+      }).setView([47.4734, 8.3089], 12)
 
       // Add OpenStreetMap tiles
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {

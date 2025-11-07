@@ -1,7 +1,12 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { getAktuellesItems, getEventItems } from '@/components/AktuellesData'
+import { AktuellesItemComponent } from '@/components/AktuellesItem'
 
 export default function AktuellesPage() {
+  const aktuellesItems = getAktuellesItems()
+  const eventItems = getEventItems()
+
   return (
     <>
       <Header />
@@ -13,17 +18,25 @@ export default function AktuellesPage() {
               <h3>Aktuelles</h3>
             </div>
             <div className="card-body">
-              <p className="card-text">Phase 2: Blog/News mit Karten-Grid; Einzelansichten</p>
+              <div className="aktuelles-list">
+                {aktuellesItems.map((item, index) => (
+                  <AktuellesItemComponent key={index} item={item} variant="aktuelles" />
+                ))}
+              </div>
             </div>
           </section>
 
-          <section id="G-02" className="bento-card">
+          <section id="G-02" className="bento-card bento-card-large events-card">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Nächste Events</h3>
             </div>
             <div className="card-body">
-              <p className="card-text">Zentrale Eventliste (Quelle für Banner); Filter/Tags optional</p>
+              <div className="events-list">
+                {eventItems.map((item, index) => (
+                  <AktuellesItemComponent key={index} item={item} variant="event" />
+                ))}
+              </div>
             </div>
           </section>
         </div>

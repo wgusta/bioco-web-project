@@ -31,9 +31,17 @@ export function GeisshofMap() {
     script.crossOrigin = ''
     
     script.onload = () => {
-      // Initialize map
+      // Initialize map - non-interactive
       const L = (window as any).L
-      const map = L.map(mapContainerRef.current!).setView([geisshofLocation.lat, geisshofLocation.lng], 14)
+      const map = L.map(mapContainerRef.current!, {
+        dragging: false,
+        touchZoom: false,
+        doubleClickZoom: false,
+        scrollWheelZoom: false,
+        boxZoom: false,
+        keyboard: false,
+        zoomControl: false,
+      }).setView([geisshofLocation.lat, geisshofLocation.lng], 14)
 
       // Add OpenStreetMap tiles
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
