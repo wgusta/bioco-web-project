@@ -1972,6 +1972,22 @@ footer a:hover {
   border-bottom-color: var(--bioco-green);
 }
 
+.kalender-select {
+  display: none;
+  width: 100%;
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-family: 'Patrick Hand', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  background: var(--bg-secondary);
+  border: 2px solid #333;
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
+}
+
 .kalender-content {
   display: grid;
   grid-template-columns: 1fr;
@@ -2047,6 +2063,22 @@ footer a:hover {
   color: white;
   border-color: var(--bioco-green);
   box-shadow: var(--shadow-md);
+}
+
+.gallery-select {
+  display: none;
+  width: 100%;
+  padding: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+  font-family: 'Patrick Hand', sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  background: var(--bg-secondary);
+  border: 2px solid #333;
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+  color: var(--text-secondary);
+  cursor: pointer;
+  box-shadow: var(--shadow-sm);
 }
 
 .gallery-grid {
@@ -3279,6 +3311,23 @@ footer a:hover {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  /* Show tabs/buttons, hide dropdowns on desktop */
+  .kalender-tabs {
+    display: flex;
+  }
+
+  .kalender-select {
+    display: none;
+  }
+
+  .gallery-filters {
+    display: flex;
+  }
+
+  .gallery-select {
+    display: none;
+  }
+
   .team-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -3502,6 +3551,23 @@ footer a:hover {
     width: 100%;
     max-width: 100%;
     box-sizing: border-box;
+  }
+
+  /* Show dropdowns, hide tabs/buttons on mobile */
+  .kalender-tabs {
+    display: none;
+  }
+
+  .kalender-select {
+    display: block;
+  }
+
+  .gallery-filters {
+    display: none;
+  }
+
+  .gallery-select {
+    display: block;
   }
 
   /* Flip abos table axes for mobile - display as vertical cards */

@@ -31,6 +31,7 @@ export function Saisonkalender() {
 
   return (
     <div className="saisonkalender">
+      {/* Desktop: Tabs, Mobile: Dropdown */}
       <div className="kalender-tabs">
         {MONTHS.map((month, index) => (
           <button
@@ -42,24 +43,24 @@ export function Saisonkalender() {
           </button>
         ))}
       </div>
+      <select
+        className="kalender-select"
+        value={activeMonth}
+        onChange={(e) => setActiveMonth(Number(e.target.value))}
+      >
+        {MONTHS.map((month, index) => (
+          <option key={month} value={index}>
+            {month}
+          </option>
+        ))}
+      </select>
 
       <div className="kalender-content">
         <div className="kalender-section">
-          <h4>Jetzt erhältlich</h4>
+          <h4>Diesen Monat</h4>
           <ul>
             {data.now.length > 0 ? (
               data.now.map((item, i) => <li key={i}>{item}</li>)
-            ) : (
-              <li className="empty">Keine Angaben verfügbar</li>
-            )}
-          </ul>
-        </div>
-
-        <div className="kalender-section">
-          <h4>Bald verfügbar</h4>
-          <ul>
-            {data.soon.length > 0 ? (
-              data.soon.map((item, i) => <li key={i}>{item}</li>)
             ) : (
               <li className="empty">Keine Angaben verfügbar</li>
             )}
