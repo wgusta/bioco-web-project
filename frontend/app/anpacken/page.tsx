@@ -17,6 +17,15 @@ export default function AnpackenPage() {
               <h3>Anpacken</h3>
             </div>
             <div className="card-body">
+              <div style={{ marginBottom: 'var(--spacing-md)' }}>
+                <Image
+                  src="/images/anpacken/bioco_anpacken_einzel.JPG"
+                  alt="Einzelperson bei der Mitarbeit auf dem Geisshof"
+                  width={800}
+                  height={600}
+                  style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                />
+              </div>
               <h4 className="card-title">Mitarbeit bei biocò</h4>
               <p className="card-text">Jede(r) Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv. Die Mitarbeit ist ein wichtiger Teil des CSA-Prinzips.</p>
             
@@ -58,16 +67,6 @@ export default function AnpackenPage() {
                 variant="primary"
               />
             </div>
-            
-            <div style={{ marginTop: '24px' }}>
-              <Image
-                src="/images/anpacken/bioco_anpacken_einzel.JPG"
-                alt="Einzelperson bei der Mitarbeit auf dem Geisshof"
-                width={800}
-                height={600}
-                style={{ width: '100%', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
-              />
-            </div>
             </div>
           </section>
 
@@ -77,6 +76,15 @@ export default function AnpackenPage() {
               <h3>Gruppen & Gemeinschaft</h3>
             </div>
             <div className="card-body">
+              <div style={{ marginBottom: 'var(--spacing-md)' }}>
+                <Image
+                  src="/images/anpacken/bioco_anpacken_gruppe.JPG"
+                  alt="Gruppe bei der Mitarbeit auf dem Geisshof"
+                  width={800}
+                  height={600}
+                  style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                />
+              </div>
               <p className="card-text">Bei biocò gibt es verschiedene Arbeitsgruppen und Gemeinschaftsaktivitäten:</p>
             <ul>
               <li><strong>Stammtisch:</strong> Regelmäßige Treffen für Austausch und Gemeinschaft</li>
@@ -85,16 +93,6 @@ export default function AnpackenPage() {
               <li><strong>Kräutergruppe:</strong> Spezialisiert auf Kräuter und Gewürze</li>
             </ul>
             <p className="card-text" style={{ marginTop: '16px' }}>Die Mitarbeit ist nicht nur Arbeit, sondern auch Gemeinschaft und Austausch!</p>
-            
-            <div style={{ marginTop: '16px' }}>
-              <Image
-                src="/images/anpacken/bioco_anpacken_gruppe.JPG"
-                alt="Gruppe bei der Mitarbeit auf dem Geisshof"
-                width={800}
-                height={600}
-                style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
-              />
-            </div>
             </div>
           </section>
 

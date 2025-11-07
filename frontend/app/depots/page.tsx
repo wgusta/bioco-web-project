@@ -16,14 +16,10 @@ export default function StandortePage() {
             </div>
             <div className="card-body">
               <p className="card-text">Hier findest du alle Standorte, an denen du deinen wöchentlichen Gemüsekorb abholen kannst.</p>
-            <DepotMap />
-            <div style={{ marginTop: '16px' }}>
-              <h3>Abholzeiten</h3>
-              <ul>
-                <li><strong>Dienstag:</strong> 17:00 - 19:00 Uhr</li>
-                <li><strong>Freitag:</strong> 17:00 - 19:00 Uhr</li>
-              </ul>
-            </div>
+              <p className="card-text" style={{ marginTop: 'var(--spacing-sm)' }}>
+                <strong>Abholzeiten:</strong> Dienstag und Freitag, 17:00 - 19:00 Uhr
+              </p>
+              <DepotMap />
             </div>
           </section>
 

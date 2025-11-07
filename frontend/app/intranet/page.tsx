@@ -42,7 +42,7 @@ export default function IntranetPage() {
             </div>
           </section>
 
-          <section className="bento-card">
+          <section className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Dokumente</h3>
@@ -59,6 +59,7 @@ export default function IntranetPage() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn btn-secondary"
+                  style={{ marginTop: 'var(--spacing-sm)' }}
                 >
                   Verteilplan herunterladen (PDF)
                 </a>
@@ -72,6 +73,7 @@ export default function IntranetPage() {
                   target="_blank" 
                   rel="noopener noreferrer"
                   className="btn btn-secondary"
+                  style={{ marginTop: 'var(--spacing-sm)' }}
                 >
                   Formular herunterladen (PDF)
                 </a>

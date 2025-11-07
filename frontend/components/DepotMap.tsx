@@ -114,8 +114,43 @@ export function DepotMap() {
   }, [])
 
   return (
-    <div className="map-container">
-      <div ref={mapContainerRef} style={{ width: '100%', height: '100%', minHeight: '400px', borderRadius: '12px' }} />
-    </div>
+    <>
+      <div className="map-container">
+        <div ref={mapContainerRef} className="map-wrapper" />
+      </div>
+      
+      <div className="location-info-box">
+        <div className="location-addresses">
+          <h4>Adressen</h4>
+          <div className="address-list">
+            {depotLocations.map((depot) => (
+              <div key={depot.id} className="address-item">
+                <strong>{depot.name}</strong>
+                <p>{depot.address}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+        
+        <div className="location-directions">
+          <h4>Routen</h4>
+          <div className="directions-list">
+            {depotLocations.map((depot) => (
+              <div key={depot.id} className="direction-item">
+                <strong>{depot.name}</strong>
+                <a
+                  href={`https://www.google.com/maps/dir/?api=1&destination=${depot.lat},${depot.lng}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-secondary"
+                >
+                  Route planen →
+                </a>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </>
   )
 }

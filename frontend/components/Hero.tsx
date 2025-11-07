@@ -1,5 +1,4 @@
 import Link from 'next/link'
-import Image from 'next/image'
 
 interface HeroProps {
   title: string
@@ -12,19 +11,18 @@ interface HeroProps {
 
 export function Hero({ title, subtitle, image }: HeroProps) {
   return (
-    <section id="hero" className="hero">
+    <section 
+      id="hero" 
+      className="hero"
+      style={image ? {
+        backgroundImage: `url(${image.url})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      } : {}}
+    >
+      <div className="hero-overlay"></div>
       <div className="hero-content">
-        {image ? (
-          <div id="hero-image" className="hero-image">
-            <Image
-              src={image.url}
-              alt={image.description}
-              width={1200}
-              height={400}
-              style={{ objectFit: 'cover', width: '100%', height: 'auto', borderRadius: '12px' }}
-            />
-          </div>
-        ) : null}
         <div id="hero-text" className="hero-text">
           <h1 id="hero-title" className="hero-title">{title}</h1>
           {subtitle && (

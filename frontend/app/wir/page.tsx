@@ -23,6 +23,14 @@ export default function WirPage() {
             <div className="team-grid">
               <div className="team-card">
                 <div className="team-card-image">
+                  <div className="team-placeholder">Foto</div>
+                </div>
+                <h3>Betriebsgruppe (BG)</h3>
+                <p>Die Betriebsgruppe koordiniert den Anbau, die Logistik und die Organisation der Genossenschaft.</p>
+              </div>
+              
+              <div className="team-card">
+                <div className="team-card-image" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
                   <Image
                     src="/images/team/bioco_hofteam_christian.JPG"
                     alt="Christian vom Hofteam"
@@ -30,13 +38,6 @@ export default function WirPage() {
                     height={300}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
                   />
-                </div>
-                <h3>Betriebsgruppe (BG)</h3>
-                <p>Die Betriebsgruppe koordiniert den Anbau, die Logistik und die Organisation der Genossenschaft.</p>
-              </div>
-              
-              <div className="team-card">
-                <div className="team-card-image">
                   <Image
                     src="/images/team/hofteam_matthias.JPG"
                     alt="Matthias vom Hofteam"
@@ -57,19 +58,46 @@ export default function WirPage() {
                 <p>Jede(r) Genossenschafter/in bringt sich ein – ob bei der Feldarbeit, in der Logistik oder bei Events.</p>
               </div>
             </div>
+            </div>
+          </section>
 
-            <div style={{ marginTop: '24px' }}>
+          <section id="F-01b" className="bento-card bento-card-large">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
               <h3>Der Geisshof</h3>
-              <p>
+            </div>
+            <div className="card-body">
+              <p className="card-text">
                 Der Geisshof in Gebenstorf ist seit 2014 der Ort, an dem biocò Gemüse anbaut. 
                 Hier finden die Feldarbeit, die Gemüseaufbereitung und viele gemeinsame Anlässe statt.
               </p>
-              <p>
-                <Link href="/depots" className="btn btn-secondary" style={{ display: 'inline-block', marginTop: '8px' }}>
+              
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--spacing-md)', marginTop: 'var(--spacing-md)' }}>
+                <div>
+                  <Image
+                    src="/images/hof/bioco_hof_luftaufnahme_grosses-feld.JPG"
+                    alt="Luftaufnahme des grossen Feldes auf dem Geisshof"
+                    width={800}
+                    height={600}
+                    style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/images/hof/bioco_hof_luftaufnahme-kleines-feld.JPG"
+                    alt="Luftaufnahme des kleinen Feldes auf dem Geisshof"
+                    width={800}
+                    height={600}
+                    style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                  />
+                </div>
+              </div>
+              
+              <p style={{ marginTop: 'var(--spacing-md)' }}>
+                <Link href="/depots" className="btn btn-secondary" style={{ display: 'inline-block' }}>
                   Anfahrtsweg zum Geisshof
                 </Link>
               </p>
-            </div>
             </div>
           </section>
 

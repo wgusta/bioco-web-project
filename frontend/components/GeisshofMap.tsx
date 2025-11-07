@@ -68,23 +68,39 @@ export function GeisshofMap() {
   }, [])
 
   return (
-    <div className="map-container">
-      <div ref={mapContainerRef} style={{ width: '100%', height: '100%', minHeight: '400px', borderRadius: '12px' }} />
-      <div style={{ marginTop: '16px', padding: '16px', background: 'var(--bg-secondary)', borderRadius: '12px' }}>
-        <h3 style={{ marginTop: 0, marginBottom: '8px' }}>Anfahrt zum Geisshof</h3>
-        <p style={{ margin: '0 0 8px 0' }}><strong>Adresse:</strong> Geisshof, Gebenstorf</p>
-        <p style={{ margin: '0 0 8px 0' }}>
-          <a 
-            href={`https://www.google.com/maps/dir/?api=1&destination=${geisshofLocation.lat},${geisshofLocation.lng}`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn btn-primary"
-            style={{ display: 'inline-block' }}
-          >
-            Route planen (Google Maps)
-          </a>
-        </p>
+    <>
+      <div className="map-container">
+        <div ref={mapContainerRef} className="map-wrapper" />
       </div>
-    </div>
+      
+      <div className="location-info-box">
+        <div className="location-addresses">
+          <h4>Adresse</h4>
+          <div className="address-list">
+            <div className="address-item">
+              <strong>{geisshofLocation.name}</strong>
+              <p>{geisshofLocation.address}</p>
+            </div>
+          </div>
+        </div>
+        
+        <div className="location-directions">
+          <h4>Route</h4>
+          <div className="directions-list">
+            <div className="direction-item">
+              <strong>{geisshofLocation.name}</strong>
+              <a
+                href={`https://www.google.com/maps/dir/?api=1&destination=${geisshofLocation.lat},${geisshofLocation.lng}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn btn-primary"
+              >
+                Route planen →
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </>
   )
 }

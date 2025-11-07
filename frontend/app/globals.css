@@ -787,7 +787,7 @@ a:hover {
   border-bottom: 1px solid var(--border-color);
   padding: var(--spacing-xs) var(--spacing-md);
   position: relative;
-  z-index: 90;
+  z-index: 1001;
   display: none; /* Hidden on mobile by default, shown in mobile menu */
 }
 
@@ -862,7 +862,7 @@ header {
   padding: var(--spacing-sm) var(--spacing-md);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   box-shadow: none;
   color: white;
 }
@@ -1267,30 +1267,61 @@ header .header-nav-container .beet-leaves {
 /* Hero Section */
 .hero {
   background: var(--bg-secondary);
-  padding: var(--spacing-xl) var(--spacing-md);
+  padding: 0;
   text-align: center;
   position: relative;
   overflow: hidden;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Make hero start from top and extend behind header on homepage */
+body > div:has(> header + .hero) {
+  position: relative;
+}
+
+body > div:has(> header + .hero) .hero {
+  margin-top: -140px;
+  padding-top: 200px;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   max-width: 800px;
   margin: 0 auto;
+  padding: var(--spacing-2xl) var(--spacing-md);
+  width: 100%;
 }
 
 .hero-title {
   font-size: 3rem;
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
-  color: var(--text-primary);
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-subtitle {
   font-size: 1.25rem;
-  color: var(--text-secondary);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: var(--spacing-lg);
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
 }
 
 .hero-buttons {
@@ -1360,7 +1391,7 @@ header .header-nav-container .beet-leaves {
 .events-banner {
   font-family: 'Neucha', sans-serif;
   font-weight: 700;
-  background: linear-gradient(135deg, rgba(46, 125, 50, 0.08) 0%, rgba(46, 125, 50, 0.03) 100%);
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.1) 0%, rgba(76, 175, 80, 0.05) 100%);
   border: 2px solid rgba(46, 125, 50, 0.3);
   padding: var(--spacing-lg);
   margin: var(--spacing-lg) 0;
@@ -2153,9 +2184,31 @@ footer a:hover {
   }
 }
 
+/* Events Card - Light Green Styling */
+.events-card {
+  background: linear-gradient(135deg, rgba(46, 125, 50, 0.1) 0%, rgba(76, 175, 80, 0.05) 100%);
+  border: 2px solid rgba(46, 125, 50, 0.3);
+}
+
+.events-card .card-header {
+  background: rgba(46, 125, 50, 0.15);
+  border-bottom: 2px solid rgba(46, 125, 50, 0.3);
+}
+
+.events-card .card-header h3 {
+  color: var(--bioco-green-dark);
+}
+
+.events-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+  margin: var(--spacing-md) 0;
+}
+
 .event-item {
-  background: var(--bg-primary);
-  border: 2px solid #333;
+  background: rgba(76, 175, 80, 0.1);
+  border: 2px solid rgba(46, 125, 50, 0.4);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   padding: var(--spacing-md);
   margin-bottom: var(--spacing-md);
@@ -2163,7 +2216,7 @@ footer a:hover {
 }
 
 .event-item h3 {
-  color: var(--bioco-orange);
+  color: var(--bioco-green-dark);
   margin-bottom: var(--spacing-sm);
   font-size: 1rem;
   font-family: 'Cabin Sketch', cursive;
@@ -2257,8 +2310,91 @@ footer a:hover {
   height: 100%;
   min-height: 400px;
   margin-top: var(--spacing-md);
-  border-radius: var(--radius-md);
+  margin-bottom: var(--spacing-md);
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   overflow: hidden;
+  border: 2px solid #333;
+  box-shadow: var(--shadow-sm);
+  background: var(--bg-secondary);
+}
+
+.map-wrapper {
+  width: 100%;
+  height: 100%;
+  min-height: 400px;
+}
+
+/* Location Info Box - Addresses and Directions */
+.location-info-box {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .location-info-box {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.location-addresses,
+.location-directions {
+  background: var(--bg-secondary);
+  border: 2px solid #333;
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+}
+
+.location-addresses h4,
+.location-directions h4 {
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 500;
+  color: var(--bioco-green);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.25rem;
+}
+
+.address-list,
+.directions-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.address-item,
+.direction-item {
+  padding: var(--spacing-sm);
+  background: var(--bg-primary);
+  border-radius: 3px 3px 3px 3px/15px 15px 15px 3px;
+  border: 1px solid var(--border-color);
+}
+
+.address-item strong,
+.direction-item strong {
+  display: block;
+  color: var(--text-primary);
+  margin-bottom: var(--spacing-xs);
+  font-size: 1rem;
+}
+
+.address-item p {
+  margin: 0;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.direction-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+}
+
+.direction-item .btn {
+  flex-shrink: 0;
 }
 
 /* Pricing Table */
@@ -2762,28 +2898,32 @@ footer a:hover {
 .document-list {
   display: flex;
   flex-direction: column;
-  gap: var(--spacing-md);
+  gap: var(--spacing-lg);
   margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .document-item {
   font-family: 'Neucha', sans-serif;
   font-weight: 700;
-  padding: var(--spacing-md);
+  padding: var(--spacing-lg);
   background: var(--bg-secondary);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   border: 2px solid #333;
   box-shadow: var(--shadow-sm);
+  min-height: auto;
 }
 
 .document-item h3 {
-  margin-bottom: var(--spacing-xs);
+  margin-bottom: var(--spacing-sm);
   color: var(--text-primary);
+  font-size: 1.25rem;
 }
 
 .document-item p {
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
   color: var(--text-secondary);
+  line-height: 1.6;
 }
 
 /* Tablet Styles - 768px and up */
