@@ -1012,11 +1012,11 @@ header {
 @media (max-width: 767px) {
   header {
     position: relative;
-    padding: var(--spacing-sm) 0;
+    padding: var(--spacing-sm) var(--spacing-xs);
   }
   
   .header-top {
-    padding: 0 var(--spacing-xs);
+    padding: 0;
   }
   
   .secondary-nav-container {
