@@ -61,7 +61,7 @@ export default function StatutenPage() {
               </p>
               <p>
                 Die Genossenschaft basiert auf dem Prinzip der Solidarität: Mitglieder teilen sich 
-                Arbeit, Ertrag und Risiko gemeinsam. Jede(r) Genossenschafter/in bringt sich aktiv ein 
+                Arbeit und Ertrag gemeinsam. Jede(r) Genossenschafter/in bringt sich aktiv ein 
                 und trägt zur Gemeinschaft bei.
               </p>
             </div>

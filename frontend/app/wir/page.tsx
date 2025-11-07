@@ -133,7 +133,7 @@ export default function WirPage() {
               <div className="mission-item">
                 <h3>Solidarität</h3>
                 <p>
-                  Wir teilen Arbeit, Ertrag und Risiko gemeinsam. Solidarische Landwirtschaft bedeutet, 
+                  Wir teilen Arbeit und Ertrag. Solidarische Landwirtschaft bedeutet, 
                   dass Produzentinnen und Konsumentinnen zusammenarbeiten und füreinander einstehen.
                 </p>
               </div>

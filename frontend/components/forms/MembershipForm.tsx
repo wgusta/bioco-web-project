@@ -392,8 +392,8 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
                         style={{ marginTop: '4px', flexShrink: 0 }}
                       />
                       <div style={{ flex: 1 }}>
-                        <h4>Risiko & Ertrag</h4>
-                        <p>Als Teil der Solidarischen Landwirtschaft <strong>teilen wir das Risiko von Ernteausfällen</strong> und freuen uns gemeinsam über reiche Ernten. Du erhältst <strong>wöchentlich frisches Demeter-Gemüse</strong>, das direkt vom Feld kommt.</p>
+                        <h4>Wetterbedingte Ertragsschwankungen</h4>
+                        <p>Mir ist bewusst, dass es zu Ernteausfällen kommen kann und mein wöchentlicher Gemüsekorb nicht immer gleich voll sein kann.</p>
                       </div>
                     </div>
                   </label>

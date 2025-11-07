@@ -88,7 +88,7 @@ export default function MitmachenPage() {
             <div className="faq-list">
               <div className="faq-item">
                 <h3>Was passiert, wenn ich nicht genug Gemüse bekomme?</h3>
-                <p>Wir teilen Arbeit, Ertrag und Risiko gemeinsam. Bei Ernteausfall aufgrund von Wetter oder anderen Umständen kann es vorkommen, dass die Ernte kleiner ausfällt. Dies ist Teil des CSA-Prinzips – wir tragen das Risiko gemeinsam.</p>
+                <p>Wir teilen Arbeit und Ertrag. Bei Ernteausfall aufgrund von Wetter oder anderen Umständen kann es vorkommen, dass die Ernte kleiner ausfällt. Dies ist Teil des CSA-Prinzips.</p>
               </div>
               <div className="faq-item">
                 <h3>Kann ich das Abo pausieren?</h3>
