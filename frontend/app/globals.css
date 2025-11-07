@@ -689,36 +689,36 @@ h4.card-title {
 
 /* Kennenlernen Card - Red border matching logo (Randrot) */
 .kennenlernen-card {
-  border: 3px solid #c62828 !important;
-  box-shadow: 0 4px 8px rgba(198, 40, 40, 0.2), 0 2px 4px rgba(198, 40, 40, 0.1) !important;
+  border: 3px solid #8b0000 !important;
+  box-shadow: 0 4px 8px rgba(139, 0, 0, 0.2), 0 2px 4px rgba(139, 0, 0, 0.1) !important;
 }
 
 .kennenlernen-card .card-text,
 .kennenlernen-card .card-header h3 {
-  color: #c62828 !important;
+  color: #8b0000 !important;
 }
 
 .kennenlernen-card .btn-primary {
-  background: #c62828 !important;
-  border-color: #c62828 !important;
+  background: #8b0000 !important;
+  border-color: #8b0000 !important;
   color: white !important;
 }
 
 .kennenlernen-card .btn-primary:hover {
-  background: #b71c1c !important;
-  border-color: #b71c1c !important;
+  background: #6b0000 !important;
+  border-color: #6b0000 !important;
   color: white !important;
 }
 
 .kennenlernen-card .btn-secondary {
   background: white !important;
-  border-color: #c62828 !important;
-  color: #c62828 !important;
+  border-color: #8b0000 !important;
+  color: #8b0000 !important;
 }
 
 .kennenlernen-card .btn-secondary:hover {
-  background: #c62828 !important;
-  border-color: #c62828 !important;
+  background: #8b0000 !important;
+  border-color: #8b0000 !important;
   color: white !important;
 }
 
@@ -934,6 +934,7 @@ a:hover {
   flex-shrink: 0;
   width: 16px;
   height: 16px;
+  color: #8b0000;
 }
 
 .secondary-nav a.duck-icon-link {
@@ -945,9 +946,14 @@ a:hover {
 .secondary-nav a.duck-icon-link svg {
   width: 20px;
   height: 20px;
+  color: var(--bioco-green);
 }
 
 .secondary-nav a.active svg {
+  color: #8b0000;
+}
+
+.secondary-nav a.duck-icon-link.active svg {
   color: var(--bioco-green);
 }
 
@@ -955,6 +961,14 @@ a:hover {
   color: var(--bioco-green);
   background: var(--bg-primary);
   text-decoration: none;
+}
+
+.secondary-nav a:hover svg {
+  color: #8b0000;
+}
+
+.secondary-nav a.duck-icon-link:hover svg {
+  color: var(--bioco-green);
 }
 
 .secondary-nav a.active {
@@ -3323,7 +3337,7 @@ footer a:hover {
   }
 
   .main-content {
-    padding: var(--spacing-xl) var(--spacing-xl);
+    padding: var(--spacing-xl) 150px;
   }
 
   .document-list {
