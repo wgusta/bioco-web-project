@@ -96,13 +96,31 @@ export default function AnpackenPage() {
             </div>
           </section>
 
-          <section className="bento-card events-card">
+          <section className="bento-card events-card bento-card-fullwidth">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Nächste Events</h3>
             </div>
             <div className="card-body">
               <EventsBanner />
+            </div>
+          </section>
+
+          {/* Möchtest du uns kennenlernen - Am Ende */}
+          <section id="B-06" className="bento-card bento-card-fullwidth kennenlernen-card">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Möchtest du uns kennenlernen?</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Es können viele Fragen auftauchen, die wir auf dieser Website nicht allesamt beantworten können. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via <Link href="/kontakt">Kontaktformular</Link> bei uns melden und wir beantworten deine Fragen persönlich.</p>
+              <div style={{ marginTop: '16px' }}>
+                <CTA
+                  text="Kontaktformular"
+                  href="/kontakt"
+                  variant="primary"
+                />
+              </div>
             </div>
           </section>
         </div>

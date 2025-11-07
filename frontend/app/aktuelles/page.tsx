@@ -1,7 +1,9 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { CTA } from '@/components/CTA'
 import { getAktuellesItems, getEventItems } from '@/components/AktuellesData'
 import { AktuellesItemComponent } from '@/components/AktuellesItem'
+import Link from 'next/link'
 
 export default function AktuellesPage() {
   const aktuellesItems = getAktuellesItems()
@@ -41,6 +43,24 @@ export default function AktuellesPage() {
               </div>
             </section>
           </div>
+
+          {/* Möchtest du uns kennenlernen - Am Ende */}
+          <section id="B-06" className="bento-card bento-card-fullwidth kennenlernen-card">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Möchtest du uns kennenlernen?</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Es können viele Fragen auftauchen, die wir auf dieser Website nicht allesamt beantworten können. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via <Link href="/kontakt">Kontaktformular</Link> bei uns melden und wir beantworten deine Fragen persönlich.</p>
+              <div style={{ marginTop: '16px' }}>
+                <CTA
+                  text="Kontaktformular"
+                  href="/kontakt"
+                  variant="primary"
+                />
+              </div>
+            </div>
+          </section>
         </div>
       </main>
       <Footer />

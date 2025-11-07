@@ -46,25 +46,7 @@ export default function ErntePage() {
             </div>
           </div>
 
-          {/* Zweite Zeile: Möchtest du uns kennenlernen - Full Width */}
-          <section id="B-06" className="bento-card bento-card-fullwidth kennenlernen-card">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Möchtest du uns kennenlernen?</h3>
-            </div>
-            <div className="card-body">
-              <p className="card-text">Es können viele Fragen auftauchen, die wir auf dieser Website nicht allesamt beantworten können. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via <Link href="/kontakt">Kontaktformular</Link> bei uns melden und wir beantworten deine Fragen persönlich.</p>
-              <div style={{ marginTop: '16px' }}>
-                <CTA
-                  text="Kontaktformular"
-                  href="/kontakt"
-                  variant="primary"
-                />
-              </div>
-            </div>
-          </section>
-
-          {/* Dritte Zeile: Warum Demeter und Saisonkalender nebeneinander (1/2 Spalten) */}
+          {/* Zweite Zeile: Warum Demeter und Saisonkalender nebeneinander (1/2 Spalten) */}
           <div className="ernte-bottom-row">
             <section id="B-05" className="bento-card">
               <div className="plant-pattern"></div>
@@ -142,6 +124,24 @@ export default function ErntePage() {
               </div>
             </section>
           </div>
+
+          {/* Möchtest du uns kennenlernen - Am Ende */}
+          <section id="B-06" className="bento-card bento-card-fullwidth kennenlernen-card">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Möchtest du uns kennenlernen?</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Es können viele Fragen auftauchen, die wir auf dieser Website nicht allesamt beantworten können. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via <Link href="/kontakt">Kontaktformular</Link> bei uns melden und wir beantworten deine Fragen persönlich.</p>
+              <div style={{ marginTop: '16px' }}>
+                <CTA
+                  text="Kontaktformular"
+                  href="/kontakt"
+                  variant="primary"
+                />
+              </div>
+            </div>
+          </section>
         </div>
       </main>
       <Footer />
