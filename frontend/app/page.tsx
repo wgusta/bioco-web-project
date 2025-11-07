@@ -20,7 +20,7 @@ export default function Home() {
       />
       <main className="main-content">
         <div className="bento-grid">
-          <section id="A-02" className="bento-card">
+          <section id="A-02" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Willkommen bei biocò</h3>

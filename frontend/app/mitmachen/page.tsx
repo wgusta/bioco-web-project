@@ -10,7 +10,7 @@ export default function MitmachenPage() {
       <Header />
       <main className="main-content">
         <div className="bento-grid">
-          <section id="H-03" className="bento-card">
+          <section id="H-03" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Es gibt bei bioco vier Möglichkeiten der Partizipation</h3>
@@ -85,7 +85,7 @@ export default function MitmachenPage() {
             </div>
           </section>
 
-          <section id="H-07" className="bento-card">
+          <section id="H-07" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Häufige Fragen (FAQ)</h3>

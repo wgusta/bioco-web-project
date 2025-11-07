@@ -11,7 +11,7 @@ export default function AnpackenPage() {
       <Header />
       <main className="main-content">
         <div className="bento-grid">
-          <section id="D-01" className="bento-card">
+          <section id="D-01" className="bento-card bento-card-large">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Anpacken</h3>
