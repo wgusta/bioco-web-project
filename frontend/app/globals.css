@@ -135,6 +135,9 @@ p {
   grid-template-columns: 1fr;
   gap: var(--spacing-md);
   margin: var(--spacing-md) 0;
+  grid-auto-flow: dense;
+  grid-auto-rows: min-content;
+  align-content: start;
 }
 
 /* Aktuelles and Events Row - Side by side on desktop */
@@ -150,6 +153,7 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-md);
+  grid-column: 1 / -1; /* Take full width in parent grid */
 }
 
 .ernte-events-wrapper {
@@ -161,6 +165,7 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-md);
+  grid-column: 1 / -1; /* Take full width in parent grid */
 }
 
 /* Wir Page Layout */
@@ -190,12 +195,12 @@ p {
   overflow: visible;
   transition: all 0.3s ease;
   box-shadow: var(--shadow-sm);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 0;
 }
 
 /* Backwards compatibility: add padding to direct children if they're not card structure elements */
 .bento-card > *:not(.plant-pattern):not(.card-header):not(.card-body):not(.card-footer):not(.card-img):not(.card-img-top):not(.card-img-bottom) {
-  padding: var(--spacing-lg);
+  padding: 0.75rem;
 }
 
 /* If card structure is used, remove padding from direct children that come after card elements */
@@ -230,7 +235,7 @@ p {
 
 /* Card structure elements */
 .card-header {
-  padding: 1rem 1rem;
+  padding: 0.75rem 1rem;
   margin-bottom: 0;
   background-color: rgba(33, 37, 41, 0.03);
   border-bottom: 2px solid #333;
@@ -305,7 +310,7 @@ p {
 
 .card-body {
   flex: 1 1 auto;
-  padding: 1rem;
+  padding: 0.75rem;
   position: relative;
   z-index: 1;
 }
@@ -2980,23 +2985,28 @@ footer a:hover {
 
   .bento-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
+    grid-auto-flow: dense;
+    grid-auto-rows: min-content;
+    align-content: start;
   }
 
   .aktuelles-events-row {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     grid-column: 1 / -1; /* Take full width in parent grid */
   }
 
   .ernte-top-row {
     grid-template-columns: 2fr 1fr;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
+    grid-column: 1 / -1; /* Take full width in parent grid */
   }
 
   .ernte-bottom-row {
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
+    grid-column: 1 / -1; /* Take full width in parent grid */
   }
 
   .wir-top-row {
@@ -3145,28 +3155,33 @@ footer a:hover {
 @media (min-width: 1024px) {
   .bento-grid {
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
+    grid-auto-flow: dense;
+    grid-auto-rows: min-content;
+    align-content: start;
   }
 
   .aktuelles-events-row {
     grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
     grid-column: 1 / -1; /* Take full width in parent grid */
   }
 
   .ernte-top-row {
     grid-template-columns: 2fr 1fr;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
+    grid-column: 1 / -1; /* Take full width in parent grid */
   }
 
   .ernte-bottom-row {
     grid-template-columns: 1fr 1fr;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
+    grid-column: 1 / -1; /* Take full width in parent grid */
   }
 
   .wir-top-row {
     grid-template-columns: 2fr 1fr;
-    gap: var(--spacing-xl);
+    gap: var(--spacing-lg);
     grid-column: 1 / -1; /* Take full width in parent grid */
   }
 
