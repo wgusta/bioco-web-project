@@ -11,7 +11,7 @@ export default function AnpackenPage() {
       <Header />
       <main className="main-content">
         <div className="bento-grid">
-          <section id="D-01" className="bento-card bento-card-large">
+          <section id="D-01" className="bento-card">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Anpacken</h3>
@@ -86,17 +86,24 @@ export default function AnpackenPage() {
                 />
               </div>
               <p className="card-text">Bei biocò gibt es verschiedene Arbeitsgruppen und Gemeinschaftsaktivitäten:</p>
-            <ul>
-              <li><strong>Stammtisch:</strong> Regelmäßige Treffen für Austausch und Gemeinschaft</li>
-              <li><strong>BG (Betriebsgruppe):</strong> Aktive Mitarbeit in der Betriebsorganisation</li>
-              <li><strong>Elki:</strong> Familienaktivitäten und gemeinsame Anlässe</li>
-              <li><strong>Kräutergruppe:</strong> Spezialisiert auf Kräuter und Gewürze</li>
-            </ul>
-            <p className="card-text" style={{ marginTop: '16px' }}>Die Mitarbeit ist nicht nur Arbeit, sondern auch Gemeinschaft und Austausch!</p>
+              <ul>
+                <li><strong>Stammtisch:</strong> Regelmäßige Treffen für Austausch und Gemeinschaft</li>
+                <li><strong>BG (Betriebsgruppe):</strong> Aktive Mitarbeit in der Betriebsorganisation</li>
+                <li><strong>Elki:</strong> Familienaktivitäten und gemeinsame Anlässe</li>
+                <li><strong>Kräutergruppe:</strong> Spezialisiert auf Kräuter und Gewürze</li>
+              </ul>
             </div>
           </section>
 
-          <EventsBanner />
+          <section className="bento-card events-card">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Nächste Events</h3>
+            </div>
+            <div className="card-body">
+              <EventsBanner />
+            </div>
+          </section>
         </div>
       </main>
       <Footer />

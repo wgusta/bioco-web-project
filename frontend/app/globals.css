@@ -142,6 +142,7 @@ p {
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--spacing-md);
+  grid-column: 1 / -1; /* Take full width in parent grid */
 }
 
 /* Ernte Page Layout */
@@ -2984,6 +2985,7 @@ footer a:hover {
   .aktuelles-events-row {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-lg);
+    grid-column: 1 / -1; /* Take full width in parent grid */
   }
 
   .ernte-top-row {
@@ -3147,6 +3149,7 @@ footer a:hover {
   .aktuelles-events-row {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--spacing-xl);
+    grid-column: 1 / -1; /* Take full width in parent grid */
   }
 
   .ernte-top-row {

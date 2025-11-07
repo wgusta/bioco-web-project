@@ -12,7 +12,7 @@ export default function AbosPage() {
       <Header />
       <main className="main-content">
         <div className="bento-grid">
-          <section id="C-01" className="bento-card bento-card-large">
+          <section id="C-01" className="bento-card">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Gemüse-Abos</h3>
@@ -183,7 +183,15 @@ export default function AbosPage() {
             </div>
           </section>
 
-          <EventsBanner />
+          <section className="bento-card events-card">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Nächste Events</h3>
+            </div>
+            <div className="card-body">
+              <EventsBanner />
+            </div>
+          </section>
 
           <section id="C-04" className="bento-card">
             <div className="plant-pattern"></div>

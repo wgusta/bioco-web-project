@@ -85,18 +85,7 @@ export default function WirPage() {
             </div>
           </div>
 
-          {/* Zweite Zeile: Events nochmal */}
-          <section className="bento-card events-card">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Nächste Events</h3>
-            </div>
-            <div className="card-body">
-              <EventsBanner />
-            </div>
-          </section>
-
-          <section id="F-01b" className="bento-card bento-card-large">
+          <section id="F-01b" className="bento-card">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Der Geisshof</h3>
@@ -136,7 +125,7 @@ export default function WirPage() {
             </div>
           </section>
 
-          <section id="F-02" className="bento-card bento-card-large">
+          <section id="F-02" className="bento-card">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Mission & Leitbild</h3>
@@ -210,7 +199,7 @@ export default function WirPage() {
             </div>
           </section>
 
-          <section id="F-04" className="bento-card bento-card-large">
+          <section id="F-04" className="bento-card">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Timeline</h3>

@@ -10,7 +10,7 @@ export default function MitmachenPage() {
       <Header />
       <main className="main-content">
         <div className="bento-grid">
-          <section id="H-03" className="bento-card bento-card-large">
+          <section id="H-03" className="bento-card">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Es gibt bei bioco vier Möglichkeiten der Partizipation</h3>
@@ -26,27 +26,9 @@ export default function MitmachenPage() {
               <h3>Zuerst testen?</h3>
             </div>
             <div className="card-body">
-              <ul>
-                <li><strong>Info-Event:</strong> Besuche einen unserer <Link href="/aktuelles">Schnuppertage</Link> und lerne biocò kennen</li>
-                <li><strong>Probe-Abo:</strong> Teste unser Gemüseabo für 3 Monate – <Link href="/abos">mehr Infos</Link></li>
-              </ul>
+              <p className="card-text">Besuche einen unserer <Link href="/aktuelles">Schnuppertage</Link> oder teste unser <Link href="/abos">Probe-Abo</Link> für 3 Monate.</p>
             </div>
           </section>
-
-          <section id="H-04" className="bento-card">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Bereit anzufangen?</h3>
-            </div>
-            <div className="card-body">
-              <p className="card-text">Fülle das Anmeldeformular aus, um Mitglied der Gemüsegenossenschaft biocò zu werden.</p>
-              <Link href="/anmeldung" className="btn btn-primary" style={{ display: 'inline-block', marginTop: '16px' }}>
-                Zur Anmeldung →
-              </Link>
-            </div>
-          </section>
-
-          <EventsBanner />
 
           <section id="H-06" className="bento-card">
             <div className="plant-pattern"></div>
@@ -80,7 +62,30 @@ export default function MitmachenPage() {
             </div>
           </section>
 
-          <section id="H-07" className="bento-card bento-card-large">
+          <section id="H-04" className="bento-card">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Bereit anzufangen?</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Fülle das Anmeldeformular aus, um Mitglied der Gemüsegenossenschaft biocò zu werden.</p>
+              <Link href="/anmeldung" className="btn btn-primary" style={{ display: 'inline-block', marginTop: '16px' }}>
+                Zur Anmeldung →
+              </Link>
+            </div>
+          </section>
+
+          <section className="bento-card events-card">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Nächste Events</h3>
+            </div>
+            <div className="card-body">
+              <EventsBanner />
+            </div>
+          </section>
+
+          <section id="H-07" className="bento-card">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Häufige Fragen (FAQ)</h3>
