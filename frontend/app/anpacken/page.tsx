@@ -85,13 +85,7 @@ export default function AnpackenPage() {
                   style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
                 />
               </div>
-              <p className="card-text">Bei biocò gibt es verschiedene Arbeitsgruppen und Gemeinschaftsaktivitäten:</p>
-              <ul>
-                <li><strong>Stammtisch:</strong> Regelmäßige Treffen für Austausch und Gemeinschaft</li>
-                <li><strong>BG (Betriebsgruppe):</strong> Aktive Mitarbeit in der Betriebsorganisation</li>
-                <li><strong>Elki:</strong> Familienaktivitäten und gemeinsame Anlässe</li>
-                <li><strong>Kräutergruppe:</strong> Spezialisiert auf Kräuter und Gewürze</li>
-              </ul>
+              <p className="card-text">Bei biocò gibt es verschiedene Arbeitsgruppen: Stammtisch, Betriebsgruppe (BG), Elki und Kräutergruppe.</p>
             </div>
           </section>
 
