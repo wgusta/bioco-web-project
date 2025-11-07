@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer'
 import { EventsBanner } from '@/components/EventsBanner'
 import { CTA } from '@/components/CTA'
 import { PersonIcons } from '@/components/PersonIcons'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function AbosPage() {
@@ -136,6 +137,15 @@ export default function AbosPage() {
               <h3>Probe-Abo</h3>
             </div>
             <div className="card-body">
+              <div style={{ marginBottom: '16px' }}>
+                <Image
+                  src="/images/abos/bioco_probeabo.JPG"
+                  alt="Probe-Abo bei biocò"
+                  width={800}
+                  height={600}
+                  style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                />
+              </div>
               <p className="card-text">Möchtest du biocò erst einmal kennenlernen? Teste unser Gemüseabo für 3 Monate.</p>
             <p><strong>Details:</strong></p>
             <ul>

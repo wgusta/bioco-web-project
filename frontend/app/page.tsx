@@ -3,6 +3,7 @@ import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
 import { AktuellesTabs } from '@/components/AktuellesTabs'
 import { CTA } from '@/components/CTA'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
@@ -12,6 +13,10 @@ export default function Home() {
       <Hero
         title="Frisches Demeter-Gemüse – fast jede Woche."
         subtitle=""
+        image={{
+          url: '/images/hero/header_homepage.JPG',
+          description: 'biocò Gemüsegenossenschaft auf dem Geisshof'
+        }}
       />
       <main className="main-content">
         <div className="bento-grid">
@@ -63,6 +68,15 @@ export default function Home() {
               <h3>Gemeinschaft & Solidarität</h3>
             </div>
             <div className="card-body">
+              <div style={{ marginBottom: '16px' }}>
+                <Image
+                  src="/images/gemeinschaft/bioco_gemeinschaft.JPG"
+                  alt="Gemeinschaft bei biocò"
+                  width={800}
+                  height={600}
+                  style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                />
+              </div>
               <p className="card-text">biocò basiert auf den Prinzipien der Solidarischen Landwirtschaft.</p>
               <ul>
                 <li><strong>Mitarbeit</strong> – <Link href="/anpacken">Anpacken auf dem Feld</Link></li>

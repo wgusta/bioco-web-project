@@ -12,10 +12,50 @@ interface GalleryImage {
   category: FilterType
 }
 
-// Placeholder images - should be replaced with actual images from ProcessWire
+// Gallery images from public/images/ernte/
 const GALLERY_IMAGES: GalleryImage[] = [
-  // These would come from ProcessWire CMS
-  // For now, using placeholder structure
+  {
+    id: 'ernte-bohnen',
+    src: '/images/ernte/bioco_ernte_bohnen.JPG',
+    alt: 'Bohnen-Ernte auf dem Geisshof',
+    category: 'feld'
+  },
+  {
+    id: 'ernte-mais',
+    src: '/images/ernte/bioco_ernte_mais.JPG',
+    alt: 'Mais-Ernte auf dem Geisshof',
+    category: 'feld'
+  },
+  {
+    id: 'ernte-paprika',
+    src: '/images/ernte/bioco_ernte_paprika.JPG',
+    alt: 'Paprika-Ernte auf dem Geisshof',
+    category: 'feld'
+  },
+  {
+    id: 'ernte-zwiebel',
+    src: '/images/ernte/bioco_ernte_zwiebel.JPG',
+    alt: 'Zwiebel-Ernte auf dem Geisshof',
+    category: 'feld'
+  },
+  {
+    id: 'ernte-kürbis',
+    src: '/images/ernte/bioco_ernte-kürbis-hoch.JPG',
+    alt: 'Kürbis-Ernte auf dem Geisshof',
+    category: 'feld'
+  },
+  {
+    id: 'ernte-salat',
+    src: '/images/ernte/bioco_ertne_Salat.JPG',
+    alt: 'Salat-Ernte auf dem Geisshof',
+    category: 'feld'
+  },
+  {
+    id: 'feld-himmel',
+    src: '/images/ernte/bioco_feld-mit-himmel.JPG',
+    alt: 'Feld mit Himmel auf dem Geisshof',
+    category: 'feld'
+  }
 ]
 
 export function Gallery() {

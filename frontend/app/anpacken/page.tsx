@@ -2,6 +2,7 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { EventsBanner } from '@/components/EventsBanner'
 import { CTA } from '@/components/CTA'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function AnpackenPage() {
@@ -57,6 +58,16 @@ export default function AnpackenPage() {
                 variant="primary"
               />
             </div>
+            
+            <div style={{ marginTop: '24px' }}>
+              <Image
+                src="/images/anpacken/bioco_anpacken_einzel.JPG"
+                alt="Einzelperson bei der Mitarbeit auf dem Geisshof"
+                width={800}
+                height={600}
+                style={{ width: '100%', height: 'auto', borderRadius: '12px', marginTop: '16px' }}
+              />
+            </div>
             </div>
           </section>
 
@@ -74,6 +85,16 @@ export default function AnpackenPage() {
               <li><strong>Kräutergruppe:</strong> Spezialisiert auf Kräuter und Gewürze</li>
             </ul>
             <p className="card-text" style={{ marginTop: '16px' }}>Die Mitarbeit ist nicht nur Arbeit, sondern auch Gemeinschaft und Austausch!</p>
+            
+            <div style={{ marginTop: '16px' }}>
+              <Image
+                src="/images/anpacken/bioco_anpacken_gruppe.JPG"
+                alt="Gruppe bei der Mitarbeit auf dem Geisshof"
+                width={800}
+                height={600}
+                style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+              />
+            </div>
             </div>
           </section>
 

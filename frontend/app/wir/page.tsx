@@ -2,6 +2,7 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { EventsBanner } from '@/components/EventsBanner'
 import { CTA } from '@/components/CTA'
+import Image from 'next/image'
 import Link from 'next/link'
 
 export default function WirPage() {
@@ -22,7 +23,13 @@ export default function WirPage() {
             <div className="team-grid">
               <div className="team-card">
                 <div className="team-card-image">
-                  <div className="team-placeholder">Foto</div>
+                  <Image
+                    src="/images/team/bioco_hofteam_christian.JPG"
+                    alt="Christian vom Hofteam"
+                    width={300}
+                    height={300}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
+                  />
                 </div>
                 <h3>Betriebsgruppe (BG)</h3>
                 <p>Die Betriebsgruppe koordiniert den Anbau, die Logistik und die Organisation der Genossenschaft.</p>
@@ -30,7 +37,13 @@ export default function WirPage() {
               
               <div className="team-card">
                 <div className="team-card-image">
-                  <div className="team-placeholder">Foto</div>
+                  <Image
+                    src="/images/team/hofteam_matthias.JPG"
+                    alt="Matthias vom Hofteam"
+                    width={300}
+                    height={300}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
+                  />
                 </div>
                 <h3>Gärtnerteam</h3>
                 <p>Unser erfahrenes Gärtnerteam sorgt für die Anbauplanung und die tägliche Feldarbeit auf dem Geisshof.</p>
