@@ -1031,9 +1031,9 @@ header {
   
   .bento-grid {
     gap: var(--spacing-sm);
-    margin: var(--spacing-xs) var(--spacing-xs); /* Small margin for visual breathing room */
-    width: calc(100% - 2 * var(--spacing-xs)); /* Full width minus small margins */
-    max-width: calc(100% - 2 * var(--spacing-xs));
+    margin: 0; /* No margins on mobile - cards go to edge */
+    width: 100%;
+    max-width: 100%;
     padding: 0;
   }
   
