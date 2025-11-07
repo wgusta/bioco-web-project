@@ -1012,15 +1012,24 @@ header {
 @media (max-width: 767px) {
   header {
     position: relative;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-sm) 0;
+  }
+  
+  .header-top {
+    padding: 0 var(--spacing-xs);
   }
   
   .secondary-nav-container {
-    padding: 0 var(--spacing-md);
+    padding: 0 var(--spacing-xs);
   }
   
   .main-content {
-    padding: var(--spacing-xl) var(--spacing-md);
+    padding: var(--spacing-xl) var(--spacing-xs);
+  }
+  
+  .bento-grid {
+    gap: var(--spacing-sm);
+    margin: var(--spacing-sm) 0;
   }
 }
 
