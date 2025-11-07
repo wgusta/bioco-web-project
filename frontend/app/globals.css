@@ -1024,12 +1024,22 @@ header {
   }
   
   .main-content {
-    padding: var(--spacing-xl) var(--spacing-xs);
+    padding: var(--spacing-md) var(--spacing-xs);
+    max-width: 100%;
+    width: 100%;
   }
   
   .bento-grid {
     gap: var(--spacing-sm);
-    margin: var(--spacing-sm) 0;
+    margin: var(--spacing-xs) 0;
+    width: 100%;
+    max-width: 100%;
+  }
+  
+  .bento-card {
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
   }
 }
 
