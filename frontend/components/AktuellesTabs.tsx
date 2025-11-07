@@ -7,8 +7,8 @@ export function AktuellesTabs() {
   const eventItems = getEventItems()
 
   return (
-    <>
-      <section id="A-07" className="bento-card bento-card-large">
+    <div className="aktuelles-events-row">
+      <section id="A-07" className="bento-card">
         <div className="plant-pattern"></div>
         <div className="card-header">
           <h3>Aktuelles</h3>
@@ -25,7 +25,7 @@ export function AktuellesTabs() {
         </div>
       </section>
 
-      <section id="A-08" className="bento-card bento-card-large events-card">
+      <section id="A-08" className="bento-card events-card">
         <div className="plant-pattern"></div>
         <div className="card-header">
           <h3>Nächste Events</h3>
@@ -41,6 +41,6 @@ export function AktuellesTabs() {
           </Link>
         </div>
       </section>
-    </>
+    </div>
   )
 }

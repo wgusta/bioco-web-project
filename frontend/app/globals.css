@@ -59,7 +59,15 @@ body {
 }
 
 /* Typography */
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: 400;
+  line-height: 1.2;
+  margin: 0 0 var(--spacing-sm);
+  color: var(--text-primary);
+}
+
+h3, h4, h5, h6 {
   font-family: 'Fredoka One', cursive;
   font-weight: 400;
   line-height: 1.2;
@@ -127,6 +135,43 @@ p {
   grid-template-columns: 1fr;
   gap: var(--spacing-md);
   margin: var(--spacing-md) 0;
+}
+
+/* Aktuelles and Events Row - Side by side on desktop */
+.aktuelles-events-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+/* Ernte Page Layout */
+.ernte-top-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+.ernte-events-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.ernte-bottom-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+/* Wir Page Layout */
+.wir-top-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
+.wir-events-wrapper {
+  display: flex;
+  flex-direction: column;
 }
 
 .bento-card {
@@ -2936,6 +2981,26 @@ footer a:hover {
     gap: var(--spacing-lg);
   }
 
+  .aktuelles-events-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+
+  .ernte-top-row {
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .ernte-bottom-row {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .wir-top-row {
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-lg);
+  }
+
   .bento-card-fullwidth {
     grid-column: 1 / -1;
   }
@@ -3076,6 +3141,26 @@ footer a:hover {
 @media (min-width: 1024px) {
   .bento-grid {
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--spacing-xl);
+  }
+
+  .aktuelles-events-row {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+
+  .ernte-top-row {
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .ernte-bottom-row {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  .wir-top-row {
+    grid-template-columns: 2fr 1fr;
     gap: var(--spacing-xl);
   }
 
