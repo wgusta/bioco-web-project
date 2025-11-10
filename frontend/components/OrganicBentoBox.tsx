@@ -111,11 +111,11 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        {/* Background shape - shifted 15px horizontally for offset effect */}
+        {/* Background shape - shifted 3px horizontally for offset effect */}
         <path
           d={getSVGPath()}
           fill={getBackgroundColor()}
-          transform="translate(15, 0)"
+          transform="translate(3, 0)"
         />
         {/* Black border following organic shape - original position */}
         <path
@@ -127,7 +127,7 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
           strokeLinejoin="round"
         />
         {/* Details (stem, leaves, roots) - also shifted horizontally */}
-        <g transform="translate(15, 0)">
+        <g transform="translate(3, 0)">
           {details}
         </g>
       </svg>
