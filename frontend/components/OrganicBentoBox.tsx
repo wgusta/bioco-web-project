@@ -44,9 +44,9 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
       case 'beet':
         return 'rgba(252, 165, 165, 0.7)' // Light red/pink, more opaque for visibility
       case 'bushbean':
-        return 'rgba(134, 239, 172, 0.7)' // Light green for bush bean
+        return 'rgba(139, 90, 43, 0.7)' // Brown for bush bean (primary nav)
       case 'cucumber':
-        return 'rgba(187, 247, 208, 0.7)' // Light green for cucumber
+        return 'rgba(255, 182, 193, 0.7)' // Light red/pink for cucumber (secondary nav)
       default:
         return 'rgba(255, 255, 255, 0.7)'
     }

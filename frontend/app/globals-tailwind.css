@@ -224,22 +224,24 @@ header {
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 0.75rem;
-    color: #1f2937;
+    color: #ffffff; /* White text for visibility on light red background */
     text-decoration: none;
     border-radius: 0.375rem;
     transition: all 0.2s ease;
     font-size: 0.875rem;
     font-weight: 500;
     white-space: nowrap;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow for better visibility */
   }
   
   .desktop-nav-secondary .secondary-nav a:hover {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
   }
   
   .desktop-nav-secondary .secondary-nav a.active {
-    background-color: rgba(46, 125, 50, 0.1);
-    color: #2e7d32;
+    background-color: rgba(255, 255, 255, 0.3);
+    color: #ffffff;
     font-weight: 600;
   }
 }
@@ -327,20 +329,22 @@ header {
 .header-nav a {
   padding: 0.5rem 1rem;
   text-decoration: none;
-  color: #1f2937;
+  color: #ffffff; /* White text for visibility on brown background */
   font-weight: 500;
   border-radius: 0.375rem;
   transition: all 0.2s ease;
   white-space: nowrap;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow for better visibility */
 }
 
 .header-nav a:hover {
-  background-color: rgba(0, 0, 0, 0.05);
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
 }
 
 .header-nav a.nav-active {
-  background-color: rgba(46, 125, 50, 0.1);
-  color: #2e7d32;
+  background-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
   font-weight: 600;
 }
 
