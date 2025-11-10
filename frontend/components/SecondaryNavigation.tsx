@@ -2,13 +2,13 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LocationIcon } from './Icons'
-import { ContactIcon } from './Icons'
-import { DuckIcon } from './DuckIcon'
+import { OrganicLocationIcon } from './OrganicIcons'
+import { OrganicContactIcon } from './OrganicIcons'
+import { OrganicIntranetIcon } from './OrganicIcons'
 
 const secondaryNavItems = [
-  { title: 'Standorte', href: '/depots', icon: LocationIcon },
-  { title: 'Kontakt', href: '/kontakt', icon: ContactIcon },
+  { title: 'Standorte', href: '/depots', icon: OrganicLocationIcon },
+  { title: 'Kontakt', href: '/kontakt', icon: OrganicContactIcon },
 ]
 
 export function SecondaryNavigation() {
@@ -37,11 +37,11 @@ export function SecondaryNavigation() {
           <li>
             <Link 
               href="/intranet" 
-              className={`duck-icon-link ${pathname === '/intranet' ? 'active' : ''}`}
+              className={`intranet-icon-link ${pathname === '/intranet' ? 'active' : ''}`}
               title="Intranet"
               aria-label="Intranet"
             >
-              <DuckIcon size={20} />
+              <OrganicIntranetIcon size={16} />
             </Link>
           </li>
         </ul>

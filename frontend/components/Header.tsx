@@ -8,11 +8,9 @@ import { OrganicBentoBox } from './OrganicBentoBox'
 export function Header() {
   return (
     <header id="header">
-      {/* Secondary Navigation - Above Primary Navigation in Cucumber shape */}
+      {/* Secondary Navigation - Above Primary Navigation (no background) */}
       <div className="desktop-nav-secondary">
-        <OrganicBentoBox type="cucumber" noBorder={true} className="nav-bento-cucumber">
-          <SecondaryNavigation />
-        </OrganicBentoBox>
+        <SecondaryNavigation />
       </div>
       <div className="header-top">
         <div id="header-logo" className="header-logo">

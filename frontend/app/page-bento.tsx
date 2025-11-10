@@ -11,10 +11,10 @@ export default function HomeBento() {
   return (
     <div className="min-h-screen bg-earth-white">
       {/* Hero Section - 50% of viewport on desktop */}
-      <div className="lg:h-[50vh] flex items-center justify-center">
-        <div className="bento-grid-container px-4 sm:px-6 lg:px-8 w-full">
-          {/* Large Welcome Card - Apple (Green) with overlap */}
-          <OrganicBentoBox type="apple" colSpan={12} rowSpan={2} className="md:col-span-8 lg:col-span-8 bento-overlap-1">
+      <div className="lg:h-[50vh] flex items-center justify-center pt-8 md:pt-12 lg:pt-0">
+        <div className="bento-grid-container w-full">
+          {/* Large Welcome Card - Apple (Green) */}
+          <OrganicBentoBox type="apple" colSpan={12} rowSpan={2} className="md:col-span-8 lg:col-span-8">
             <div className="h-full flex flex-col justify-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 drop-shadow-lg">Willkommen bei biocò</h1>
               <p className="text-xl md:text-2xl text-gray-800 mb-6 drop-shadow-md">
@@ -51,10 +51,10 @@ export default function HomeBento() {
       </div>
 
       {/* Main Content Container */}
-      <div className="bento-grid-container py-12 px-4 sm:px-6 lg:px-8">
+      <div className="bento-grid-container py-12">
 
-        {/* Gemeinschaft - Beige with overlap */}
-        <OrganicBentoBox type="beige" colSpan={12} rowSpan={1} className="md:col-span-6 lg:col-span-6 bento-overlap-3">
+        {/* Gemeinschaft - Beige */}
+        <OrganicBentoBox type="beige" colSpan={12} rowSpan={1} className="md:col-span-6 lg:col-span-6">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Gemeinschaft & Solidarität</h2>
           <div className="mb-4">
             <OrganicImage
