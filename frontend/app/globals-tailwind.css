@@ -192,15 +192,15 @@ header {
   min-height: auto;
   display: inline-block;
   position: relative;
+  width: fit-content; /* Width based on content */
+  min-width: auto; /* No fixed min-width */
 }
 
 .nav-bento-bushbean {
-  min-width: 600px; /* Longer for primary nav */
   z-index: 3; /* Primary nav above secondary */
 }
 
 .nav-bento-cucumber {
-  min-width: 400px; /* Shorter for secondary nav */
   z-index: 1; /* Secondary nav below primary */
 }
 
@@ -212,7 +212,8 @@ header {
 @media (min-width: 768px) {
   .desktop-nav-secondary {
     display: flex;
-    justify-content: flex-end;
+    justify-content: flex-end; /* Right-aligned */
+    align-items: flex-end; /* Align to bottom */
     margin-bottom: 0.5rem;
     position: relative;
     z-index: 1; /* Lower z-index so primary nav can overlap */
@@ -225,6 +226,7 @@ header {
   .desktop-nav-secondary .secondary-nav-container {
     display: flex;
     align-items: center;
+    width: fit-content; /* Width based on content */
   }
   
   .desktop-nav-secondary .secondary-nav ul {
@@ -272,6 +274,12 @@ header {
   width: 100%;
 }
 
+.desktop-nav {
+  display: flex;
+  justify-content: flex-end; /* Right-aligned */
+  align-items: center;
+}
+
 .header-logo {
   min-height: 50px;
   display: flex;
@@ -292,6 +300,8 @@ header {
   display: none;
   position: relative;
   z-index: 2; /* Higher z-index to appear above secondary nav */
+  justify-content: flex-end; /* Right-aligned */
+  align-items: center;
 }
 
 .mobile-menu-wrapper {
@@ -323,7 +333,7 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  width: 100%;
+  width: fit-content; /* Width based on content */
   height: 100%;
   background: transparent !important; /* NO green background */
 }
