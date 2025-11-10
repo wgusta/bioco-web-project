@@ -96,20 +96,8 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
           />
         )}
       </svg>
-      {/* Content wrapper with larger mask for full content visibility */}
-      <div
-        className="bento-content-wrapper"
-        style={{
-          WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='${getSVGPath()}' fill='black'/></svg>`)}")`,
-          maskImage: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='${getSVGPath()}' fill='black'/></svg>`)}")`,
-          WebkitMaskSize: '100% 100%',
-          maskSize: '100% 100%',
-          WebkitMaskRepeat: 'no-repeat',
-          maskRepeat: 'no-repeat',
-          WebkitMaskPosition: 'center',
-          maskPosition: 'center',
-        }}
-      >
+      {/* Content wrapper - NO MASK to allow full content visibility */}
+      <div className="bento-content-wrapper">
         {children}
       </div>
     </div>

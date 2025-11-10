@@ -191,14 +191,17 @@ header {
 .nav-bento-cucumber {
   min-height: auto;
   display: inline-block;
+  position: relative;
 }
 
 .nav-bento-bushbean {
   min-width: 600px; /* Longer for primary nav */
+  z-index: 3; /* Primary nav above secondary */
 }
 
 .nav-bento-cucumber {
   min-width: 400px; /* Shorter for secondary nav */
+  z-index: 1; /* Secondary nav below primary */
 }
 
 /* Secondary Navigation in Header - Above Primary */
@@ -211,6 +214,8 @@ header {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 0.5rem;
+    position: relative;
+    z-index: 1; /* Lower z-index so primary nav can overlap */
   }
   
   .desktop-nav-secondary .secondary-nav {
@@ -285,6 +290,8 @@ header {
 
 .desktop-nav {
   display: none;
+  position: relative;
+  z-index: 2; /* Higher z-index to appear above secondary nav */
 }
 
 .mobile-menu-wrapper {
@@ -298,6 +305,8 @@ header {
 @media (min-width: 768px) {
   .desktop-nav {
     display: block;
+    position: relative;
+    z-index: 2; /* Higher z-index to appear above secondary nav */
   }
   
   .mobile-menu-wrapper {
