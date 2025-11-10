@@ -235,21 +235,25 @@ footer h5 {
   color: #ffffff;
   font-weight: 600;
   margin-bottom: 1rem;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow for better visibility */
 }
 
 footer a {
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff; /* Full white for better readability */
   text-decoration: none;
   transition: color 0.2s ease;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow for better visibility */
 }
 
 footer a:hover {
   color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5); /* Stronger shadow on hover */
 }
 
 footer p {
-  color: rgba(255, 255, 255, 0.9);
+  color: #ffffff; /* Full white for better readability */
   line-height: 1.6;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3); /* Text shadow for better visibility */
 }
 
 footer ul {
