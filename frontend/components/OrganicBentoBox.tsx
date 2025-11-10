@@ -28,48 +28,6 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
     }
   }
 
-  // Get details (stem, leaves, roots) for each type
-  const getDetails = () => {
-    switch (type) {
-      case 'apple':
-        // Apple stem and leaf at top (left side for horizontal)
-        return (
-          <>
-            {/* Stem */}
-            <line x1="10" y1="15" x2="10" y2="10" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
-            {/* Leaf */}
-            <path d="M 10 10 Q 8 8 6 10 Q 8 12 10 10" fill="#2e7d32" stroke="#000000" strokeWidth="1"/>
-          </>
-        )
-      case 'carrot':
-        // Carrot leaves/greens at top (left side for horizontal)
-        return (
-          <>
-            {/* Leaf 1 */}
-            <path d="M 10 15 Q 8 13 6 15 Q 8 17 10 15" fill="#2e7d32" stroke="#000000" strokeWidth="1"/>
-            {/* Leaf 2 */}
-            <path d="M 10 15 Q 12 13 14 15 Q 12 17 10 15" fill="#2e7d32" stroke="#000000" strokeWidth="1"/>
-            {/* Leaf 3 */}
-            <path d="M 10 15 Q 9 13 8 14 Q 9 16 10 15" fill="#2e7d32" stroke="#000000" strokeWidth="1"/>
-          </>
-        )
-      case 'beet':
-        // Beetroot roots at bottom (right side for horizontal)
-        return (
-          <>
-            {/* Root 1 - left */}
-            <path d="M 45 85 Q 47 87 49 89 Q 47 88 45 85" fill="none" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
-            {/* Root 2 - center */}
-            <path d="M 48 85 Q 50 87 52 89 Q 50 88 48 85" fill="none" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
-            {/* Root 3 - right */}
-            <path d="M 51 85 Q 53 87 55 89 Q 53 88 51 85" fill="none" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
-          </>
-        )
-      default:
-        return null
-    }
-  }
-
   const getBackgroundColor = () => {
     switch (type) {
       case 'apple':
@@ -97,8 +55,6 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
   const rowSpanClasses: Record<number, string> = {
     1: 'row-span-1', 2: 'row-span-2', 3: 'row-span-3', 4: 'row-span-4',
   }
-
-  const details = getDetails()
 
   return (
     <div
