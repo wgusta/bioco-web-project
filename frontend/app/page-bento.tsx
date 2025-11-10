@@ -5,6 +5,7 @@ import { OrganicButton } from '@/components/OrganicButton'
 import { OrganicCard } from '@/components/OrganicCard'
 import { OrganicNumberBadge } from '@/components/OrganicNumberBadge'
 import { OrganicImage } from '@/components/OrganicImage'
+import { Footer } from '@/components/Footer'
 import Link from 'next/link'
 
 export default function HomeBento() {
@@ -173,32 +174,7 @@ export default function HomeBento() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-white py-16 px-8 mt-16">
-        <div className="max-w-6xl mx-auto">
-          <h3 className="text-2xl font-bold mb-8">biocò Gemüsegenossenschaft</h3>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h4 className="font-semibold mb-4">Kontakt</h4>
-              <p className="text-gray-400">Geisshof, Gebenstorf</p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Links</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="/ernte" className="hover:text-white transition-colors">Ernte</a></li>
-                <li><a href="/abos" className="hover:text-white transition-colors">Abos</a></li>
-                <li><a href="/mitmachen" className="hover:text-white transition-colors">Mitmachen</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Rechtliches</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><a href="/impressum" className="hover:text-white transition-colors">Impressum</a></li>
-                <li><a href="/datenschutz" className="hover:text-white transition-colors">Datenschutz</a></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   )
 }

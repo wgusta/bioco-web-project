@@ -223,6 +223,45 @@ header {
   padding: 0.5rem 150px 1rem;
 }
 
+/* Footer Styles - Dark brown like earth, primary nav style */
+footer {
+  background: #5d4037; /* Dark brown/earth color */
+  color: #ffffff;
+  padding: 3rem 150px;
+}
+
+footer h4,
+footer h5 {
+  color: #ffffff;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+footer a {
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+footer a:hover {
+  color: #ffffff;
+}
+
+footer p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.6;
+}
+
+footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+footer li {
+  margin-bottom: 0.5rem;
+}
+
 /* Navigation Bento Boxes */
 .nav-bento-bushbean,
 .nav-bento-cucumber {
