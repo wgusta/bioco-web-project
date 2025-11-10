@@ -16,14 +16,14 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
   const getSVGPath = () => {
     switch (type) {
       case 'apple':
-        // Horizontal apple shape - maximum inner space (0-100% width, 5-95% height)
-        return "M 0 50 Q 0 25 0 10 Q 0 2 2 1 Q 5 0 10 0 Q 15 0 20 1 Q 22 2 25 10 Q 25 25 25 50 Q 25 75 25 90 Q 22 98 20 99 Q 15 100 10 100 Q 5 100 2 99 Q 0 98 0 90 Q 0 75 0 50 Z"
+        // Horizontal apple shape - full width (0-100%)
+        return "M 0 50 Q 0 20 0 5 Q 0 0 0 0 Q 0 0 5 0 Q 10 0 15 0 Q 20 0 25 0 Q 30 0 30 5 Q 30 20 30 50 Q 30 80 30 95 Q 30 100 25 100 Q 20 100 15 100 Q 10 100 5 100 Q 0 100 0 95 Q 0 80 0 50 Z"
       case 'carrot':
-        // Horizontal carrot shape - maximum inner space (0-100% width, 5-95% height)
-        return "M 0 50 Q 0 25 0 10 Q 0 2 2 1 Q 5 0 10 0 Q 15 0 20 1 Q 22 2 25 10 Q 25 25 25 50 Q 25 75 25 90 Q 22 98 20 99 Q 15 100 10 100 Q 5 100 2 99 Q 0 98 0 90 Q 0 75 0 50 Z"
+        // Horizontal carrot shape - full width (0-100%)
+        return "M 0 50 Q 0 20 0 5 Q 0 0 0 0 Q 0 0 5 0 Q 10 0 15 0 Q 20 0 25 0 Q 30 0 30 5 Q 30 20 30 50 Q 30 80 30 95 Q 30 100 25 100 Q 20 100 15 100 Q 10 100 5 100 Q 0 100 0 95 Q 0 80 0 50 Z"
       case 'beet':
-        // Horizontal beetroot shape - maximum inner space (0-100% width, 5-95% height)
-        return "M 0 50 Q 0 25 0 10 Q 0 2 2 1 Q 5 0 10 0 Q 15 0 20 1 Q 22 2 25 10 Q 25 25 25 50 Q 25 75 25 90 Q 22 98 20 99 Q 15 100 10 100 Q 5 100 2 99 Q 0 98 0 90 Q 0 75 0 50 Z"
+        // Horizontal beetroot shape - full width (0-100%)
+        return "M 0 50 Q 0 20 0 5 Q 0 0 0 0 Q 0 0 5 0 Q 10 0 15 0 Q 20 0 25 0 Q 30 0 30 5 Q 30 20 30 50 Q 30 80 30 95 Q 30 100 25 100 Q 20 100 15 100 Q 10 100 5 100 Q 0 100 0 95 Q 0 80 0 50 Z"
       case 'bushbean':
         // Long bush bean shape - elongated, organic
         return "M 2 50 Q 1 40 2 30 Q 3 20 5 15 Q 7 10 10 8 Q 13 6 16 6 Q 19 6 22 8 Q 25 10 27 15 Q 29 20 30 30 Q 31 40 30 50 Q 31 60 30 70 Q 29 80 27 85 Q 25 90 22 92 Q 19 94 16 94 Q 13 94 10 92 Q 7 90 5 85 Q 3 80 2 70 Q 1 60 2 50 Z"
@@ -44,7 +44,7 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
       case 'beet':
         return 'rgba(252, 165, 165, 0.7)' // Light red/pink, more opaque for visibility
       case 'bushbean':
-        return 'rgba(139, 90, 43, 0.7)' // Brown for bush bean (primary nav)
+        return 'transparent' // No background for primary nav
       case 'cucumber':
         return 'rgba(255, 182, 193, 0.7)' // Light red/pink for cucumber (secondary nav)
       default:
