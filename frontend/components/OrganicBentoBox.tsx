@@ -11,18 +11,18 @@ interface OrganicBentoBoxProps {
 }
 
 export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = '', children }: OrganicBentoBoxProps) {
-  // Professional organic SVG paths - subtle, not childish
+  // Professional organic SVG paths - natural, flowing curves
   const getSVGPath = () => {
     switch (type) {
       case 'apple':
-        // Apple shape - subtle organic curves
-        return "M 10 20 Q 15 10 25 15 Q 35 20 40 25 Q 45 30 47 40 Q 48 50 45 60 Q 42 70 35 75 Q 28 80 20 78 Q 12 76 8 70 Q 4 64 5 55 Q 6 45 8 35 Q 10 25 10 20 Z"
+        // Apple shape - natural, rounded with slight indent
+        return "M 20 15 Q 15 10 20 8 Q 30 5 40 8 Q 50 10 55 15 Q 60 20 62 30 Q 63 40 61 50 Q 58 60 53 65 Q 48 70 40 72 Q 32 74 25 70 Q 18 66 15 58 Q 12 50 13 40 Q 14 30 16 22 Q 18 18 20 15 Z M 35 8 Q 37 10 38 12 Q 37 10 35 8 Z"
       case 'carrot':
-        // Carrot shape - organic triangular
-        return "M 50 5 Q 55 10 58 20 Q 60 30 61 40 Q 61 50 59 60 Q 57 70 53 75 Q 49 80 45 78 Q 41 76 38 72 Q 35 68 33 62 Q 31 56 32 48 Q 33 40 35 32 Q 37 24 40 18 Q 43 12 47 8 Q 50 5 50 5 Z"
+        // Carrot shape - organic, tapering
+        return "M 50 3 Q 52 5 54 8 Q 56 12 57 18 Q 58 25 59 32 Q 59 40 58 48 Q 57 56 55 62 Q 53 68 50 72 Q 47 76 44 74 Q 41 72 39 68 Q 37 64 36 58 Q 35 52 35 45 Q 35 38 36 30 Q 37 22 39 15 Q 41 8 44 5 Q 47 3 50 3 Z"
       case 'beet':
-        // Beetroot shape - rounded, organic
-        return "M 50 8 Q 60 5 70 10 Q 75 15 78 25 Q 80 35 78 45 Q 75 55 70 60 Q 65 65 58 68 Q 51 71 42 68 Q 33 65 28 60 Q 23 55 20 45 Q 17 35 19 25 Q 22 15 27 10 Q 32 5 42 6 Q 46 7 50 8 Z"
+        // Beetroot shape - rounded, bulbous
+        return "M 50 5 Q 60 3 68 8 Q 75 13 78 20 Q 80 28 79 38 Q 78 48 74 56 Q 70 64 64 68 Q 58 72 50 73 Q 42 74 36 70 Q 30 66 26 58 Q 22 50 21 40 Q 20 30 22 22 Q 24 14 28 9 Q 32 5 40 4 Q 45 4 50 5 Z"
       default:
         return ""
     }
@@ -67,36 +67,22 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
   return (
     <div
       className={`organic-bento-box ${colSpanClasses[colSpan] || 'col-span-1'} ${rowSpanClasses[rowSpan] || 'row-span-1'} ${className}`}
+      style={{
+        backgroundColor: getBackgroundColor(),
+        borderColor: getBorderColor(),
+        WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='${getSVGPath()}' fill='black'/></svg>`)}")`,
+        maskImage: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='${getSVGPath()}' fill='black'/></svg>`)}")`,
+        WebkitMaskSize: '100% 100%',
+        maskSize: '100% 100%',
+        WebkitMaskRepeat: 'no-repeat',
+        maskRepeat: 'no-repeat',
+        WebkitMaskPosition: 'center',
+        maskPosition: 'center',
+      }}
     >
-      <svg
-        className="absolute inset-0 w-full h-full"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <filter id={`glow-${type}`} x="-50%" y="-50%" width="200%" height="200%">
-            <feGaussianBlur stdDeviation="1" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
-        <path
-          d={getSVGPath()}
-          fill={getBackgroundColor()}
-          stroke={getBorderColor()}
-          strokeWidth="0.5"
-          filter={`url(#glow-${type})`}
-          opacity="0.95"
-        />
-        <foreignObject x="0" y="0" width="100" height="100">
-          <div className="bento-content-wrapper">
-            {children}
-          </div>
-        </foreignObject>
-      </svg>
+      <div className="bento-content-wrapper">
+        {children}
+      </div>
     </div>
   )
 }
