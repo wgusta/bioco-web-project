@@ -57,12 +57,12 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
         // Beetroot roots at bottom (right side for horizontal)
         return (
           <>
-            {/* Root 1 */}
+            {/* Root 1 - left */}
+            <path d="M 45 85 Q 47 87 49 89 Q 47 88 45 85" fill="none" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
+            {/* Root 2 - center */}
             <path d="M 48 85 Q 50 87 52 89 Q 50 88 48 85" fill="none" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
-            {/* Root 2 */}
-            <path d="M 48 85 Q 50 87 52 89 Q 50 88 48 85" fill="none" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
-            {/* Root 3 */}
-            <path d="M 48 85 Q 48 87 48 89 Q 48 88 48 85" fill="none" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
+            {/* Root 3 - right */}
+            <path d="M 51 85 Q 53 87 55 89 Q 53 88 51 85" fill="none" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
           </>
         )
       default:
