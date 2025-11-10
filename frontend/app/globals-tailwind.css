@@ -173,6 +173,21 @@ header {
   padding: 0.5rem 150px 1rem;
 }
 
+/* Navigation Bento Boxes */
+.nav-bento-bushbean,
+.nav-bento-cucumber {
+  min-height: auto;
+  display: inline-block;
+}
+
+.nav-bento-bushbean {
+  min-width: 600px; /* Longer for primary nav */
+}
+
+.nav-bento-cucumber {
+  min-width: 400px; /* Shorter for secondary nav */
+}
+
 /* Secondary Navigation in Header - Above Primary */
 .desktop-nav-secondary {
   display: none;
@@ -284,6 +299,15 @@ header {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  width: 100%;
+  height: 100%;
+}
+
+.nav-bento-bushbean .bento-content-wrapper,
+.nav-bento-cucumber .bento-content-wrapper {
+  padding: 0.75rem 1.5rem;
+  justify-content: center;
+  align-items: center;
 }
 
 .header-nav ul {
