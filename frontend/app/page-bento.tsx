@@ -34,8 +34,8 @@ export default function HomeBento() {
       {/* Main Content Container */}
       <div className="bento-grid-container max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
 
-        {/* Saisonal & Demeter - Carrot with overlap */}
-        <OrganicBentoBox type="carrot" colSpan={12} rowSpan={1} className="md:col-span-6 lg:col-span-6 bento-overlap-2">
+        {/* Saisonal & Demeter - Violet with overlap */}
+        <OrganicBentoBox type="violet" colSpan={12} rowSpan={1} className="md:col-span-6 lg:col-span-6 bento-overlap-2">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Das ist drin: Saisonal & Demeter</h2>
           <p className="text-gray-800 mb-4 drop-shadow-md">
             Wöchentlich erhalten unsere Mitglieder einen Gemüsekorb mit frischem, saisonalem Gemüse in Demeter-Qualität.
@@ -50,8 +50,8 @@ export default function HomeBento() {
           </OrganicButton>
         </OrganicBentoBox>
 
-        {/* Gemeinschaft - Beet with overlap */}
-        <OrganicBentoBox type="beet" colSpan={12} rowSpan={1} className="md:col-span-6 lg:col-span-6 bento-overlap-3">
+        {/* Gemeinschaft - Beige with overlap */}
+        <OrganicBentoBox type="beige" colSpan={12} rowSpan={1} className="md:col-span-6 lg:col-span-6 bento-overlap-3">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Gemeinschaft & Solidarität</h2>
           <div className="mb-4">
             <Image
@@ -73,8 +73,8 @@ export default function HomeBento() {
           </ul>
         </OrganicBentoBox>
 
-        {/* Aktuelles - Carrot */}
-        <OrganicBentoBox type="carrot" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
+        {/* Aktuelles - Yellow */}
+        <OrganicBentoBox type="yellow" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Aktuelles</h2>
           <div className="space-y-4">
             <div className="p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-gray-900/20">
@@ -93,8 +93,8 @@ export default function HomeBento() {
           </div>
         </OrganicBentoBox>
 
-        {/* Events - Apple */}
-        <OrganicBentoBox type="apple" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
+        {/* Events - Carrot */}
+        <OrganicBentoBox type="carrot" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Nächste Events</h2>
           <div className="space-y-4">
             <div className="p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-gray-900/20">
@@ -113,8 +113,8 @@ export default function HomeBento() {
           </div>
         </OrganicBentoBox>
 
-        {/* Wie funktioniert's - Beet */}
-        <OrganicBentoBox type="beet" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
+        {/* Wie funktioniert's - Apple */}
+        <OrganicBentoBox type="apple" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Wie funktioniert's?</h2>
           <div className="space-y-4">
             <div className="flex gap-4">
