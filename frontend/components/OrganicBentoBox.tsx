@@ -11,84 +11,61 @@ interface OrganicBentoBoxProps {
 }
 
 export function OrganicBentoBox({ type, gridCol, gridRow, children, className = '' }: OrganicBentoBoxProps) {
-  const getSVGPath = () => {
+  const getBackgroundColor = () => {
     switch (type) {
       case 'apple':
-        // Apple shape - organic, rounded
-        return "M 50 10 Q 60 5 70 10 Q 80 15 85 25 Q 90 35 88 45 Q 85 55 80 60 Q 75 65 70 65 Q 65 70 60 68 Q 55 70 50 68 Q 45 70 40 68 Q 35 70 30 68 Q 25 70 20 65 Q 15 60 12 55 Q 10 45 15 35 Q 20 25 25 20 Q 30 15 40 12 Q 45 10 50 10 Z"
+        return 'bg-red-600' // Red
+      case 'lettuce':
+        return 'bg-green-600' // Green
+      case 'carrot':
+        return 'bg-orange-600' // Orange
+      default:
+        return 'bg-gray-200'
+    }
+  }
+
+  const getBorderColor = () => {
+    switch (type) {
+      case 'apple':
+        return 'border-red-800'
+      case 'lettuce':
+        return 'border-green-800'
+      case 'carrot':
+        return 'border-orange-800'
+      default:
+        return 'border-gray-400'
+    }
+  }
+
+  const getClipPath = () => {
+    switch (type) {
+      case 'apple':
+        // Apple shape - rounded, organic
+        return 'polygon(30% 10%, 50% 5%, 70% 10%, 85% 25%, 88% 45%, 85% 55%, 80% 60%, 70% 65%, 50% 68%, 30% 65%, 20% 60%, 15% 55%, 12% 45%, 15% 25%, 30% 10%)'
       case 'lettuce':
         // Lettuce head shape - wavy, organic
-        return "M 50 5 Q 60 8 70 5 Q 80 8 85 15 Q 90 25 88 35 Q 85 45 80 50 Q 75 55 70 55 Q 65 60 60 58 Q 55 60 50 58 Q 45 60 40 58 Q 35 60 30 58 Q 25 60 20 55 Q 15 50 12 45 Q 10 35 15 25 Q 20 15 25 10 Q 30 8 40 7 Q 45 5 50 5 Z"
+        return 'polygon(30% 3%, 50% 5%, 70% 3%, 85% 12%, 88% 28%, 85% 40%, 75% 48%, 50% 58%, 25% 48%, 15% 40%, 12% 28%, 15% 12%, 30% 3%)'
       case 'carrot':
-        // Carrot shape - triangular with organic curves
-        return "M 50 5 Q 55 8 60 10 Q 65 15 68 25 Q 70 35 72 45 Q 73 55 70 60 Q 68 65 65 68 Q 62 70 58 72 Q 55 74 52 75 Q 50 75 48 75 Q 45 74 42 72 Q 38 70 35 68 Q 32 65 30 60 Q 27 55 28 45 Q 30 35 32 25 Q 35 15 40 10 Q 45 8 50 5 Z"
+        // Carrot shape - triangular, organic
+        return 'polygon(50% 2%, 60% 6%, 68% 18%, 72% 32%, 74% 48%, 72% 60%, 67% 68%, 50% 75%, 33% 68%, 28% 60%, 26% 48%, 28% 32%, 32% 18%, 40% 6%, 50% 2%)'
       default:
-        return ""
-    }
-  }
-
-  const getFillColor = () => {
-    switch (type) {
-      case 'apple':
-        return '#dc2626' // Red
-      case 'lettuce':
-        return '#16a34a' // Green
-      case 'carrot':
-        return '#ea580c' // Orange
-      default:
-        return '#ffffff'
-    }
-  }
-
-  const getStrokeColor = () => {
-    switch (type) {
-      case 'apple':
-        return '#991b1b' // Dark red
-      case 'lettuce':
-        return '#15803d' // Dark green
-      case 'carrot':
-        return '#c2410c' // Dark orange
-      default:
-        return '#000000'
+        return 'polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%)'
     }
   }
 
   return (
     <div
-      className={`organic-bento-box ${className}`}
+      className={`organic-bento-box min-h-[300px] ${getBackgroundColor()} ${getBorderColor()} border-2 shadow-xl ${className}`}
       style={{
         gridColumn: gridCol,
         gridRow: gridRow,
+        clipPath: getClipPath(),
+        WebkitClipPath: getClipPath(),
       }}
     >
-      <svg
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <defs>
-          <filter id={`glow-${type}`}>
-            <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
-        <path
-          d={getSVGPath()}
-          fill={getFillColor()}
-          stroke={getStrokeColor()}
-          strokeWidth="1"
-          filter={`url(#glow-${type})`}
-          opacity="0.95"
-        />
-        <foreignObject x="0" y="0" width="100" height="100">
-          <div className="bento-content">
-            {children}
-          </div>
-        </foreignObject>
-      </svg>
+      <div className="bento-content h-full w-full p-6 flex flex-col justify-center items-center text-center">
+        {children}
+      </div>
     </div>
   )
 }
