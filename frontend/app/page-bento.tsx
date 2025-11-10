@@ -78,49 +78,53 @@ export default function HomeBento() {
 
         {/* Aktuelles - Yellow */}
         <OrganicBentoBox type="yellow" colSpan={12} rowSpan={1} className="md:col-span-6 lg:col-span-4">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 drop-shadow-lg">Aktuelles</h2>
-          <div className="space-y-3">
-            <OrganicCard>
-              <h3 className="font-semibold text-gray-900 mb-1 text-sm">Neuigkeiten vom Hof</h3>
-              <p className="text-xs text-gray-800">Aktuelle Informationen und Updates</p>
-            </OrganicCard>
-            <OrganicCard>
-              <h3 className="font-semibold text-gray-900 mb-1 text-sm">Saisonale Highlights</h3>
-              <p className="text-xs text-gray-800">Was gerade wächst und geerntet wird</p>
-            </OrganicCard>
-            <OrganicCard>
-              <h3 className="font-semibold text-gray-900 mb-1 text-sm">Ernte-Update</h3>
-              <p className="text-xs text-gray-800">Neueste Ernte-Informationen</p>
-            </OrganicCard>
-          </div>
-          <div className="mt-3 flex justify-center">
-            <OrganicButton href="/aktuelles" variant="primary" className="text-sm">
-              Alle Aktuelles ansehen
-            </OrganicButton>
+          <div className="flex flex-col h-full justify-start">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 drop-shadow-lg">Aktuelles</h2>
+            <div className="space-y-2 flex-grow">
+              <OrganicCard>
+                <h3 className="font-semibold text-gray-900 mb-1 text-sm">Neuigkeiten vom Hof</h3>
+                <p className="text-xs text-gray-800">Aktuelle Informationen und Updates</p>
+              </OrganicCard>
+              <OrganicCard>
+                <h3 className="font-semibold text-gray-900 mb-1 text-sm">Saisonale Highlights</h3>
+                <p className="text-xs text-gray-800">Was gerade wächst und geerntet wird</p>
+              </OrganicCard>
+              <OrganicCard>
+                <h3 className="font-semibold text-gray-900 mb-1 text-sm">Ernte-Update</h3>
+                <p className="text-xs text-gray-800">Neueste Ernte-Informationen</p>
+              </OrganicCard>
+            </div>
+            <div className="mt-2 flex justify-center">
+              <OrganicButton href="/aktuelles" variant="primary" className="text-sm">
+                Alle Aktuelles ansehen
+              </OrganicButton>
+            </div>
           </div>
         </OrganicBentoBox>
 
         {/* Events - Carrot */}
         <OrganicBentoBox type="carrot" colSpan={12} rowSpan={1} className="md:col-span-6 lg:col-span-4">
-          <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 drop-shadow-lg">Nächste Events</h2>
-          <div className="space-y-3">
-            <OrganicCard>
-              <h3 className="font-semibold text-gray-900 mb-1 text-sm">Schnuppertag</h3>
-              <p className="text-xs text-gray-800">Lerne uns und den Hof kennen</p>
-            </OrganicCard>
-            <OrganicCard>
-              <h3 className="font-semibold text-gray-900 mb-1 text-sm">Erntefest</h3>
-              <p className="text-xs text-gray-800">Gemeinsam feiern und geniessen</p>
-            </OrganicCard>
-            <OrganicCard>
-              <h3 className="font-semibold text-gray-900 mb-1 text-sm">Hofbesichtigung</h3>
-              <p className="text-xs text-gray-800">Besuche unseren Hof</p>
-            </OrganicCard>
-          </div>
-          <div className="mt-3 flex justify-center">
-            <OrganicButton href="/aktuelles" variant="primary" className="text-sm">
-              Alle Events ansehen
-            </OrganicButton>
+          <div className="flex flex-col h-full justify-start">
+            <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 drop-shadow-lg">Nächste Events</h2>
+            <div className="space-y-2 flex-grow">
+              <OrganicCard>
+                <h3 className="font-semibold text-gray-900 mb-1 text-sm">Schnuppertag</h3>
+                <p className="text-xs text-gray-800">Lerne uns und den Hof kennen</p>
+              </OrganicCard>
+              <OrganicCard>
+                <h3 className="font-semibold text-gray-900 mb-1 text-sm">Erntefest</h3>
+                <p className="text-xs text-gray-800">Gemeinsam feiern und geniessen</p>
+              </OrganicCard>
+              <OrganicCard>
+                <h3 className="font-semibold text-gray-900 mb-1 text-sm">Hofbesichtigung</h3>
+                <p className="text-xs text-gray-800">Besuche unseren Hof</p>
+              </OrganicCard>
+            </div>
+            <div className="mt-2 flex justify-center">
+              <OrganicButton href="/aktuelles" variant="primary" className="text-sm">
+                Alle Events ansehen
+              </OrganicButton>
+            </div>
           </div>
         </OrganicBentoBox>
 

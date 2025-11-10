@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Typography - Lora for headings, Inter for body */
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 600;
+}
+
+h1 {
+  font-weight: 700;
+}
+
 /* Organic Number Badge Styles */
 .organic-number-badge {
   position: relative;
@@ -61,7 +76,7 @@
 /* Organic Bento Box */
 .organic-bento-box {
   position: relative;
-  min-height: 350px; /* Taller boxes for content visibility */
+  min-height: 300px; /* Reduced from 350px for more compact boxes */
   width: 100%; /* Full width of grid column */
   max-width: 100%; /* Don't exceed grid column */
   overflow: visible; /* Allow overlap and content visibility */
@@ -106,10 +121,10 @@
 .bento-content-wrapper {
   width: 100%;
   height: 100%;
-  padding: 3rem 2.5rem; /* Generous padding but not excessive */
+  padding: 2rem 2rem; /* Reduced padding for more compact layout */
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Start from top instead of center */
   align-items: center;
   text-align: center;
   position: relative;

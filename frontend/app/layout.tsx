@@ -21,8 +21,8 @@ export default function RootLayout({
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        {/* Keep original fonts for now, can be changed later */}
-        <link href="https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Fredoka+One&family=Patrick+Hand&display=swap" rel="stylesheet" />
+        {/* Lora for headings, Inter for body text */}
+        <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
       </head>
       <body>
         {children}
