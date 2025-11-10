@@ -13,7 +13,9 @@ export function Header() {
           <div id="header-logo" className="header-logo">
             <Logo />
           </div>
-          <MobileMenu />
+          <div className="mobile-menu-wrapper">
+            <MobileMenu />
+          </div>
           <div className="desktop-nav">
             <div className="header-nav-container">
               <Navigation />

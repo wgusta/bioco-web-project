@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Earthy white background */
+.bg-earth-white {
+  background-color: #faf8f5; /* Warm, earthy white */
+}
+
 /* Bento Grid - Professional Layout */
 .bento-grid-container {
   display: grid;
@@ -22,7 +27,7 @@
   position: relative;
   min-height: 300px;
   overflow: hidden;
-  border: 2px solid;
+  border: 2px solid #000000; /* Always black border */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.2s ease;
 }
@@ -83,9 +88,17 @@ header {
   display: none;
 }
 
+.mobile-menu-wrapper {
+  display: block;
+}
+
 @media (min-width: 768px) {
   .desktop-nav {
     display: block;
+  }
+  
+  .mobile-menu-wrapper {
+    display: none; /* Hide mobile menu (bean icon) on desktop */
   }
 }
 
