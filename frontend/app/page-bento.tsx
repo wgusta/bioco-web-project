@@ -28,27 +28,28 @@ export default function HomeBento() {
               </div>
             </div>
           </OrganicBentoBox>
+          {/* Saisonal & Demeter - Small box next to Welcome */}
+          <OrganicBentoBox type="violet" colSpan={12} rowSpan={2} className="md:col-span-4 lg:col-span-4">
+            <div className="h-full flex flex-col justify-center">
+              <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-3 drop-shadow-lg">Das ist drin: Saisonal & Demeter</h2>
+              <p className="text-sm md:text-base text-gray-800 mb-3 drop-shadow-md">
+                Wöchentlich erhalten unsere Mitglieder einen Gemüsekorb mit frischem, saisonalem Gemüse in Demeter-Qualität.
+              </p>
+              <ul className="space-y-1 text-xs md:text-sm text-gray-800 mb-4 text-left drop-shadow-sm">
+                <li>• Wöchentlicher Gemüsekorb</li>
+                <li>• Saisonalität – das Gemüse der Jahreszeit</li>
+                <li>• Demeter-Qualität – höchste Bio-Standards</li>
+              </ul>
+              <OrganicButton href="/ernte" variant="primary" className="text-sm">
+                Ernte entdecken
+              </OrganicButton>
+            </div>
+          </OrganicBentoBox>
         </div>
       </div>
 
       {/* Main Content Container */}
       <div className="bento-grid-container max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
-
-        {/* Saisonal & Demeter - Violet with overlap */}
-        <OrganicBentoBox type="violet" colSpan={12} rowSpan={1} className="md:col-span-6 lg:col-span-6 bento-overlap-2">
-          <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Das ist drin: Saisonal & Demeter</h2>
-          <p className="text-gray-800 mb-4 drop-shadow-md">
-            Wöchentlich erhalten unsere Mitglieder einen Gemüsekorb mit frischem, saisonalem Gemüse in Demeter-Qualität.
-          </p>
-          <ul className="space-y-2 text-gray-800 mb-6 text-left drop-shadow-sm">
-            <li>• Wöchentlicher Gemüsekorb</li>
-            <li>• Saisonalität – das Gemüse der Jahreszeit</li>
-            <li>• Demeter-Qualität – höchste Bio-Standards</li>
-          </ul>
-          <OrganicButton href="/ernte" variant="primary">
-            Ernte entdecken
-          </OrganicButton>
-        </OrganicBentoBox>
 
         {/* Gemeinschaft - Beige with overlap */}
         <OrganicBentoBox type="beige" colSpan={12} rowSpan={1} className="md:col-span-6 lg:col-span-6 bento-overlap-3">

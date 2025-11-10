@@ -25,11 +25,11 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
         // Horizontal beetroot shape - FULL width (0-100) with organic curves
         return "M 0 50 Q 0 20 0 5 Q 0 0 5 0 Q 10 0 15 0 Q 20 0 25 0 Q 30 0 35 0 Q 40 0 45 0 Q 50 0 55 0 Q 60 0 65 0 Q 70 0 75 0 Q 80 0 85 0 Q 90 0 95 0 Q 100 0 100 5 Q 100 20 100 50 Q 100 80 100 95 Q 100 100 95 100 Q 90 100 85 100 Q 80 100 75 100 Q 70 100 65 100 Q 60 100 55 100 Q 50 100 45 100 Q 40 100 35 100 Q 30 100 25 100 Q 20 100 15 100 Q 10 100 5 100 Q 0 100 0 95 Q 0 80 0 50 Z"
       case 'bushbean':
-        // Long bush bean shape - elongated, organic
-        return "M 2 50 Q 1 40 2 30 Q 3 20 5 15 Q 7 10 10 8 Q 13 6 16 6 Q 19 6 22 8 Q 25 10 27 15 Q 29 20 30 30 Q 31 40 30 50 Q 31 60 30 70 Q 29 80 27 85 Q 25 90 22 92 Q 19 94 16 94 Q 13 94 10 92 Q 7 90 5 85 Q 3 80 2 70 Q 1 60 2 50 Z"
+        // Long bush bean shape - FULL width (0-100) with organic curves
+        return "M 0 50 Q 0 20 0 5 Q 0 0 5 0 Q 10 0 15 0 Q 20 0 25 0 Q 30 0 35 0 Q 40 0 45 0 Q 50 0 55 0 Q 60 0 65 0 Q 70 0 75 0 Q 80 0 85 0 Q 90 0 95 0 Q 100 0 100 5 Q 100 20 100 50 Q 100 80 100 95 Q 100 100 95 100 Q 90 100 85 100 Q 80 100 75 100 Q 70 100 65 100 Q 60 100 55 100 Q 50 100 45 100 Q 40 100 35 100 Q 30 100 25 100 Q 20 100 15 100 Q 10 100 5 100 Q 0 100 0 95 Q 0 80 0 50 Z"
       case 'cucumber':
-        // Long cucumber shape - elongated, tapering (shorter than bushbean)
-        return "M 3 50 Q 2 40 3 30 Q 4 20 6 16 Q 8 12 11 10 Q 14 8 17 8 Q 20 8 23 10 Q 26 12 28 16 Q 30 20 31 30 Q 32 40 31 50 Q 32 60 31 70 Q 30 80 28 84 Q 26 88 23 90 Q 20 92 17 92 Q 14 92 11 90 Q 8 88 6 84 Q 4 80 3 70 Q 2 60 3 50 Z"
+        // Long cucumber shape - FULL width (0-100) with organic curves
+        return "M 0 50 Q 0 20 0 5 Q 0 0 5 0 Q 10 0 15 0 Q 20 0 25 0 Q 30 0 35 0 Q 40 0 45 0 Q 50 0 55 0 Q 60 0 65 0 Q 70 0 75 0 Q 80 0 85 0 Q 90 0 95 0 Q 100 0 100 5 Q 100 20 100 50 Q 100 80 100 95 Q 100 100 95 100 Q 90 100 85 100 Q 80 100 75 100 Q 70 100 65 100 Q 60 100 55 100 Q 50 100 45 100 Q 40 100 35 100 Q 30 100 25 100 Q 20 100 15 100 Q 10 100 5 100 Q 0 100 0 95 Q 0 80 0 50 Z"
       case 'violet':
         // Horizontal violet shape - FULL width (0-100) with organic curves
         return "M 0 50 Q 0 20 0 5 Q 0 0 5 0 Q 10 0 15 0 Q 20 0 25 0 Q 30 0 35 0 Q 40 0 45 0 Q 50 0 55 0 Q 60 0 65 0 Q 70 0 75 0 Q 80 0 85 0 Q 90 0 95 0 Q 100 0 100 5 Q 100 20 100 50 Q 100 80 100 95 Q 100 100 95 100 Q 90 100 85 100 Q 80 100 75 100 Q 70 100 65 100 Q 60 100 55 100 Q 50 100 45 100 Q 40 100 35 100 Q 30 100 25 100 Q 20 100 15 100 Q 10 100 5 100 Q 0 100 0 95 Q 0 80 0 50 Z"
