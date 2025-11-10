@@ -1,6 +1,8 @@
 'use client'
 
 import { OrganicBentoBox } from '@/components/OrganicBentoBox'
+import { Navigation } from '@/components/Navigation'
+import { SecondaryNavigation } from '@/components/SecondaryNavigation'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -31,6 +33,26 @@ export default function HomeBento() {
                   Zuerst testen?
                 </Link>
               </div>
+            </div>
+          </OrganicBentoBox>
+
+          {/* Primary Navigation - Carrot (Right side, top) */}
+          <OrganicBentoBox type="carrot" colSpan={12} rowSpan={1} className="md:col-span-4 lg:col-span-4 md:col-start-9 lg:col-start-9">
+            <div className="h-full flex flex-col justify-center">
+              <h3 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wide">Navigation</h3>
+              <nav className="bento-nav">
+                <Navigation hideMitmachen={true} />
+              </nav>
+            </div>
+          </OrganicBentoBox>
+
+          {/* Secondary Navigation - Beet (Right side, bottom) */}
+          <OrganicBentoBox type="beet" colSpan={12} rowSpan={1} className="md:col-span-4 lg:col-span-4 md:col-start-9 lg:col-start-9 md:row-start-2 lg:row-start-2">
+            <div className="h-full flex flex-col justify-center">
+              <h3 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wide">Kontakt & Standorte</h3>
+              <nav className="bento-nav-secondary">
+                <SecondaryNavigation />
+              </nav>
             </div>
           </OrganicBentoBox>
         </div>
