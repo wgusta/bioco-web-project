@@ -12,7 +12,7 @@ export default function HomeBento() {
     <div className="min-h-screen bg-earth-white">
       {/* Hero Section - 50% of viewport on desktop */}
       <div className="lg:h-[50vh] flex items-center justify-center">
-        <div className="bento-grid-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+        <div className="bento-grid-container px-4 sm:px-6 lg:px-8 w-full">
           {/* Large Welcome Card - Apple (Green) with overlap */}
           <OrganicBentoBox type="apple" colSpan={12} rowSpan={2} className="md:col-span-8 lg:col-span-8 bento-overlap-1">
             <div className="h-full flex flex-col justify-center">
@@ -51,7 +51,7 @@ export default function HomeBento() {
       </div>
 
       {/* Main Content Container */}
-      <div className="bento-grid-container max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div className="bento-grid-container py-12 px-4 sm:px-6 lg:px-8">
 
         {/* Gemeinschaft - Beige with overlap */}
         <OrganicBentoBox type="beige" colSpan={12} rowSpan={1} className="md:col-span-6 lg:col-span-6 bento-overlap-3">

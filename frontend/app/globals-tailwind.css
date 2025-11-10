@@ -56,9 +56,10 @@ h1 {
 .bento-grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem 1.5rem; /* row-gap column-gap */
-  row-gap: 3rem; /* More vertical spacing between rows */
+  gap: 1.5rem; /* Consistent gap for both rows and columns */
   width: 100%;
+  max-width: calc(100% - 300px); /* Match header width (150px padding on each side) */
+  margin: 0 auto;
   position: relative;
   overflow: visible; /* Allow bento boxes to overlap */
   /* Ensure shifted colors are visible */
@@ -100,20 +101,17 @@ h1 {
   z-index: 0;
 }
 
-/* Overlap styles for bento boxes */
+/* Overlap styles for bento boxes - removed transforms to maintain consistent spacing */
 .bento-overlap-1 {
   z-index: 2;
-  transform: translate(0, 0);
 }
 
 .bento-overlap-2 {
   z-index: 3;
-  transform: translate(-20px, 20px);
 }
 
 .bento-overlap-3 {
   z-index: 4;
-  transform: translate(20px, -15px);
 }
 
 /* No hover shadow */
