@@ -5,7 +5,6 @@ import { OrganicButton } from '@/components/OrganicButton'
 import { OrganicCard } from '@/components/OrganicCard'
 import { OrganicNumberBadge } from '@/components/OrganicNumberBadge'
 import { OrganicImage } from '@/components/OrganicImage'
-import { Footer } from '@/components/Footer'
 import Link from 'next/link'
 
 export default function HomeBento() {
@@ -172,9 +171,6 @@ export default function HomeBento() {
           </div>
         </OrganicBentoBox>
       </div>
-
-      {/* Footer */}
-      <Footer />
     </div>
   )
 }
