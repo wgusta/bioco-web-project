@@ -38,7 +38,7 @@ export default function HomeBento() {
           </BentoBox>
 
           {/* Saisonal & Demeter */}
-          <BentoBox colSpan={12} rowSpan={2} className="md:col-span-6">
+          <BentoBox colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-6">
             <h2 className="text-2xl font-bold text-bioco-green mb-4">Das ist drin: Saisonal & Demeter</h2>
             <p className="text-gray-700 mb-4">
               Wöchentlich erhalten unsere Mitglieder einen Gemüsekorb mit frischem, saisonalem Gemüse in Demeter-Qualität.
@@ -57,7 +57,7 @@ export default function HomeBento() {
           </BentoBox>
 
           {/* Gemeinschaft */}
-          <BentoBox colSpan={12} rowSpan={2} className="md:col-span-6">
+          <BentoBox colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-6">
             <h2 className="text-2xl font-bold text-bioco-green mb-4">Gemeinschaft & Solidarität</h2>
             <div className="mb-4">
               <Image
@@ -80,7 +80,7 @@ export default function HomeBento() {
           </BentoBox>
 
           {/* Aktuelles */}
-          <BentoBox colSpan={12} rowSpan={2} className="md:col-span-4">
+          <BentoBox colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
             <h2 className="text-2xl font-bold text-bioco-green mb-4">Aktuelles</h2>
             <div className="space-y-4">
               <div className="p-4 bg-gray-50 rounded-lg">
@@ -101,7 +101,7 @@ export default function HomeBento() {
           </BentoBox>
 
           {/* Events */}
-          <BentoBox colSpan={12} rowSpan={2} className="md:col-span-4 bg-gradient-to-br from-bioco-green/10 to-bioco-green/5">
+          <BentoBox colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4 bg-gradient-to-br from-bioco-green/10 to-bioco-green/5">
             <h2 className="text-2xl font-bold text-bioco-green mb-4">Nächste Events</h2>
             <div className="space-y-4">
               <div className="p-4 bg-white rounded-lg border border-bioco-green/20">
@@ -122,7 +122,7 @@ export default function HomeBento() {
           </BentoBox>
 
           {/* Wie funktioniert's */}
-          <BentoBox colSpan={12} rowSpan={2} className="md:col-span-4">
+          <BentoBox colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
             <h2 className="text-2xl font-bold text-bioco-green mb-4">Wie funktioniert's?</h2>
             <div className="space-y-4">
               <div className="flex gap-4">
