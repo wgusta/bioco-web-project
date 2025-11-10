@@ -28,8 +28,9 @@
 .organic-bento-box {
   position: relative;
   min-height: 350px; /* Taller boxes for content visibility */
-  min-width: 100%; /* Larger width for content visibility */
-  overflow: visible; /* Allow overlap */
+  width: 100%; /* Full width of grid column */
+  max-width: 100%; /* Don't exceed grid column */
+  overflow: visible; /* Allow overlap and content visibility */
   /* No box-shadow */
   transition: transform 0.2s ease;
   isolation: isolate; /* Create new stacking context for mask */
@@ -68,7 +69,7 @@
 .bento-content-wrapper {
   width: 100%;
   height: 100%;
-  padding: 4rem 3rem; /* Extra generous padding to prevent clipping */
+  padding: 3rem 2.5rem; /* Generous padding but not excessive */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -76,17 +77,29 @@
   text-align: center;
   position: relative;
   z-index: 2; /* Above SVG */
-  overflow: hidden; /* Ensure content doesn't overflow */
+  overflow: visible; /* Allow content to be fully visible */
   box-sizing: border-box;
   max-width: 100%;
   max-height: 100%;
 }
 
-/* Ensure text wraps and stays within bounds */
+/* Ensure text wraps and stays within bounds - but don't clip */
 .bento-content-wrapper * {
   max-width: 100%;
   word-wrap: break-word;
   overflow-wrap: break-word;
+  box-sizing: border-box;
+}
+
+/* Allow text to flow naturally without clipping */
+.bento-content-wrapper h1,
+.bento-content-wrapper h2,
+.bento-content-wrapper h3,
+.bento-content-wrapper p,
+.bento-content-wrapper ul,
+.bento-content-wrapper li {
+  overflow: visible;
+  text-overflow: clip;
 }
 
 .bento-content-wrapper h1,

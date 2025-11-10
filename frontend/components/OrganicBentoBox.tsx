@@ -12,18 +12,18 @@ interface OrganicBentoBoxProps {
 }
 
 export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = '', children, noBorder = false }: OrganicBentoBoxProps) {
-  // Horizontal organic SVG paths - larger inner area to prevent content clipping
+  // Horizontal organic SVG paths - much larger inner area to prevent content clipping
   const getSVGPath = () => {
     switch (type) {
       case 'apple':
-        // Horizontal apple shape - larger, more inner space
-        return "M 2 50 Q 0 35 2 20 Q 5 8 15 5 Q 25 2 35 2 Q 45 2 55 5 Q 65 8 68 20 Q 70 35 68 50 Q 70 65 68 80 Q 65 92 55 95 Q 45 98 35 98 Q 25 98 15 95 Q 5 92 2 80 Q 0 65 2 50 Z"
+        // Horizontal apple shape - maximum inner space (0-100% width, 5-95% height)
+        return "M 0 50 Q 0 25 0 10 Q 0 2 2 1 Q 5 0 10 0 Q 15 0 20 1 Q 22 2 25 10 Q 25 25 25 50 Q 25 75 25 90 Q 22 98 20 99 Q 15 100 10 100 Q 5 100 2 99 Q 0 98 0 90 Q 0 75 0 50 Z"
       case 'carrot':
-        // Horizontal carrot shape - larger, more inner space
-        return "M 1 50 Q 0 35 1 20 Q 3 8 10 5 Q 17 2 25 2 Q 33 2 40 5 Q 47 8 49 20 Q 50 35 50 50 Q 50 65 49 80 Q 47 92 40 95 Q 33 98 25 98 Q 17 98 10 95 Q 3 92 1 80 Q 0 65 1 50 Z"
+        // Horizontal carrot shape - maximum inner space (0-100% width, 5-95% height)
+        return "M 0 50 Q 0 25 0 10 Q 0 2 2 1 Q 5 0 10 0 Q 15 0 20 1 Q 22 2 25 10 Q 25 25 25 50 Q 25 75 25 90 Q 22 98 20 99 Q 15 100 10 100 Q 5 100 2 99 Q 0 98 0 90 Q 0 75 0 50 Z"
       case 'beet':
-        // Horizontal beetroot shape - larger, more inner space
-        return "M 1 50 Q 0 35 1 20 Q 3 8 12 5 Q 21 2 30 2 Q 40 2 49 5 Q 58 8 60 20 Q 61 35 60 50 Q 61 65 60 80 Q 58 92 49 95 Q 40 98 30 98 Q 21 98 12 95 Q 3 92 1 80 Q 0 65 1 50 Z"
+        // Horizontal beetroot shape - maximum inner space (0-100% width, 5-95% height)
+        return "M 0 50 Q 0 25 0 10 Q 0 2 2 1 Q 5 0 10 0 Q 15 0 20 1 Q 22 2 25 10 Q 25 25 25 50 Q 25 75 25 90 Q 22 98 20 99 Q 15 100 10 100 Q 5 100 2 99 Q 0 98 0 90 Q 0 75 0 50 Z"
       case 'bushbean':
         // Long bush bean shape - elongated, organic
         return "M 2 50 Q 1 40 2 30 Q 3 20 5 15 Q 7 10 10 8 Q 13 6 16 6 Q 19 6 22 8 Q 25 10 27 15 Q 29 20 30 30 Q 31 40 30 50 Q 31 60 30 70 Q 29 80 27 85 Q 25 90 22 92 Q 19 94 16 94 Q 13 94 10 92 Q 7 90 5 85 Q 3 80 2 70 Q 1 60 2 50 Z"
@@ -96,12 +96,12 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
           />
         )}
       </svg>
-      {/* Content wrapper with mask */}
+      {/* Content wrapper with larger mask for full content visibility */}
       <div
         className="bento-content-wrapper"
         style={{
-          WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='${getSVGPath()}' fill='black'/></svg>`)}")`,
-          maskImage: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='${getSVGPath()}' fill='black'/></svg>`)}")`,
+          WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='${getSVGPath()}' fill='black'/></svg>`)}")`,
+          maskImage: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='${getSVGPath()}' fill='black'/></svg>`)}")`,
           WebkitMaskSize: '100% 100%',
           maskSize: '100% 100%',
           WebkitMaskRepeat: 'no-repeat',
