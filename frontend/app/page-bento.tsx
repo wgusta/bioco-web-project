@@ -10,8 +10,8 @@ export default function HomeBento() {
       {/* Hero Section - 50% of viewport on desktop */}
       <div className="lg:h-[50vh] flex items-center justify-center">
         <div className="bento-grid-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          {/* Large Welcome Card - Apple (Green) with overlap - 3x larger, horizontal */}
-          <OrganicBentoBox type="apple" colSpan={12} rowSpan={1} className="md:col-span-12 lg:col-span-12 bento-overlap-1">
+          {/* Large Welcome Card - Apple (Green) with overlap */}
+          <OrganicBentoBox type="apple" colSpan={12} rowSpan={2} className="md:col-span-8 lg:col-span-8 bento-overlap-1">
             <div className="h-full flex flex-col justify-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 drop-shadow-lg">Willkommen bei biocò</h1>
               <p className="text-xl md:text-2xl text-gray-800 mb-6 drop-shadow-md">
@@ -39,8 +39,8 @@ export default function HomeBento() {
       {/* Main Content Container */}
       <div className="bento-grid-container max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
 
-        {/* Saisonal & Demeter - Carrot with overlap - 3x larger, horizontal */}
-        <OrganicBentoBox type="carrot" colSpan={12} rowSpan={1} className="md:col-span-12 lg:col-span-12 bento-overlap-2">
+        {/* Saisonal & Demeter - Carrot with overlap */}
+        <OrganicBentoBox type="carrot" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-6 bento-overlap-2">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Das ist drin: Saisonal & Demeter</h2>
           <p className="text-gray-800 mb-4 drop-shadow-md">
             Wöchentlich erhalten unsere Mitglieder einen Gemüsekorb mit frischem, saisonalem Gemüse in Demeter-Qualität.
@@ -58,8 +58,8 @@ export default function HomeBento() {
           </Link>
         </OrganicBentoBox>
 
-        {/* Gemeinschaft - Beet with overlap - 3x larger, horizontal */}
-        <OrganicBentoBox type="beet" colSpan={12} rowSpan={1} className="md:col-span-12 lg:col-span-12 bento-overlap-3">
+        {/* Gemeinschaft - Beet with overlap */}
+        <OrganicBentoBox type="beet" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-6 bento-overlap-3">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Gemeinschaft & Solidarität</h2>
           <div className="mb-4">
             <Image
@@ -81,8 +81,8 @@ export default function HomeBento() {
           </ul>
         </OrganicBentoBox>
 
-        {/* Aktuelles - Carrot - 3x larger, horizontal */}
-        <OrganicBentoBox type="carrot" colSpan={12} rowSpan={1} className="md:col-span-12 lg:col-span-12">
+        {/* Aktuelles - Carrot */}
+        <OrganicBentoBox type="carrot" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Aktuelles</h2>
           <div className="space-y-4">
             <div className="p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-gray-900/20">
@@ -102,8 +102,8 @@ export default function HomeBento() {
           </Link>
         </OrganicBentoBox>
 
-        {/* Events - Apple - 3x larger, horizontal */}
-        <OrganicBentoBox type="apple" colSpan={12} rowSpan={1} className="md:col-span-12 lg:col-span-12">
+        {/* Events - Apple */}
+        <OrganicBentoBox type="apple" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Nächste Events</h2>
           <div className="space-y-4">
             <div className="p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-gray-900/20">
@@ -123,8 +123,8 @@ export default function HomeBento() {
           </Link>
         </OrganicBentoBox>
 
-        {/* Wie funktioniert's - Beet - 3x larger, horizontal */}
-        <OrganicBentoBox type="beet" colSpan={12} rowSpan={1} className="md:col-span-12 lg:col-span-12">
+        {/* Wie funktioniert's - Beet */}
+        <OrganicBentoBox type="beet" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Wie funktioniert's?</h2>
           <div className="space-y-4">
             <div className="flex gap-4">

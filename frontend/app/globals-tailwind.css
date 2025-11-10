@@ -27,8 +27,7 @@
 /* Organic Bento Box */
 .organic-bento-box {
   position: relative;
-  min-height: 200px; /* Horizontal boxes are lower */
-  min-width: 100%; /* Full width for horizontal layout */
+  min-height: 350px; /* Taller boxes for content visibility */
   overflow: visible; /* Allow overlap */
   /* No box-shadow */
   transition: transform 0.2s ease;
@@ -68,7 +67,7 @@
 .bento-content-wrapper {
   width: 100%;
   height: 100%;
-  padding: 3rem 2.5rem; /* More generous padding for content visibility */
+  padding: 4rem 3rem; /* Extra generous padding to prevent clipping */
   display: flex;
   flex-direction: column;
   justify-content: center;
