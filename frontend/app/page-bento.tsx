@@ -62,7 +62,7 @@ export default function HomeBento() {
               alt="Gemeinschaft bei biocò"
               width={800}
               height={600}
-              className="w-3/4 mx-auto"
+              className="w-[37.5%] mx-auto"
             />
           </div>
           <p className="text-gray-800 mb-4 drop-shadow-md">
