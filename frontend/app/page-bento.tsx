@@ -3,6 +3,7 @@
 import { OrganicBentoBox } from '@/components/OrganicBentoBox'
 import { OrganicButton } from '@/components/OrganicButton'
 import { OrganicCard } from '@/components/OrganicCard'
+import { OrganicNumberBadge } from '@/components/OrganicNumberBadge'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -120,36 +121,28 @@ export default function HomeBento() {
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Wie funktioniert's?</h2>
           <div className="space-y-4">
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold shadow-lg">
-                1
-              </div>
+              <OrganicNumberBadge number={1} />
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">Anmelden</h3>
                 <p className="text-sm text-gray-800">Entscheide dich für ein <Link href="/abos" className="text-gray-900 hover:underline font-semibold">Abo</Link> oder teste mit einem <Link href="/mitmachen" className="text-gray-900 hover:underline font-semibold">Schnupperabo</Link></p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold shadow-lg">
-                2
-              </div>
+              <OrganicNumberBadge number={2} />
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">Rechnung bezahlen</h3>
                 <p className="text-sm text-gray-800">Du erhältst eine Rechnung und bezahlst den Beitrag</p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold shadow-lg">
-                3
-              </div>
+              <OrganicNumberBadge number={3} />
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">Arbeitseinsätze planen</h3>
                 <p className="text-sm text-gray-800">Organisiere deine <Link href="/anpacken" className="text-gray-900 hover:underline font-semibold">Mitarbeit</Link></p>
               </div>
             </div>
             <div className="flex gap-4">
-              <div className="flex-shrink-0 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center font-bold shadow-lg">
-                4
-              </div>
+              <OrganicNumberBadge number={4} />
               <div>
                 <h3 className="font-semibold text-gray-900 mb-1">Gemüse abholen</h3>
                 <p className="text-sm text-gray-800">Wöchentlich in einem der <Link href="/depots" className="text-gray-900 hover:underline font-semibold">Standorte</Link></p>

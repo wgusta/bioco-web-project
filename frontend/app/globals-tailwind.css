@@ -2,6 +2,36 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Organic Number Badge Styles */
+.organic-number-badge {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2.5rem;
+  font-weight: 700;
+  font-size: 1rem;
+  color: #ffffff;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  flex-shrink: 0;
+}
+
+.organic-number-badge-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.organic-number-badge-content {
+  position: relative;
+  z-index: 2;
+}
+
 /* Earthy white background */
 .bg-earth-white {
   background-color: #faf8f5; /* Warm, earthy white */
