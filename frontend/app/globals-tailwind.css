@@ -453,3 +453,35 @@ header {
   font-family: inherit;
 }
 
+/* Organic Card Styles (for inner cards within bento boxes) */
+.organic-card-wrapper {
+  position: relative;
+  display: block;
+  width: 100%;
+  min-height: 100px;
+  transition: transform 0.2s ease;
+}
+
+.organic-card-wrapper:hover {
+  transform: scale(1.01);
+}
+
+.organic-card-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.organic-card-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  padding: 1rem 1.25rem;
+  box-sizing: border-box;
+}
+

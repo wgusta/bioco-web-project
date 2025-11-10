@@ -2,6 +2,7 @@
 
 import { OrganicBentoBox } from '@/components/OrganicBentoBox'
 import { OrganicButton } from '@/components/OrganicButton'
+import { OrganicCard } from '@/components/OrganicCard'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -78,14 +79,14 @@ export default function HomeBento() {
         <OrganicBentoBox type="yellow" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Aktuelles</h2>
           <div className="space-y-4">
-            <div className="p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-gray-900/20">
+            <OrganicCard>
               <h3 className="font-semibold text-gray-900 mb-2">Neuigkeiten vom Hof</h3>
               <p className="text-sm text-gray-800">Aktuelle Informationen und Updates</p>
-            </div>
-            <div className="p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-gray-900/20">
+            </OrganicCard>
+            <OrganicCard>
               <h3 className="font-semibold text-gray-900 mb-2">Saisonale Highlights</h3>
               <p className="text-sm text-gray-800">Was gerade wächst und geerntet wird</p>
-            </div>
+            </OrganicCard>
           </div>
           <div className="mt-4 flex justify-center">
             <OrganicButton href="/aktuelles" variant="primary" className="w-full sm:w-auto">
@@ -98,14 +99,14 @@ export default function HomeBento() {
         <OrganicBentoBox type="carrot" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Nächste Events</h2>
           <div className="space-y-4">
-            <div className="p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-gray-900/20">
+            <OrganicCard>
               <h3 className="font-semibold text-gray-900 mb-2">Schnuppertag</h3>
               <p className="text-sm text-gray-800">Lerne uns und den Hof kennen</p>
-            </div>
-            <div className="p-4 bg-white/60 backdrop-blur-sm rounded-lg border border-gray-900/20">
+            </OrganicCard>
+            <OrganicCard>
               <h3 className="font-semibold text-gray-900 mb-2">Erntefest</h3>
               <p className="text-sm text-gray-800">Gemeinsam feiern und geniessen</p>
-            </div>
+            </OrganicCard>
           </div>
           <div className="mt-4 flex justify-center">
             <OrganicButton href="/aktuelles" variant="primary" className="w-full sm:w-auto">
