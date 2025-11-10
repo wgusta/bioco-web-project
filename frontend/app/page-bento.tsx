@@ -1,6 +1,7 @@
 'use client'
 
 import { OrganicBentoBox } from '@/components/OrganicBentoBox'
+import { OrganicButton } from '@/components/OrganicButton'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -18,18 +19,12 @@ export default function HomeBento() {
                 Frisches Demeter-Gemüse – fast jede Woche.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link
-                  href="/mitmachen"
-                  className="inline-block px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors text-center shadow-lg"
-                >
+                <OrganicButton href="/mitmachen" variant="primary">
                   Jetzt Mitglied werden
-                </Link>
-                <Link
-                  href="/mitmachen#testen"
-                  className="inline-block px-6 py-3 bg-white/80 text-gray-900 border-2 border-gray-900 rounded-lg font-semibold hover:bg-white transition-colors text-center"
-                >
+                </OrganicButton>
+                <OrganicButton href="/mitmachen#testen" variant="secondary">
                   Zuerst testen?
-                </Link>
+                </OrganicButton>
               </div>
             </div>
           </OrganicBentoBox>
@@ -50,12 +45,9 @@ export default function HomeBento() {
             <li>• Saisonalität – das Gemüse der Jahreszeit</li>
             <li>• Demeter-Qualität – höchste Bio-Standards</li>
           </ul>
-          <Link
-            href="/ernte"
-            className="inline-block px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors shadow-lg"
-          >
+          <OrganicButton href="/ernte" variant="primary">
             Ernte entdecken
-          </Link>
+          </OrganicButton>
         </OrganicBentoBox>
 
         {/* Gemeinschaft - Beet with overlap */}
@@ -94,12 +86,11 @@ export default function HomeBento() {
               <p className="text-sm text-gray-800">Was gerade wächst und geerntet wird</p>
             </div>
           </div>
-          <Link
-            href="/aktuelles"
-            className="inline-block mt-4 px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors w-full text-center shadow-lg"
-          >
-            Alle Aktuelles ansehen
-          </Link>
+          <div className="mt-4 flex justify-center">
+            <OrganicButton href="/aktuelles" variant="primary" className="w-full sm:w-auto">
+              Alle Aktuelles ansehen
+            </OrganicButton>
+          </div>
         </OrganicBentoBox>
 
         {/* Events - Apple */}
@@ -115,12 +106,11 @@ export default function HomeBento() {
               <p className="text-sm text-gray-800">Gemeinsam feiern und geniessen</p>
             </div>
           </div>
-          <Link
-            href="/aktuelles"
-            className="inline-block mt-4 px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors w-full text-center shadow-lg"
-          >
-            Alle Events ansehen
-          </Link>
+          <div className="mt-4 flex justify-center">
+            <OrganicButton href="/aktuelles" variant="primary" className="w-full sm:w-auto">
+              Alle Events ansehen
+            </OrganicButton>
+          </div>
         </OrganicBentoBox>
 
         {/* Wie funktioniert's - Beet */}
@@ -176,18 +166,12 @@ export default function HomeBento() {
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="/kontakt"
-                className="px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors text-center shadow-lg"
-              >
+              <OrganicButton href="/kontakt" variant="primary">
                 Nimm Kontakt auf
-              </Link>
-              <Link
-                href="/depots"
-                className="px-6 py-3 bg-white/80 text-gray-900 border-2 border-gray-900 rounded-lg font-semibold hover:bg-white transition-colors text-center"
-              >
+              </OrganicButton>
+              <OrganicButton href="/depots" variant="secondary">
                 Zu uns finden
-              </Link>
+              </OrganicButton>
             </div>
           </div>
         </OrganicBentoBox>
