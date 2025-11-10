@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 // import './globals.css' // Original sketchy design - disabled for rooty-bento
-import './rooty-bento.css' // New modern rooty-bento design
+// import './rooty-bento.css' // New modern rooty-bento design
+import './globals-tailwind.css' // Tailwind CSS for organic bento design
 import { MatomoScript } from '@/components/MatomoScript'
 
 export const metadata: Metadata = {
