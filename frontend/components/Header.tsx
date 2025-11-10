@@ -6,24 +6,25 @@ import { MobileMenu } from './MobileMenu'
 
 export function Header() {
   return (
-    <>
-      <SecondaryNavigation />
-      <header id="header">
-        <div className="header-top">
-          <div id="header-logo" className="header-logo">
-            <Logo />
-          </div>
-          <div className="mobile-menu-wrapper">
-            <MobileMenu />
-          </div>
-          {/* Desktop nav - wide horizontal layout */}
-          <div className="desktop-nav">
-            <div className="header-nav-container">
-              <Navigation />
-            </div>
+    <header id="header">
+      {/* Secondary Navigation - Above Primary Navigation */}
+      <div className="desktop-nav-secondary">
+        <SecondaryNavigation />
+      </div>
+      <div className="header-top">
+        <div id="header-logo" className="header-logo">
+          <Logo />
+        </div>
+        <div className="mobile-menu-wrapper">
+          <MobileMenu />
+        </div>
+        {/* Desktop nav - wide horizontal layout */}
+        <div className="desktop-nav">
+          <div className="header-nav-container">
+            <Navigation />
           </div>
         </div>
-      </header>
-    </>
+      </div>
+    </header>
   )
 }
