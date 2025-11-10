@@ -2,64 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Parallax Background - Journey into the Earth */
-.parallax-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 300vh; /* 3x viewport height for scroll effect */
-  background: linear-gradient(
-    to bottom,
-    #87CEEB 0%,      /* Sky blue - top */
-    #B0E0E6 20%,     /* Light blue */
-    #98D8C8 40%,     /* Light green-blue */
-    #F4E4BC 60%,     /* Light brown - surface */
-    #D2B48C 80%,     /* Tan - shallow earth */
-    #8B7355 100%     /* Dark brown - deep earth */
-  );
-  z-index: -1;
-  will-change: transform;
-}
-
-/* SVG Root Container */
-.svg-root-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 1;
-}
-
-/* Bento Grid */
+/* Bento Grid - Professional Layout */
 .bento-grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  grid-template-rows: repeat(12, minmax(100px, auto));
   gap: 1.5rem;
-  padding: 2rem;
-  position: relative;
-  z-index: 2;
+  width: 100%;
 }
 
-/* Organic Bento Box Base */
-.organic-bento-box {
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.organic-bento-box:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-}
-
-/* Content inside box */
-.bento-content {
-  position: relative;
-  z-index: 1;
+/* Bento Box Base */
+.bento-box {
+  display: flex;
+  flex-direction: column;
+  min-height: 200px;
 }
 
 /* Header Styles */
@@ -114,16 +69,10 @@ header {
   }
 }
 
-/* Mobile: Stack vertically */
-@media (max-width: 1023px) {
+/* Responsive Grid */
+@media (max-width: 768px) {
   .bento-grid-container {
     grid-template-columns: 1fr;
-    grid-template-rows: auto;
-    gap: 2rem;
-  }
-  
-  .parallax-background {
-    display: none; /* Disable parallax on mobile */
   }
 }
 
