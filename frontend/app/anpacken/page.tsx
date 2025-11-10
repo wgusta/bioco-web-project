@@ -1,46 +1,45 @@
+'use client'
+
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
+import { OrganicBentoBox } from '@/components/OrganicBentoBox'
+import { OrganicButton } from '@/components/OrganicButton'
+import { OrganicImage } from '@/components/OrganicImage'
 import { EventsBanner } from '@/components/EventsBanner'
-import { CTA } from '@/components/CTA'
-import Image from 'next/image'
-import Link from 'next/link'
 
 export default function AnpackenPage() {
   return (
     <>
       <Header />
-      <main className="main-content">
-        <div className="bento-grid">
-          <section id="D-01" className="bento-card bento-card-large">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Was es braucht, damit wir gesundes Gemüse haben</h3>
+      <div className="min-h-screen bg-earth-white">
+        <div className="bento-grid-container py-12">
+          {/* Was es braucht - Apple */}
+          <OrganicBentoBox type="apple" colSpan={12} rowSpan={2} className="md:col-span-8 lg:col-span-8">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Was es braucht, damit wir gesundes Gemüse haben</h2>
+            <div className="mb-4">
+              <OrganicImage
+                src="/images/anpacken/bioco_anpacken_einzel.JPG"
+                alt="Einzelperson bei der Mitarbeit auf dem Geisshof"
+                width={800}
+                height={600}
+                className="w-full"
+              />
             </div>
-            <div className="card-body">
-              <div style={{ marginBottom: 'var(--spacing-md)' }}>
-                <Image
-                  src="/images/anpacken/bioco_anpacken_einzel.JPG"
-                  alt="Einzelperson bei der Mitarbeit auf dem Geisshof"
-                  width={800}
-                  height={600}
-                  style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
-                />
-              </div>
-              <h4 className="card-title">Mitarbeit bei biocò</h4>
-              <p className="card-text">Jede(r) Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv. Die Mitarbeit ist ein wichtiger Teil des CSA-Prinzips.</p>
-            
-            <div style={{ marginTop: '16px' }}>
-              <h3>Umfang</h3>
-              <ul>
+            <h3 className="text-xl font-semibold text-gray-900 mb-3 drop-shadow-md">Mitarbeit bei biocò</h3>
+            <p className="text-gray-800 mb-4 drop-shadow-md">Jede(r) Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv. Die Mitarbeit ist ein wichtiger Teil des CSA-Prinzips.</p>
+          
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Umfang</h3>
+              <ul className="space-y-2 text-gray-800">
                 <li><strong>Halb Gemüsekorb:</strong> 20 Stunden pro Jahr (5 Halbtage, alias "10 Rüebli")</li>
                 <li><strong>Standard/Doppel Gemüsekorb:</strong> 40 Stunden pro Jahr</li>
               </ul>
             </div>
 
-            <div style={{ marginTop: '16px' }}>
-              <h3>Tätigkeitsbereiche</h3>
-              <p>Du kannst dich in verschiedenen Bereichen einbringen:</p>
-              <ul>
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Tätigkeitsbereiche</h3>
+              <p className="text-gray-800 mb-2">Du kannst dich in verschiedenen Bereichen einbringen:</p>
+              <ul className="space-y-2 text-gray-800">
                 <li><strong>Feld/Anbau:</strong> Säen, Pflanzen, Jäten, Ernten, Unkraut bekämpfen</li>
                 <li><strong>Logistik:</strong> Gemüse waschen, sortieren, packen, verteilen</li>
                 <li><strong>Administration:</strong> Büroarbeit, Rechnungen, Kommunikation</li>
@@ -49,10 +48,10 @@ export default function AnpackenPage() {
               </ul>
             </div>
 
-            <div style={{ marginTop: '16px' }}>
-              <h3>Planung</h3>
-              <p>Nach der Anmeldung erhältst du Zugang zum Intranet. Dort kannst du:</p>
-              <ul>
+            <div className="mb-4">
+              <h3 className="text-lg font-semibold text-gray-900 mb-2">Planung</h3>
+              <p className="text-gray-800 mb-2">Nach der Anmeldung erhältst du Zugang zum Intranet. Dort kannst du:</p>
+              <ul className="space-y-2 text-gray-800">
                 <li>Deine bevorzugten Tage angeben (Mo-Sa)</li>
                 <li>Deine bevorzugten Zeiten wählen (morgens, nachmittags, abends)</li>
                 <li>Tätigkeitsbereiche auswählen</li>
@@ -60,76 +59,62 @@ export default function AnpackenPage() {
               </ul>
             </div>
 
-            <div style={{ marginTop: '24px' }}>
-              <CTA
-                text="Jetzt anmelden"
-                href="/mitmachen"
-                variant="primary"
+            <div className="mt-6">
+              <OrganicButton href="/mitmachen" variant="primary">
+                Jetzt anmelden
+              </OrganicButton>
+            </div>
+          </OrganicBentoBox>
+
+          {/* Gruppen & Gemeinschaft - Beige */}
+          <OrganicBentoBox type="beige" colSpan={12} rowSpan={2} className="md:col-span-4 lg:col-span-4">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Gruppen & Gemeinschaft</h2>
+            <div className="mb-4">
+              <OrganicImage
+                src="/images/anpacken/bioco_anpacken_gruppe.JPG"
+                alt="Gruppe bei der Mitarbeit auf dem Geisshof"
+                width={800}
+                height={600}
+                className="w-full"
               />
             </div>
-            </div>
-          </section>
+            <p className="text-gray-800 mb-4 drop-shadow-md">Bei biocò gibt es verschiedene Arbeitsgruppen und Gemeinschaftsaktivitäten, die das Herzstück unserer Genossenschaft bilden:</p>
+            <ul className="space-y-3 text-gray-800">
+              <li><strong>Stammtisch:</strong> Regelmäßige Treffen für Austausch und Gemeinschaft. Hier kommen Mitglieder zusammen, um sich über aktuelle Themen auszutauschen, Erfahrungen zu teilen und die Gemeinschaft zu stärken.</li>
+              <li><strong>BG (Betriebsgruppe):</strong> Aktive Mitarbeit in der Betriebsorganisation. Die Betriebsgruppe koordiniert die strategischen Entscheidungen, plant die Anbauzyklen, organisiert die Logistik und sorgt für die reibungslose Abwicklung des täglichen Betriebs.</li>
+              <li><strong>Elki:</strong> Familienaktivitäten und gemeinsame Anlässe. Die Elki-Gruppe organisiert speziell für Familien mit Kindern ausgerichtete Aktivitäten auf dem Hof.</li>
+              <li><strong>Kräutergruppe:</strong> Spezialisiert auf Kräuter und Gewürze. Diese Gruppe widmet sich dem Anbau, der Pflege und der Verarbeitung von Kräutern und Gewürzen.</li>
+            </ul>
+            <p className="text-gray-800 mt-4 drop-shadow-md">Diese Gruppen ermöglichen es, sich nach eigenen Interessen und Fähigkeiten einzubringen und die Genossenschaft aktiv mitzugestalten.</p>
+          </OrganicBentoBox>
 
-          <section id="D-02" className="bento-card">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Gruppen & Gemeinschaft</h3>
-            </div>
-            <div className="card-body">
-              <div style={{ marginBottom: 'var(--spacing-md)' }}>
-                <Image
-                  src="/images/anpacken/bioco_anpacken_gruppe.JPG"
-                  alt="Gruppe bei der Mitarbeit auf dem Geisshof"
-                  width={800}
-                  height={600}
-                  style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
-                />
+          {/* Nächste Events - Carrot */}
+          <OrganicBentoBox type="carrot" colSpan={12} rowSpan={1} className="md:col-span-12">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Nächste Events</h2>
+            <EventsBanner />
+          </OrganicBentoBox>
+
+          {/* Möchtest du uns kennenlernen - Beet */}
+          <OrganicBentoBox type="beet" colSpan={12} rowSpan={1} className="md:col-span-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2 drop-shadow-lg">Möchtest du uns kennenlernen?</h2>
+                <p className="text-gray-800 drop-shadow-md">
+                  Es können viele Fragen auftauchen. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via Kontaktformular bei uns melden.
+                </p>
               </div>
-              <p className="card-text">Bei biocò gibt es verschiedene Arbeitsgruppen und Gemeinschaftsaktivitäten, die das Herzstück unserer Genossenschaft bilden:</p>
-              <ul>
-                <li><strong>Stammtisch:</strong> Regelmäßige Treffen für Austausch und Gemeinschaft. Hier kommen Mitglieder zusammen, um sich über aktuelle Themen auszutauschen, Erfahrungen zu teilen und die Gemeinschaft zu stärken. Der Stammtisch ist ein wichtiger Ort für den informellen Austausch und das Knüpfen von Kontakten.</li>
-                <li><strong>BG (Betriebsgruppe):</strong> Aktive Mitarbeit in der Betriebsorganisation. Die Betriebsgruppe koordiniert die strategischen Entscheidungen, plant die Anbauzyklen, organisiert die Logistik und sorgt für die reibungslose Abwicklung des täglichen Betriebs. Mitglieder der BG bringen ihre Expertise in verschiedenen Bereichen ein und gestalten die Zukunft der Genossenschaft aktiv mit.</li>
-                <li><strong>Elki:</strong> Familienaktivitäten und gemeinsame Anlässe. Die Elki-Gruppe organisiert speziell für Familien mit Kindern ausgerichtete Aktivitäten auf dem Hof. Kinder können spielerisch den Anbau kennenlernen, gemeinsam ernten und die Natur entdecken. Diese Aktivitäten stärken das Gemeinschaftsgefühl und ermöglichen es, auch den jüngsten Mitgliedern die Werte der solidarischen Landwirtschaft zu vermitteln.</li>
-                <li><strong>Kräutergruppe:</strong> Spezialisiert auf Kräuter und Gewürze. Diese Gruppe widmet sich dem Anbau, der Pflege und der Verarbeitung von Kräutern und Gewürzen. Mitglieder lernen verschiedene Kräuterarten kennen, erfahren mehr über deren Verwendung in der Küche und können ihre eigenen Kräuterprodukte herstellen. Die Kräutergruppe trägt zur Vielfalt unseres Angebots bei und bietet eine spezielle Nische für interessierte Mitglieder.</li>
-              </ul>
-              <p className="card-text" style={{ marginTop: '16px' }}>Diese Gruppen ermöglichen es, sich nach eigenen Interessen und Fähigkeiten einzubringen und die Genossenschaft aktiv mitzugestalten. Jede Gruppe trägt auf ihre Weise zum Erfolg und zur Gemeinschaft bei biocò bei.</p>
-            </div>
-          </section>
-
-          <section className="bento-card events-card bento-card-fullwidth">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Nächste Events</h3>
-            </div>
-            <div className="card-body">
-              <EventsBanner />
-            </div>
-          </section>
-
-          {/* Möchtest du uns kennenlernen - Am Ende */}
-          <section id="B-06" className="bento-card bento-card-fullwidth kennenlernen-card">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Möchtest du uns kennenlernen?</h3>
-            </div>
-            <div className="card-body">
-              <p className="card-text">Es können viele Fragen auftauchen, die wir auf dieser Website nicht allesamt beantworten können. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via Kontaktformular bei uns melden und wir beantworten deine Fragen persönlich.</p>
-              <div style={{ marginTop: '16px', display: 'flex', gap: 'var(--spacing-md)', flexWrap: 'wrap' }}>
-                <CTA
-                  text="Nimm Kontakt auf"
-                  href="/kontakt"
-                  variant="primary"
-                />
-                <CTA
-                  text="Zu uns finden"
-                  href="/depots"
-                  variant="secondary"
-                />
+              <div className="flex flex-col sm:flex-row gap-4">
+                <OrganicButton href="/kontakt" variant="primary">
+                  Nimm Kontakt auf
+                </OrganicButton>
+                <OrganicButton href="/depots" variant="secondary">
+                  Zu uns finden
+                </OrganicButton>
               </div>
             </div>
-          </section>
+          </OrganicBentoBox>
         </div>
-      </main>
+      </div>
       <Footer />
     </>
   )

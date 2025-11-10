@@ -1,9 +1,11 @@
+'use client'
+
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-import { CTA } from '@/components/CTA'
+import { OrganicBentoBox } from '@/components/OrganicBentoBox'
+import { OrganicButton } from '@/components/OrganicButton'
 import { getAktuellesItems, getEventItems } from '@/components/AktuellesData'
 import { AktuellesItemComponent } from '@/components/AktuellesItem'
-import Link from 'next/link'
 
 export default function AktuellesPage() {
   const aktuellesItems = getAktuellesItems()
@@ -12,62 +14,53 @@ export default function AktuellesPage() {
   return (
     <>
       <Header />
-      <main className="main-content">
-        <div className="bento-grid">
-          <div className="aktuelles-events-row">
-            <section id="G-01" className="bento-card">
-              <div className="plant-pattern"></div>
-              <div className="card-header">
-                <h3>Aktuelles</h3>
-              </div>
-              <div className="card-body">
-                <div className="aktuelles-list">
-                  {aktuellesItems.map((item, index) => (
-                    <AktuellesItemComponent key={index} item={item} variant="aktuelles" />
-                  ))}
+      <div className="min-h-screen bg-earth-white">
+        <div className="bento-grid-container py-12">
+          {/* Aktuelles - Yellow */}
+          <OrganicBentoBox type="yellow" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Aktuelles</h2>
+            <div className="space-y-3">
+              {aktuellesItems.map((item, index) => (
+                <div key={index}>
+                  <AktuellesItemComponent item={item} variant="aktuelles" />
                 </div>
-              </div>
-            </section>
-
-            <section id="G-02" className="bento-card events-card">
-              <div className="plant-pattern"></div>
-              <div className="card-header">
-                <h3>Nächste Events</h3>
-              </div>
-              <div className="card-body">
-                <div className="events-list">
-                  {eventItems.map((item, index) => (
-                    <AktuellesItemComponent key={index} item={item} variant="event" />
-                  ))}
-                </div>
-              </div>
-            </section>
-          </div>
-
-          {/* Möchtest du uns kennenlernen - Am Ende */}
-          <section id="B-06" className="bento-card bento-card-fullwidth kennenlernen-card">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Möchtest du uns kennenlernen?</h3>
+              ))}
             </div>
-            <div className="card-body">
-              <p className="card-text">Es können viele Fragen auftauchen, die wir auf dieser Website nicht allesamt beantworten können. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via Kontaktformular bei uns melden und wir beantworten deine Fragen persönlich.</p>
-              <div style={{ marginTop: '16px', display: 'flex', gap: 'var(--spacing-md)', flexWrap: 'wrap' }}>
-                <CTA
-                  text="Nimm Kontakt auf"
-                  href="/kontakt"
-                  variant="primary"
-                />
-                <CTA
-                  text="Zu uns finden"
-                  href="/depots"
-                  variant="secondary"
-                />
+          </OrganicBentoBox>
+
+          {/* Nächste Events - Carrot */}
+          <OrganicBentoBox type="carrot" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-6">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Nächste Events</h2>
+            <div className="space-y-3">
+              {eventItems.map((item, index) => (
+                <div key={index}>
+                  <AktuellesItemComponent item={item} variant="event" />
+                </div>
+              ))}
+            </div>
+          </OrganicBentoBox>
+
+          {/* Möchtest du uns kennenlernen - Beet */}
+          <OrganicBentoBox type="beet" colSpan={12} rowSpan={1} className="md:col-span-12">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6">
+              <div>
+                <h2 className="text-2xl font-bold text-gray-900 mb-2 drop-shadow-lg">Möchtest du uns kennenlernen?</h2>
+                <p className="text-gray-800 drop-shadow-md">
+                  Es können viele Fragen auftauchen. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via Kontaktformular bei uns melden.
+                </p>
+              </div>
+              <div className="flex flex-col sm:flex-row gap-4">
+                <OrganicButton href="/kontakt" variant="primary">
+                  Nimm Kontakt auf
+                </OrganicButton>
+                <OrganicButton href="/depots" variant="secondary">
+                  Zu uns finden
+                </OrganicButton>
               </div>
             </div>
-          </section>
+          </OrganicBentoBox>
         </div>
-      </main>
+      </div>
       <Footer />
     </>
   )

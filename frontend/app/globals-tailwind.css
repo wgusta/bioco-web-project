@@ -85,9 +85,16 @@ h1 {
   transition: transform 0.2s ease;
   isolation: isolate; /* Create new stacking context for mask */
   z-index: 1; /* All boxes have same z-index to prevent overlap */
-  /* Ensure shifted color (3px offset) is visible */
+  /* Ensure shifted color (3px offset) is visible - only on desktop */
   padding: 0 3px; /* Add padding to prevent clipping of offset color */
   box-sizing: border-box;
+}
+
+/* Remove offset padding on mobile - boxes go to edge */
+@media (max-width: 768px) {
+  .organic-bento-box {
+    padding: 0 !important; /* No padding on mobile - boxes go to edge */
+  }
 }
 
 /* SVG shape overlay */
@@ -715,14 +722,124 @@ footer li {
   }
 }
 
-/* Responsive Grid */
+/* Responsive Grid - Mobile Full Width */
 @media (max-width: 768px) {
+  /* Ensure body and main containers don't add padding */
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden; /* Prevent horizontal scroll */
+  }
+  
+  /* Remove any padding/margin from container on mobile - boxes go to edge */
   .bento-grid-container {
     grid-template-columns: 1fr;
-    max-width: 100%; /* Full width on mobile */
-    padding: 0; /* No padding for true full width */
+    max-width: 100% !important; /* Force full width */
+    width: 100% !important; /* Force full width */
+    padding: 0 !important; /* No padding - boxes go to edge */
+    margin: 0 !important; /* No margin */
     gap: 2.5rem; /* Increased gap between rows on mobile */
     row-gap: 2.5rem; /* Explicit row gap for mobile */
+  }
+  
+  /* Ensure wrapper divs don't add padding */
+  .min-h-screen {
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  
+  /* Ensure bento boxes are truly full width on mobile - go to edge */
+  .organic-bento-box {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important; /* Remove any padding from box itself */
+    /* Remove the 3px padding that was for offset colors on mobile */
+  }
+  
+  /* Adjust content padding for readability while keeping box full width */
+  .bento-content-wrapper {
+    padding: 1.5rem 1rem !important; /* Reduced padding on mobile, but keep some for readability */
+  }
+  
+  /* Ensure text is readable on mobile */
+  .bento-content-wrapper h1 {
+    font-size: 1.75rem !important; /* Smaller on mobile */
+    line-height: 1.3;
+    margin-bottom: 1rem;
+  }
+  
+  .bento-content-wrapper h2 {
+    font-size: 1.5rem !important; /* Smaller on mobile */
+    line-height: 1.3;
+    margin-bottom: 0.75rem;
+  }
+  
+  .bento-content-wrapper h3 {
+    font-size: 1.25rem !important; /* Smaller on mobile */
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bento-content-wrapper h4 {
+    font-size: 1.1rem !important;
+    line-height: 1.4;
+    margin-bottom: 0.5rem;
+  }
+  
+  .bento-content-wrapper p {
+    font-size: 0.95rem !important; /* Readable size on mobile */
+    line-height: 1.6;
+    margin-bottom: 1rem;
+  }
+  
+  .bento-content-wrapper ul,
+  .bento-content-wrapper li {
+    font-size: 0.95rem !important; /* Readable size on mobile */
+    line-height: 1.6;
+  }
+  
+  /* Ensure tables are readable and scrollable on mobile */
+  .bento-content-wrapper .overflow-x-auto {
+    width: 100%;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 0 -1rem; /* Extend to edge, content padding will handle spacing */
+    padding: 0 1rem; /* Add padding back for scroll area */
+  }
+  
+  .bento-content-wrapper table {
+    font-size: 0.75rem !important; /* Smaller table text on mobile */
+    width: 100%;
+    min-width: 600px; /* Minimum width for table to be readable */
+    display: table; /* Keep table layout */
+    border-collapse: collapse;
+  }
+  
+  .bento-content-wrapper table th,
+  .bento-content-wrapper table td {
+    padding: 0.5rem 0.25rem !important; /* Reduced padding on mobile */
+    min-width: 60px;
+    font-size: 0.75rem !important;
+    word-break: break-word;
+  }
+  
+  /* Ensure buttons are touch-friendly */
+  .organic-button-wrapper {
+    min-width: 120px; /* Minimum touch target */
+    min-height: 44px; /* Minimum touch target */
+  }
+  
+  /* Ensure images don't overflow */
+  .bento-content-wrapper img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  /* Ensure organic images are full width */
+  .organic-image-wrapper {
+    width: 100%;
+    margin: 0;
   }
 }
 
@@ -821,16 +938,15 @@ footer li {
   display: block;
   width: 100%;
   overflow: hidden;
+  /* Ensure clean clipping - no rounded corners */
+  border-radius: 0;
 }
 
 .organic-image-svg {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 2; /* Above image */
+  width: 0;
+  height: 0;
+  overflow: hidden;
 }
 
 .organic-image-content {
@@ -839,14 +955,27 @@ footer li {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  /* Clip image to organic shape */
-  clip-path: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M 0 50 Q 0 20 0 5 Q 0 0 5 0 Q 10 0 15 0 Q 20 0 25 0 Q 30 0 35 0 Q 40 0 45 0 Q 50 0 55 0 Q 60 0 65 0 Q 70 0 75 0 Q 80 0 85 0 Q 90 0 95 0 Q 100 0 100 5 Q 100 20 100 50 Q 100 80 100 95 Q 100 100 95 100 Q 90 100 85 100 Q 80 100 75 100 Q 70 100 65 100 Q 60 100 55 100 Q 50 100 45 100 Q 40 100 35 100 Q 30 100 25 100 Q 20 100 15 100 Q 10 100 5 100 Q 0 100 0 95 Q 0 80 0 50 Z' fill='black'/></svg>");
-  -webkit-clip-path: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100' preserveAspectRatio='none'><path d='M 0 50 Q 0 20 0 5 Q 0 0 5 0 Q 10 0 15 0 Q 20 0 25 0 Q 30 0 35 0 Q 40 0 45 0 Q 50 0 55 0 Q 60 0 65 0 Q 70 0 75 0 Q 80 0 85 0 Q 90 0 95 0 Q 100 0 100 5 Q 100 20 100 50 Q 100 80 100 95 Q 100 100 95 100 Q 90 100 85 100 Q 80 100 75 100 Q 70 100 65 100 Q 60 100 55 100 Q 50 100 45 100 Q 40 100 35 100 Q 30 100 25 100 Q 20 100 15 100 Q 10 100 5 100 Q 0 100 0 95 Q 0 80 0 50 Z' fill='black'/></svg>");
+  /* Ensure clean edges - no rounded corners */
+  border-radius: 0;
+  /* Mask will be applied inline via style */
 }
 
 .organic-image-content img {
   width: 100%;
   height: auto;
   display: block;
+  /* Ensure clean edges - no rounded corners */
+  border-radius: 0;
+  object-fit: cover;
+}
+
+.organic-image-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 2;
 }
 
