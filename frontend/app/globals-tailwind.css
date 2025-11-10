@@ -28,6 +28,7 @@
 .organic-bento-box {
   position: relative;
   min-height: 350px; /* Taller boxes for content visibility */
+  min-width: 100%; /* Larger width for content visibility */
   overflow: visible; /* Allow overlap */
   /* No box-shadow */
   transition: transform 0.2s ease;
