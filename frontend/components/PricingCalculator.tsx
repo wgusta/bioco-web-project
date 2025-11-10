@@ -94,10 +94,12 @@ export function PricingCalculator({ onStartForm }: PricingCalculatorProps) {
             </tr>
           </thead>
           <tbody>
-            {selectedAbo !== 'kein' && (
+            {selectedAbo !== 'kein' ? (
               <tr>
                 <td>
-                  {aboData.name}
+                  {selectedAbo === 'halb' && 'Halb (1 Person)'}
+                  {selectedAbo === 'standard' && 'Standard (2-3 Personen)'}
+                  {selectedAbo === 'doppel' && 'Doppel (4-6 Personen)'}
                   <span className="payment-type-label" style={{ display: 'block', marginTop: '4px' }}>
                     <strong style={{ color: 'var(--bioco-green)', fontSize: '0.875rem' }}>Jährlicher Beitrag</strong>
                   </span>
@@ -108,6 +110,19 @@ export function PricingCalculator({ onStartForm }: PricingCalculatorProps) {
                 <td>1</td>
                 <td>CHF {aboData.price.toLocaleString('de-CH')}.-</td>
                 <td><strong>CHF {aboData.price.toLocaleString('de-CH')}.-</strong></td>
+                <td></td>
+              </tr>
+            ) : (
+              <tr>
+                <td>
+                  Kein Abo
+                  <span className="payment-type-label" style={{ display: 'block', marginTop: '4px' }}>
+                    <strong style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Nur Anteilsscheine</strong>
+                  </span>
+                </td>
+                <td>-</td>
+                <td>-</td>
+                <td><strong>-</strong></td>
                 <td></td>
               </tr>
             )}
