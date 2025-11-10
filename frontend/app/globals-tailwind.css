@@ -11,7 +11,8 @@
 .bento-grid-container {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
-  gap: 1.5rem;
+  gap: 1.5rem 1.5rem; /* row-gap column-gap */
+  row-gap: 3rem; /* More vertical spacing between rows */
   width: 100%;
   position: relative;
   overflow: visible; /* Allow bento boxes to overlap */
