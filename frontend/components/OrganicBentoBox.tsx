@@ -60,7 +60,7 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
     <div
       className={`organic-bento-box ${colSpanClasses[colSpan] || 'col-span-1'} ${rowSpanClasses[rowSpan] || 'row-span-1'} ${className}`}
     >
-      {/* SVG for shape, border, and details */}
+      {/* SVG for shape and border */}
       <svg
         className="bento-svg-shape"
         viewBox="0 0 100 100"
