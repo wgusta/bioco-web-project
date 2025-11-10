@@ -4,7 +4,7 @@ import { OrganicBentoBox } from '@/components/OrganicBentoBox'
 import { OrganicButton } from '@/components/OrganicButton'
 import { OrganicCard } from '@/components/OrganicCard'
 import { OrganicNumberBadge } from '@/components/OrganicNumberBadge'
-import Image from 'next/image'
+import { OrganicImage } from '@/components/OrganicImage'
 import Link from 'next/link'
 
 export default function HomeBento() {
@@ -57,12 +57,12 @@ export default function HomeBento() {
         <OrganicBentoBox type="beige" colSpan={12} rowSpan={1} className="md:col-span-6 lg:col-span-6 bento-overlap-3">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Gemeinschaft & Solidarität</h2>
           <div className="mb-4">
-            <Image
+            <OrganicImage
               src="/images/gemeinschaft/bioco_gemeinschaft.JPG"
               alt="Gemeinschaft bei biocò"
               width={800}
               height={600}
-              className="w-3/4 h-auto mx-auto rounded-lg shadow-xl"
+              className="w-3/4 mx-auto"
             />
           </div>
           <p className="text-gray-800 mb-4 drop-shadow-md">
