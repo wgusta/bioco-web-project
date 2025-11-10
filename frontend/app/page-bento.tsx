@@ -1,8 +1,6 @@
 'use client'
 
 import { OrganicBentoBox } from '@/components/OrganicBentoBox'
-import { Navigation } from '@/components/Navigation'
-import { SecondaryNavigation } from '@/components/SecondaryNavigation'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -12,8 +10,8 @@ export default function HomeBento() {
       {/* Hero Section - 50% of viewport on desktop */}
       <div className="lg:h-[50vh] flex items-center justify-center">
         <div className="bento-grid-container max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          {/* Large Welcome Card - Apple (Green) */}
-          <OrganicBentoBox type="apple" colSpan={12} rowSpan={2} className="md:col-span-8 lg:col-span-8">
+          {/* Large Welcome Card - Apple (Green) with overlap */}
+          <OrganicBentoBox type="apple" colSpan={12} rowSpan={2} className="md:col-span-8 lg:col-span-8 bento-overlap-1">
             <div className="h-full flex flex-col justify-center">
               <h1 className="text-4xl md:text-5xl font-bold mb-4 text-gray-900 drop-shadow-lg">Willkommen bei biocò</h1>
               <p className="text-xl md:text-2xl text-gray-800 mb-6 drop-shadow-md">
@@ -35,34 +33,14 @@ export default function HomeBento() {
               </div>
             </div>
           </OrganicBentoBox>
-
-          {/* Primary Navigation - Carrot (Right side, top) */}
-          <OrganicBentoBox type="carrot" colSpan={12} rowSpan={1} className="md:col-span-4 lg:col-span-4 md:col-start-9 lg:col-start-9">
-            <div className="h-full flex flex-col justify-center">
-              <h3 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wide">Navigation</h3>
-              <nav className="bento-nav">
-                <Navigation hideMitmachen={true} />
-              </nav>
-            </div>
-          </OrganicBentoBox>
-
-          {/* Secondary Navigation - Beet (Right side, bottom) */}
-          <OrganicBentoBox type="beet" colSpan={12} rowSpan={1} className="md:col-span-4 lg:col-span-4 md:col-start-9 lg:col-start-9 md:row-start-2 lg:row-start-2">
-            <div className="h-full flex flex-col justify-center">
-              <h3 className="text-sm font-semibold text-gray-900 mb-3 uppercase tracking-wide">Kontakt & Standorte</h3>
-              <nav className="bento-nav-secondary">
-                <SecondaryNavigation />
-              </nav>
-            </div>
-          </OrganicBentoBox>
         </div>
       </div>
 
       {/* Main Content Container */}
       <div className="bento-grid-container max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
 
-        {/* Saisonal & Demeter - Carrot */}
-        <OrganicBentoBox type="carrot" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-6">
+        {/* Saisonal & Demeter - Carrot with overlap */}
+        <OrganicBentoBox type="carrot" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-6 bento-overlap-2">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Das ist drin: Saisonal & Demeter</h2>
           <p className="text-gray-800 mb-4 drop-shadow-md">
             Wöchentlich erhalten unsere Mitglieder einen Gemüsekorb mit frischem, saisonalem Gemüse in Demeter-Qualität.
@@ -80,8 +58,8 @@ export default function HomeBento() {
           </Link>
         </OrganicBentoBox>
 
-        {/* Gemeinschaft - Beet */}
-        <OrganicBentoBox type="beet" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-6">
+        {/* Gemeinschaft - Beet with overlap */}
+        <OrganicBentoBox type="beet" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-6 bento-overlap-3">
           <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Gemeinschaft & Solidarität</h2>
           <div className="mb-4">
             <Image

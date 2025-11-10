@@ -13,6 +13,8 @@
   grid-template-columns: repeat(12, 1fr);
   gap: 1.5rem;
   width: 100%;
+  position: relative;
+  overflow: visible; /* Allow bento boxes to overlap */
 }
 
 /* Bento Box Base */
@@ -26,11 +28,28 @@
 .organic-bento-box {
   position: relative;
   min-height: 300px;
-  overflow: hidden; /* Clip content to mask */
-  border: 2px solid #000000; /* Always black border */
+  overflow: visible; /* Allow overlap */
+  border: 3px solid #000000; /* Strong black border */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.2s ease;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
   isolation: isolate; /* Create new stacking context for mask */
+  z-index: 1;
+}
+
+/* Overlap styles for bento boxes */
+.bento-overlap-1 {
+  z-index: 2;
+  transform: translate(0, 0);
+}
+
+.bento-overlap-2 {
+  z-index: 3;
+  transform: translate(-20px, 20px);
+}
+
+.bento-overlap-3 {
+  z-index: 4;
+  transform: translate(20px, -15px);
 }
 
 .organic-bento-box:hover {
@@ -190,20 +209,50 @@ header {
     display: none; /* Hide mobile menu (bean icon) on desktop */
   }
   
-  /* Hide secondary nav in header on desktop (moved to bento on homepage) */
   .secondary-nav-wrapper {
-    display: none;
-  }
-  
-  /* Show desktop nav only on non-home pages */
-  .desktop-nav-non-home {
-    display: block;
+    display: block; /* Show secondary nav in header */
   }
 }
 
-/* Hide desktop nav on homepage (navigation is in bento boxes) */
-body:has(.bg-earth-white) .desktop-nav-non-home {
-  display: none;
+/* Header Navigation - Wide horizontal layout */
+.header-nav-container {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.header-nav ul {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  align-items: center;
+}
+
+.header-nav li {
+  margin: 0;
+}
+
+.header-nav a {
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: #1f2937;
+  font-weight: 500;
+  border-radius: 0.375rem;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.header-nav a:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.header-nav a.nav-active {
+  background-color: rgba(46, 125, 50, 0.1);
+  color: #2e7d32;
+  font-weight: 600;
 }
 
 @media (max-width: 767px) {

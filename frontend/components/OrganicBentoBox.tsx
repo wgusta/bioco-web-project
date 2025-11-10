@@ -31,13 +31,13 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
   const getBackgroundColor = () => {
     switch (type) {
       case 'apple':
-        return 'rgba(134, 239, 172, 0.4)' // Light green, semi-transparent
+        return 'rgba(134, 239, 172, 0.7)' // Light green, more opaque for visibility
       case 'carrot':
-        return 'rgba(254, 215, 170, 0.4)' // Light orange, semi-transparent
+        return 'rgba(254, 215, 170, 0.7)' // Light orange, more opaque for visibility
       case 'beet':
-        return 'rgba(252, 165, 165, 0.4)' // Light red/pink, semi-transparent
+        return 'rgba(252, 165, 165, 0.7)' // Light red/pink, more opaque for visibility
       default:
-        return 'rgba(255, 255, 255, 0.4)'
+        return 'rgba(255, 255, 255, 0.7)'
     }
   }
 
