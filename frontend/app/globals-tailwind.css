@@ -27,13 +27,23 @@
 /* Organic Bento Box */
 .organic-bento-box {
   position: relative;
-  min-height: 300px;
+  min-height: 400px; /* Larger minimum height for content visibility */
   overflow: visible; /* Allow overlap */
-  border: 3px solid #000000; /* Strong black border */
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
   transition: box-shadow 0.2s ease, transform 0.2s ease;
   isolation: isolate; /* Create new stacking context for mask */
   z-index: 1;
+}
+
+/* SVG shape overlay */
+.bento-svg-shape {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 0;
 }
 
 /* Overlap styles for bento boxes */
@@ -59,14 +69,14 @@
 .bento-content-wrapper {
   width: 100%;
   height: 100%;
-  padding: 2.5rem 2rem; /* Generous padding to keep text away from organic edges */
+  padding: 3rem 2.5rem; /* More generous padding for content visibility */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
   position: relative;
-  z-index: 1;
+  z-index: 2; /* Above SVG */
   overflow: hidden; /* Ensure content doesn't overflow */
   box-sizing: border-box;
   max-width: 100%;

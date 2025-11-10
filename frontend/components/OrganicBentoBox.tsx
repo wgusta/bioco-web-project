@@ -56,24 +56,92 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
     1: 'row-span-1', 2: 'row-span-2', 3: 'row-span-3', 4: 'row-span-4',
   }
 
+  // Get highlight positions for fruit icon style (white circular highlights)
+  const getHighlights = () => {
+    switch (type) {
+      case 'apple':
+        return [
+          { cx: 35, cy: 35, r: 3 },
+          { cx: 60, cy: 30, r: 2.5 },
+        ]
+      case 'carrot':
+        return [
+          { cx: 40, cy: 25, r: 2.5 },
+          { cx: 55, cy: 20, r: 2 },
+        ]
+      case 'beet':
+        return [
+          { cx: 45, cy: 30, r: 3 },
+          { cx: 60, cy: 35, r: 2.5 },
+        ]
+      default:
+        return []
+    }
+  }
+
+  const highlights = getHighlights()
+
   return (
     <div
       className={`organic-bento-box ${colSpanClasses[colSpan] || 'col-span-1'} ${rowSpanClasses[rowSpan] || 'row-span-1'} ${className}`}
-      style={{
-        backgroundColor: getBackgroundColor(),
-        borderColor: getBorderColor(),
-        WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='${getSVGPath()}' fill='black'/></svg>`)}")`,
-        maskImage: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='${getSVGPath()}' fill='black'/></svg>`)}")`,
-        WebkitMaskSize: '100% 100%',
-        maskSize: '100% 100%',
-        WebkitMaskRepeat: 'no-repeat',
-        maskRepeat: 'no-repeat',
-        WebkitMaskPosition: 'center',
-        maskPosition: 'center',
-        backdropFilter: 'blur(2px)',
-      }}
     >
-      <div className="bento-content-wrapper">
+      {/* SVG for shape, border, and highlights */}
+      <svg
+        className="bento-svg-shape"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <defs>
+          <filter id={`glow-${type}`}>
+            <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        {/* Background shape */}
+        <path
+          d={getSVGPath()}
+          fill={getBackgroundColor()}
+          filter={`url(#glow-${type})`}
+        />
+        {/* Black border following organic shape */}
+        <path
+          d={getSVGPath()}
+          fill="none"
+          stroke="#000000"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        {/* White highlights like fruit icons */}
+        {highlights.map((h, i) => (
+          <circle
+            key={i}
+            cx={h.cx}
+            cy={h.cy}
+            r={h.r}
+            fill="white"
+            opacity="0.85"
+          />
+        ))}
+      </svg>
+      {/* Content wrapper with mask */}
+      <div
+        className="bento-content-wrapper"
+        style={{
+          WebkitMaskImage: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='${getSVGPath()}' fill='black'/></svg>`)}")`,
+          maskImage: `url("data:image/svg+xml,${encodeURIComponent(`<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='${getSVGPath()}' fill='black'/></svg>`)}")`,
+          WebkitMaskSize: '100% 100%',
+          maskSize: '100% 100%',
+          WebkitMaskRepeat: 'no-repeat',
+          maskRepeat: 'no-repeat',
+          WebkitMaskPosition: 'center',
+          maskPosition: 'center',
+        }}
+      >
         {children}
       </div>
     </div>
