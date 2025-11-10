@@ -11,20 +11,62 @@ interface OrganicBentoBoxProps {
 }
 
 export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = '', children }: OrganicBentoBoxProps) {
-  // Organic SVG paths inspired by fruit icons - natural, flowing curves
+  // Horizontal organic SVG paths - much wider than tall
   const getSVGPath = () => {
     switch (type) {
       case 'apple':
-        // Apple shape - organic, rounded like icon
-        return "M 50 8 Q 45 5 40 8 Q 35 12 32 18 Q 30 25 30 32 Q 30 40 32 48 Q 35 55 40 60 Q 45 65 50 67 Q 55 65 60 60 Q 65 55 68 48 Q 70 40 70 32 Q 70 25 68 18 Q 65 12 60 8 Q 55 5 50 8 Z M 50 8 Q 48 6 46 8 Q 45 10 46 12 Q 48 10 50 8 Z"
+        // Horizontal apple shape - wide oval
+        return "M 5 50 Q 3 40 5 30 Q 8 20 15 15 Q 22 10 30 10 Q 38 10 45 15 Q 52 20 55 30 Q 57 40 55 50 Q 57 60 55 70 Q 52 80 45 85 Q 38 90 30 90 Q 22 90 15 85 Q 8 80 5 70 Q 3 60 5 50 Z"
       case 'carrot':
-        // Carrot shape - organic, tapering like icon
-        return "M 50 2 Q 52 4 54 8 Q 56 12 57 18 Q 58 25 59 32 Q 59 40 58 48 Q 57 56 55 62 Q 53 68 50 72 Q 47 76 44 74 Q 41 72 39 68 Q 37 64 36 58 Q 35 52 35 45 Q 35 38 36 30 Q 37 22 39 15 Q 41 8 44 5 Q 47 2 50 2 Z"
+        // Horizontal carrot shape - wide, tapering
+        return "M 3 50 Q 2 40 3 30 Q 5 20 10 15 Q 15 10 22 10 Q 28 10 33 15 Q 38 20 40 30 Q 41 40 41 50 Q 41 60 40 70 Q 38 80 33 85 Q 28 90 22 90 Q 15 90 10 85 Q 5 80 3 70 Q 2 60 3 50 Z"
       case 'beet':
-        // Beetroot shape - rounded, bulbous like icon
-        return "M 50 5 Q 60 3 68 8 Q 75 13 78 20 Q 80 28 79 38 Q 78 48 74 56 Q 70 64 64 68 Q 58 72 50 73 Q 42 74 36 70 Q 30 66 26 58 Q 22 50 21 40 Q 20 30 22 22 Q 24 14 28 9 Q 32 5 40 4 Q 45 4 50 5 Z"
+        // Horizontal beetroot shape - wide, rounded
+        return "M 4 50 Q 2 40 4 30 Q 6 20 12 15 Q 18 10 26 10 Q 34 10 40 15 Q 46 20 48 30 Q 50 40 48 50 Q 50 60 48 70 Q 46 80 40 85 Q 34 90 26 90 Q 18 90 12 85 Q 6 80 4 70 Q 2 60 4 50 Z"
       default:
         return ""
+    }
+  }
+
+  // Get details (stem, leaves, roots) for each type
+  const getDetails = () => {
+    switch (type) {
+      case 'apple':
+        // Apple stem and leaf at top (left side for horizontal)
+        return (
+          <>
+            {/* Stem */}
+            <line x1="10" y1="15" x2="10" y2="10" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
+            {/* Leaf */}
+            <path d="M 10 10 Q 8 8 6 10 Q 8 12 10 10" fill="#2e7d32" stroke="#000000" strokeWidth="1"/>
+          </>
+        )
+      case 'carrot':
+        // Carrot leaves/greens at top (left side for horizontal)
+        return (
+          <>
+            {/* Leaf 1 */}
+            <path d="M 10 15 Q 8 13 6 15 Q 8 17 10 15" fill="#2e7d32" stroke="#000000" strokeWidth="1"/>
+            {/* Leaf 2 */}
+            <path d="M 10 15 Q 12 13 14 15 Q 12 17 10 15" fill="#2e7d32" stroke="#000000" strokeWidth="1"/>
+            {/* Leaf 3 */}
+            <path d="M 10 15 Q 9 13 8 14 Q 9 16 10 15" fill="#2e7d32" stroke="#000000" strokeWidth="1"/>
+          </>
+        )
+      case 'beet':
+        // Beetroot roots at bottom (right side for horizontal)
+        return (
+          <>
+            {/* Root 1 */}
+            <path d="M 48 85 Q 50 87 52 89 Q 50 88 48 85" fill="none" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
+            {/* Root 2 */}
+            <path d="M 48 85 Q 50 87 52 89 Q 50 88 48 85" fill="none" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
+            {/* Root 3 */}
+            <path d="M 48 85 Q 48 87 48 89 Q 48 88 48 85" fill="none" stroke="#000000" strokeWidth="1.2" strokeLinecap="round"/>
+          </>
+        )
+      default:
+        return null
     }
   }
 
@@ -56,56 +98,23 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
     1: 'row-span-1', 2: 'row-span-2', 3: 'row-span-3', 4: 'row-span-4',
   }
 
-  // Get highlight positions for fruit icon style (white circular highlights)
-  const getHighlights = () => {
-    switch (type) {
-      case 'apple':
-        return [
-          { cx: 35, cy: 35, r: 3 },
-          { cx: 60, cy: 30, r: 2.5 },
-        ]
-      case 'carrot':
-        return [
-          { cx: 40, cy: 25, r: 2.5 },
-          { cx: 55, cy: 20, r: 2 },
-        ]
-      case 'beet':
-        return [
-          { cx: 45, cy: 30, r: 3 },
-          { cx: 60, cy: 35, r: 2.5 },
-        ]
-      default:
-        return []
-    }
-  }
-
-  const highlights = getHighlights()
+  const details = getDetails()
 
   return (
     <div
       className={`organic-bento-box ${colSpanClasses[colSpan] || 'col-span-1'} ${rowSpanClasses[rowSpan] || 'row-span-1'} ${className}`}
     >
-      {/* SVG for shape, border, and highlights */}
+      {/* SVG for shape, border, and details */}
       <svg
         className="bento-svg-shape"
         viewBox="0 0 100 100"
         preserveAspectRatio="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <defs>
-          <filter id={`glow-${type}`}>
-            <feGaussianBlur stdDeviation="0.5" result="coloredBlur"/>
-            <feMerge>
-              <feMergeNode in="coloredBlur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
         {/* Background shape */}
         <path
           d={getSVGPath()}
           fill={getBackgroundColor()}
-          filter={`url(#glow-${type})`}
         />
         {/* Black border following organic shape */}
         <path
@@ -116,17 +125,8 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        {/* White highlights like fruit icons */}
-        {highlights.map((h, i) => (
-          <circle
-            key={i}
-            cx={h.cx}
-            cy={h.cy}
-            r={h.r}
-            fill="white"
-            opacity="0.85"
-          />
-        ))}
+        {/* Details (stem, leaves, roots) */}
+        {details}
       </svg>
       {/* Content wrapper with mask */}
       <div

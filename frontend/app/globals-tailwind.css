@@ -27,10 +27,11 @@
 /* Organic Bento Box */
 .organic-bento-box {
   position: relative;
-  min-height: 400px; /* Larger minimum height for content visibility */
+  min-height: 200px; /* Horizontal boxes are lower */
+  min-width: 100%; /* Full width for horizontal layout */
   overflow: visible; /* Allow overlap */
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  /* No box-shadow */
+  transition: transform 0.2s ease;
   isolation: isolate; /* Create new stacking context for mask */
   z-index: 1;
 }
@@ -62,9 +63,7 @@
   transform: translate(20px, -15px);
 }
 
-.organic-bento-box:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-}
+/* No hover shadow */
 
 .bento-content-wrapper {
   width: 100%;
