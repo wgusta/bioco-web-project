@@ -14,11 +14,11 @@ export function OrganicBentoBox({ type, gridCol, gridRow, children, className = 
   const getBackgroundColor = () => {
     switch (type) {
       case 'apple':
-        return 'bg-red-600' // Red
+        return 'bg-bioco-beet' // Deep red (beet color for sky/apple theme)
       case 'lettuce':
-        return 'bg-green-600' // Green
+        return 'bg-bioco-green' // Green
       case 'carrot':
-        return 'bg-orange-600' // Orange
+        return 'bg-bioco-orange' // Orange
       default:
         return 'bg-gray-200'
     }
@@ -27,9 +27,9 @@ export function OrganicBentoBox({ type, gridCol, gridRow, children, className = 
   const getBorderColor = () => {
     switch (type) {
       case 'apple':
-        return 'border-red-800'
+        return 'border-bioco-beet-light'
       case 'lettuce':
-        return 'border-green-800'
+        return 'border-bioco-green-dark'
       case 'carrot':
         return 'border-orange-800'
       default:
