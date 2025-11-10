@@ -126,10 +126,6 @@ export function OrganicBentoBox({ type, colSpan = 1, rowSpan = 1, className = ''
           strokeLinecap="round"
           strokeLinejoin="round"
         />
-        {/* Details (stem, leaves, roots) - also shifted horizontally */}
-        <g transform="translate(3, 0)">
-          {details}
-        </g>
       </svg>
       {/* Content wrapper with mask */}
       <div
