@@ -111,7 +111,7 @@ export default function MitmachenPage() {
             <h2 className="text-xl font-bold text-gray-900 mb-3 drop-shadow-lg">Warteliste</h2>
             <p className="text-gray-800 mb-3 drop-shadow-md">Wenn alle Gemüsekörbe vergeben sind, kannst du dich auf die Warteliste setzen lassen. Du erhältst Vorrang, wenn ein Platz frei wird.</p>
             <p className="text-sm text-gray-800 mb-4">Genossenschafter/innen mit Anteilsscheinen (auch ohne Abo) haben Vorrang auf der Warteliste.</p>
-            <OrganicButton href="/warteliste" variant="secondary" className="text-sm">
+            <OrganicButton href="/warteliste" variant="beet" className="text-sm">
               Auf Warteliste setzen
             </OrganicButton>
           </OrganicBentoBox>
@@ -126,10 +126,10 @@ export default function MitmachenPage() {
                 </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4">
-                <OrganicButton href="/kontakt" variant="primary">
+                <OrganicButton href="/kontakt" variant="beet">
                   Nimm Kontakt auf
                 </OrganicButton>
-                <OrganicButton href="/depots" variant="secondary">
+                <OrganicButton href="/depots" variant="beet">
                   Zu uns finden
                 </OrganicButton>
               </div>

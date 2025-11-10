@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import { OrganicButton } from './OrganicButton'
 
 const ABO_PRICES = {
   'halb': { name: 'Halb Gemüsekorb', price: 750, shares: 1, hours: 20, halbtage: 10 },
@@ -179,13 +180,13 @@ export function PricingCalculator({ onStartForm }: PricingCalculatorProps) {
 
       {(selectedAbo !== 'kein' || additionalShares > 0) && (
         <div style={{ marginTop: '24px', textAlign: 'center' }}>
-          <Link
+          <OrganicButton
             href={`/anmeldung?abo=${selectedAbo === 'kein' ? 'kein' : selectedAbo}&shares=${totalShares}&additional=${additionalShares}`}
-            className="btn btn-primary"
-            style={{ display: 'inline-block', fontSize: '1.125rem', padding: '16px 32px' }}
+            variant="beet"
+            className="text-lg"
           >
             Jetzt mitmachen!
-          </Link>
+          </OrganicButton>
           <p style={{ marginTop: '12px', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
             Deine Auswahl wird automatisch ins Anmeldeformular übernommen
           </p>

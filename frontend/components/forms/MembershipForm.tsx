@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 import { trackEvent } from '../MatomoScript'
 import { InfoTooltip } from '../InfoTooltip'
+import { OrganicButton } from '../OrganicButton'
 import Link from 'next/link'
 
 type AboType = 'halb' | 'standard' | 'doppel' | 'none'
@@ -907,29 +908,27 @@ export function MembershipForm({ initialData }: MembershipFormProps) {
             {/* Navigation Buttons */}
             <div className="form-navigation">
               {currentStep > 0 && (
-                <button
-                  type="button"
-                  className="btn btn-secondary"
+                <OrganicButton
                   onClick={handlePrevious}
+                  variant="secondary"
                 >
                   Zurück
-                </button>
+                </OrganicButton>
               )}
               {currentStep < 5 ? (
-                <button
-                  type="button"
-                  className="btn btn-primary"
+                <OrganicButton
                   onClick={handleNext}
+                  variant="beet"
                 >
                   Weiter
-                </button>
+                </OrganicButton>
               ) : (
-                <button
+                <OrganicButton
                   type="submit"
-                  className="btn btn-primary"
+                  variant="beet"
                 >
                   Anmeldung einreichen
-                </button>
+                </OrganicButton>
               )}
             </div>
           </form>

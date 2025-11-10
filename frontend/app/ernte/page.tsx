@@ -17,15 +17,17 @@ export default function ErntePage() {
       <Header />
       <div className="min-h-screen bg-earth-white">
         <div className="bento-grid-container py-12">
-          {/* Was wir anbauen - Apple */}
-          <OrganicBentoBox type="apple" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-6">
+          {/* Was wir anbauen - Apple - 3/4 width */}
+          <OrganicBentoBox type="apple" colSpan={12} rowSpan={2} className="md:col-span-9 lg:col-span-9">
             <h2 className="text-2xl font-bold text-gray-900 mb-4 drop-shadow-lg">Was wir anbauen</h2>
             <p className="text-gray-800 mb-4 drop-shadow-md">Einblicke in unsere Ernte, den Anbau und die Gemeinschaft</p>
-            <Gallery />
+            <div className="gallery-wrapper-small">
+              <Gallery />
+            </div>
           </OrganicBentoBox>
 
-          {/* Nächste Events - Carrot */}
-          <OrganicBentoBox type="carrot" colSpan={12} rowSpan={2} className="md:col-span-6 lg:col-span-4">
+          {/* Nächste Events - Carrot - 1/4 width */}
+          <OrganicBentoBox type="carrot" colSpan={12} rowSpan={2} className="md:col-span-3 lg:col-span-3">
             <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1 drop-shadow-lg">Nächste Events</h2>
             <div className="space-y-2">
               {getEventItems().slice(0, 3).map((item, index) => (

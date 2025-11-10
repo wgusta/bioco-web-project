@@ -1,20 +1,21 @@
-import { MinimalHeader } from '@/components/MinimalHeader'
+import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { MembershipForm } from '@/components/forms/MembershipForm'
+import { OrganicBentoBox } from '@/components/OrganicBentoBox'
 
 export default function AnmeldungPage() {
   return (
     <>
-      <MinimalHeader />
-      <main className="main-content">
-        <div className="bento-grid">
-          <section className="bento-card bento-card-fullwidth">
-            <div className="plant-pattern"></div>
-            <h1>Anmeldung</h1>
+      <Header />
+      <div className="min-h-screen bg-earth-white">
+        <div className="bento-grid-container py-12">
+          <OrganicBentoBox type="beet" colSpan={12} rowSpan={1} className="md:col-span-12">
+            <h1 className="text-3xl font-bold text-gray-900 mb-6 drop-shadow-lg">Anmeldung</h1>
             <MembershipForm />
-          </section>
+          </OrganicBentoBox>
         </div>
-      </main>
+      </div>
+      <Footer />
     </>
   )
 }

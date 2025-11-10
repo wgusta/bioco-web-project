@@ -1,63 +1,62 @@
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
-import Link from 'next/link'
+import { OrganicBentoBox } from '@/components/OrganicBentoBox'
+import { OrganicButton } from '@/components/OrganicButton'
+import { OrganicNumberBadge } from '@/components/OrganicNumberBadge'
 
 export default function DankePage() {
   return (
     <>
       <Header />
-      <main className="main-content">
-        <div className="bento-grid">
-          <section className="bento-card bento-card-large">
-            <div className="plant-pattern"></div>
-            <h1>Vielen Dank für deine Anmeldung!</h1>
-            <p style={{ fontSize: '1.125rem', marginBottom: '24px' }}>
+      <div className="min-h-screen bg-earth-white">
+        <div className="bento-grid-container py-12">
+          <OrganicBentoBox type="beet" colSpan={12} rowSpan={1} className="md:col-span-12">
+            <h1 className="text-3xl font-bold text-gray-900 mb-4 drop-shadow-lg">Vielen Dank für deine Anmeldung!</h1>
+            <p className="text-lg text-gray-800 mb-6 drop-shadow-md">
               Wir prüfen deine Anmeldung. In der Zwischenzeit kannst du unseren Mitgliederbereich schon anschauen. 
-              Klicke dafür oben rechts auf die Ente.
+              Klicke dafür oben rechts auf das Intranet-Icon.
             </p>
             
-            <div className="next-steps" style={{ marginTop: '32px' }}>
-              <div className="step-item">
-                <div className="step-number">1</div>
+            <div className="space-y-4 mb-6">
+              <div className="flex gap-4">
+                <OrganicNumberBadge number={1} />
                 <div>
-                  <h3>Bestätigungs-E-Mail</h3>
-                  <p>Du erhältst eine E-Mail mit Bestätigungslink (Double Opt-In). Bitte bestätige deine Anmeldung.</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Bestätigungs-E-Mail</h3>
+                  <p className="text-sm text-gray-800">Du erhältst eine E-Mail mit Bestätigungslink (Double Opt-In). Bitte bestätige deine Anmeldung.</p>
                 </div>
               </div>
-              <div className="step-item">
-                <div className="step-number">2</div>
+              <div className="flex gap-4">
+                <OrganicNumberBadge number={2} />
                 <div>
-                  <h3>Rechnung</h3>
-                  <p>Nach Bestätigung erhältst du eine Rechnung per 31. Januar. Du kannst quartalsweise oder das ganze Jahr bezahlen.</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Rechnung</h3>
+                  <p className="text-sm text-gray-800">Nach Bestätigung erhältst du eine Rechnung per 31. Januar. Du kannst quartalsweise oder das ganze Jahr bezahlen.</p>
                 </div>
               </div>
-              <div className="step-item">
-                <div className="step-number">3</div>
+              <div className="flex gap-4">
+                <OrganicNumberBadge number={3} />
                 <div>
-                  <h3>Start</h3>
-                  <p>Du erhältst Zugang zum Intranet und kannst deine Arbeitseinsätze planen. Ab Januar startet die Gemüseverteilung!</p>
+                  <h3 className="font-semibold text-gray-900 mb-1">Start</h3>
+                  <p className="text-sm text-gray-800">Du erhältst Zugang zum Intranet und kannst deine Arbeitseinsätze planen. Ab Januar startet die Gemüseverteilung!</p>
                 </div>
               </div>
             </div>
 
-            <div style={{ marginTop: '32px', padding: '24px', background: 'var(--bg-secondary)', borderRadius: '12px' }}>
-              <h3>Fragen?</h3>
-              <p>Bei Fragen zur Anmeldung oder zu biocò kannst du uns jederzeit kontaktieren:</p>
-              <p>
-                <a href="mailto:info@bioco.ch" className="btn btn-secondary" style={{ display: 'inline-block', marginTop: '8px' }}>
-                  info@bioco.ch
-                </a>
-              </p>
+            <div className="mb-6 p-6 bg-white bg-opacity-50 rounded-lg">
+              <h3 className="font-semibold text-gray-900 mb-2">Fragen?</h3>
+              <p className="text-gray-800 mb-3">Bei Fragen zur Anmeldung oder zu biocò kannst du uns jederzeit kontaktieren:</p>
+              <OrganicButton href="mailto:info@bioco.ch" variant="beet" className="text-sm">
+                info@bioco.ch
+              </OrganicButton>
             </div>
 
-            <div style={{ marginTop: '24px' }}>
-              <Link href="/" className="btn btn-primary">
+            <div className="mt-6">
+              <OrganicButton href="/" variant="beet">
                 Zurück zur Startseite
-              </Link>
+              </OrganicButton>
             </div>
-          </section>
+          </OrganicBentoBox>
         </div>
-      </main>
+      </div>
       <Footer />
     </>
   )

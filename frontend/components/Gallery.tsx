@@ -78,7 +78,7 @@ export function Gallery() {
 
   return (
     <div className="gallery-container">
-      {/* Desktop: Buttons, Mobile: Dropdown */}
+      {/* Filter Chips - User-friendly on all devices */}
       <div className="gallery-filters">
         {filters.map(filter => (
           <button
@@ -93,20 +93,6 @@ export function Gallery() {
           </button>
         ))}
       </div>
-      <select
-        className="gallery-select"
-        value={activeFilter}
-        onChange={(e) => {
-          setActiveFilter(e.target.value as FilterType)
-          setShowAll(false)
-        }}
-      >
-        {filters.map(filter => (
-          <option key={filter.id} value={filter.id}>
-            {filter.label}
-          </option>
-        ))}
-      </select>
 
       {GALLERY_IMAGES.length > 0 ? (
         <>
