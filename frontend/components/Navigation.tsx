@@ -4,10 +4,10 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
 const navigationItems = [
-  { title: 'Ernte', href: '/ernte', id: 'B' },
-  { title: 'Anpacken', href: '/anpacken', id: 'D' },
-  { title: 'Abos', href: '/abos', id: 'C' },
   { title: 'Wir', href: '/wir', id: 'F' },
+  { title: 'Gemüse', href: '/ernte', id: 'B' },
+  { title: 'Mitmachen', href: '/mitmachen', id: 'D' },
+  { title: 'Abos', href: '/abos', id: 'C' },
   { title: 'Aktuelles', href: '/aktuelles', id: 'G' },
 ]
 
@@ -44,7 +44,7 @@ export function Navigation({ onLinkClick, hideMitmachen = false }: NavigationPro
               className="btn btn-orange"
               onClick={onLinkClick}
             >
-              Mitmachen!
+              bioco werden
             </Link>
           </li>
         )}

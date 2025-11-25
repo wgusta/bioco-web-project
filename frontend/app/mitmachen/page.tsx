@@ -88,7 +88,7 @@ export default function MitmachenPage() {
             <div className="faq-list">
               <div className="faq-item">
                 <h3>Was passiert, wenn ich nicht genug Gemüse bekomme?</h3>
-                <p>Wir teilen Arbeit und Ertrag. Bei Ernteausfall aufgrund von Wetter oder anderen Umständen kann es vorkommen, dass die Ernte kleiner ausfällt. Dies ist Teil des CSA-Prinzips.</p>
+                <p>Wir teilen Arbeit und Ertrag. Bei Ernteausfall aufgrund von Wetter oder anderen Umständen kann es vorkommen, dass die Ernte kleiner ausfällt. Dies ist Teil der solidarischen Landwirtschaft.</p>
               </div>
               <div className="faq-item">
                 <h3>Kann ich das Abo pausieren?</h3>
@@ -129,7 +129,6 @@ export default function MitmachenPage() {
             </div>
             <div className="card-body">
               <p className="card-text">Wenn alle Gemüsekörbe vergeben sind, kannst du dich auf die Warteliste setzen lassen. Du erhältst Vorrang, wenn ein Platz frei wird.</p>
-              <p className="card-text">Genossenschafter/innen mit Anteilsscheinen (auch ohne Abo) haben Vorrang auf der Warteliste.</p>
               <Link href="/warteliste" className="btn btn-secondary" style={{ marginTop: '16px', display: 'inline-block' }}>
                 Auf Warteliste setzen
               </Link>

@@ -24,26 +24,18 @@ export default function WirPage() {
               <p className="card-text">biocò ist eine Gemeinschaft von engagierten Menschen, die gemeinsam für frisches, regionales Demeter-Gemüse sorgen.</p>
             
             <div className="team-grid">
-              <div className="team-card">
-                <div className="team-card-image">
-                  <div className="team-placeholder">Foto</div>
-                </div>
-                <h3>Betriebsgruppe (BG)</h3>
-                <p>Die Betriebsgruppe koordiniert den Anbau, die Logistik und die Organisation der Genossenschaft.</p>
-              </div>
-              
-              <div className="team-card">
-                <div className="team-card-image" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
+              <div className="team-card" style={{ gridColumn: 'span 2' }}>
+                <div className="team-card-image" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', height: '100%' }}>
                   <Image
-                    src="/images/team/bioco_hofteam_christian.JPG"
-                    alt="Christian vom Hofteam"
+                    src="/images/team/hofteam_matthias.JPG"
+                    alt="Matthias vom Hofteam"
                     width={300}
                     height={300}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
                   />
                   <Image
-                    src="/images/team/hofteam_matthias.JPG"
-                    alt="Matthias vom Hofteam"
+                    src="/images/team/bioco_hofteam_christian.JPG"
+                    alt="Christian vom Hofteam"
                     width={300}
                     height={300}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
@@ -59,6 +51,14 @@ export default function WirPage() {
                 </div>
                 <h3>Alle Mitglieder</h3>
                 <p>Jede(r) Genossenschafter/in bringt sich ein – ob bei der Feldarbeit, in der Logistik oder bei Events.</p>
+              </div>
+              
+              <div className="team-card">
+                <div className="team-card-image">
+                  <div className="team-placeholder">Foto</div>
+                </div>
+                <h3>Betriebsgruppe (BG)</h3>
+                <p>Die Betriebsgruppe koordiniert den Anbau, die Logistik und die Organisation der Genossenschaft.</p>
               </div>
             </div>
             </div>

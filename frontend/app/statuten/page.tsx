@@ -38,17 +38,6 @@ export default function StatutenPage() {
                     Reglement (PDF)
                   </a>
                 </li>
-                <li>
-                  <a 
-                    href="#" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="btn btn-secondary"
-                    style={{ display: 'inline-block', marginTop: '8px' }}
-                  >
-                    Jahresbericht (PDF)
-                  </a>
-                </li>
               </ul>
             </div>
 
@@ -56,7 +45,7 @@ export default function StatutenPage() {
               <h2>Über die Genossenschaft</h2>
               <p>
                 Die Gemüsegenossenschaft biocò ist eine Genossenschaft nach schweizerischem Recht. 
-                Sie wurde 2014 gegründet und betreibt solidarische Landwirtschaft (CSA - Community Supported Agriculture) 
+                Sie wurde 2014 gegründet und betreibt solidarische Landwirtschaft (Community Supported Agriculture)
                 auf dem Geisshof in Gebenstorf.
               </p>
               <p>

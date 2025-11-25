@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <Header />
       <Hero
-        title="Frisches Demeter-Gemüse – fast jede Woche."
+        title="Frisches Demeter-Gemüse – fast jede Woche"
         subtitle=""
         image={{
           url: '/images/hero/header_homepage.JPG',
@@ -28,18 +28,7 @@ export default function Home() {
             </div>
             <div className="card-body">
               <p className="card-text">biocò ist eine Gemüsegenossenschaft in der Region Baden-Brugg, die seit 2014 auf dem Geisshof in Gebenstorf eine Vielzahl von Biogemüse in Demeter-Qualität anbaut und wöchentlich an ihre Mitglieder verteilt.</p>
-              <div className="button-group">
-                <CTA
-                  text="Jetzt Mitglied werden"
-                  href="/mitmachen"
-                  variant="primary"
-                />
-                <CTA
-                  text="Zuerst testen?"
-                  href="/mitmachen#testen"
-                  variant="secondary"
-                />
-              </div>
+              <div className="button-group"></div>
             </div>
           </section>
 
@@ -55,11 +44,6 @@ export default function Home() {
                 <li>Saisonalität – das Gemüse der Jahreszeit</li>
                 <li>Demeter-Qualität – höchste Bio-Standards</li>
               </ul>
-              <CTA
-                text="Ernte entdecken"
-                href="/ernte"
-                variant="primary"
-              />
             </div>
           </section>
 
@@ -82,7 +66,7 @@ export default function Home() {
                 <p className="card-text">biocò basiert auf den Prinzipien der Solidarischen Landwirtschaft.</p>
                 <ul>
                   <li><strong>Mitarbeit</strong> – <Link href="/anpacken">Anpacken auf dem Feld</Link></li>
-                  <li><strong>Transparenz</strong> – Solidarische Landwirtschaft (CSA)</li>
+                  <li><strong>Transparenz</strong> – Solidarische Landwirtschaft</li>
                   <li><strong>Gemeinschaft</strong> – Jede(r) bringt sich ein</li>
                   <li><strong>Lokal/Region</strong> – <Link href="/wir">Hof: Geisshof</Link></li>
                 </ul>
@@ -101,7 +85,7 @@ export default function Home() {
                   ))}
                 </div>
                 <Link href="/aktuelles" className="btn btn-primary" style={{ marginTop: '16px', display: 'inline-block' }}>
-                  Alle Aktuelles ansehen
+                  Alle Neuigkeiten ansehen
                 </Link>
               </div>
             </section>

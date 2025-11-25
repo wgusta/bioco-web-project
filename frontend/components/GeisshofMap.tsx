@@ -5,7 +5,7 @@ import { useEffect, useRef } from 'react'
 // Geisshof location
 const geisshofLocation = {
   name: 'Geisshof',
-  address: 'Gebenstorf, Schweiz',
+  address: 'Geisslistrasse, Gebenstorf, Schweiz',
   lat: 47.4819,
   lng: 8.2389,
 }
@@ -55,7 +55,7 @@ export function GeisshofMap() {
         <div style="padding: 8px;">
           <strong>Geisshof</strong><br>
           ${geisshofLocation.address}<br>
-          <a href="https://www.google.com/maps/dir/?api=1&destination=${geisshofLocation.lat},${geisshofLocation.lng}" 
+          <a href="https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent('Geisslistrasse, Gebenstorf, Schweiz')}" 
              target="_blank" 
              rel="noopener noreferrer"
              style="color: #2e7d32; text-decoration: underline;">
@@ -98,7 +98,7 @@ export function GeisshofMap() {
             <div className="direction-item">
               <strong>{geisshofLocation.name}</strong>
               <a
-                href={`https://www.google.com/maps/dir/?api=1&destination=${geisshofLocation.lat},${geisshofLocation.lng}`}
+                href={`https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(geisshofLocation.address)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"

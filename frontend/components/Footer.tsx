@@ -74,11 +74,6 @@ export function Footer() {
                     Reglement (PDF)
                   </a>
                 </li>
-                <li>
-                  <a href="#" target="_blank" rel="noopener noreferrer">
-                    Jahresbericht (PDF)
-                  </a>
-                </li>
               </ul>
             </div>
           </div>
