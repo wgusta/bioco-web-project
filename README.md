@@ -175,6 +175,16 @@ resolved any issues.
 * [Contact ProcessWire developer](https://processwire.com/contact/)
 * [Report issue](https://github.com/processwire/processwire-issues/issues)
 
+## Activity Log
+
+This section is automatically updated by GitHub Actions when commits are pushed to main, develop, or master branches.
+
+Last 10 commits (auto-generated):
+
+(Awaiting first automated update)
+
+View full commit history: [GitHub Commits](https://github.com/wgusta/bioco-web-project/commits)
+
 ------
 
 Copyright 2025 by Ryan Cramer / Ryan Cramer Design, LLC

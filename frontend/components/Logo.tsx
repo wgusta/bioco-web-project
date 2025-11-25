@@ -5,7 +5,7 @@ export function Logo() {
   return (
     <Link href="/" className="logo-link">
       <Image
-        src="https://bioco.ch/wp-content/uploads/2017/02/bioco_logo_gemuesegenossenschaft.png"
+        src="/images/bioco-logo.png"
         alt="biocò Logo"
         width={200}
         height={60}

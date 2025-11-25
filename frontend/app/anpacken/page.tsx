@@ -26,7 +26,7 @@ export default function AnpackenPage() {
               />
             </div>
             <h3 className="text-xl font-semibold text-gray-900 mb-3 drop-shadow-md">Mitarbeit bei biocò</h3>
-            <p className="text-gray-800 mb-4 drop-shadow-md">Jede(r) Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv. Die Mitarbeit ist ein wichtiger Teil des CSA-Prinzips.</p>
+            <p className="text-gray-800 mb-4 drop-shadow-md">Jedes Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv.</p>
           
             <div className="mb-4">
               <h3 className="text-lg font-semibold text-gray-900 mb-2">Umfang</h3>
@@ -80,10 +80,9 @@ export default function AnpackenPage() {
             </div>
             <p className="text-gray-800 mb-4 drop-shadow-md">Bei biocò gibt es verschiedene Arbeitsgruppen und Gemeinschaftsaktivitäten, die das Herzstück unserer Genossenschaft bilden:</p>
             <ul className="space-y-3 text-gray-800">
-              <li><strong>Stammtisch:</strong> Regelmäßige Treffen für Austausch und Gemeinschaft. Hier kommen Mitglieder zusammen, um sich über aktuelle Themen auszutauschen, Erfahrungen zu teilen und die Gemeinschaft zu stärken.</li>
-              <li><strong>BG (Betriebsgruppe):</strong> Aktive Mitarbeit in der Betriebsorganisation. Die Betriebsgruppe koordiniert die strategischen Entscheidungen, plant die Anbauzyklen, organisiert die Logistik und sorgt für die reibungslose Abwicklung des täglichen Betriebs.</li>
               <li><strong>Elki:</strong> Familienaktivitäten und gemeinsame Anlässe. Die Elki-Gruppe organisiert speziell für Familien mit Kindern ausgerichtete Aktivitäten auf dem Hof.</li>
               <li><strong>Kräutergruppe:</strong> Spezialisiert auf Kräuter und Gewürze. Diese Gruppe widmet sich dem Anbau, der Pflege und der Verarbeitung von Kräutern und Gewürzen.</li>
+              <li><strong>BG (Betriebsgruppe):</strong> Aktive Mitarbeit in der Betriebsorganisation. Die Betriebsgruppe koordiniert die strategischen Entscheidungen, plant die Anbauzyklen, organisiert die Logistik und sorgt für die reibungslose Abwicklung des täglichen Betriebs.</li>
             </ul>
             <p className="text-gray-800 mt-4 drop-shadow-md">Diese Gruppen ermöglichen es, sich nach eigenen Interessen und Fähigkeiten einzubringen und die Genossenschaft aktiv mitzugestalten.</p>
           </OrganicBentoBox>

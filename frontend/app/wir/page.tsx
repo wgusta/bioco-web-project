@@ -23,15 +23,15 @@ export default function WirPage() {
             <h3 className="text-xl font-semibold text-gray-900 mb-3 drop-shadow-md">Team & Hof</h3>
             <p className="text-gray-800 mb-4 drop-shadow-md">biocò ist eine Gemeinschaft von engagierten Menschen, die gemeinsam für frisches, regionales Demeter-Gemüse sorgen.</p>
           
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-4">
               <div className="p-4 bg-white bg-opacity-60 rounded">
                 <div className="h-32 bg-gray-200 rounded mb-3 flex items-center justify-center text-gray-500">Foto</div>
                 <h3 className="font-semibold text-gray-900 mb-2">Betriebsgruppe (BG)</h3>
                 <p className="text-sm text-gray-800">Die Betriebsgruppe koordiniert den Anbau, die Logistik und die Organisation der Genossenschaft.</p>
               </div>
               
-              <div className="p-4 bg-white bg-opacity-60 rounded">
-                <div className="grid grid-cols-2 gap-2 h-32 mb-3">
+              <div className="p-4 bg-white bg-opacity-60 rounded md:col-span-2">
+                <div className="grid grid-cols-2 gap-2 h-48 mb-3">
                   <Image
                     src="/images/team/bioco_hofteam_christian.JPG"
                     alt="Christian vom Hofteam"
