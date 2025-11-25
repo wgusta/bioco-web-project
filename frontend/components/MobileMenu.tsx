@@ -16,7 +16,7 @@ export function MobileMenu() {
           href="/mitmachen" 
           className="btn btn-orange mobile-mitmachen-btn"
         >
-          bioco werden
+          biocò werden
         </Link>
         <button
           className="mobile-menu-toggle"
@@ -56,7 +56,7 @@ export function MobileMenu() {
                 className="btn btn-orange"
                 onClick={() => setIsOpen(false)}
               >
-                bioco werden
+                biocò werden
               </Link>
             </div>
           </nav>

@@ -44,7 +44,7 @@ export function Navigation({ onLinkClick, hideMitmachen = false }: NavigationPro
               className="btn btn-orange"
               onClick={onLinkClick}
             >
-              bioco werden
+              biocò werden
             </Link>
           </li>
         )}
