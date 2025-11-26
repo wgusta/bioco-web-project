@@ -25,20 +25,20 @@ export default function WirPage() {
             
             <div className="team-grid">
               <div className="team-card" style={{ gridColumn: 'span 2' }}>
-                <div className="team-card-image" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', height: '100%' }}>
+                <div className="team-card-image" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '16px' }}>
                   <Image
                     src="/images/team/hofteam_matthias.JPG"
                     alt="Matthias vom Hofteam"
                     width={300}
                     height={300}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
+                    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
                   />
                   <Image
                     src="/images/team/bioco_hofteam_christian.JPG"
                     alt="Christian vom Hofteam"
                     width={300}
                     height={300}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '8px' }}
+                    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
                   />
                 </div>
                 <h3>Gärtnerteam</h3>
@@ -46,16 +46,16 @@ export default function WirPage() {
               </div>
               
               <div className="team-card">
-                <div className="team-card-image">
-                  <div className="team-placeholder">Foto</div>
+                <div className="team-card-image" style={{ marginBottom: '16px' }}>
+                  <div className="team-placeholder" style={{ height: '200px' }}>Foto</div>
                 </div>
                 <h3>Alle Mitglieder</h3>
                 <p>Jede(r) Genossenschafter/in bringt sich ein – ob bei der Feldarbeit, in der Logistik oder bei Events.</p>
               </div>
               
               <div className="team-card">
-                <div className="team-card-image">
-                  <div className="team-placeholder">Foto</div>
+                <div className="team-card-image" style={{ marginBottom: '16px' }}>
+                  <div className="team-placeholder" style={{ height: '200px' }}>Foto</div>
                 </div>
                 <h3>Betriebsgruppe (BG)</h3>
                 <p>Die Betriebsgruppe koordiniert den Anbau, die Logistik und die Organisation der Genossenschaft.</p>

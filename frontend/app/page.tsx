@@ -1,13 +1,29 @@
+'use client'
+
+import { useState } from 'react'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { Hero } from '@/components/Hero'
 import { CTA } from '@/components/CTA'
-import { getAktuellesItems, getEventItems } from '@/components/AktuellesData'
+import { getAktuellesItems, getEventItems, AktuellesItem } from '@/components/AktuellesData'
 import { AktuellesItemComponent } from '@/components/AktuellesItem'
+import { ItemDetailModal } from '@/components/ItemDetailModal'
 import Image from 'next/image'
 import Link from 'next/link'
 
 export default function Home() {
+  const [selectedItem, setSelectedItem] = useState<AktuellesItem | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleItemClick = (item: AktuellesItem) => {
+    setSelectedItem(item)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setSelectedItem(null)
+  }
   return (
     <>
       <Header />
@@ -81,7 +97,12 @@ export default function Home() {
               <div className="card-body">
                 <div className="aktuelles-list">
                   {getAktuellesItems().map((item, index) => (
-                    <AktuellesItemComponent key={index} item={item} variant="aktuelles" />
+                    <AktuellesItemComponent 
+                      key={item.id || index} 
+                      item={item} 
+                      variant="aktuelles"
+                      onClick={handleItemClick}
+                    />
                   ))}
                 </div>
                 <Link href="/aktuelles" className="btn btn-primary" style={{ marginTop: '16px', display: 'inline-block' }}>
@@ -98,7 +119,12 @@ export default function Home() {
               <div className="card-body">
                 <div className="events-list">
                   {getEventItems().map((item, index) => (
-                    <AktuellesItemComponent key={index} item={item} variant="event" />
+                    <AktuellesItemComponent 
+                      key={item.id || index} 
+                      item={item} 
+                      variant="event"
+                      onClick={handleItemClick}
+                    />
                   ))}
                 </div>
                 <Link href="/aktuelles" className="btn btn-primary" style={{ marginTop: '16px', display: 'inline-block' }}>
@@ -179,6 +205,11 @@ export default function Home() {
         </div>
       </main>
       <Footer />
+      <ItemDetailModal 
+        item={selectedItem} 
+        isOpen={isModalOpen} 
+        onClose={handleCloseModal} 
+      />
     </>
   )
 }

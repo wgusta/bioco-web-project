@@ -19,16 +19,16 @@ export default function AnpackenPage() {
             <div className="card-body">
               <div style={{ marginBottom: 'var(--spacing-md)' }}>
                 <Image
-                  src="/images/anpacken/bioco_anpacken_einzel.JPG"
-                  alt="Einzelperson bei der Mitarbeit auf dem Geisshof"
-                  width={800}
-                  height={600}
+                src="/images/anpacken/bioco_anpacken_einzel.JPG"
+                alt="Einzelperson bei der Mitarbeit auf dem Geisshof"
+                width={800}
+                height={600}
                   style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
-                />
-              </div>
+              />
+            </div>
               <h4 className="card-title">Mitarbeit bei biocò</h4>
               <p className="card-text">Jedes Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv.</p>
-            
+          
             <div style={{ marginTop: '16px' }}>
               <h3>Umfang</h3>
               <ul>
@@ -78,10 +78,10 @@ export default function AnpackenPage() {
             <div className="card-body">
               <div style={{ marginBottom: 'var(--spacing-md)' }}>
                 <Image
-                  src="/images/anpacken/bioco_anpacken_gruppe.JPG"
-                  alt="Gruppe bei der Mitarbeit auf dem Geisshof"
-                  width={800}
-                  height={600}
+                src="/images/anpacken/bioco_anpacken_gruppe.JPG"
+                alt="Gruppe bei der Mitarbeit auf dem Geisshof"
+                width={800}
+                height={600}
                   style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
                 />
               </div>
@@ -101,7 +101,7 @@ export default function AnpackenPage() {
               <h3>Nächste Events</h3>
             </div>
             <div className="card-body">
-              <EventsBanner />
+            <EventsBanner />
             </div>
           </section>
 
@@ -110,7 +110,7 @@ export default function AnpackenPage() {
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Möchtest du uns kennenlernen?</h3>
-            </div>
+              </div>
             <div className="card-body">
               <p className="card-text">Es können viele Fragen auftauchen, die wir auf dieser Website nicht allesamt beantworten können. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via Kontaktformular bei uns melden und wir beantworten deine Fragen persönlich.</p>
               <div style={{ marginTop: '16px', display: 'flex', gap: 'var(--spacing-md)', flexWrap: 'wrap' }}>

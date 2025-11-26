@@ -1,13 +1,29 @@
+'use client'
+
+import { useState } from 'react'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { CTA } from '@/components/CTA'
-import { getAktuellesItems, getEventItems } from '@/components/AktuellesData'
+import { getAktuellesItems, getEventItems, AktuellesItem } from '@/components/AktuellesData'
 import { AktuellesItemComponent } from '@/components/AktuellesItem'
+import { ItemDetailModal } from '@/components/ItemDetailModal'
 import Link from 'next/link'
 
 export default function AktuellesPage() {
   const aktuellesItems = getAktuellesItems()
   const eventItems = getEventItems()
+  const [selectedItem, setSelectedItem] = useState<AktuellesItem | null>(null)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const handleItemClick = (item: AktuellesItem) => {
+    setSelectedItem(item)
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = () => {
+    setIsModalOpen(false)
+    setSelectedItem(null)
+  }
 
   return (
     <>
@@ -23,7 +39,12 @@ export default function AktuellesPage() {
               <div className="card-body">
                 <div className="aktuelles-list">
                   {aktuellesItems.map((item, index) => (
-                    <AktuellesItemComponent key={index} item={item} variant="aktuelles" />
+                    <AktuellesItemComponent 
+                      key={item.id || index} 
+                      item={item} 
+                      variant="aktuelles"
+                      onClick={handleItemClick}
+                    />
                   ))}
                 </div>
               </div>
@@ -37,7 +58,12 @@ export default function AktuellesPage() {
               <div className="card-body">
                 <div className="events-list">
                   {eventItems.map((item, index) => (
-                    <AktuellesItemComponent key={index} item={item} variant="event" />
+                    <AktuellesItemComponent 
+                      key={item.id || index} 
+                      item={item} 
+                      variant="event"
+                      onClick={handleItemClick}
+                    />
                   ))}
                 </div>
               </div>
@@ -69,6 +95,11 @@ export default function AktuellesPage() {
         </div>
       </main>
       <Footer />
+      <ItemDetailModal 
+        item={selectedItem} 
+        isOpen={isModalOpen} 
+        onClose={handleCloseModal} 
+      />
     </>
   )
 }
