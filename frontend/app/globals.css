@@ -198,7 +198,7 @@ p {
   display: flex;
   flex-direction: column;
   min-width: 0;
-  background-color: var(--bg-primary);
+  background-color: var(--bg-secondary);
   border: 1px solid var(--bioco-green);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   padding: 0;
@@ -1442,7 +1442,7 @@ header .header-nav-container .beet-leaves {
 /* Hero Section - Bento Card Style */
 .hero {
   background: var(--bg-secondary);
-  padding: var(--spacing-xl) 150px;
+  padding: var(--spacing-xl) 0;
   margin-top: var(--spacing-xl);
   margin-bottom: var(--spacing-lg);
   max-width: 100%;
@@ -1454,7 +1454,9 @@ header .header-nav-container .beet-leaves {
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-md);
   width: 100%;
-  max-width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 150px;
 }
 
 .hero-image-card {
@@ -1522,13 +1524,17 @@ header .header-nav-container .beet-leaves {
 
 @media (max-width: 1023px) {
   .hero {
-    padding: var(--spacing-lg) var(--spacing-md);
+    padding: var(--spacing-lg) 0;
+  }
+  
+  .hero-container {
+    padding: 0 var(--spacing-md);
   }
 }
 
 @media (max-width: 767px) {
   .hero {
-    padding: var(--spacing-md) var(--spacing-xs);
+    padding: var(--spacing-md) 0;
     margin-top: var(--spacing-md);
     margin-bottom: var(--spacing-md);
   }
@@ -1536,6 +1542,7 @@ header .header-nav-container .beet-leaves {
   .hero-container {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
+    padding: 0 var(--spacing-xs);
   }
 
   .hero-image-card {
@@ -2276,7 +2283,7 @@ footer a:hover {
   padding: var(--spacing-md);
   background: var(--bg-secondary);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
-  border: 2px solid #333;
+  border: 1px solid var(--bioco-green);
   border-left: 4px solid var(--bioco-green);
   box-shadow: var(--shadow-sm);
 }
@@ -2370,8 +2377,8 @@ footer a:hover {
 }
 
 .aktuelles-item {
-  background: var(--bg-primary);
-  border: 2px solid #333;
+  background: var(--bg-secondary);
+  border: 1px solid var(--bioco-green);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   padding: var(--spacing-md);
   margin-bottom: var(--spacing-md);
@@ -2471,8 +2478,8 @@ footer a:hover {
 }
 
 .event-item {
-  background: rgba(76, 175, 80, 0.1);
-  border: 2px solid rgba(46, 125, 50, 0.4);
+  background: var(--bg-secondary);
+  border: 1px solid var(--bioco-green);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   padding: var(--spacing-md);
   margin-bottom: var(--spacing-md);
@@ -2509,7 +2516,7 @@ footer a:hover {
   padding: var(--spacing-md);
   background: var(--bg-secondary);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
-  border: 2px solid #333;
+  border: 1px solid var(--bioco-green);
   box-shadow: var(--shadow-sm);
   transition: all 0.2s ease;
 }
@@ -2997,7 +3004,7 @@ footer a:hover {
   padding: var(--spacing-md);
   background: var(--bg-secondary);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
-  border: 2px solid #333;
+  border: 1px solid var(--bioco-green);
   border-left: 4px solid var(--bioco-green);
   cursor: pointer;
   transition: background-color 0.2s ease;
@@ -3083,7 +3090,7 @@ footer a:hover {
   padding: var(--spacing-md);
   background: var(--bg-secondary);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
-  border: 2px solid #333;
+  border: 1px solid var(--bioco-green);
   box-shadow: var(--shadow-sm);
 }
 
@@ -3174,7 +3181,7 @@ footer a:hover {
   padding: var(--spacing-lg);
   background: var(--bg-secondary);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
-  border: 2px solid #333;
+  border: 1px solid var(--bioco-green);
   box-shadow: var(--shadow-sm);
   min-height: auto;
 }
