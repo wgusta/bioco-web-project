@@ -248,7 +248,7 @@ p {
   padding: 0.75rem 1rem;
   margin-bottom: 0;
   background-color: rgba(33, 37, 41, 0.03);
-  border-bottom: 2px solid #333;
+  border-bottom: none;
   border-radius: 3px 3px 0 0/23px 23px 0 0;
   font-family: 'Fredoka One', cursive;
   font-weight: 500;
@@ -287,7 +287,7 @@ p {
 .bento-card.bg-danger .card-header,
 .bento-card.bg-info .card-header,
 .bento-card.bg-dark .card-header {
-  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+  border-bottom: none;
   background-color: rgba(255, 255, 255, 0.1);
 }
 
@@ -555,7 +555,7 @@ h4.card-title {
 .bento-card.bg-primary .card-header,
 .bento-card.text-white.bg-primary .card-header {
   background-color: rgba(255, 255, 255, 0.1);
-  border-bottom-color: var(--bioco-green-dark);
+  border-bottom: none;
 }
 
 .bento-card.bg-primary .card-footer,
@@ -574,7 +574,7 @@ h4.card-title {
 .bento-card.bg-secondary .card-header,
 .bento-card.text-white.bg-secondary .card-header {
   background-color: rgba(255, 255, 255, 0.1);
-  border-bottom-color: var(--bioco-green);
+  border-bottom: none;
 }
 
 .bento-card.bg-secondary .card-footer,
@@ -591,7 +591,7 @@ h4.card-title {
 
 .bento-card.bg-success .card-header {
   background-color: rgba(255, 255, 255, 0.1);
-  border-bottom-color: var(--bioco-green);
+  border-bottom: none;
 }
 
 .bento-card.bg-success .card-footer {
@@ -607,7 +607,7 @@ h4.card-title {
 
 .bento-card.bg-warning .card-header {
   background-color: rgba(255, 255, 255, 0.1);
-  border-bottom-color: #E88200;
+  border-bottom: none;
 }
 
 .bento-card.bg-warning .card-footer {
@@ -623,7 +623,7 @@ h4.card-title {
 
 .bento-card.bg-danger .card-header {
   background-color: rgba(255, 255, 255, 0.1);
-  border-bottom-color: var(--bioco-beet-light);
+  border-bottom: none;
 }
 
 .bento-card.bg-danger .card-footer {
@@ -639,7 +639,7 @@ h4.card-title {
 
 .bento-card.bg-info .card-header {
   background-color: rgba(255, 255, 255, 0.1);
-  border-bottom-color: var(--bioco-green);
+  border-bottom: none;
 }
 
 .bento-card.bg-info .card-footer {
@@ -661,7 +661,7 @@ h4.card-title {
 
 .bento-card.bg-dark .card-header {
   background-color: rgba(255, 255, 255, 0.1);
-  border-bottom-color: #555;
+  border-bottom: none;
 }
 
 .bento-card.bg-dark .card-footer {
@@ -2398,7 +2398,7 @@ footer a:hover {
 
 .events-card .card-header {
   background: rgba(46, 125, 50, 0.15);
-  border-bottom: 2px solid rgba(46, 125, 50, 0.3);
+  border-bottom: none;
 }
 
 .events-card .card-header h3 {
