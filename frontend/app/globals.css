@@ -1444,24 +1444,21 @@ header .header-nav-container .beet-leaves {
   background: var(--bg-secondary);
   padding: var(--spacing-xl) 150px;
   margin-top: var(--spacing-xl);
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-lg);
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 
-.hero-bento-card {
+.hero-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: var(--spacing-lg);
-  background: var(--bg-primary);
-  border: 1px solid var(--bioco-green);
-  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
-  padding: var(--spacing-lg);
-  box-shadow: var(--shadow-sm);
-  min-height: 500px;
-  max-width: 1200px;
+  gap: var(--spacing-md);
   width: 100%;
+}
+
+.hero-image-card {
+  min-height: 500px;
+  padding: 0;
+  overflow: hidden;
 }
 
 .hero-image-container {
@@ -1469,15 +1466,17 @@ header .header-nav-container .beet-leaves {
   width: 100%;
   height: 100%;
   min-height: 500px;
-  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   overflow: hidden;
-  border: 1px solid var(--bioco-green);
+}
+
+.hero-text-card {
+  min-height: 500px;
+  display: flex;
+  align-items: center;
 }
 
 .hero-content {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   padding: var(--spacing-lg);
 }
 
@@ -1532,21 +1531,23 @@ header .header-nav-container .beet-leaves {
     margin-bottom: var(--spacing-md);
   }
 
-  .hero-bento-card {
+  .hero-container {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
-    padding: var(--spacing-md);
-    min-height: auto;
   }
 
-  .hero-image-container {
+  .hero-image-card {
     min-height: 300px;
     order: 1;
   }
 
-  .hero-content {
+  .hero-image-container {
+    min-height: 300px;
+  }
+
+  .hero-text-card {
     order: 2;
-    padding: var(--spacing-md);
+    min-height: auto;
   }
 
   .hero-title {
