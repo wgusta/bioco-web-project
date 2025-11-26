@@ -46,7 +46,7 @@
 }
 
 body {
-  font-family: 'Patrick Hand', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
   font-weight: 400;
   line-height: 1.6;
   color: var(--text-primary);
@@ -60,16 +60,16 @@ body {
 
 /* Typography */
 h1, h2 {
-  font-family: 'Cabin Sketch', cursive;
-  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
   line-height: 1.2;
   margin: 0 0 var(--spacing-sm);
   color: var(--text-primary);
 }
 
 h3, h4, h5, h6 {
-  font-family: 'Fredoka One', cursive;
-  font-weight: 400;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
   line-height: 1.2;
   margin: 0 0 var(--spacing-sm);
   color: var(--text-primary);
@@ -77,7 +77,7 @@ h3, h4, h5, h6 {
 
 h1 {
   font-size: calc(1.375rem + 1.5vw);
-  font-weight: 500;
+  font-weight: 700;
 }
 
 @media (min-width: 1200px) {
@@ -107,7 +107,7 @@ h3 {
 }
 
 p {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   margin: 0 0 var(--spacing-sm);
   color: var(--text-secondary);
@@ -192,7 +192,7 @@ p {
 }
 
 .bento-card {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   position: relative;
   display: flex;
@@ -250,13 +250,13 @@ p {
   background-color: rgba(33, 37, 41, 0.03);
   border-bottom: none;
   border-radius: 3px 3px 0 0/23px 23px 0 0;
-  font-family: 'Fredoka One', cursive;
-  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
 }
 
 .card-header h3 {
-  font-family: 'Fredoka One', cursive;
-  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
   font-size: 1.25rem;
   margin: 0;
   padding: 0;
@@ -271,7 +271,7 @@ p {
 }
 
 .card-header h4.card-title {
-  font-family: 'Fredoka One', cursive;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 1rem;
   margin: 0.5rem 0 0 0;
@@ -336,7 +336,7 @@ p {
 .card-title,
 h4.card-title {
   margin-bottom: 0.5rem;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   color: var(--text-primary);
 }
@@ -350,7 +350,7 @@ h4.card-title {
 .card-subtitle {
   margin-top: -0.25rem;
   margin-bottom: 0;
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 400;
   color: var(--text-secondary);
 }
@@ -390,7 +390,7 @@ h4.card-title {
   background-color: var(--bg-primary);
   border: 2px solid #333;
   border-top: 0;
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
 }
 
@@ -447,7 +447,7 @@ h4.card-title {
   padding: 12px 16px;
   font-size: 1rem;
   font-weight: 700;
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   line-height: 1.5;
   color: var(--text-primary);
   text-align: center;
@@ -519,7 +519,7 @@ h4.card-title {
   border: 2px solid transparent;
   transform-origin: 0 0;
   transition: opacity 0.1s ease-in-out, transform 0.1s ease-in-out;
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   color: var(--text-secondary);
 }
@@ -540,7 +540,7 @@ h4.card-title {
   background-color: rgba(33, 37, 41, 0.03);
   border-top: 2px solid #333;
   border-radius: 0 0 3px 3px/0 0 23px 5px;
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
 }
 
@@ -723,7 +723,7 @@ button,
 .btn,
 .btn-primary,
 .btn-secondary {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   display: inline-block;
   padding: 12px 24px;
@@ -840,7 +840,7 @@ a:hover {
   font-size: 2rem;
   font-weight: 500;
   line-height: 1;
-  font-family: 'Fredoka One', cursive;
+  font-family: 'DM Sans', sans-serif;
 }
 
 .logo-b {
@@ -991,7 +991,7 @@ a:hover {
 }
 
 header {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   background: transparent;
   border-bottom: none;
@@ -1130,7 +1130,7 @@ header .header-nav-container .beet-leaves {
 }
 
 .mobile-menu-toggle {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   background: transparent;
   border: none;
@@ -1192,7 +1192,7 @@ header .header-nav-container .beet-leaves {
 }
 
 .mobile-menu {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   background: var(--bg-primary);
   border: 2px solid #333;
@@ -1268,7 +1268,7 @@ header .header-nav-container .beet-leaves {
 }
 
 .mobile-menu-title {
-  font-family: 'Fredoka One', cursive;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   font-size: 1.5rem;
   margin: 0;
@@ -1480,18 +1480,21 @@ header .header-nav-container .beet-leaves {
 }
 
 .hero-title {
+  font-family: 'DM Sans', sans-serif;
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: var(--spacing-sm);
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 10px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .hero-subtitle {
+  font-family: 'DM Sans', sans-serif;
   font-size: 1.25rem;
+  font-weight: 400;
   color: rgba(255, 255, 255, 0.95);
   margin-bottom: var(--spacing-lg);
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
 .hero-buttons {
@@ -1566,7 +1569,7 @@ header .header-nav-container .beet-leaves {
 
 /* Events Banner */
 .events-banner {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   background: linear-gradient(135deg, rgba(46, 125, 50, 0.1) 0%, rgba(76, 175, 80, 0.05) 100%);
   border: 2px solid rgba(46, 125, 50, 0.3);
@@ -1621,7 +1624,7 @@ header .header-nav-container .beet-leaves {
 }
 
 .recommended-badge {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   display: inline-block;
   background: var(--bioco-orange);
@@ -1647,7 +1650,7 @@ input[type="search"],
 textarea,
 select,
 .form-control {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   border: 2px solid #333;
   padding: 12px 16px;
@@ -1707,7 +1710,7 @@ select:focus,
   margin-top: 0.25rem;
   font-size: 0.875rem;
   color: #28a745;
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
 }
 
@@ -1717,7 +1720,7 @@ select:focus,
   margin-top: 0.25rem;
   font-size: 0.875rem;
   color: #dc3545;
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
 }
 
@@ -1743,7 +1746,7 @@ select:focus,
 .form-label {
   display: inline-block;
   margin-bottom: 0.5rem;
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   color: var(--text-primary);
 }
@@ -1807,7 +1810,7 @@ input[type="radio"]:checked::after {
 }
 
 .form-success {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   background: #d4edda;
   border: 2px solid #28a745;
@@ -1819,7 +1822,7 @@ input[type="radio"]:checked::after {
 }
 
 .form-error {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   background: #f8d7da;
   border: 2px solid #dc3545;
@@ -1832,7 +1835,7 @@ input[type="radio"]:checked::after {
 
 /* Footer */
 footer {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   border-top: 2px solid #333;
   background: var(--bg-secondary);
@@ -1913,7 +1916,7 @@ footer a:hover {
 }
 
 .partner-badge {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   display: inline-block;
   padding: var(--spacing-sm) var(--spacing-md);
@@ -1946,7 +1949,7 @@ footer a:hover {
 }
 
 .kalender-tab {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-xs) var(--spacing-sm);
   background: transparent;
@@ -1973,7 +1976,7 @@ footer a:hover {
   width: 100%;
   padding: var(--spacing-sm);
   margin-bottom: var(--spacing-md);
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 1rem;
   background: var(--bg-secondary);
@@ -1991,7 +1994,7 @@ footer a:hover {
 }
 
 .kalender-section {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
@@ -2035,7 +2038,7 @@ footer a:hover {
 }
 
 .gallery-filter {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-xs) var(--spacing-md);
   background: var(--bg-secondary);
@@ -2066,7 +2069,7 @@ footer a:hover {
   width: 100%;
   padding: var(--spacing-sm);
   margin-bottom: var(--spacing-md);
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   font-size: 1rem;
   background: var(--bg-secondary);
@@ -2107,7 +2110,7 @@ footer a:hover {
 }
 
 .demeter-accordion details {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
   border: 2px solid #333;
@@ -2165,7 +2168,7 @@ footer a:hover {
 }
 
 .team-card {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
@@ -2213,7 +2216,7 @@ footer a:hover {
 }
 
 .mission-item {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
@@ -2324,8 +2327,8 @@ footer a:hover {
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
   font-size: 1rem;
-  font-family: 'Fredoka One', cursive;
-  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
 }
 
 .aktuelles-item p {
@@ -2346,7 +2349,7 @@ footer a:hover {
 }
 
 .tab-button {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-sm) var(--spacing-md);
   background: transparent;
@@ -2425,8 +2428,8 @@ footer a:hover {
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
   font-size: 1rem;
-  font-family: 'Fredoka One', cursive;
-  font-weight: 500;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
 }
 
 .event-item p {
@@ -2443,7 +2446,7 @@ footer a:hover {
 }
 
 .procedure-step {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   display: flex;
   align-items: flex-start;
@@ -2554,7 +2557,7 @@ footer a:hover {
 
 .location-addresses h4,
 .location-directions h4 {
-  font-family: 'Fredoka One', cursive;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   color: var(--bioco-green);
   margin-bottom: var(--spacing-md);
@@ -2609,7 +2612,7 @@ footer a:hover {
 }
 
 .pricing-table table {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   width: 100%;
   border-collapse: separate;
@@ -2622,7 +2625,7 @@ footer a:hover {
 }
 
 .pricing-table th {
-  font-family: 'Fredoka One', cursive;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 500;
   background: var(--bioco-green);
   color: white;
@@ -2632,7 +2635,7 @@ footer a:hover {
 }
 
 .pricing-table td {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-md) var(--spacing-md);
   border-bottom: 2px solid #333;
@@ -2674,7 +2677,7 @@ footer a:hover {
 }
 
 .btn-add-share {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-xs) var(--spacing-sm);
   background: var(--bioco-green);
@@ -2693,7 +2696,7 @@ footer a:hover {
 }
 
 .btn-remove-share {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-xs) var(--spacing-sm);
   background: var(--text-secondary);
@@ -2743,7 +2746,7 @@ footer a:hover {
 }
 
 .abo-button {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
@@ -2934,7 +2937,7 @@ footer a:hover {
 }
 
 .commitment-item {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
@@ -3020,7 +3023,7 @@ footer a:hover {
 }
 
 .faq-item {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-md);
   background: var(--bg-secondary);
@@ -3070,7 +3073,7 @@ footer a:hover {
 }
 
 .info-tooltip-content {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   position: absolute;
   bottom: 100%;
@@ -3111,7 +3114,7 @@ footer a:hover {
 }
 
 .document-item {
-  font-family: 'Patrick Hand', sans-serif;
+  font-family: 'DM Sans', sans-serif;
   font-weight: 700;
   padding: var(--spacing-lg);
   background: var(--bg-secondary);
