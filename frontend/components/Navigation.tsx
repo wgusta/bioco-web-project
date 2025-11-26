@@ -40,7 +40,7 @@ export function Navigation({ onLinkClick, hideMitmachen = false }: NavigationPro
         {!hideMitmachen && (
           <li>
             <Link 
-              href="/anpacken" 
+              href="/mitmachen" 
               className="btn btn-orange"
               onClick={onLinkClick}
             >

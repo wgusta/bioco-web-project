@@ -13,7 +13,7 @@ export function MobileMenu() {
     <>
       <div className="mobile-header-actions">
         <Link 
-          href="/anpacken" 
+          href="/mitmachen" 
           className="btn btn-orange mobile-mitmachen-btn"
         >
           biocò werden
@@ -52,7 +52,7 @@ export function MobileMenu() {
             </div>
             <div className="mobile-menu-cta-bottom">
               <Link 
-                href="/anpacken" 
+                href="/mitmachen" 
                 className="btn btn-orange"
                 onClick={() => setIsOpen(false)}
               >

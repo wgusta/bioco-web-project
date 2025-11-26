@@ -1,21 +1,45 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { CTA } from '@/components/CTA'
-import { getAktuellesItems, getEventItems, AktuellesItem } from '@/components/AktuellesData'
+import { getAktuellesItems, getEventItems, getAllAktuellesItems, AktuellesItem } from '@/components/AktuellesData'
 import { AktuellesItemComponent } from '@/components/AktuellesItem'
 import { ItemDetailModal } from '@/components/ItemDetailModal'
 import Link from 'next/link'
 
 export default function AktuellesPage() {
-  const aktuellesItems = getAktuellesItems()
+  const staticAktuellesItems = getAktuellesItems()
   const eventItems = getEventItems()
+  const [allAktuellesItems, setAllAktuellesItems] = useState<AktuellesItem[]>(staticAktuellesItems)
   const [selectedItem, setSelectedItem] = useState<AktuellesItem | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
+
+  // Load Instagram posts on mount
+  useEffect(() => {
+    const loadInstagramPosts = async () => {
+      try {
+        const items = await getAllAktuellesItems()
+        setAllAktuellesItems(items)
+      } catch (error) {
+        console.error('Error loading Instagram posts:', error)
+        // Fallback to static items
+        setAllAktuellesItems(staticAktuellesItems)
+      } finally {
+        setIsLoading(false)
+      }
+    }
+    
+    loadInstagramPosts()
+  }, [])
 
   const handleItemClick = (item: AktuellesItem) => {
+    // Don't open modal for Instagram posts (they open in new tab)
+    if (item.type === 'instagram') {
+      return
+    }
     setSelectedItem(item)
     setIsModalOpen(true)
   }
@@ -37,16 +61,23 @@ export default function AktuellesPage() {
                 <h3>Aktuelles</h3>
               </div>
               <div className="card-body">
-                <div className="aktuelles-list">
-                  {aktuellesItems.map((item, index) => (
-                    <AktuellesItemComponent 
-                      key={item.id || index} 
-                      item={item} 
-                      variant="aktuelles"
-                      onClick={handleItemClick}
-                    />
-                  ))}
-                </div>
+                {isLoading ? (
+                  <p style={{ color: 'var(--text-secondary)' }}>Lade Beiträge...</p>
+                ) : (
+                  <div className="aktuelles-list">
+                    {allAktuellesItems.map((item, index) => (
+                      <AktuellesItemComponent 
+                        key={item.id || item.instagram_id || index} 
+                        item={item} 
+                        variant="aktuelles"
+                        onClick={handleItemClick}
+                      />
+                    ))}
+                    {allAktuellesItems.length === 0 && (
+                      <p style={{ color: 'var(--text-secondary)' }}>Keine Beiträge verfügbar.</p>
+                    )}
+                  </div>
+                )}
               </div>
             </section>
 
