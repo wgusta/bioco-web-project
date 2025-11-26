@@ -199,7 +199,7 @@ p {
   flex-direction: column;
   min-width: 0;
   background-color: var(--bg-primary);
-  border: 2px solid #333;
+  border: 1px solid var(--bioco-green);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   padding: 0;
   overflow: visible;
@@ -260,7 +260,7 @@ p {
   font-size: 1.25rem;
   margin: 0;
   padding: 0;
-  color: var(--bioco-green);
+  color: var(--text-primary);
 }
 
 .card-header .card-header-divider {
@@ -276,7 +276,7 @@ p {
   font-size: 1rem;
   margin: 0.5rem 0 0 0;
   padding: 0;
-  color: var(--bioco-green);
+  color: var(--text-primary);
 }
 
 /* Ensure card-header separation in colored cards */
@@ -325,12 +325,12 @@ p {
   z-index: 1;
 }
 
-/* Alle Überschriften in Cards grün färben */
+/* Alle Überschriften in Cards schwarz färben */
 .bento-card .card-body h3,
 .bento-card .card-body h4,
 .bento-card .card-body h5,
 .bento-card .card-body h6 {
-  color: var(--bioco-green);
+  color: var(--text-primary);
 }
 
 .card-title,
@@ -338,13 +338,13 @@ h4.card-title {
   margin-bottom: 0.5rem;
   font-family: 'Fredoka One', cursive;
   font-weight: 500;
-  color: var(--bioco-green);
+  color: var(--text-primary);
 }
 
 .card-body .card-title {
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
-  color: var(--bioco-green);
+  color: var(--text-primary);
 }
 
 .card-subtitle {
@@ -673,11 +673,7 @@ h4.card-title {
   color: white;
 }
 
-.bento-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-  border-color: var(--bioco-green);
-}
+/* Hover-Effekte für Cards entfernt - nur für Buttons und klickbare Elemente */
 
 .bento-card-large {
   grid-column: span 1;
@@ -2179,10 +2175,7 @@ footer a:hover {
   box-shadow: var(--shadow-sm);
 }
 
-.team-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-2px);
-}
+/* Hover-Effekte für team-card entfernt - nur für klickbare Elemente */
 
 .team-card-image {
   width: 100%;
@@ -2203,7 +2196,7 @@ footer a:hover {
 .team-card h3 {
   font-size: 1.125rem;
   margin-bottom: var(--spacing-xs);
-  color: var(--bioco-green);
+  color: var(--text-primary);
 }
 
 .team-card p {
@@ -2233,7 +2226,7 @@ footer a:hover {
 .mission-item h3 {
   font-size: 1.125rem;
   margin-bottom: var(--spacing-xs);
-  color: var(--bioco-green);
+  color: var(--text-primary);
 }
 
 .mission-item p {
@@ -2328,7 +2321,7 @@ footer a:hover {
 }
 
 .aktuelles-item h3 {
-  color: var(--bioco-green);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
   font-size: 1rem;
   font-family: 'Fredoka One', cursive;
@@ -2429,7 +2422,7 @@ footer a:hover {
 }
 
 .event-item h3 {
-  color: var(--bioco-green-dark);
+  color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
   font-size: 1rem;
   font-family: 'Fredoka One', cursive;
@@ -2463,10 +2456,7 @@ footer a:hover {
   transition: all 0.2s ease;
 }
 
-.procedure-step:hover {
-  background: var(--bg-tertiary);
-  transform: translateX(4px);
-}
+/* Hover-Effekte für procedure-step entfernt - nur für klickbare Elemente */
 
 .step-icon {
   flex-shrink: 0;
@@ -2970,7 +2960,7 @@ footer a:hover {
 
 .commitment-item h3 {
   margin-top: 0;
-  color: var(--bioco-green);
+  color: var(--text-primary);
   font-size: 1.125rem;
 }
 
@@ -3043,7 +3033,7 @@ footer a:hover {
   margin-top: 0;
   margin-bottom: var(--spacing-sm);
   font-size: 1.125rem;
-  color: var(--bioco-green);
+  color: var(--text-primary);
 }
 
 .faq-item p {
