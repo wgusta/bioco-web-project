@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 interface HeroProps {
   title: string
@@ -11,30 +12,33 @@ interface HeroProps {
 
 export function Hero({ title, subtitle, image }: HeroProps) {
   return (
-    <section 
-      id="hero" 
-      className="hero"
-      style={image ? {
-        backgroundImage: `url(${image.url})`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
-      } : {}}
-    >
-      <div className="hero-overlay"></div>
-      <div className="hero-content">
-        <div id="hero-text" className="hero-text">
-          <h1 id="hero-title" className="hero-title">{title}</h1>
-          {subtitle && (
-            <p id="hero-subtitle" className="hero-subtitle">{subtitle}</p>
-          )}
-          <div className="hero-buttons">
-            <Link href="/ernte" className="btn btn-primary">
-              Was wächst gerade
-            </Link>
-            <Link href="/wir" className="btn btn-secondary">
-              Lerne uns kennen
-            </Link>
+    <section id="hero" className="hero">
+      <div className="hero-bento-card">
+        {image && (
+          <div className="hero-image-container">
+            <Image
+              src={image.url}
+              alt={image.description}
+              fill
+              style={{ objectFit: 'cover' }}
+              priority
+            />
+          </div>
+        )}
+        <div className="hero-content">
+          <div className="hero-text">
+            {subtitle && (
+              <p className="hero-subtitle">{subtitle}</p>
+            )}
+            <h1 className="hero-title">{title}</h1>
+            <div className="hero-buttons">
+              <Link href="/ernte" className="btn btn-primary">
+                Was wächst gerade
+              </Link>
+              <Link href="/wir" className="btn btn-secondary">
+                Lerne uns kennen
+              </Link>
+            </div>
           </div>
         </div>
       </div>
