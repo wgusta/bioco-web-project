@@ -19,16 +19,16 @@ export default function AnpackenPage() {
             <div className="card-body">
               <div style={{ marginBottom: 'var(--spacing-md)' }}>
                 <Image
-                src="/images/anpacken/bioco_anpacken_einzel.JPG"
-                alt="Einzelperson bei der Mitarbeit auf dem Geisshof"
-                width={800}
-                height={600}
+                  src="/images/anpacken/bioco_anpacken_einzel.JPG"
+                  alt="Einzelperson bei der Mitarbeit auf dem Geisshof"
+                  width={800}
+                  height={600}
                   style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
-              />
-            </div>
+                />
+              </div>
               <h4 className="card-title">Mitarbeit bei biocò</h4>
-              <p className="card-text">Jedes Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv.</p>
-          
+              <p className="card-text">Jede(r) Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv. Die Mitarbeit ist ein wichtiger Teil des CSA-Prinzips.</p>
+            
             <div style={{ marginTop: '16px' }}>
               <h3>Umfang</h3>
               <ul>
@@ -41,7 +41,7 @@ export default function AnpackenPage() {
               <h3>Tätigkeitsbereiche</h3>
               <p>Du kannst dich in verschiedenen Bereichen einbringen:</p>
               <ul>
-                <li><strong>Feld/Anbau:</strong> Pflanzen, Jäten, Ernten</li>
+                <li><strong>Feld/Anbau:</strong> Säen, Pflanzen, Jäten, Ernten, Unkraut bekämpfen</li>
                 <li><strong>Logistik:</strong> Gemüse waschen, sortieren, packen, verteilen</li>
                 <li><strong>Administration:</strong> Büroarbeit, Rechnungen, Kommunikation</li>
                 <li><strong>Events/Organisation:</strong> Schnuppertage, Veranstaltungen, Gemeinschaftsanlässe</li>
@@ -53,7 +53,7 @@ export default function AnpackenPage() {
               <h3>Planung</h3>
               <p>Nach der Anmeldung erhältst du Zugang zum Intranet. Dort kannst du:</p>
               <ul>
-                <li>Deine bevorzugten Einsatztage (Mo-Sa) angeben</li>
+                <li>Deine bevorzugten Tage angeben (Mo-Sa)</li>
                 <li>Deine bevorzugten Zeiten wählen (morgens, nachmittags, abends)</li>
                 <li>Tätigkeitsbereiche auswählen</li>
                 <li>Arbeitseinsätze planen und buchen</li>
@@ -63,7 +63,7 @@ export default function AnpackenPage() {
             <div style={{ marginTop: '24px' }}>
               <CTA
                 text="Jetzt anmelden"
-                href="/anpacken"
+                href="/mitmachen"
                 variant="primary"
               />
             </div>
@@ -78,18 +78,19 @@ export default function AnpackenPage() {
             <div className="card-body">
               <div style={{ marginBottom: 'var(--spacing-md)' }}>
                 <Image
-                src="/images/anpacken/bioco_anpacken_gruppe.JPG"
-                alt="Gruppe bei der Mitarbeit auf dem Geisshof"
-                width={800}
-                height={600}
+                  src="/images/anpacken/bioco_anpacken_gruppe.JPG"
+                  alt="Gruppe bei der Mitarbeit auf dem Geisshof"
+                  width={800}
+                  height={600}
                   style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
                 />
               </div>
               <p className="card-text">Bei biocò gibt es verschiedene Arbeitsgruppen und Gemeinschaftsaktivitäten, die das Herzstück unserer Genossenschaft bilden:</p>
               <ul>
+                <li><strong>Stammtisch:</strong> Regelmäßige Treffen für Austausch und Gemeinschaft. Hier kommen Mitglieder zusammen, um sich über aktuelle Themen auszutauschen, Erfahrungen zu teilen und die Gemeinschaft zu stärken. Der Stammtisch ist ein wichtiger Ort für den informellen Austausch und das Knüpfen von Kontakten.</li>
+                <li><strong>BG (Betriebsgruppe):</strong> Aktive Mitarbeit in der Betriebsorganisation. Die Betriebsgruppe koordiniert die strategischen Entscheidungen, plant die Anbauzyklen, organisiert die Logistik und sorgt für die reibungslose Abwicklung des täglichen Betriebs. Mitglieder der BG bringen ihre Expertise in verschiedenen Bereichen ein und gestalten die Zukunft der Genossenschaft aktiv mit.</li>
                 <li><strong>Elki:</strong> Familienaktivitäten und gemeinsame Anlässe. Die Elki-Gruppe organisiert speziell für Familien mit Kindern ausgerichtete Aktivitäten auf dem Hof. Kinder können spielerisch den Anbau kennenlernen, gemeinsam ernten und die Natur entdecken. Diese Aktivitäten stärken das Gemeinschaftsgefühl und ermöglichen es, auch den jüngsten Mitgliedern die Werte der solidarischen Landwirtschaft zu vermitteln.</li>
                 <li><strong>Kräutergruppe:</strong> Spezialisiert auf Kräuter und Gewürze. Diese Gruppe widmet sich dem Anbau, der Pflege und der Verarbeitung von Kräutern und Gewürzen. Mitglieder lernen verschiedene Kräuterarten kennen, erfahren mehr über deren Verwendung in der Küche und können ihre eigenen Kräuterprodukte herstellen. Die Kräutergruppe trägt zur Vielfalt unseres Angebots bei und bietet eine spezielle Nische für interessierte Mitglieder.</li>
-                <li><strong>BG (Betriebsgruppe):</strong> Aktive Mitarbeit in der Betriebsorganisation. Die Betriebsgruppe koordiniert die strategischen Entscheidungen, plant die Anbauzyklen, organisiert die Logistik und sorgt für die reibungslose Abwicklung des täglichen Betriebs. Mitglieder der BG bringen ihre Expertise in verschiedenen Bereichen ein und gestalten die Zukunft der Genossenschaft aktiv mit.</li>
               </ul>
               <p className="card-text" style={{ marginTop: '16px' }}>Diese Gruppen ermöglichen es, sich nach eigenen Interessen und Fähigkeiten einzubringen und die Genossenschaft aktiv mitzugestalten. Jede Gruppe trägt auf ihre Weise zum Erfolg und zur Gemeinschaft bei biocò bei.</p>
             </div>
@@ -101,7 +102,7 @@ export default function AnpackenPage() {
               <h3>Nächste Events</h3>
             </div>
             <div className="card-body">
-            <EventsBanner />
+              <EventsBanner />
             </div>
           </section>
 
@@ -110,7 +111,7 @@ export default function AnpackenPage() {
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Möchtest du uns kennenlernen?</h3>
-              </div>
+            </div>
             <div className="card-body">
               <p className="card-text">Es können viele Fragen auftauchen, die wir auf dieser Website nicht allesamt beantworten können. Du hast die Möglichkeit, den Hof und uns an den regulären Schnuppertagen kennenzulernen. Oder du kannst dich via Kontaktformular bei uns melden und wir beantworten deine Fragen persönlich.</p>
               <div style={{ marginTop: '16px', display: 'flex', gap: 'var(--spacing-md)', flexWrap: 'wrap' }}>

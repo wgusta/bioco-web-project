@@ -1445,6 +1445,7 @@ header .header-nav-container .beet-leaves {
   padding: var(--spacing-xl) 150px;
   margin-top: var(--spacing-xl);
   margin-bottom: var(--spacing-lg);
+  max-width: 100%;
   width: 100%;
 }
 
@@ -1453,6 +1454,7 @@ header .header-nav-container .beet-leaves {
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-md);
   width: 100%;
+  max-width: 100%;
 }
 
 .hero-image-card {
@@ -1473,16 +1475,16 @@ header .header-nav-container .beet-leaves {
   min-height: 500px;
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 .hero-content {
   width: 100%;
-  padding: var(--spacing-lg);
+  padding: var(--spacing-xl);
 }
 
 .hero-text {
   width: 100%;
-  max-width: 600px;
 }
 
 .hero-subtitle {
