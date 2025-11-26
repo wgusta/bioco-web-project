@@ -63,7 +63,7 @@ export default function AnpackenPage() {
             <div style={{ marginTop: '24px' }}>
               <CTA
                 text="Jetzt anmelden"
-                href="/mitmachen"
+                href="/anpacken"
                 variant="primary"
               />
             </div>

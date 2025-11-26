@@ -145,7 +145,7 @@ export default function Home() {
                 <div className="step-icon">1</div>
                 <div className="step-content">
                   <h3>Anmelden als Mitglied oder Schnupperabo</h3>
-                  <p>Entscheide dich für ein <Link href="/abos">Abo</Link> oder teste mit einem <Link href="/mitmachen">Schnupperabo</Link></p>
+                  <p>Entscheide dich für ein <Link href="/abos">Abo</Link> oder teste mit einem <Link href="/anpacken">Schnupperabo</Link></p>
                 </div>
               </div>
               <div className="procedure-step">

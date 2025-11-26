@@ -255,7 +255,7 @@ export default function WirPage() {
               <p className="card-text">Werde Teil unserer Gemeinschaft und unterstütze die solidarische Landwirtschaft.</p>
             <CTA
               text="Jetzt Mitglied werden"
-              href="/mitmachen"
+              href="/anpacken"
               variant="primary"
             />
             </div>

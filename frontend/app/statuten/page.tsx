@@ -67,7 +67,7 @@ export default function StatutenPage() {
                 <li>Doppel Gemüsekorb: 4 Anteile</li>
               </ul>
               <p style={{ marginTop: '16px' }}>
-                <Link href="/mitmachen" className="btn btn-primary" style={{ display: 'inline-block' }}>
+                <Link href="/anpacken" className="btn btn-primary" style={{ display: 'inline-block' }}>
                   Jetzt Mitglied werden
                 </Link>
               </p>

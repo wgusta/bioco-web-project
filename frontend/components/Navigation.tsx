@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation'
 const navigationItems = [
   { title: 'Wir', href: '/wir', id: 'F' },
   { title: 'Gemüse', href: '/ernte', id: 'B' },
-  { title: 'Mitmachen', href: '/mitmachen', id: 'D' },
+  { title: 'Anpacken', href: '/anpacken', id: 'D' },
   { title: 'Abos', href: '/abos', id: 'C' },
   { title: 'Aktuelles', href: '/aktuelles', id: 'G' },
 ]
@@ -40,7 +40,7 @@ export function Navigation({ onLinkClick, hideMitmachen = false }: NavigationPro
         {!hideMitmachen && (
           <li>
             <Link 
-              href="/mitmachen" 
+              href="/anpacken" 
               className="btn btn-orange"
               onClick={onLinkClick}
             >
