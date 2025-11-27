@@ -43,6 +43,7 @@
   --sketchy-border-thin: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,10 Q20,5 40,10 T80,10 Q90,8 100,10 M100,20 Q80,25 60,20 T20,20 Q10,22 0,20 M0,30 Q15,28 30,30 T70,30 Q85,32 100,30 M100,40 Q90,38 80,40 T40,40 Q25,42 0,40 M0,50 Q20,48 50,50 T100,50 M100,60 Q85,62 70,60 T30,60 Q15,58 0,60 M0,70 Q25,68 50,70 T100,70 M100,80 Q80,82 60,80 T20,80 Q10,78 0,80 M0,90 Q30,88 60,90 T100,90' stroke='%23e1e4e8' fill='none' stroke-width='2'/%3E%3C/svg%3E");
   --sketchy-border-medium: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,15 Q25,8 50,15 T100,15 Q95,10 100,15 M100,25 Q75,32 50,25 T0,25 Q5,30 0,25 M0,35 Q30,28 60,35 T100,35 M100,45 Q70,52 40,45 T0,45 Q10,40 0,45 M0,55 Q35,48 70,55 T100,55 M100,65 Q65,72 30,65 T0,65 Q15,60 0,65 M0,75 Q40,68 80,75 T100,75 M100,85 Q60,92 20,85 T0,85' stroke='%23e1e4e8' fill='none' stroke-width='4'/%3E%3C/svg%3E");
   --sketchy-border-thick: url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0,20 Q30,10 60,20 T100,20 Q95,12 100,20 M100,30 Q70,40 40,30 T0,30 Q5,38 0,30 M0,40 Q35,30 70,40 T100,40 M100,50 Q65,60 30,50 T0,50 Q15,42 0,50 M0,60 Q40,50 80,60 T100,60 M100,70 Q60,80 20,70 T0,70 Q25,62 0,70 M0,80 Q45,70 90,80 T100,80' stroke='%23e1e4e8' fill='none' stroke-width='6'/%3E%3C/svg%3E");
+  --sketchy-border-zigzag: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cpath d='M0 12 L20 4 L40 12 L60 4 L80 12 L100 4 L120 12 M0 36 L15 48 L30 36 L45 48 L60 36 L75 48 L90 36 L105 48 L120 36 M0 60 L25 72 L50 60 L75 72 L100 60 L120 68 M0 90 L18 104 L36 90 L54 104 L72 90 L90 104 L108 90 L120 99' fill='none' stroke='%232e7d32' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' opacity='0.65'/%3E%3C/svg%3E");
 }
 
 body {
@@ -199,7 +200,10 @@ p {
   flex-direction: column;
   min-width: 0;
   background-color: #faf9f7;
-  border: 2px solid var(--bioco-green);
+  border: 6px solid transparent;
+  border-image-source: var(--sketchy-border-zigzag);
+  border-image-slice: 24;
+  border-image-repeat: round;
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   padding: 0;
   overflow: visible;
@@ -1501,17 +1505,11 @@ header .header-nav-container .beet-leaves {
 
 .hero-title {
   font-family: 'DM Sans', sans-serif;
-  font-size: calc(1rem + 0.5vw - 10px);
+  font-size: clamp(1.5rem, 3vw, 2.75rem);
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: var(--spacing-md);
+  line-height: 1.15;
+  margin-bottom: calc(var(--spacing-md) / 2);
   color: var(--text-primary);
-}
-
-@media (min-width: 1200px) {
-  .hero-title {
-    font-size: calc(1.5rem - 10px);
-  }
 }
 
 .hero-buttons {
@@ -1697,15 +1695,14 @@ header .header-nav-container .beet-leaves {
 }
 
 .pea-bullet-icon {
-  width: 16px;
-  height: 12px;
-  background: radial-gradient(circle at 30% 40%, #9cd47a, #3f7f35 70%);
-  border: 1px solid rgba(47, 110, 52, 0.9);
-  border-radius: 55% 45% 50% 40% / 65% 45% 55% 45%;
-  transform: rotate(-8deg);
+  width: 14px;
+  height: 14px;
+  background: var(--bioco-green);
+  border: 1px solid var(--bioco-green);
+  border-radius: 50%;
   flex-shrink: 0;
   margin-top: 0.4rem;
-  box-shadow: inset -2px 1px 2px rgba(255, 255, 255, 0.4);
+  box-shadow: inset -2px 1px 2px rgba(255, 255, 255, 0.35);
 }
 
 .pea-bullet-content {
@@ -3305,10 +3302,6 @@ footer a:hover {
     flex-direction: column;
     text-align: center;
     align-items: center;
-  }
-
-  .procedure-step:hover {
-    transform: translateY(-4px);
   }
 
   .step-icon {
