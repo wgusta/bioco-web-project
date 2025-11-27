@@ -175,3 +175,4 @@ export function EventSignupForm({ eventTitle, eventId, onSuccess, onCancel }: Ev
   )
 }
 
+

@@ -14,19 +14,6 @@ export function Hero({ title, subtitle, image }: HeroProps) {
   return (
     <section id="hero" className="hero">
       <div className="hero-container">
-        {image && (
-          <div className="hero-image-card bento-card">
-            <div className="hero-image-container">
-              <Image
-                src={image.url}
-                alt={image.description}
-                fill
-                style={{ objectFit: 'cover' }}
-                priority
-              />
-            </div>
-          </div>
-        )}
         <div className="hero-text-card bento-card">
           <div className="hero-content">
             <div className="hero-text">
@@ -45,6 +32,19 @@ export function Hero({ title, subtitle, image }: HeroProps) {
             </div>
           </div>
         </div>
+        {image && (
+          <div className="hero-image-card bento-card">
+            <div className="hero-image-container">
+              <Image
+                src={image.url}
+                alt={image.description}
+                fill
+                style={{ objectFit: 'cover' }}
+                priority
+              />
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )

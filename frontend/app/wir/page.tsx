@@ -25,20 +25,20 @@ export default function WirPage() {
             
             <div className="team-grid">
               <div className="team-card" style={{ gridColumn: 'span 2' }}>
-                <div className="team-card-image" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '16px' }}>
+                <div className="team-card-image" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '16px', aspectRatio: 'auto' }}>
                   <Image
                     src="/images/team/hofteam_matthias.JPG"
                     alt="Matthias vom Hofteam"
                     width={300}
                     height={300}
-                    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
+                    style={{ width: '100%', height: 'auto', objectFit: 'contain', borderRadius: '8px' }}
                   />
                   <Image
                     src="/images/team/bioco_hofteam_christian.JPG"
                     alt="Christian vom Hofteam"
                     width={300}
                     height={300}
-                    style={{ width: '100%', height: '200px', objectFit: 'cover', borderRadius: '8px' }}
+                    style={{ width: '100%', height: 'auto', objectFit: 'contain', borderRadius: '8px' }}
                   />
                 </div>
                 <h3>Gärtnerteam</h3>
