@@ -938,7 +938,7 @@ a:hover {
 .secondary-nav {
   background: var(--bg-secondary);
   border-bottom: 2px solid var(--bioco-green);
-  padding: var(--spacing-xs) var(--spacing-md);
+  padding: var(--spacing-md) var(--spacing-md);
   position: fixed;
   top: 0;
   left: 0;
@@ -946,7 +946,7 @@ a:hover {
   z-index: 1001;
   display: none; /* Hidden on mobile by default, shown in mobile menu */
   box-sizing: border-box;
-  height: 48px; /* Set explicit height for proper positioning */
+  min-height: 80px; /* Increased height for more space */
 }
 
 .secondary-nav-container {
@@ -954,6 +954,18 @@ a:hover {
   width: 100%;
   margin: 0;
   padding: 0 150px;
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-lg);
+}
+
+.secondary-nav-logo {
+  flex-shrink: 0;
+}
+
+.secondary-nav-logo img {
+  max-height: 50px;
+  width: auto;
 }
 
 .secondary-nav ul {
@@ -1078,7 +1090,7 @@ header {
   }
   
   .main-content {
-    padding: var(--spacing-md) 0 !important;
+    padding: 8px 0 !important; /* Reduced vertical spacing by 75% (was 32px, now 8px) */
     max-width: 100%;
     width: 100%;
     margin: 0;
@@ -1111,13 +1123,13 @@ header {
   
   /* Position header below secondary-nav */
   header {
-    top: 64px;
+    top: 96px;
   }
-  
-  /* Add padding for both navbars on desktop */
-  .main-content {
-    padding-top: 140px !important; /* 48px secondary + 64px primary + margin */
-  }
+   
+   /* Add padding for both navbars on desktop */
+   .main-content {
+     padding-top: 100px !important; /* Reduced spacing above content */
+   }
 }
 
 header .header-nav-container {
@@ -1712,8 +1724,8 @@ header .header-nav-container .beet-leaves {
 
 /* Main Content */
 .main-content {
-  padding: var(--spacing-xl) 150px;
-  padding-top: 80px; /* Account for mobile header */
+  padding: 12px 150px; /* Reduced vertical spacing by 75% (was 48px, now 12px) */
+  padding-top: 100px; /* Account for header */
   max-width: 100%;
   width: 100%;
   margin: 0;
@@ -3555,7 +3567,7 @@ footer a:hover {
   }
 
   .main-content {
-    padding: var(--spacing-xl) 150px;
+    padding: 12px 150px; /* Reduced vertical spacing by 75% */
     max-width: 100%;
     width: 100%;
   }

@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { DuckIcon } from './BiocoIcons'
+import { Logo } from './Logo'
 
 const navigationItems = [
   { title: 'Wir', href: '/wir' },
@@ -20,6 +21,9 @@ export function SecondaryNavigation() {
   return (
     <nav className="secondary-nav">
       <div className="secondary-nav-container">
+        <div className="secondary-nav-logo">
+          <Logo />
+        </div>
         <ul>
           {navigationItems.map((item) => {
             const isActive = pathname === item.href
@@ -37,20 +41,20 @@ export function SecondaryNavigation() {
           })}
           <li>
             <Link 
+              href="/mitmachen" 
+              className="btn btn-orange"
+            >
+              biocò werden
+            </Link>
+          </li>
+          <li>
+            <Link 
               href="/intranet" 
               className={`duck-icon-link ${pathname === '/intranet' ? 'active' : ''}`}
               title="Intranet"
               aria-label="Intranet"
             >
               <DuckIcon size={20} />
-            </Link>
-          </li>
-          <li>
-            <Link 
-              href="/mitmachen" 
-              className="btn btn-orange"
-            >
-              biocò werden
             </Link>
           </li>
         </ul>
