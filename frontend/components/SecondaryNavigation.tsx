@@ -2,20 +2,16 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { MapNeedleIcon, ContactLetterIcon, DuckIcon } from './BiocoIcons'
+import { DuckIcon } from './BiocoIcons'
 
-// Wrapper components to match the expected API (size prop)
-const LocationIcon = ({ size = 16 }: { size?: number }) => (
-  <MapNeedleIcon size={size} />
-)
-
-const ContactIcon = ({ size = 16 }: { size?: number }) => (
-  <ContactLetterIcon size={size} />
-)
-
-const secondaryNavItems = [
-  { title: 'Standorte', href: '/depots', icon: LocationIcon },
-  { title: 'Kontakt', href: '/kontakt', icon: ContactIcon },
+const navigationItems = [
+  { title: 'Wir', href: '/wir' },
+  { title: 'Gemüse', href: '/ernte' },
+  { title: 'Mitmachen', href: '/anpacken' },
+  { title: 'Abos', href: '/abos' },
+  { title: 'Aktuelles', href: '/aktuelles' },
+  { title: 'Standorte', href: '/depots' },
+  { title: 'Kontakt', href: '/kontakt' },
 ]
 
 export function SecondaryNavigation() {
@@ -25,9 +21,8 @@ export function SecondaryNavigation() {
     <nav className="secondary-nav">
       <div className="secondary-nav-container">
         <ul>
-          {secondaryNavItems.map((item) => {
+          {navigationItems.map((item) => {
             const isActive = pathname === item.href
-            const IconComponent = item.icon
             
             return (
               <li key={item.href}>
@@ -35,8 +30,7 @@ export function SecondaryNavigation() {
                   href={item.href}
                   className={isActive ? 'active' : ''}
                 >
-                  <IconComponent size={16} />
-                  <span>{item.title}</span>
+                  {item.title}
                 </Link>
               </li>
             )
@@ -49,6 +43,14 @@ export function SecondaryNavigation() {
               aria-label="Intranet"
             >
               <DuckIcon size={20} />
+            </Link>
+          </li>
+          <li>
+            <Link 
+              href="/mitmachen" 
+              className="btn btn-orange"
+            >
+              biocò werden
             </Link>
           </li>
         </ul>

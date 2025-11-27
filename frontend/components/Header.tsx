@@ -1,4 +1,3 @@
-import { Navigation } from './Navigation'
 import { SecondaryNavigation } from './SecondaryNavigation'
 import { Logo } from './Logo'
 import { MobileMenu } from './MobileMenu'
@@ -13,11 +12,6 @@ export function Header() {
             <Logo />
           </div>
           <MobileMenu />
-          <div className="desktop-nav">
-            <div className="header-nav-container">
-              <Navigation />
-            </div>
-          </div>
         </div>
       </header>
     </>

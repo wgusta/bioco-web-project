@@ -1,8 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
-import { Navigation } from './Navigation'
 import { SecondaryNavigation } from './SecondaryNavigation'
 import { TriColorHamburgerIcon } from './TriColorHamburgerIcon'
 
@@ -41,19 +39,9 @@ export function MobileMenu() {
               </button>
             </div>
             <div className="mobile-menu-primary-section">
-              <Navigation onLinkClick={() => setIsOpen(false)} hideMitmachen={true} />
               <div className="mobile-menu-secondary">
                 <SecondaryNavigation />
               </div>
-            </div>
-            <div className="mobile-menu-cta-bottom">
-              <Link 
-                href="/mitmachen" 
-                className="btn btn-orange"
-                onClick={() => setIsOpen(false)}
-              >
-                biocò werden
-              </Link>
             </div>
           </nav>
         </div>
