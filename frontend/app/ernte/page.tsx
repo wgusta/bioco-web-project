@@ -25,35 +25,36 @@ export default function ErntePage() {
       <Header />
       <main className="main-content">
         <div className="bento-grid">
-          {/* Erste Zeile: Saisonkalender */}
-          <section id="B-04" className="bento-card bento-card-large">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Saisonkalender</h3>
-            </div>
-            <div className="card-body">
-              <p className="card-text">Wann ist welches Gemüse verfügbar? Entdecke unsere saisonale Vielfalt.</p>
-              <Saisonkalender />
-            </div>
-          </section>
-
-          {/* Zweite Zeile: Events */}
-          <section className="bento-card events-card bento-card-large">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Nächste Events</h3>
-            </div>
-            <div className="card-body">
-              <div className="events-list">
-                {getEventItems().slice(0, 3).map((item, index) => (
-                  <AktuellesItemComponent key={index} item={item} variant="event" />
-                ))}
+          {/* Erste Zeile: Saisonkalender (2/3) und Events (1/3) */}
+          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 'var(--spacing-md)' }}>
+            <section id="B-04" className="bento-card">
+              <div className="plant-pattern"></div>
+              <div className="card-header">
+                <h3>Saisonkalender</h3>
               </div>
-              <Link href="/aktuelles" className="btn btn-primary" style={{ marginTop: '16px', display: 'inline-block' }}>
-                Alle Events ansehen
-              </Link>
-            </div>
-          </section>
+              <div className="card-body">
+                <p className="card-text">Wann ist welches Gemüse verfügbar? Entdecke unsere saisonale Vielfalt.</p>
+                <Saisonkalender />
+              </div>
+            </section>
+
+            <section className="bento-card events-card">
+              <div className="plant-pattern"></div>
+              <div className="card-header">
+                <h3>Nächste Events</h3>
+              </div>
+              <div className="card-body">
+                <div className="events-list">
+                  {getEventItems().slice(0, 3).map((item, index) => (
+                    <AktuellesItemComponent key={index} item={item} variant="event" />
+                  ))}
+                </div>
+                <Link href="/aktuelles" className="btn btn-primary" style={{ marginTop: '16px', display: 'inline-block' }}>
+                  Alle Events ansehen
+                </Link>
+              </div>
+            </section>
+          </div>
 
           {/* Dritte Zeile: Demeter und Pictures nebeneinander (50/50) */}
           <div className="ernte-bottom-row">
