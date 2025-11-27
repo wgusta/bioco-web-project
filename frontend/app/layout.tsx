@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { MatomoScript } from '@/components/MatomoScript'
+import { MarkerScript } from '@/components/MarkerScript'
 
 export const metadata: Metadata = {
   title: 'bioco.ch',
@@ -22,6 +23,7 @@ export default function RootLayout({
       <body>
         {children}
         <MatomoScript />
+        <MarkerScript />
       </body>
     </html>
   )

@@ -1509,6 +1509,10 @@ header .header-nav-container .beet-leaves {
   color: var(--text-primary);
 }
 
+.hero-text {
+  max-width: 420px;
+}
+
 .hero-buttons {
   display: flex;
   flex-direction: row;
