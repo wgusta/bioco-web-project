@@ -986,6 +986,12 @@ a:hover {
   flex-wrap: wrap;
 }
 
+@media (max-width: 767px) {
+  .secondary-nav ul {
+    justify-content: flex-end;
+  }
+}
+
 .secondary-nav li {
   padding: 0;
 }
@@ -1097,7 +1103,7 @@ header {
   }
   
   .main-content {
-    padding: 100px 0 8px 0 !important; /* Add space for fixed header on mobile */
+    padding: 140px 0 8px 0 !important; /* Increased space for fixed header on mobile */
     max-width: 100%;
     width: 100%;
     margin: 0;
@@ -2477,6 +2483,24 @@ footer a:hover {
   box-shadow: var(--shadow-sm);
 }
 
+.team-card-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.team-card-gardener {
+  grid-column: span 1;
+}
+
+.geisshof-images-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
 /* Hover-Effekte für team-card entfernt - nur für klickbare Elemente */
 
 .team-card-image {
@@ -3658,6 +3682,18 @@ footer a:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .team-card-gardener {
+    grid-column: span 2;
+  }
+
+  .team-card-image-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .geisshof-images-grid {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+
   .mission-values {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -3775,6 +3811,10 @@ footer a:hover {
     grid-template-columns: repeat(3, 1fr);
   }
 
+  .team-card-gardener {
+    grid-column: span 3;
+  }
+
   .mission-values {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -3790,6 +3830,27 @@ footer a:hover {
 
 /* Mobile-specific adjustments */
 @media (max-width: 767px) {
+  /* Wir page mobile fixes */
+  .team-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .team-card-gardener {
+    grid-column: span 1 !important;
+  }
+
+  .team-card-image-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .geisshof-images-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .mission-values {
+    grid-template-columns: 1fr !important;
+  }
+
   button,
   .btn,
   .btn-primary,

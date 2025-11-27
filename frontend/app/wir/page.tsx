@@ -24,8 +24,8 @@ export default function WirPage() {
               <p className="card-text">biocò ist eine Gemeinschaft von engagierten Menschen, die gemeinsam für frisches, regionales Demeter-Gemüse sorgen.</p>
             
             <div className="team-grid">
-              <div className="team-card" style={{ gridColumn: 'span 2' }}>
-                <div className="team-card-image" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px', marginBottom: '16px', aspectRatio: 'auto' }}>
+              <div className="team-card team-card-gardener">
+                <div className="team-card-image team-card-image-grid">
                   <Image
                     src="/images/team/hofteam_matthias.JPG"
                     alt="Matthias vom Hofteam"
@@ -93,7 +93,7 @@ export default function WirPage() {
                 Hier finden die Feldarbeit, die Gemüseaufbereitung und viele gemeinsame Anlässe statt.
               </p>
               
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: 'var(--spacing-md)', marginTop: 'var(--spacing-md)' }}>
+              <div className="geisshof-images-grid">
                 <div>
                   <Image
                     src="/images/hof/bioco_hof_luftaufnahme_grosses-feld.JPG"

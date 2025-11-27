@@ -37,8 +37,8 @@ export default function Home() {
         }
         subtitle=""
         image={{
-          url: '/images/hero/header_homepage.JPG',
-          description: 'biocò Gemüsegenossenschaft auf dem Geisshof'
+          url: '/images/ernte/bioco_ernte-kürbis-hoch.JPG',
+          description: 'Person in grüner Jacke hält einen Kürbis auf dem Feld'
         }}
       />
       <main className="main-content">
