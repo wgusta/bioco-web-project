@@ -807,6 +807,38 @@ button.btn-orange:hover {
   transform: translateY(-1px);
 }
 
+/* Form submit buttons - match primary button style */
+input[type="submit"].cta-button,
+.cta-button {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  display: inline-block;
+  padding: 12px 24px;
+  font-size: 1rem;
+  text-align: center;
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  cursor: pointer;
+  border: 2px solid;
+  line-height: 1.5;
+  position: relative;
+  overflow: visible;
+  box-shadow: var(--shadow-sm);
+  background: var(--bioco-green);
+  color: #ffffff;
+  border-color: var(--bioco-green);
+}
+
+input[type="submit"].cta-button:hover,
+.cta-button:hover {
+  background: var(--bioco-green-dark);
+  color: #ffffff;
+  border-color: var(--bioco-green-dark);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-1px);
+}
+
 /* Links - Keep as links for navigation */
 a {
   color: var(--bioco-green);
@@ -907,9 +939,21 @@ a:hover {
   background: var(--bg-secondary);
   border-bottom: 1px solid var(--border-color);
   padding: var(--spacing-xs) var(--spacing-md);
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1001;
   display: none; /* Hidden on mobile by default, shown in mobile menu */
+  transition: transform 0.3s ease-in-out;
+}
+
+.secondary-nav.header-visible {
+  transform: translateY(0);
+}
+
+.secondary-nav.header-hidden {
+  transform: translateY(-100%);
 }
 
 .secondary-nav-container {
@@ -997,13 +1041,39 @@ header {
   background: transparent;
   border-bottom: none;
   padding: var(--spacing-sm) 150px;
-  position: relative;
-  top: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   box-shadow: none;
   color: white;
   width: 100%;
   max-width: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+header.header-visible {
+  transform: translateY(0);
+}
+
+header.header-hidden {
+  transform: translateY(-100%);
+}
+
+/* Adjust header top position when secondary-nav is visible on desktop */
+@media (min-width: 768px) {
+  header {
+    top: 40px; /* Approximate height of secondary-nav */
+  }
+  
+  header.header-visible {
+    transform: translateY(0);
+  }
+  
+  header.header-hidden {
+    transform: translateY(-100%);
+  }
 }
 
 @media (max-width: 767px) {
@@ -1515,6 +1585,10 @@ header .header-nav-container .beet-leaves {
   align-items: center;
   justify-content: center;
   background: var(--bg-primary);
+}
+
+.bento-card.hero-text-card {
+  background-color: var(--bg-primary) !important;
 }
 
 .hero-content {

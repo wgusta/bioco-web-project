@@ -212,8 +212,8 @@ export const PeasIcon = ({ className = '', ariaLabel = 'Erbsenschote Illustratio
 }
 
 /**
- * Simple Duck Head Icon for navigation (hand-drawn profile view)
- * Only shows the head, matching the simplified flat style
+ * Duck Head Icon for navigation (hand-drawn, realistic style)
+ * Shows head and neck only, with longer beak, black and green colors, in a circle
  */
 export const DuckIcon = ({ className = '', size = 20 }: { className?: string, size?: number }) => {
   return (
@@ -225,46 +225,78 @@ export const DuckIcon = ({ className = '', size = 20 }: { className?: string, si
       xmlns="http://www.w3.org/2000/svg" 
       className={className}
     >
-      {/* Duck head - hand-drawn organic shape in profile */}
-      <path
-        d="M25 50 Q20 35 30 25 Q45 15 60 20 Q75 25 80 40 Q82 50 75 60 Q65 70 50 72 Q35 70 25 60 Q20 55 25 50 Z"
-        fill="var(--bioco-orange)"
-        stroke="#d67a00"
+      {/* Circle background */}
+      <circle
+        cx="50"
+        cy="50"
+        r="48"
+        fill="var(--bg-primary)"
+        stroke="var(--bioco-green)"
         strokeWidth="3"
-        strokeLinecap="round"
-        strokeLinejoin="round"
       />
-      {/* Duck beak - hand-drawn triangular shape */}
+      
+      {/* Duck head - black, realistic profile shape */}
       <path
-        d="M80 40 Q85 35 88 42 Q85 48 80 45 Q78 42 80 40 Z"
-        fill="var(--bioco-orange-light)"
-        stroke="#d67a00"
+        d="M30 50 Q25 40 30 30 Q40 20 55 22 Q70 25 75 35 Q78 42 76 50 Q74 58 68 62 Q60 66 50 66 Q40 66 32 62 Q28 58 30 50 Z"
+        fill="#1F2A1B"
+        stroke="#1F2A1B"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
-      {/* Duck eye - simple circle */}
+      
+      {/* Duck beak - longer, realistic shape, green accent */}
+      <path
+        d="M75 35 Q82 30 92 38 Q90 45 85 48 Q80 50 75 45 Q73 40 75 35 Z"
+        fill="var(--bioco-green)"
+        stroke="var(--bioco-green-dark)"
+        strokeWidth="2"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      />
+      
+      {/* Beak detail line */}
+      <path
+        d="M80 38 Q85 40 88 42"
+        stroke="var(--bioco-green-dark)"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        fill="none"
+      />
+      
+      {/* Duck eye - simple black circle */}
       <circle 
         cx="55" 
-        cy="40" 
-        r="5" 
+        cy="42" 
+        r="4" 
         fill="#1F2A1B" 
       />
-      {/* Eye highlight */}
+      
+      {/* Eye highlight - small white dot */}
       <circle 
         cx="56" 
-        cy="39" 
-        r="1.5" 
+        cy="41" 
+        r="1.2" 
         fill="var(--bg-primary)" 
       />
-      {/* Neck/chest line - subtle hand-drawn curve */}
+      
+      {/* Neck - extending down from head */}
       <path
-        d="M25 55 Q20 65 18 75"
-        stroke="#d67a00"
+        d="M32 58 Q28 65 30 72 Q32 75 35 75"
+        stroke="#1F2A1B"
+        strokeWidth="3"
+        strokeLinecap="round"
+        fill="none"
+      />
+      
+      {/* Neck detail - green accent line */}
+      <path
+        d="M34 60 Q30 68 32 74"
+        stroke="var(--bioco-green)"
         strokeWidth="2"
         strokeLinecap="round"
         fill="none"
-        opacity="0.6"
+        opacity="0.7"
       />
     </svg>
   )

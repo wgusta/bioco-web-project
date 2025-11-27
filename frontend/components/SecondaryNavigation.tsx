@@ -18,11 +18,11 @@ const secondaryNavItems = [
   { title: 'Kontakt', href: '/kontakt', icon: ContactIcon },
 ]
 
-export function SecondaryNavigation() {
+export function SecondaryNavigation({ className = '' }: { className?: string }) {
   const pathname = usePathname()
 
   return (
-    <nav className="secondary-nav">
+    <nav className={`secondary-nav ${className}`}>
       <div className="secondary-nav-container">
         <ul>
           {secondaryNavItems.map((item) => {
