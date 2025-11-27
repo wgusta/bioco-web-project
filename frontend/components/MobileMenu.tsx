@@ -4,7 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { Navigation } from './Navigation'
 import { SecondaryNavigation } from './SecondaryNavigation'
-import { BeanMenuIcon } from './BeanMenuIcon'
+import { TriColorHamburgerIcon } from './TriColorHamburgerIcon'
 
 export function MobileMenu() {
   const [isOpen, setIsOpen] = useState(false)
@@ -24,7 +24,7 @@ export function MobileMenu() {
           aria-label="Toggle menu"
           aria-expanded={isOpen}
         >
-          <BeanMenuIcon width={32} height={32} />
+          <TriColorHamburgerIcon width={30} height={20} />
         </button>
       </div>
       {isOpen && (
