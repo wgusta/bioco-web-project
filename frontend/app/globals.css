@@ -1113,9 +1113,9 @@ header.header-hidden {
     display: block;
   }
   
-  /* Position header below secondary-nav - match explicit height */
+  /* Position header below secondary-nav with spacing */
   header {
-    top: 48px;
+    top: 56px; /* Increased from 48px for more spacing */
   }
   
   header.header-visible {
@@ -1305,7 +1305,11 @@ header .header-nav-container .beet-leaves {
 }
 
 .mobile-menu-secondary .secondary-nav {
-  display: block;
+  display: block !important; /* Force display in mobile menu */
+}
+
+.mobile-menu-secondary .secondary-nav-container {
+  padding: 0; /* Remove padding in mobile context */
 }
 
 .mobile-menu-secondary .secondary-nav ul {
@@ -1325,6 +1329,10 @@ header .header-nav-container .beet-leaves {
 .mobile-menu-secondary .secondary-nav a:hover {
   background: var(--bg-secondary);
   color: var(--bioco-green);
+}
+
+.mobile-menu-secondary .secondary-nav a svg {
+  flex-shrink: 0;
 }
 
 .mobile-menu-cta-bottom {
