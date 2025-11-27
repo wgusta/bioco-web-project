@@ -4,6 +4,18 @@ import { EventsBanner } from '@/components/EventsBanner'
 import { CTA } from '@/components/CTA'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Mitmachen bei solidarischer Landwirtschaft | biocò Baden',
+  description: 'Werde Teil der Gemüsegenossenschaft biocò. Solidarische Landwirtschaft leben: Mitarbeit auf dem Geisshof und frisches Demeter-Gemüse für Baden-Brugg.',
+  keywords: 'mitmachen, solidarische landwirtschaft, gemüsegenossenschaft, baden, brugg, mitarbeit, geisshof',
+  openGraph: {
+    title: 'Mitmachen bei solidarischer Landwirtschaft | biocò Baden',
+    description: 'Werde Teil der Gemüsegenossenschaft biocò. Solidarische Landwirtschaft leben.',
+    type: 'website',
+  },
+}
 
 export default function AnpackenPage() {
   return (
@@ -20,14 +32,14 @@ export default function AnpackenPage() {
               <div style={{ marginBottom: 'var(--spacing-md)' }}>
                 <Image
                   src="/images/anpacken/bioco_anpacken_einzel.JPG"
-                  alt="Einzelperson bei der Mitarbeit auf dem Geisshof"
+                  alt="Mitarbeit bei solidarischer Landwirtschaft auf dem Geisshof Gebenstorf"
                   width={800}
                   height={600}
                   style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
                 />
               </div>
               <h4 className="card-title">Mitarbeit bei biocò</h4>
-              <p className="card-text">Jedes Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv. Die Mitarbeit ist ein wichtiger Teil des Prinzips.</p>
+              <p className="card-text">Jedes Mitglied bringt sich ein und unterstützt die Genossenschaft aktiv. Die Mitarbeit ist ein wichtiger Teil der <Link href="/wir">solidarischen Landwirtschaft</Link>.</p>
             
             <div style={{ marginTop: '16px' }}>
             </div>
@@ -74,7 +86,7 @@ export default function AnpackenPage() {
               <div style={{ marginBottom: 'var(--spacing-md)' }}>
                 <Image
                   src="/images/anpacken/zusammen-arbeiten.JPG"
-                  alt="Gruppe bei der Mitarbeit auf dem Geisshof"
+                  alt="Gemeinschaft bei solidarischer Landwirtschaft biocò Baden-Brugg"
                   width={800}
                   height={600}
                   style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
@@ -96,32 +108,36 @@ export default function AnpackenPage() {
               <h3>Familien & Kinder auf dem Geisshof</h3>
             </div>
             <div className="card-body">
-              <div style={{ marginBottom: 'var(--spacing-md)' }}>
-                <Image
-                  src="/images/ernte/bioco_ernte-kürbis-hoch.JPG"
-                  alt="Hand hält frisch geernteten grünen Kürbis"
-                  width={800}
-                  height={600}
-                  style={{ width: '25%', height: 'auto', borderRadius: '12px' }}
-                />
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 'var(--spacing-md)', alignItems: 'start' }}>
+                <div>
+                  <Image
+                    src="/images/ernte/bioco_ernte-kürbis-hoch.JPG"
+                    alt="Frisch geerntetes Demeter-Gemüse vom Geisshof"
+                    width={800}
+                    height={600}
+                    style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                  />
+                </div>
+                <div>
+                  <h4 className="card-title">Kinder sind willkommen</h4>
+                  <p className="card-text">
+                    Familien und Kinder sind sehr regelmässige Helfer auf dem Geisshof. Die Einbindung von Kindern 
+                    in den Prozess des Gemüseanbaus ist ein zentraler Bestandteil der biocò-Kultur.
+                  </p>
+                  <p className="card-text">
+                    Auf dem Geisshof erleben Kinder hautnah, wie Gemüse wächst, gepflegt wird und geerntet wird. 
+                    Sie lernen spielerisch den Kreislauf der Natur kennen und entwickeln ein tiefes Verständnis für 
+                    die Herkunft ihrer Nahrung. Diese praktische Erfahrung prägt nicht nur ihr Verhältnis zu Lebensmitteln, 
+                    sondern stärkt auch das Gemeinschaftsgefühl zwischen den Generationen.
+                  </p>
+                  <p className="card-text">
+                    Die Elki-Gruppe organisiert spezielle Aktivitäten für Familien, bei denen Kinder aktiv mithelfen 
+                    können – sei es beim Säen, Jäten, Ernten oder beim gemeinsamen Verarbeiten des Gemüses. Diese 
+                    gemeinsamen Erlebnisse schaffen bleibende Erinnerungen und fördern das Verständnis für nachhaltige 
+                    Landwirtschaft von klein auf.
+                  </p>
+                </div>
               </div>
-              <h4 className="card-title">Kinder sind willkommen</h4>
-              <p className="card-text">
-                Familien und Kinder sind sehr regelmässige Helfer auf dem Geisshof. Die Einbindung von Kindern 
-                in den Prozess des Gemüseanbaus ist ein zentraler Bestandteil der biocò-Kultur.
-              </p>
-              <p className="card-text">
-                Auf dem Geisshof erleben Kinder hautnah, wie Gemüse wächst, gepflegt wird und geerntet wird. 
-                Sie lernen spielerisch den Kreislauf der Natur kennen und entwickeln ein tiefes Verständnis für 
-                die Herkunft ihrer Nahrung. Diese praktische Erfahrung prägt nicht nur ihr Verhältnis zu Lebensmitteln, 
-                sondern stärkt auch das Gemeinschaftsgefühl zwischen den Generationen.
-              </p>
-              <p className="card-text">
-                Die Elki-Gruppe organisiert spezielle Aktivitäten für Familien, bei denen Kinder aktiv mithelfen 
-                können – sei es beim Säen, Jäten, Ernten oder beim gemeinsamen Verarbeiten des Gemüses. Diese 
-                gemeinsamen Erlebnisse schaffen bleibende Erinnerungen und fördern das Verständnis für nachhaltige 
-                Landwirtschaft von klein auf.
-              </p>
             </div>
           </section>
 

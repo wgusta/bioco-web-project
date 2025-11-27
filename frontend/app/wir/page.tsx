@@ -6,6 +6,18 @@ import { getEventItems } from '@/components/AktuellesData'
 import { AktuellesItemComponent } from '@/components/AktuellesItem'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Über uns | Solidarische Landwirtschaft Baden | biocò Gemüsegenossenschaft',
+  description: 'biocò Gemüsegenossenschaft: Seit 2014 solidarische Landwirtschaft auf dem Geisshof Gebenstorf. Demeter-zertifiziertes Bio-Gemüse für Baden-Brugg.',
+  keywords: 'solidarische landwirtschaft, gemüsegenossenschaft, baden, brugg, gebenstorf, demeter, bio gemüse',
+  openGraph: {
+    title: 'Über uns | Solidarische Landwirtschaft Baden | biocò',
+    description: 'Seit 2014 solidarische Landwirtschaft auf dem Geisshof Gebenstorf. Demeter-zertifiziertes Bio-Gemüse für Baden-Brugg.',
+    type: 'website',
+  },
+}
 
 export default function WirPage() {
   return (
@@ -21,14 +33,14 @@ export default function WirPage() {
             </div>
             <div className="card-body">
               <h4 className="card-title">Team & Hof</h4>
-              <p className="card-text">biocò ist eine Gemeinschaft von engagierten Menschen, die gemeinsam für frisches, regionales Demeter-Gemüse sorgen.</p>
+              <p className="card-text">biocò ist eine Gemeinschaft von engagierten Menschen, die gemeinsam für frisches, regionales <Link href="/ernte">Demeter-Gemüse</Link> sorgen.</p>
             
             <div className="team-grid">
               <div className="team-card">
                 <div className="team-card-image" style={{ marginBottom: '16px' }}>
                   <Image
                     src="/images/team/hofteam_matthias.JPG"
-                    alt="Matthias vom Hofteam"
+                    alt="Matthias vom Hof-Team - Demeter Landwirtschaft Geisshof"
                     width={300}
                     height={300}
                     style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }}
@@ -42,7 +54,7 @@ export default function WirPage() {
                 <div className="team-card-image" style={{ marginBottom: '16px' }}>
                   <Image
                     src="/images/team/bioco_hofteam_christian.JPG"
-                    alt="Christian vom Hofteam"
+                    alt="Christian vom Hof-Team - Demeter Landwirtschaft Geisshof"
                     width={300}
                     height={300}
                     style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }}
@@ -56,7 +68,7 @@ export default function WirPage() {
                 <div className="team-card-image" style={{ marginBottom: '16px' }}>
                   <Image
                     src="/images/team/alle-mitglieder-bioco.jpeg"
-                    alt="Gemeinschaft von Mitgliedern bei einer Versammlung auf dem Geisshof"
+                    alt="Mitglieder der Gemüsegenossenschaft biocò - Solidarische Landwirtschaft Baden"
                     width={800}
                     height={600}
                     style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }}
@@ -70,7 +82,7 @@ export default function WirPage() {
                 <div className="team-card-image" style={{ marginBottom: '16px', aspectRatio: '1', overflow: 'hidden', borderRadius: '8px' }}>
                   <Image
                     src="/images/team/betriebsgruppe.JPG"
-                    alt="Mitglieder der Betriebsgruppe im Gespräch auf dem Geisshof"
+                    alt="Betriebsgruppe der Gemüsegenossenschaft biocò Gebenstorf"
                     width={800}
                     height={600}
                     style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'bottom', borderRadius: '8px' }}
@@ -108,15 +120,17 @@ export default function WirPage() {
             </div>
             <div className="card-body">
               <p className="card-text">
-                Der Geisshof in Gebenstorf ist seit 2014 der Ort, an dem biocò Gemüse anbaut. 
-                Hier finden die Feldarbeit, die Gemüseaufbereitung und viele gemeinsame Anlässe statt.
+                Der Geisshof in Gebenstorf im Aargau ist seit 2014 der Ort, an dem biocò Bio-Gemüse 
+                in Demeter-Qualität anbaut. Zentral gelegen zwischen Baden und Brugg versorgen wir die 
+                Region mit frischem, saisonalem Gemüse. Hier finden die Feldarbeit, die Gemüseaufbereitung 
+                und viele gemeinsame Anlässe statt.
               </p>
               
               <div className="geisshof-images-grid">
                 <div>
                   <Image
                     src="/images/hof/bioco_hof_luftaufnahme_grosses-feld.JPG"
-                    alt="Luftaufnahme des grossen Feldes auf dem Geisshof"
+                    alt="Bio-Gemüse Anbaufläche auf dem Geisshof Gebenstorf"
                     width={800}
                     height={600}
                     style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
@@ -125,7 +139,7 @@ export default function WirPage() {
                 <div>
                   <Image
                     src="/images/hof/bioco_hof_luftaufnahme-kleines-feld.JPG"
-                    alt="Luftaufnahme des kleinen Feldes auf dem Geisshof"
+                    alt="Demeter Gemüsefeld auf dem Geisshof in Gebenstorf"
                     width={800}
                     height={600}
                     style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
@@ -200,8 +214,9 @@ export default function WirPage() {
             </div>
             <div className="card-body">
               <p className="card-text">
-                Die Gemüsegenossenschaft biocò wurde 2014 gegründet. Aus einer kleinen Gruppe 
-                engagierter Menschen wurde eine lebendige Gemeinschaft mit über 100 Mitgliedern.
+                Die Gemüsegenossenschaft biocò wurde 2014 in Gebenstorf im Aargau gegründet. 
+                Aus einer kleinen Gruppe engagierter Menschen aus Baden, Brugg und der Region 
+                wurde eine lebendige Gemeinschaft, die solidarische Landwirtschaft lebt.
               </p>
               <p className="card-text">
                 Gestartet wurde auf dem Geisshof in Gebenstorf, wo wir bis heute unser Gemüse anbauen. 
@@ -271,15 +286,6 @@ export default function WirPage() {
               <h3>Mitmachen?</h3>
             </div>
             <div className="card-body">
-              <div style={{ marginBottom: 'var(--spacing-md)' }}>
-                <Image
-                  src="/images/gemeinschaft/bioco_gemeinschaft.JPG"
-                  alt="Gemeinschaft beim gemeinsamen Essen"
-                  width={800}
-                  height={600}
-                  style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
-                />
-              </div>
               <p className="card-text">Werde Teil unserer Gemeinschaft und unterstütze die solidarische Landwirtschaft.</p>
             <CTA
               text="Jetzt Mitglied werden"

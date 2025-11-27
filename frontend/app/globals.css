@@ -938,7 +938,7 @@ a:hover {
 .secondary-nav {
   background: var(--bg-secondary);
   border-bottom: 2px solid var(--bioco-green);
-  padding: var(--spacing-xs) var(--spacing-md);
+  padding: var(--spacing-xs) 0; /* Removed horizontal padding */
   position: fixed;
   top: 0;
   left: 0;

@@ -51,21 +51,23 @@ export default function Home() {
             <div className="card-body">
               <p className="card-text">
                 biocò ist mehr als nur eine Gemüsegenossenschaft. Wir sind eine lebendige Gemeinschaft 
-                in der Region Baden-Brugg, die gemeinsam für frisches, regionales Demeter-Gemüse sorgt.
+                in der Region Baden-Brugg, die gemeinsam für frisches Bio-Gemüse aus der Region sorgt.
               </p>
               
               <p className="card-text">
                 Seit 2014 bewirtschaften wir den Geisshof in Gebenstorf nach biologisch-dynamischen 
-                Prinzipien. Hier wächst Woche für Woche eine vielfältige Auswahl an saisonalem Gemüse, 
+                Prinzipien und liefern Demeter-Gemüse in höchster Bio-Qualität. Hier wächst Woche für 
+                Woche eine vielfältige Auswahl an saisonalem Gemüse aus solidarischer Landwirtschaft, 
                 das wir gemeinsam anbauen, pflegen und ernten. Jedes Mitglied bringt sich ein, ob auf 
                 dem Feld, in der Logistik oder bei der Organisation.
               </p>
               
               <p className="card-text">
                 Bei uns teilen wir nicht nur die Ernte, sondern auch die Verantwortung und die Freude 
-                an der Arbeit. Das ist solidarische Landwirtschaft: Produzentinnen und Konsumentinnen 
-                arbeiten Hand in Hand, gestalten gemeinsam den Anbau und erleben, wie aus einem Samen 
-                frisches Gemüse wird, das jeden Dienstag und Freitag in den Depots abgeholt werden kann.
+                an der Arbeit. Das ist solidarische Landwirtschaft in der Region Baden: Produzentinnen 
+                und Konsumentinnen arbeiten Hand in Hand, gestalten gemeinsam den Anbau und erleben, 
+                wie aus einem Samen frisches Bio-Gemüse wird, das jeden Dienstag und Freitag in den 
+                Depots in Baden, Brugg und Gebenstorf abgeholt werden kann.
               </p>
               <div className="button-group"></div>
             </div>
@@ -77,7 +79,7 @@ export default function Home() {
               <h3>Das ist drin: Saisonal & Demeter</h3>
             </div>
             <div className="card-body">
-              <p className="card-text">Wöchentlich erhalten unsere Mitglieder einen Gemüsekorb mit frischem, saisonalem Gemüse in Demeter-Qualität.</p>
+              <p className="card-text">Wöchentlich erhalten unsere Mitglieder ein <Link href="/abos">Gemüseabo</Link> mit frischem, saisonalem <Link href="/ernte">Demeter-Gemüse</Link>.</p>
               <div className="pea-bullet-list">
                 <PeaBullet>Wöchentlicher Gemüsekorb</PeaBullet>
                 <PeaBullet>Saisonalität – das Gemüse der Jahreszeit</PeaBullet>
@@ -96,13 +98,13 @@ export default function Home() {
                 <div style={{ marginBottom: '16px' }}>
                   <Image
                     src="/images/gemeinschaft/bioco_kinder.JPG"
-                    alt="Kinder bei biocò"
+                    alt="Kinder bei solidarischer Landwirtschaft auf dem Geisshof Gebenstorf"
                     width={800}
                     height={600}
                     style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
                   />
                 </div>
-                <p className="card-text">biocò basiert auf den Prinzipien der Solidarischen Landwirtschaft.</p>
+                <p className="card-text">biocò basiert auf den Prinzipien der <Link href="/wir">Solidarischen Landwirtschaft</Link>.</p>
                 <div className="pea-bullet-list">
                   <PeaBullet>
                     <strong>Mitarbeit</strong> – <Link href="/anpacken">Anpacken auf dem Feld</Link>

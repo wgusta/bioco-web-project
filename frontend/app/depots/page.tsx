@@ -4,6 +4,18 @@ import { CTA } from '@/components/CTA'
 import { DepotMap } from '@/components/DepotMap'
 import { GeisshofMap } from '@/components/GeisshofMap'
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Standorte & Depots Baden-Brugg | Gemüse abholen | biocò',
+  description: 'Gemüseabholung in Baden, Brugg und Umgebung. Finde dein Depot für frisches Bio-Gemüse aus solidarischer Landwirtschaft vom Geisshof Gebenstorf.',
+  keywords: 'depot, standorte, baden, brugg, gebenstorf, gemüseabholung, bio gemüse, geisshof',
+  openGraph: {
+    title: 'Standorte & Depots Baden-Brugg | Gemüse abholen | biocò',
+    description: 'Gemüseabholung in Baden, Brugg und Umgebung. Finde dein Depot für frisches Bio-Gemüse.',
+    type: 'website',
+  },
+}
 
 export default function StandortePage() {
   return (
@@ -17,7 +29,7 @@ export default function StandortePage() {
               <h3>Anfahrt zum Geisshof</h3>
             </div>
             <div className="card-body">
-              <p className="card-text">Der Geisshof ist unser Betrieb in Gebenstorf, wo wir das Gemüse anbauen. Hier kannst du auch direkt vorbeikommen.</p>
+              <p className="card-text">Der Geisshof ist unser Betrieb in Gebenstorf im Aargau, wo wir Bio-Gemüse in Demeter-Qualität anbauen. Zentral gelegen zwischen Baden und Brugg kannst du hier auch direkt vorbeikommen und die solidarische Landwirtschaft kennenlernen.</p>
               <GeisshofMap />
             </div>
           </section>
@@ -28,7 +40,7 @@ export default function StandortePage() {
               <h3>Depot-Standort für Abholung</h3>
             </div>
             <div className="card-body">
-              <p className="card-text">Hier findest du alle Depot-Standorte, an denen du deinen wöchentlichen Gemüsekorb abholen kannst.</p>
+              <p className="card-text">Hier findest du alle Depot-Standorte in Baden, Brugg, Gebenstorf, Wettingen und der Region Aargau, an denen du deinen wöchentlichen Gemüsekorb mit frischem Bio-Gemüse abholen kannst. Abholzeiten: Dienstag und Freitag, 17:00-19:00 Uhr.</p>
               <DepotMap />
             </div>
           </section>

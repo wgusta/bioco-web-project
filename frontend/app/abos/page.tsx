@@ -5,10 +5,24 @@ import { CTA } from '@/components/CTA'
 import { PersonIcons } from '@/components/PersonIcons'
 import Image from 'next/image'
 import Link from 'next/link'
+import { Metadata } from 'next'
+import { ProductSchema } from '@/components/StructuredData'
+
+export const metadata: Metadata = {
+  title: 'Gemüseabo Baden | Demeter Gemüse wöchentlich | biocò',
+  description: 'Gemüseabo für die Region Baden-Brugg: Wöchentlich frisches Bio-Gemüse in Demeter-Qualität. Solidarische Landwirtschaft vom Geisshof Gebenstorf.',
+  keywords: 'gemüseabo, demeter gemüse, bio gemüse, baden, brugg, gebenstorf, wöchentlicher gemüsekorb',
+  openGraph: {
+    title: 'Gemüseabo Baden | Demeter Gemüse wöchentlich | biocò',
+    description: 'Gemüseabo für die Region Baden-Brugg: Wöchentlich frisches Bio-Gemüse in Demeter-Qualität.',
+    type: 'website',
+  },
+}
 
 export default function AbosPage() {
   return (
     <>
+      <ProductSchema />
       <Header />
       <main className="main-content">
         <div className="bento-grid">
@@ -137,7 +151,7 @@ export default function AbosPage() {
               <div style={{ marginBottom: '16px', overflow: 'hidden', borderRadius: '12px', aspectRatio: '4/3' }}>
                 <Image
                   src="/images/abos/probeabo-bioco.JPG"
-                  alt="Probe-Abo bei biocò"
+                  alt="Gemüseabo mit frischem Demeter-Gemüse aus der Region Baden"
                   width={800}
                   height={600}
                   style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center bottom', borderRadius: '12px' }}

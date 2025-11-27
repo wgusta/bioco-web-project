@@ -22,10 +22,15 @@ export function Footer() {
                 <strong>Gemüsegenossenschaft biocò</strong><br />
                 Geisshof<br />
                 5412 Gebenstorf<br />
-                Schweiz
+                Aargau, Schweiz
               </p>
               <p>
                 <a href="mailto:info@bioco.ch">info@bioco.ch</a>
+              </p>
+              <p style={{ marginTop: '12px', fontSize: '14px' }}>
+                <strong>Depot-Abholzeiten:</strong><br />
+                Dienstag & Freitag<br />
+                17:00 - 19:00 Uhr
               </p>
             </div>
 
@@ -98,6 +103,9 @@ export function Footer() {
                 <span>Bio Suisse</span>
               </a>
             </div>
+            <p style={{ marginTop: '16px', fontSize: '14px', color: 'var(--text-secondary)' }}>
+              Solidarische Landwirtschaft für Baden, Brugg, Gebenstorf, Wettingen und die Region Aargau
+            </p>
           </div>
         </section>
       </div>

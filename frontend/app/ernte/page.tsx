@@ -6,6 +6,18 @@ import { Saisonkalender } from '@/components/Saisonkalender'
 import { getEventItems } from '@/components/AktuellesData'
 import { AktuellesItemComponent } from '@/components/AktuellesItem'
 import Link from 'next/link'
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Saisonales Demeter Gemüse | Was wächst gerade | biocò',
+  description: 'Entdecke unser saisonales Bio-Gemüse in Demeter-Qualität. Frisch vom Geisshof in Gebenstorf für die Region Baden-Brugg.',
+  keywords: 'demeter gemüse, bio gemüse, saisonales gemüse, gebenstorf, baden, brugg, gemüseernte',
+  openGraph: {
+    title: 'Saisonales Demeter Gemüse | Was wächst gerade | biocò',
+    description: 'Entdecke unser saisonales Bio-Gemüse in Demeter-Qualität. Frisch vom Geisshof in Gebenstorf.',
+    type: 'website',
+  },
+}
 
 export default function ErntePage() {
   return (
@@ -13,40 +25,37 @@ export default function ErntePage() {
       <Header />
       <main className="main-content">
         <div className="bento-grid">
-          {/* Erste Zeile: Was wir anbauen und Events nebeneinander */}
-          <div className="ernte-top-row">
-            <section id="B-02" className="bento-card">
-              <div className="plant-pattern"></div>
-              <div className="card-header">
-                <h3>Was wir anbauen</h3>
-              </div>
-              <div className="card-body">
-                <p className="card-text">Einblicke in unsere Ernte, den Anbau und die Gemeinschaft</p>
-                <Gallery />
-              </div>
-            </section>
-
-            <div className="ernte-events-wrapper">
-              <section className="bento-card events-card">
-                <div className="plant-pattern"></div>
-                <div className="card-header">
-                  <h3>Nächste Events</h3>
-                </div>
-                <div className="card-body">
-                  <div className="events-list">
-                    {getEventItems().slice(0, 3).map((item, index) => (
-                      <AktuellesItemComponent key={index} item={item} variant="event" />
-                    ))}
-                  </div>
-                  <Link href="/aktuelles" className="btn btn-primary" style={{ marginTop: '16px', display: 'inline-block' }}>
-                    Alle Events ansehen
-                  </Link>
-                </div>
-              </section>
+          {/* Erste Zeile: Saisonkalender */}
+          <section id="B-04" className="bento-card bento-card-large">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Saisonkalender</h3>
             </div>
-          </div>
+            <div className="card-body">
+              <p className="card-text">Wann ist welches Gemüse verfügbar? Entdecke unsere saisonale Vielfalt.</p>
+              <Saisonkalender />
+            </div>
+          </section>
 
-          {/* Zweite Zeile: Warum Demeter und Saisonkalender nebeneinander (1/2 Spalten) */}
+          {/* Zweite Zeile: Events */}
+          <section className="bento-card events-card bento-card-large">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Nächste Events</h3>
+            </div>
+            <div className="card-body">
+              <div className="events-list">
+                {getEventItems().slice(0, 3).map((item, index) => (
+                  <AktuellesItemComponent key={index} item={item} variant="event" />
+                ))}
+              </div>
+              <Link href="/aktuelles" className="btn btn-primary" style={{ marginTop: '16px', display: 'inline-block' }}>
+                Alle Events ansehen
+              </Link>
+            </div>
+          </section>
+
+          {/* Dritte Zeile: Demeter und Pictures nebeneinander (50/50) */}
           <div className="ernte-bottom-row">
             <section id="B-05" className="bento-card">
               <div className="plant-pattern"></div>
@@ -113,14 +122,14 @@ export default function ErntePage() {
               </div>
             </section>
 
-            <section id="B-04" className="bento-card">
+            <section id="B-02" className="bento-card">
               <div className="plant-pattern"></div>
               <div className="card-header">
-                <h3>Saisonkalender</h3>
+                <h3>Was wir anbauen</h3>
               </div>
               <div className="card-body">
-                <p className="card-text">Wann ist welches Gemüse verfügbar? Entdecke unsere saisonale Vielfalt.</p>
-                <Saisonkalender />
+                <p className="card-text">Einblicke in unsere Ernte, den Anbau und die Gemeinschaft</p>
+                <Gallery />
               </div>
             </section>
           </div>
