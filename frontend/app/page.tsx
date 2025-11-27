@@ -31,7 +31,8 @@ export default function Home() {
       <Hero
         title={
           <>
-            Frisches Demeter Gemüse. <span className="hero-title-secondary">Fast jede Woche.</span>
+            Frisches Demeter Gemüse.<br />
+            <span className="hero-title-secondary">Fast jede Woche.</span>
           </>
         }
         subtitle=""

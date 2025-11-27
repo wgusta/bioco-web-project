@@ -1462,8 +1462,8 @@ header .header-nav-container .beet-leaves {
 }
 
 .header-nav .btn-orange {
-  background: var(--bioco-green-dark);
-  border-color: var(--bioco-green-dark);
+  background: var(--bioco-orange);
+  border-color: var(--bioco-orange);
   color: white;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -1479,7 +1479,7 @@ header .header-nav-container .beet-leaves {
 .hero {
   background: var(--bg-secondary);
   padding: var(--spacing-lg) 0;
-  margin-top: var(--spacing-xl);
+  margin-top: calc(var(--spacing-xl) / 2);
   margin-bottom: calc(var(--spacing-md) / 2);
   max-width: 100%;
   width: 100%;
@@ -1582,7 +1582,7 @@ header .header-nav-container .beet-leaves {
 @media (max-width: 767px) {
   .hero {
     padding: var(--spacing-md) 0;
-    margin-top: var(--spacing-md);
+    margin-top: calc(var(--spacing-md) / 2);
     margin-bottom: var(--spacing-md);
   }
 
