@@ -1691,7 +1691,7 @@ header .header-nav-container .beet-leaves {
 @media (max-width: 767px) {
   .hero {
     padding: var(--spacing-lg) 0 0 0;
-    margin-top: var(--spacing-md);
+    margin-top: 120px;
     margin-bottom: 0;
   }
 

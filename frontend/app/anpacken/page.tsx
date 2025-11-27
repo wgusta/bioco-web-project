@@ -73,7 +73,7 @@ export default function AnpackenPage() {
             <div className="card-body">
               <div style={{ marginBottom: 'var(--spacing-md)' }}>
                 <Image
-                  src="/images/anpacken/bioco_anpacken_gruppe.JPG"
+                  src="/images/anpacken/zusammen-arbeiten.JPG"
                   alt="Gruppe bei der Mitarbeit auf dem Geisshof"
                   width={800}
                   height={600}

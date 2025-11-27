@@ -136,7 +136,7 @@ export default function AbosPage() {
             <div className="card-body">
               <div style={{ marginBottom: '16px' }}>
                 <Image
-                  src="/images/abos/bioco_probeabo.JPG"
+                  src="/images/abos/probeabo-bioco.JPG"
                   alt="Probe-Abo bei biocò"
                   width={800}
                   height={600}

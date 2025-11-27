@@ -24,25 +24,32 @@ export default function WirPage() {
               <p className="card-text">biocò ist eine Gemeinschaft von engagierten Menschen, die gemeinsam für frisches, regionales Demeter-Gemüse sorgen.</p>
             
             <div className="team-grid">
-              <div className="team-card team-card-gardener">
-                <div className="team-card-image team-card-image-grid">
+              <div className="team-card">
+                <div className="team-card-image" style={{ marginBottom: '16px' }}>
                   <Image
                     src="/images/team/hofteam_matthias.JPG"
                     alt="Matthias vom Hofteam"
                     width={300}
                     height={300}
-                    style={{ width: '100%', height: 'auto', objectFit: 'contain', borderRadius: '8px' }}
+                    style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }}
                   />
+                </div>
+                <h3>Matthias</h3>
+                <p>Hof-Team</p>
+              </div>
+              
+              <div className="team-card">
+                <div className="team-card-image" style={{ marginBottom: '16px' }}>
                   <Image
                     src="/images/team/bioco_hofteam_christian.JPG"
                     alt="Christian vom Hofteam"
                     width={300}
                     height={300}
-                    style={{ width: '100%', height: 'auto', objectFit: 'contain', borderRadius: '8px' }}
+                    style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }}
                   />
                 </div>
-                <h3>Hof-Team</h3>
-                <p>Unser erfahrenes Gärtnerteam sorgt für die Anbauplanung und die tägliche Feldarbeit auf dem Geisshof.</p>
+                <h3>Christian</h3>
+                <p>Hof-Team</p>
               </div>
               
               <div className="team-card">
