@@ -1098,6 +1098,11 @@ header {
   header {
     top: 64px;
   }
+  
+  /* Add padding for both navbars on desktop */
+  .main-content {
+    padding-top: 140px !important; /* 48px secondary + 64px primary + margin */
+  }
 }
 
 header .header-nav-container {
@@ -1667,6 +1672,7 @@ header .header-nav-container .beet-leaves {
 /* Main Content */
 .main-content {
   padding: var(--spacing-xl) 150px;
+  padding-top: 80px; /* Account for mobile header */
   max-width: 100%;
   width: 100%;
   margin: 0;
