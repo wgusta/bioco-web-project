@@ -2,9 +2,16 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LocationIcon } from './Icons'
-import { ContactIcon } from './Icons'
-import { DuckIcon } from './DuckIcon'
+import { MapNeedleIcon, ContactLetterIcon, DuckIcon } from './BiocoIcons'
+
+// Wrapper components to match the expected API (size prop)
+const LocationIcon = ({ size = 16 }: { size?: number }) => (
+  <MapNeedleIcon size={size} />
+)
+
+const ContactIcon = ({ size = 16 }: { size?: number }) => (
+  <ContactLetterIcon size={size} />
+)
 
 const secondaryNavItems = [
   { title: 'Standorte', href: '/depots', icon: LocationIcon },

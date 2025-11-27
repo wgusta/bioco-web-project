@@ -1477,7 +1477,7 @@ header .header-nav-container .beet-leaves {
 
 /* Hero Section - Bento Card Style */
 .hero {
-  background: var(--bg-secondary);
+  background: transparent;
   padding: var(--spacing-lg) 0;
   margin-top: calc(var(--spacing-xl) / 2);
   margin-bottom: calc(var(--spacing-md) / 2);
