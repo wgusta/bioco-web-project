@@ -200,10 +200,7 @@ p {
   flex-direction: column;
   min-width: 0;
   background-color: #faf9f7;
-  border: 6px solid transparent;
-  border-image-source: var(--sketchy-border-zigzag);
-  border-image-slice: 24;
-  border-image-repeat: round;
+  border: 2px solid var(--bioco-green);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   padding: 0;
   overflow: visible;
@@ -1505,7 +1502,7 @@ header .header-nav-container .beet-leaves {
 
 .hero-title {
   font-family: 'DM Sans', sans-serif;
-  font-size: clamp(1.5rem, 3vw, 2.75rem);
+  font-size: clamp(1.25rem, 2.2vw, 2rem);
   font-weight: 700;
   line-height: 1.15;
   margin-bottom: calc(var(--spacing-md) / 2);
@@ -1695,14 +1692,14 @@ header .header-nav-container .beet-leaves {
 }
 
 .pea-bullet-icon {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   background: var(--bioco-green);
   border: 1px solid var(--bioco-green);
   border-radius: 50%;
   flex-shrink: 0;
-  margin-top: 0.4rem;
-  box-shadow: inset -2px 1px 2px rgba(255, 255, 255, 0.35);
+  margin-top: 0.35rem;
+  box-shadow: inset -2px 1px 2px rgba(255, 255, 255, 0.25);
 }
 
 .pea-bullet-content {
