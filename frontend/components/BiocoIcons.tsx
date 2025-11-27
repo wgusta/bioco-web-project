@@ -235,68 +235,65 @@ export const DuckIcon = ({ className = '', size = 20 }: { className?: string, si
         strokeWidth="3"
       />
       
-      {/* Duck head - black, realistic profile shape */}
-      <path
-        d="M30 50 Q25 40 30 30 Q40 20 55 22 Q70 25 75 35 Q78 42 76 50 Q74 58 68 62 Q60 66 50 66 Q40 66 32 62 Q28 58 30 50 Z"
+      {/* Duck head - black, more recognizable duck profile */}
+      <ellipse
+        cx="45"
+        cy="50"
+        rx="18"
+        ry="22"
         fill="#1F2A1B"
         stroke="#1F2A1B"
+        strokeWidth="2"
+      />
+      
+      {/* Duck beak - much longer, prominent, green */}
+      <path
+        d="M60 48 Q75 45 88 50 Q85 55 75 55 Q65 53 60 52 Q58 50 60 48 Z"
+        fill="var(--bioco-green)"
+        stroke="var(--bioco-green-dark)"
         strokeWidth="2.5"
         strokeLinecap="round"
         strokeLinejoin="round"
       />
       
-      {/* Duck beak - longer, realistic shape, green accent */}
-      <path
-        d="M75 35 Q82 30 92 38 Q90 45 85 48 Q80 50 75 45 Q73 40 75 35 Z"
-        fill="var(--bioco-green)"
-        stroke="var(--bioco-green-dark)"
-        strokeWidth="2"
-        strokeLinecap="round"
-        strokeLinejoin="round"
+      {/* Beak nostril detail */}
+      <circle
+        cx="72"
+        cy="50"
+        r="1.5"
+        fill="var(--bioco-green-dark)"
       />
       
-      {/* Beak detail line */}
-      <path
-        d="M80 38 Q85 40 88 42"
-        stroke="var(--bioco-green-dark)"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        fill="none"
-      />
-      
-      {/* Duck eye - simple black circle */}
+      {/* Duck eye - positioned correctly on head */}
       <circle 
-        cx="55" 
-        cy="42" 
-        r="4" 
+        cx="50" 
+        cy="45" 
+        r="3.5" 
         fill="#1F2A1B" 
       />
-      
-      {/* Eye highlight - small white dot */}
       <circle 
-        cx="56" 
-        cy="41" 
-        r="1.2" 
+        cx="51" 
+        cy="44" 
+        r="1" 
         fill="var(--bg-primary)" 
       />
       
       {/* Neck - extending down from head */}
       <path
-        d="M32 58 Q28 65 30 72 Q32 75 35 75"
+        d="M35 60 Q30 70 32 80 Q34 82 38 82"
         stroke="#1F2A1B"
-        strokeWidth="3"
+        strokeWidth="4"
         strokeLinecap="round"
         fill="none"
       />
       
-      {/* Neck detail - green accent line */}
+      {/* Neck green accent */}
       <path
-        d="M34 60 Q30 68 32 74"
+        d="M36 62 Q32 72 34 78"
         stroke="var(--bioco-green)"
-        strokeWidth="2"
+        strokeWidth="2.5"
         strokeLinecap="round"
         fill="none"
-        opacity="0.7"
       />
     </svg>
   )

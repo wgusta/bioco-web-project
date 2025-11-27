@@ -946,6 +946,8 @@ a:hover {
   z-index: 1001;
   display: none; /* Hidden on mobile by default, shown in mobile menu */
   transition: transform 0.3s ease-in-out;
+  height: 40px; /* Set explicit height */
+  box-sizing: border-box;
 }
 
 .secondary-nav.header-visible {
