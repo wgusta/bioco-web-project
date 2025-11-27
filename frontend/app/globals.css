@@ -1514,7 +1514,7 @@ header .header-nav-container .beet-leaves {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--bg-secondary);
+  background: var(--bg-primary);
 }
 
 .hero-content {
@@ -1561,6 +1561,7 @@ header .header-nav-container .beet-leaves {
   flex-direction: column;
   gap: var(--spacing-md);
   margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
   width: 100%;
 }
 
