@@ -197,22 +197,40 @@ export function DepotMap() {
             <div style={{ marginBottom: 'var(--spacing-md)' }}>
               <h5 style={{ color: 'var(--bioco-green)', marginBottom: 'var(--spacing-sm)' }}>Dienstag</h5>
               {depotLocations.filter(d => d.day === 'Dienstag').map((depot) => (
-                <div key={depot.id} className="address-item" style={{ marginBottom: 'var(--spacing-sm)' }}>
+                <div key={depot.id} className="address-item" style={{ marginBottom: 'var(--spacing-md)' }}>
                   <strong>{depot.name}</strong>
                   <p>{depot.address}</p>
                   {depot.contact && <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Kontakt: {depot.contact} {depot.phone && `(${depot.phone})`}</p>}
-                  {depot.notes && <p style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)', fontStyle: 'italic' }}>{depot.notes}</p>}
+                  {depot.notes && <p style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)', fontStyle: 'italic', marginBottom: 'var(--spacing-sm)' }}>{depot.notes}</p>}
+                  <a
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${depot.lat},${depot.lng}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                    style={{ marginTop: 'var(--spacing-sm)', display: 'inline-block' }}
+                  >
+                    Route planen →
+                  </a>
                 </div>
               ))}
             </div>
             <div>
               <h5 style={{ color: 'var(--bioco-orange)', marginBottom: 'var(--spacing-sm)' }}>Freitag</h5>
               {depotLocations.filter(d => d.day === 'Freitag').map((depot) => (
-                <div key={depot.id} className="address-item" style={{ marginBottom: 'var(--spacing-sm)' }}>
+                <div key={depot.id} className="address-item" style={{ marginBottom: 'var(--spacing-md)' }}>
                   <strong>{depot.name}</strong>
                   <p>{depot.address}</p>
                   {depot.contact && <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)' }}>Kontakt: {depot.contact} {depot.phone && `(${depot.phone})`}</p>}
-                  {depot.notes && <p style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)', fontStyle: 'italic' }}>{depot.notes}</p>}
+                  {depot.notes && <p style={{ fontSize: '0.8rem', color: 'var(--text-tertiary)', fontStyle: 'italic', marginBottom: 'var(--spacing-sm)' }}>{depot.notes}</p>}
+                  <a
+                    href={`https://www.google.com/maps/dir/?api=1&destination=${depot.lat},${depot.lng}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-secondary"
+                    style={{ marginTop: 'var(--spacing-sm)', display: 'inline-block' }}
+                  >
+                    Route planen →
+                  </a>
                 </div>
               ))}
             </div>

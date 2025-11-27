@@ -40,9 +40,11 @@ export function MobileMenu() {
                 ×
               </button>
             </div>
-            <Navigation onLinkClick={() => setIsOpen(false)} hideMitmachen={true} />
-            <div className="mobile-menu-secondary">
-              <SecondaryNavigation />
+            <div className="mobile-menu-primary-section">
+              <Navigation onLinkClick={() => setIsOpen(false)} hideMitmachen={true} />
+              <div className="mobile-menu-secondary">
+                <SecondaryNavigation />
+              </div>
             </div>
             <div className="mobile-menu-cta-bottom">
               <Link 

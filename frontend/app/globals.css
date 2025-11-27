@@ -1097,13 +1097,12 @@ header.header-hidden {
   }
   
   .bento-card {
-    width: 100% !important;
+    width: calc(100% - var(--spacing-sm)) !important;
     max-width: 100% !important;
-    margin: 0 !important;
+    margin: 0 auto var(--spacing-sm) auto !important;
     padding: 0 !important;
     box-sizing: border-box;
-    border: none !important;
-    border-radius: 0 !important;
+    border-radius: 5px 5px 5px 5px/25px 25px 25px 5px !important;
   }
 }
 
@@ -1113,9 +1112,9 @@ header.header-hidden {
     display: block;
   }
   
-  /* Position header below secondary-nav with spacing */
+  /* Position header below secondary-nav with 100% more spacing */
   header {
-    top: 56px; /* Increased from 48px for more spacing */
+    top: 64px; /* Doubled spacing: 48px + 16px extra = 64px */
   }
   
   header.header-visible {
@@ -1298,10 +1297,15 @@ header .header-nav-container .beet-leaves {
   display: block;
 }
 
+.mobile-menu-primary-section {
+  padding-bottom: var(--spacing-md);
+  border-bottom: 2px solid var(--border-color);
+}
+
 .mobile-menu-secondary {
   margin-top: var(--spacing-md);
-  padding-top: var(--spacing-md);
-  border-top: 2px solid var(--border-color);
+  padding-top: 0;
+  border-top: none;
 }
 
 .mobile-menu-secondary .secondary-nav {
