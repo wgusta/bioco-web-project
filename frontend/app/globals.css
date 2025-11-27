@@ -1701,9 +1701,10 @@ header .header-nav-container .beet-leaves {
     padding: 0 var(--spacing-xs);
   }
 
-  .main-content {
-    padding-top: var(--spacing-xs) !important; /* Drastically reduced from 140px to minimal spacing */
-    margin-top: calc(-1 * var(--spacing-xl)) !important; /* Pull content up closer to hero */
+  /* Only apply 20px spacing on homepage (when hero is present) */
+  .hero + .main-content {
+    padding-top: 20px !important; /* 20px spacing between hero and content on mobile */
+    margin-top: 0 !important;
   }
 
   .hero-image-card {
