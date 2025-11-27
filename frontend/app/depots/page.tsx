@@ -3,6 +3,8 @@ import { Footer } from '@/components/Footer'
 import { CTA } from '@/components/CTA'
 import { DepotMap } from '@/components/DepotMap'
 import { GeisshofMap } from '@/components/GeisshofMap'
+import { getEventItems } from '@/components/AktuellesData'
+import { AktuellesItemComponent } from '@/components/AktuellesItem'
 import Link from 'next/link'
 import { Metadata } from 'next'
 
@@ -23,16 +25,36 @@ export default function StandortePage() {
       <Header />
       <main className="main-content">
         <div className="standorte-layout">
-          <section id="E-01" className="bento-card standorte-map-section">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Anfahrt zum Geisshof</h3>
-            </div>
-            <div className="card-body">
-              <p className="card-text">Der Geisshof ist unser Betrieb in Gebenstorf im Aargau, wo wir Bio-Gemüse in Demeter-Qualität anbauen. Zentral gelegen zwischen Baden und Brugg kannst du hier auch direkt vorbeikommen und die solidarische Landwirtschaft kennenlernen.</p>
-              <GeisshofMap />
-            </div>
-          </section>
+          {/* Events und Geisshof nebeneinander */}
+          <div className="ernte-top-row" style={{ gridTemplateColumns: '1fr 2fr' }}>
+            <section className="bento-card events-card">
+              <div className="plant-pattern"></div>
+              <div className="card-header">
+                <h3>Nächste Events</h3>
+              </div>
+              <div className="card-body">
+                <div className="events-list">
+                  {getEventItems().slice(0, 3).map((item, index) => (
+                    <AktuellesItemComponent key={index} item={item} variant="event" />
+                  ))}
+                </div>
+                <Link href="/aktuelles" className="btn btn-primary" style={{ marginTop: '16px', display: 'inline-block' }}>
+                  Alle Events ansehen
+                </Link>
+              </div>
+            </section>
+
+            <section id="E-01" className="bento-card standorte-map-section">
+              <div className="plant-pattern"></div>
+              <div className="card-header">
+                <h3>Anfahrt zum Geisshof</h3>
+              </div>
+              <div className="card-body">
+                <p className="card-text">Der Geisshof ist unser Betrieb in Gebenstorf im Aargau, wo wir Bio-Gemüse in Demeter-Qualität anbauen. Zentral gelegen zwischen Baden und Brugg kannst du hier auch direkt vorbeikommen und die solidarische Landwirtschaft kennenlernen.</p>
+                <GeisshofMap />
+              </div>
+            </section>
+          </div>
 
           <section id="E-02" className="bento-card standorte-map-section standorte-depot-fullwidth">
             <div className="plant-pattern"></div>
