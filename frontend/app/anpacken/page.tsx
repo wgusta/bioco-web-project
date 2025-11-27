@@ -2,6 +2,8 @@ import { Header } from '@/components/Header'
 import { Footer } from '@/components/Footer'
 import { EventsBanner } from '@/components/EventsBanner'
 import { CTA } from '@/components/CTA'
+import { getEventItems } from '@/components/AktuellesData'
+import { AktuellesItemComponent } from '@/components/AktuellesItem'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Metadata } from 'next'
@@ -102,54 +104,64 @@ export default function AnpackenPage() {
             </div>
           </section>
 
-          <section id="D-03" className="bento-card bento-card-large">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Familien & Kinder auf dem Geisshof</h3>
-            </div>
-            <div className="card-body">
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 'var(--spacing-md)', alignItems: 'start' }}>
-                <div>
-                  <Image
-                    src="/images/ernte/bioco_ernte-kürbis-hoch.JPG"
-                    alt="Frisch geerntetes Demeter-Gemüse vom Geisshof"
-                    width={800}
-                    height={600}
-                    style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
-                  />
+          {/* Events und Familien & Kinder nebeneinander */}
+          <div className="ernte-bottom-row">
+            <section className="bento-card events-card">
+              <div className="plant-pattern"></div>
+              <div className="card-header">
+                <h3>Nächste Events</h3>
+              </div>
+              <div className="card-body">
+                <div className="events-list">
+                  {getEventItems().slice(0, 3).map((item, index) => (
+                    <AktuellesItemComponent key={index} item={item} variant="event" />
+                  ))}
                 </div>
-                <div>
-                  <h4 className="card-title">Kinder sind willkommen</h4>
-                  <p className="card-text">
-                    Familien und Kinder sind sehr regelmässige Helfer auf dem Geisshof. Die Einbindung von Kindern 
-                    in den Prozess des Gemüseanbaus ist ein zentraler Bestandteil der biocò-Kultur.
-                  </p>
-                  <p className="card-text">
-                    Auf dem Geisshof erleben Kinder hautnah, wie Gemüse wächst, gepflegt wird und geerntet wird. 
-                    Sie lernen spielerisch den Kreislauf der Natur kennen und entwickeln ein tiefes Verständnis für 
-                    die Herkunft ihrer Nahrung. Diese praktische Erfahrung prägt nicht nur ihr Verhältnis zu Lebensmitteln, 
-                    sondern stärkt auch das Gemeinschaftsgefühl zwischen den Generationen.
-                  </p>
-                  <p className="card-text">
-                    Die Elki-Gruppe organisiert spezielle Aktivitäten für Familien, bei denen Kinder aktiv mithelfen 
-                    können – sei es beim Säen, Jäten, Ernten oder beim gemeinsamen Verarbeiten des Gemüses. Diese 
-                    gemeinsamen Erlebnisse schaffen bleibende Erinnerungen und fördern das Verständnis für nachhaltige 
-                    Landwirtschaft von klein auf.
-                  </p>
+                <Link href="/aktuelles" className="btn btn-primary" style={{ marginTop: '16px', display: 'inline-block' }}>
+                  Alle Events ansehen
+                </Link>
+              </div>
+            </section>
+
+            <section id="D-03" className="bento-card">
+              <div className="plant-pattern"></div>
+              <div className="card-header">
+                <h3>Familien & Kinder auf dem Geisshof</h3>
+              </div>
+              <div className="card-body">
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 2fr', gap: 'var(--spacing-md)', alignItems: 'start' }}>
+                  <div>
+                    <Image
+                      src="/images/ernte/bioco_ernte-kürbis-hoch.JPG"
+                      alt="Frisch geerntetes Demeter-Gemüse vom Geisshof"
+                      width={800}
+                      height={600}
+                      style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                    />
+                  </div>
+                  <div>
+                    <h4 className="card-title">Kinder sind willkommen</h4>
+                    <p className="card-text">
+                      Familien und Kinder sind sehr regelmässige Helfer auf dem Geisshof. Die Einbindung von Kindern 
+                      in den Prozess des Gemüseanbaus ist ein zentraler Bestandteil der biocò-Kultur.
+                    </p>
+                    <p className="card-text">
+                      Auf dem Geisshof erleben Kinder hautnah, wie Gemüse wächst, gepflegt wird und geerntet wird. 
+                      Sie lernen spielerisch den Kreislauf der Natur kennen und entwickeln ein tiefes Verständnis für 
+                      die Herkunft ihrer Nahrung. Diese praktische Erfahrung prägt nicht nur ihr Verhältnis zu Lebensmitteln, 
+                      sondern stärkt auch das Gemeinschaftsgefühl zwischen den Generationen.
+                    </p>
+                    <p className="card-text">
+                      Die Elki-Gruppe organisiert spezielle Aktivitäten für Familien, bei denen Kinder aktiv mithelfen 
+                      können – sei es beim Säen, Jäten, Ernten oder beim gemeinsamen Verarbeiten des Gemüses. Diese 
+                      gemeinsamen Erlebnisse schaffen bleibende Erinnerungen und fördern das Verständnis für nachhaltige 
+                      Landwirtschaft von klein auf.
+                    </p>
+                  </div>
                 </div>
               </div>
-            </div>
-          </section>
-
-          <section className="bento-card events-card bento-card-fullwidth">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
-              <h3>Nächste Events</h3>
-            </div>
-            <div className="card-body">
-              <EventsBanner showTitle={false} variant="embedded" />
-            </div>
-          </section>
+            </section>
+          </div>
 
           {/* Möchtest du uns kennenlernen - Am Ende */}
           <section id="B-06" className="bento-card bento-card-fullwidth kennenlernen-card">
