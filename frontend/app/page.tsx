@@ -37,7 +37,7 @@ export default function Home() {
         }
         subtitle=""
         image={{
-          url: '/images/ernte/bioco_ernte-kürbis-hoch.JPG',
+          url: '/images/hero/bioco_hero-junge-mit-kuerbis.JPG',
           description: 'Person in grüner Jacke hält einen Kürbis auf dem Feld'
         }}
       />

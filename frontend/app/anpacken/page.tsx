@@ -102,7 +102,7 @@ export default function AnpackenPage() {
                   alt="Hand hält frisch geernteten grünen Kürbis"
                   width={800}
                   height={600}
-                  style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                  style={{ width: '25%', height: 'auto', borderRadius: '12px' }}
                 />
               </div>
               <h4 className="card-title">Kinder sind willkommen</h4>

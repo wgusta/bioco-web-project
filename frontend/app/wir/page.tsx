@@ -48,7 +48,7 @@ export default function WirPage() {
               <div className="team-card">
                 <div className="team-card-image" style={{ marginBottom: '16px' }}>
                   <Image
-                    src="/images/gemeinschaft/bioco_gemeinschaft.JPG"
+                    src="/images/team/alle-mitglieder-bioco.jpeg"
                     alt="Gemeinschaft von Mitgliedern bei einer Versammlung auf dem Geisshof"
                     width={800}
                     height={600}
@@ -62,7 +62,7 @@ export default function WirPage() {
               <div className="team-card">
                 <div className="team-card-image" style={{ marginBottom: '16px', aspectRatio: '1', overflow: 'hidden', borderRadius: '8px' }}>
                   <Image
-                    src="/images/gemeinschaft/bioco_gemeinschaft.JPG"
+                    src="/images/team/betriebsgruppe.JPG"
                     alt="Mitglieder der Betriebsgruppe im Gespräch auf dem Geisshof"
                     width={800}
                     height={600}
