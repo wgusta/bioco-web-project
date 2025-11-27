@@ -1082,8 +1082,8 @@ header {
 }
 
 header .header-nav-container {
-  background: var(--bioco-green);
-  border: 2px solid var(--bioco-green-dark);
+  background: transparent;
+  border: 2px solid var(--bioco-green);
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   padding: var(--spacing-xs) var(--spacing-md);
   box-shadow: var(--shadow-sm);
@@ -1105,7 +1105,7 @@ header .beet-leaves {
 }
 
 header .header-nav-container .logo {
-  color: white;
+  color: var(--bioco-green);
 }
 
 header .header-nav-container .logo-b,
@@ -1113,7 +1113,7 @@ header .header-nav-container .logo-o1,
 header .header-nav-container .logo-c,
 header .header-nav-container .carrot-leaves,
 header .header-nav-container .beet-leaves {
-  color: white;
+  color: var(--bioco-green);
 }
 
 .minimal-header {
@@ -1383,7 +1383,7 @@ header .header-nav-container .beet-leaves {
 }
 
 .header-nav-container .header-nav a {
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--bioco-green-dark);
 }
 
 .mobile-menu .header-nav a {
@@ -1597,6 +1597,13 @@ header .header-nav-container .beet-leaves {
   .hero-text-card {
     order: 2;
     min-height: auto;
+    text-align: center;
+  }
+
+  .hero-text {
+    max-width: 100%;
+    padding-left: 0;
+    text-align: center;
   }
 
   .hero-title {
@@ -1605,6 +1612,13 @@ header .header-nav-container .beet-leaves {
 
   .hero-buttons {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    max-width: 260px;
+    text-align: center;
   }
 }
 
