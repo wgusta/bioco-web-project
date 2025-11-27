@@ -1035,6 +1035,7 @@ header {
   border-bottom: none;
   padding: var(--spacing-sm) 150px;
   position: fixed;
+  top: 0;
   left: 0;
   right: 0;
   z-index: 100;
@@ -1047,7 +1048,6 @@ header {
 /* Mobile: header at top */
 @media (max-width: 767px) {
   header {
-    top: 0;
     padding: var(--spacing-sm) var(--spacing-xs);
   }
   
@@ -1096,7 +1096,7 @@ header {
   
   /* Position header below secondary-nav */
   header {
-    top: 64px;
+    top: 56px;
   }
 }
 
