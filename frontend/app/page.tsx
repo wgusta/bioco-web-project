@@ -75,13 +75,13 @@ export default function Home() {
                 <h3>Gemeinschaft & Solidarität</h3>
               </div>
               <div className="card-body">
-                <div style={{ marginBottom: '16px' }}>
+                <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center' }}>
                   <Image
                     src="/images/gemeinschaft/bioco_gemeinschaft.JPG"
                     alt="Gemeinschaft bei biocò"
                     width={800}
                     height={600}
-                    style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                    style={{ width: '80%', maxWidth: '360px', height: 'auto', borderRadius: '12px' }}
                   />
                 </div>
                 <p className="card-text">biocò basiert auf den Prinzipien der Solidarischen Landwirtschaft.</p>
