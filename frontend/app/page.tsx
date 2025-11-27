@@ -50,24 +50,19 @@ export default function Home() {
             </div>
             <div className="card-body">
               <p className="card-text">
-                biocò ist mehr als nur eine Gemüsegenossenschaft. Wir sind eine lebendige Gemeinschaft 
-                in der Region Baden-Brugg, die gemeinsam für frisches Bio-Gemüse aus der Region sorgt.
-              </p>
-              
-              <p className="card-text">
-                Seit 2014 bewirtschaften wir den Geisshof in Gebenstorf nach biologisch-dynamischen 
-                Prinzipien und liefern Demeter-Gemüse in höchster Bio-Qualität. Hier wächst Woche für 
-                Woche eine vielfältige Auswahl an saisonalem Gemüse aus solidarischer Landwirtschaft, 
-                das wir gemeinsam anbauen, pflegen und ernten. Jedes Mitglied bringt sich ein, ob auf 
-                dem Feld, in der Logistik oder bei der Organisation.
+                Seit 2014 bewirtschaften wir den <Link href="/wir">Geisshof in Gebenstorf</Link> nach biologisch-dynamischen 
+                Prinzipien und liefern <Link href="/ernte">Demeter-Gemüse</Link> in höchster Bio-Qualität. Hier wächst Woche für 
+                Woche eine vielfältige Auswahl an saisonalem Gemüse aus <Link href="/wir">solidarischer Landwirtschaft</Link>, 
+                das wir gemeinsam anbauen, pflegen und ernten. Jedes <Link href="/anpacken">Mitglied</Link> bringt sich ein, ob auf 
+                dem <Link href="/anpacken">Feld</Link>, in der <Link href="/anpacken">Logistik</Link> oder bei der <Link href="/anpacken">Organisation</Link>.
               </p>
               
               <p className="card-text">
                 Bei uns teilen wir nicht nur die Ernte, sondern auch die Verantwortung und die Freude 
-                an der Arbeit. Das ist solidarische Landwirtschaft in der Region Baden: Produzentinnen 
-                und Konsumentinnen arbeiten Hand in Hand, gestalten gemeinsam den Anbau und erleben, 
+                an der Arbeit. Das ist <Link href="/wir">solidarische Landwirtschaft</Link> in der Region Baden: Produzentinnen 
+                und Konsumentinnen arbeiten Hand in Hand, gestalten gemeinsam den <Link href="/ernte">Anbau</Link> und erleben, 
                 wie aus einem Samen frisches Bio-Gemüse wird, das jeden Dienstag und Freitag in den 
-                Depots in Baden, Brugg und Gebenstorf abgeholt werden kann.
+                <Link href="/depots"> Depots in Baden, Brugg und Gebenstorf</Link> abgeholt werden kann.
               </p>
               <div className="button-group"></div>
             </div>
