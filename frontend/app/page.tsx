@@ -49,7 +49,24 @@ export default function Home() {
               <h3>Willkommen bei biocò</h3>
             </div>
             <div className="card-body">
-              <p className="card-text">biocò ist eine Gemüsegenossenschaft in der Region Baden-Brugg, die seit 2014 auf dem Geisshof in Gebenstorf eine Vielzahl von Biogemüse in Demeter-Qualität anbaut und wöchentlich an ihre Mitglieder verteilt.</p>
+              <p className="card-text">
+                biocò ist mehr als nur eine Gemüsegenossenschaft. Wir sind eine lebendige Gemeinschaft 
+                in der Region Baden-Brugg, die gemeinsam für frisches, regionales Demeter-Gemüse sorgt.
+              </p>
+              
+              <p className="card-text">
+                Seit 2014 bewirtschaften wir den Geisshof in Gebenstorf nach biologisch-dynamischen 
+                Prinzipien. Hier wächst Woche für Woche eine vielfältige Auswahl an saisonalem Gemüse, 
+                das wir gemeinsam anbauen, pflegen und ernten. Jedes Mitglied bringt sich ein, ob auf 
+                dem Feld, in der Logistik oder bei der Organisation.
+              </p>
+              
+              <p className="card-text">
+                Bei uns teilen wir nicht nur die Ernte, sondern auch die Verantwortung und die Freude 
+                an der Arbeit. Das ist solidarische Landwirtschaft: Produzentinnen und Konsumentinnen 
+                arbeiten Hand in Hand, gestalten gemeinsam den Anbau und erleben, wie aus einem Samen 
+                frisches Gemüse wird, das jeden Dienstag und Freitag in den Depots abgeholt werden kann.
+              </p>
               <div className="button-group"></div>
             </div>
           </section>
@@ -76,13 +93,13 @@ export default function Home() {
                 <h3>Gemeinschaft & Solidarität</h3>
               </div>
               <div className="card-body">
-                <div style={{ marginBottom: '16px', display: 'flex', justifyContent: 'center' }}>
+                <div style={{ marginBottom: '16px' }}>
                   <Image
                     src="/images/gemeinschaft/bioco_kinder.JPG"
                     alt="Kinder bei biocò"
                     width={800}
                     height={600}
-                    style={{ width: '80%', maxWidth: '360px', height: 'auto', borderRadius: '12px' }}
+                    style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
                   />
                 </div>
                 <p className="card-text">biocò basiert auf den Prinzipien der Solidarischen Landwirtschaft.</p>

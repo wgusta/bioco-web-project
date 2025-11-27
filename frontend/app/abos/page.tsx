@@ -134,13 +134,13 @@ export default function AbosPage() {
               <h3>Probe-Abo</h3>
             </div>
             <div className="card-body">
-              <div style={{ marginBottom: '16px' }}>
+              <div style={{ marginBottom: '16px', overflow: 'hidden', borderRadius: '12px', aspectRatio: '4/3' }}>
                 <Image
                   src="/images/abos/probeabo-bioco.JPG"
                   alt="Probe-Abo bei biocò"
                   width={800}
                   height={600}
-                  style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center bottom', borderRadius: '12px' }}
                 />
               </div>
               <p className="card-text">Möchtest du biocò erst einmal kennenlernen? Teste unser Gemüseabo für 3 Monate.</p>
