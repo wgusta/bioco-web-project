@@ -14,20 +14,6 @@ export default function StandortePage() {
           <section id="E-01" className="bento-card standorte-map-section">
             <div className="plant-pattern"></div>
             <div className="card-header">
-              <h3>Standorte</h3>
-            </div>
-            <div className="card-body">
-              <p className="card-text">Hier findest du alle Standorte, an denen du deinen wöchentlichen Gemüsekorb abholen kannst.</p>
-              <p className="card-text" style={{ marginTop: 'var(--spacing-sm)' }}>
-                <strong>Abholzeiten:</strong> Dienstag und Freitag, 17:00 - 19:00 Uhr
-              </p>
-              <DepotMap />
-            </div>
-          </section>
-
-          <section id="E-02" className="bento-card standorte-map-section">
-            <div className="plant-pattern"></div>
-            <div className="card-header">
               <h3>Anfahrt zum Geisshof</h3>
             </div>
             <div className="card-body">
@@ -35,6 +21,22 @@ export default function StandortePage() {
               <GeisshofMap />
             </div>
           </section>
+
+          <section id="E-02" className="bento-card standorte-map-section">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Depot-Standort für Abholung</h3>
+            </div>
+            <div className="card-body">
+              <p className="card-text">Hier findest du alle Depot-Standorte, an denen du deinen wöchentlichen Gemüsekorb abholen kannst.</p>
+              <p className="card-text" style={{ marginTop: 'var(--spacing-sm)' }}>
+                <strong>Abholzeiten:</strong> Dienstag und Freitag, 17:00 - 19:00 Uhr
+              </p>
+              <DepotMap />
+            </div>
+          </section>
+
+          
 
           {/* Möchtest du uns kennenlernen - Am Ende */}
           <section id="B-06" className="bento-card bento-card-fullwidth kennenlernen-card">
