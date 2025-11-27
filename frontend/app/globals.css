@@ -946,8 +946,8 @@ a:hover {
   z-index: 1001;
   display: none; /* Hidden on mobile by default, shown in mobile menu */
   transition: transform 0.3s ease-in-out;
-  height: 40px; /* Set explicit height */
   box-sizing: border-box;
+  min-height: 48px; /* Set minimum height to match content */
 }
 
 .secondary-nav.header-visible {
@@ -1065,8 +1065,12 @@ header.header-hidden {
 
 /* Adjust header top position when secondary-nav is visible on desktop */
 @media (min-width: 768px) {
+  .secondary-nav {
+    display: block;
+  }
+  
   header {
-    top: 40px; /* Approximate height of secondary-nav */
+    top: 50px; /* Position below secondary-nav with small buffer */
   }
   
   header.header-visible {
@@ -3410,9 +3414,7 @@ footer a:hover {
 
 /* Tablet Styles - 768px and up */
 @media (min-width: 768px) {
-  .secondary-nav {
-    display: block;
-  }
+  /* secondary-nav display moved to header positioning section */
 
   .secondary-nav ul {
     justify-content: flex-end;
