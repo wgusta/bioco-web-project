@@ -22,16 +22,13 @@ export default function StandortePage() {
             </div>
           </section>
 
-          <section id="E-02" className="bento-card standorte-map-section">
+          <section id="E-02" className="bento-card standorte-map-section standorte-depot-fullwidth">
             <div className="plant-pattern"></div>
             <div className="card-header">
               <h3>Depot-Standort für Abholung</h3>
             </div>
             <div className="card-body">
               <p className="card-text">Hier findest du alle Depot-Standorte, an denen du deinen wöchentlichen Gemüsekorb abholen kannst.</p>
-              <p className="card-text" style={{ marginTop: 'var(--spacing-sm)' }}>
-                <strong>Abholzeiten:</strong> Dienstag und Freitag, 17:00 - 19:00 Uhr
-              </p>
               <DepotMap />
             </div>
           </section>

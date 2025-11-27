@@ -969,6 +969,12 @@ a:hover {
   width: auto;
 }
 
+@media (max-width: 767px) {
+  .secondary-nav-logo {
+    display: none;
+  }
+}
+
 .secondary-nav ul {
   list-style: none;
   display: flex;
@@ -1091,7 +1097,7 @@ header {
   }
   
   .main-content {
-    padding: 8px 0 !important; /* Reduced vertical spacing by 75% (was 32px, now 8px) */
+    padding: 100px 0 8px 0 !important; /* Add space for fixed header on mobile */
     max-width: 100%;
     width: 100%;
     margin: 0;
@@ -1678,8 +1684,8 @@ header .header-nav-container .beet-leaves {
 
 @media (max-width: 767px) {
   .hero {
-    padding: var(--spacing-md) 0 0 0;
-    margin-top: calc(var(--spacing-md) / 2);
+    padding: var(--spacing-lg) 0 0 0;
+    margin-top: var(--spacing-md);
     margin-bottom: 0;
   }
 
@@ -2833,10 +2839,27 @@ footer a:hover {
   margin-top: var(--spacing-md);
 }
 
+.location-card-combined {
+  background: var(--bg-secondary);
+  border: 2px solid #333;
+  border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
+  padding: var(--spacing-md);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-md);
+}
+
 @media (min-width: 768px) {
-  .location-info-box {
+  .location-card-combined {
     grid-template-columns: 1fr 1fr;
   }
+}
+
+.location-address-section,
+.location-route-section {
+  display: flex;
+  flex-direction: column;
 }
 
 .location-addresses,
@@ -2846,6 +2869,15 @@ footer a:hover {
   border-radius: 5px 5px 5px 5px/25px 25px 25px 5px;
   padding: var(--spacing-md);
   box-shadow: var(--shadow-sm);
+}
+
+.location-address-section h4,
+.location-route-section h4 {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 500;
+  color: var(--bioco-green);
+  margin-bottom: var(--spacing-md);
+  font-size: 1.25rem;
 }
 
 .location-addresses h4,
@@ -2862,6 +2894,20 @@ footer a:hover {
   display: flex;
   flex-direction: column;
   gap: var(--spacing-md);
+}
+
+@media (min-width: 768px) {
+  .location-addresses .address-list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  .location-addresses .address-list > div {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
 }
 
 .address-item,
@@ -3702,6 +3748,10 @@ footer a:hover {
     height: 100%;
     display: flex;
     flex-direction: column;
+  }
+
+  .standorte-depot-fullwidth {
+    grid-column: 1 / -1;
   }
 
   .hero-title {

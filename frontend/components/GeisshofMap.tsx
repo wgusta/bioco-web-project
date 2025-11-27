@@ -82,19 +82,17 @@ export function GeisshofMap() {
       </div>
       
       <div className="location-info-box">
-        <div className="location-addresses">
-          <h4>Adresse</h4>
-          <div className="address-list">
+        <div className="location-card-combined">
+          <div className="location-address-section">
+            <h4>Adresse</h4>
             <div className="address-item">
               <strong>{geisshofLocation.name}</strong>
               <p>{geisshofLocation.address}</p>
             </div>
           </div>
-        </div>
-        
-        <div className="location-directions">
-          <h4>Route</h4>
-          <div className="directions-list">
+          
+          <div className="location-route-section">
+            <h4>Route</h4>
             <div className="direction-item">
               <strong>{geisshofLocation.name}</strong>
               <a
