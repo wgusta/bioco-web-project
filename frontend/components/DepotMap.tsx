@@ -236,26 +236,6 @@ export function DepotMap() {
             </div>
           </div>
         </div>
-        
-        <div className="location-directions">
-          <h4>Routen</h4>
-          <div className="directions-list">
-            {depotLocations.map((depot) => (
-              <div key={depot.id} className="direction-item">
-                <strong>{depot.name}</strong>
-                <small style={{ display: 'block', color: 'var(--text-secondary)', marginBottom: '4px' }}>{depot.day}</small>
-                <a
-                  href={`https://www.google.com/maps/dir/?api=1&destination=${depot.lat},${depot.lng}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-secondary"
-                >
-                  Route planen →
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
       </div>
     </>
   )
