@@ -947,6 +947,7 @@ a:hover {
   display: none; /* Hidden on mobile by default, shown in mobile menu */
   transition: transform 0.3s ease-in-out;
   box-sizing: border-box;
+  height: 48px; /* Set explicit height for proper positioning */
 }
 
 .secondary-nav.header-visible {
@@ -1112,9 +1113,9 @@ header.header-hidden {
     display: block;
   }
   
-  /* Position header below secondary-nav */
+  /* Position header below secondary-nav - match explicit height */
   header {
-    top: 49px;
+    top: 48px;
   }
   
   header.header-visible {
