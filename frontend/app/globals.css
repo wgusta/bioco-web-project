@@ -1669,7 +1669,7 @@ header .header-nav-container .beet-leaves {
   flex-direction: column;
   gap: var(--spacing-md);
   margin-top: var(--spacing-lg);
-  margin-bottom: 0;
+  margin-bottom: var(--spacing-xl);
   width: 100%;
 }
 

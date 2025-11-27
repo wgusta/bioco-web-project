@@ -41,21 +41,33 @@ export default function WirPage() {
                     style={{ width: '100%', height: 'auto', objectFit: 'contain', borderRadius: '8px' }}
                   />
                 </div>
-                <h3>Gärtnerteam</h3>
+                <h3>Hof-Team</h3>
                 <p>Unser erfahrenes Gärtnerteam sorgt für die Anbauplanung und die tägliche Feldarbeit auf dem Geisshof.</p>
               </div>
               
               <div className="team-card">
                 <div className="team-card-image" style={{ marginBottom: '16px' }}>
-                  <div className="team-placeholder" style={{ height: '200px' }}>Foto</div>
+                  <Image
+                    src="/images/gemeinschaft/bioco_gemeinschaft.JPG"
+                    alt="Gemeinschaft von Mitgliedern bei einer Versammlung auf dem Geisshof"
+                    width={800}
+                    height={600}
+                    style={{ width: '100%', height: 'auto', objectFit: 'cover', borderRadius: '8px' }}
+                  />
                 </div>
                 <h3>Alle Mitglieder</h3>
                 <p>Jede(r) Genossenschafter/in bringt sich ein – ob bei der Feldarbeit, in der Logistik oder bei Events.</p>
               </div>
               
               <div className="team-card">
-                <div className="team-card-image" style={{ marginBottom: '16px' }}>
-                  <div className="team-placeholder" style={{ height: '200px' }}>Foto</div>
+                <div className="team-card-image" style={{ marginBottom: '16px', aspectRatio: '1', overflow: 'hidden', borderRadius: '8px' }}>
+                  <Image
+                    src="/images/gemeinschaft/bioco_gemeinschaft.JPG"
+                    alt="Mitglieder der Betriebsgruppe im Gespräch auf dem Geisshof"
+                    width={800}
+                    height={600}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'bottom', borderRadius: '8px' }}
+                  />
                 </div>
                 <h3>Betriebsgruppe (BG)</h3>
                 <p>Die Betriebsgruppe koordiniert den Anbau, die Logistik und die Organisation der Genossenschaft.</p>
@@ -252,6 +264,15 @@ export default function WirPage() {
               <h3>Mitmachen?</h3>
             </div>
             <div className="card-body">
+              <div style={{ marginBottom: 'var(--spacing-md)' }}>
+                <Image
+                  src="/images/gemeinschaft/bioco_gemeinschaft.JPG"
+                  alt="Gemeinschaft beim gemeinsamen Essen"
+                  width={800}
+                  height={600}
+                  style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                />
+              </div>
               <p className="card-text">Werde Teil unserer Gemeinschaft und unterstütze die solidarische Landwirtschaft.</p>
             <CTA
               text="Jetzt Mitglied werden"

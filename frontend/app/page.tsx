@@ -148,6 +148,28 @@ export default function Home() {
             </section>
           </div>
 
+          <section id="A-09" className="bento-card">
+            <div className="plant-pattern"></div>
+            <div className="card-header">
+              <h3>Gemeinsam auf dem Feld</h3>
+            </div>
+            <div className="card-body">
+              <div style={{ marginBottom: 'var(--spacing-md)' }}>
+                <Image
+                  src="/images/anpacken/bioco_anpacken_gruppe.JPG"
+                  alt="Erwachsene und Kind arbeiten gemeinsam auf dem Feld"
+                  width={800}
+                  height={600}
+                  style={{ width: '100%', height: 'auto', borderRadius: '12px' }}
+                />
+              </div>
+              <p className="card-text">
+                Die gemeinsame Arbeit auf dem Feld verbindet Generationen. Erwachsene und Kinder arbeiten 
+                Seite an Seite, lernen voneinander und teilen die Freude an der Natur und dem selbst angebauten Gemüse.
+              </p>
+            </div>
+          </section>
+
           <section id="A-05" className="bento-card bento-card-fullwidth">
             <div className="plant-pattern"></div>
             <div className="card-header">
