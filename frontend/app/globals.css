@@ -1502,9 +1502,9 @@ header .header-nav-container .beet-leaves {
 
 .hero-title {
   font-family: 'DM Sans', sans-serif;
-  font-size: clamp(1.25rem, 2.2vw, 2rem);
+  font-size: 1.6rem;
   font-weight: 700;
-  line-height: 1.15;
+  line-height: 1.3;
   margin-bottom: calc(var(--spacing-md) / 2);
   color: var(--text-primary);
 }
@@ -1692,18 +1692,50 @@ header .header-nav-container .beet-leaves {
 }
 
 .pea-bullet-icon {
-  width: 18px;
-  height: 18px;
+  width: 13.5px;
+  height: 13.5px;
   background: var(--bioco-green);
   border: 1px solid var(--bioco-green);
   border-radius: 50%;
   flex-shrink: 0;
-  margin-top: 0.35rem;
+  margin-top: 0.4rem;
   box-shadow: inset -2px 1px 2px rgba(255, 255, 255, 0.25);
 }
 
 .pea-bullet-content {
   flex: 1;
+}
+
+/* Global bullet styling */
+main ul:not(.pea-bullet-list),
+.bento-card ul:not(.pea-bullet-list),
+.content ul:not(.pea-bullet-list) {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+
+main ul:not(.pea-bullet-list) li,
+.bento-card ul:not(.pea-bullet-list) li,
+.content ul:not(.pea-bullet-list) li {
+  position: relative;
+  padding-left: 26px;
+  margin: 8px 0;
+}
+
+main ul:not(.pea-bullet-list) li::before,
+.bento-card ul:not(.pea-bullet-list) li::before,
+.content ul:not(.pea-bullet-list) li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.45rem;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--bioco-green);
+  border: 1px solid var(--bioco-green);
+  box-shadow: inset -2px 1px 2px rgba(255, 255, 255, 0.25);
 }
 
 /* Forms */
