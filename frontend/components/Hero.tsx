@@ -1,8 +1,10 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
+import { ReactNode } from 'react'
+
 interface HeroProps {
-  title: string
+  title: ReactNode
   subtitle?: string
   image?: {
     url: string

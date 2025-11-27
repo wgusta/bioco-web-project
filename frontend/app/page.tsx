@@ -29,7 +29,11 @@ export default function Home() {
     <>
       <Header />
       <Hero
-        title="Frisches Demeter-Gemüse – fast jede Woche"
+        title={
+          <>
+            Frisches Demeter Gemüse. <span className="hero-title-secondary">Fast jede Woche.</span>
+          </>
+        }
         subtitle=""
         image={{
           url: '/images/hero/header_homepage.JPG',

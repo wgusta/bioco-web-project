@@ -5,9 +5,9 @@ interface TriColorHamburgerIconProps {
 }
 
 export function TriColorHamburgerIcon({
-  width = 30,
-  height = 20,
-  strokeWidth = 3,
+  width = 32,
+  height = 28,
+  strokeWidth = 3.5,
 }: TriColorHamburgerIconProps) {
   const lineRadius = strokeWidth / 2
   const colors = [

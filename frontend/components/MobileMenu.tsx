@@ -12,12 +12,6 @@ export function MobileMenu() {
   return (
     <>
       <div className="mobile-header-actions">
-        <Link 
-          href="/mitmachen" 
-          className="btn btn-orange mobile-mitmachen-btn"
-        >
-          biocò werden
-        </Link>
         <button
           className="mobile-menu-toggle"
           onClick={() => setIsOpen(!isOpen)}

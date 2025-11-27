@@ -1055,10 +1055,10 @@ header {
 
   .mobile-mitmachen-btn {
     display: inline-block;
-    padding: 6px 12px;
-    font-size: 0.85rem;
-    min-height: 34px;
-    border-radius: 20px;
+    padding: 8px 14px;
+    font-size: 0.9rem;
+    min-height: 36px;
+    border-radius: 22px;
   }
 
   #header-logo {
@@ -1071,13 +1071,13 @@ header {
   }
 
   .mobile-menu-toggle {
-    padding: 4px;
-    margin-left: var(--spacing-xs);
+    padding: 6px;
+    margin-left: var(--spacing-sm);
   }
 
   .tri-hamburger-icon {
-    width: 26px;
-    height: 18px;
+    width: 32px;
+    height: 28px;
   }
 }
 
@@ -1542,6 +1542,11 @@ header .header-nav-container .beet-leaves {
   letter-spacing: -0.015em;
   margin-bottom: calc(var(--spacing-md) / 3);
   color: var(--text-primary);
+}
+
+.hero-title-secondary {
+  font-weight: 400;
+  color: var(--text-secondary);
 }
 
 .hero-text {
