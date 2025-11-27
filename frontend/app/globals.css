@@ -1078,6 +1078,32 @@ header.header-hidden {
   .secondary-nav-container {
     padding: 0 var(--spacing-xs);
   }
+  
+  .main-content {
+    padding: var(--spacing-md) 0 !important;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .bento-grid {
+    gap: var(--spacing-sm);
+    margin: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 !important;
+    border: none;
+  }
+  
+  .bento-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box;
+    border: none !important;
+    border-radius: 0 !important;
+  }
 }
 
 /* Desktop: header below secondary-nav */
@@ -1086,7 +1112,7 @@ header.header-hidden {
     display: block;
   }
   
-  /* Position header below secondary-nav (8px padding + content + 1px border ≈ 49px) */
+  /* Position header below secondary-nav */
   header {
     top: 49px;
   }
@@ -1097,63 +1123,6 @@ header.header-hidden {
   
   header.header-hidden {
     transform: translateY(-100%);
-  }
-  
-  .main-content {
-    padding: var(--spacing-md) 0 !important; /* Force no horizontal padding */
-    max-width: 100%;
-    width: 100%;
-    margin: 0;
-  }
-  
-  .bento-grid {
-    gap: var(--spacing-sm);
-    margin: 0 !important; /* Force no margins */
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 0 !important;
-    border: none;
-  }
-  
-  .bento-card {
-    width: 100% !important;
-    max-width: 100% !important;
-    margin: 0 !important; /* Force all margins to 0 */
-    padding: 0 !important;
-    box-sizing: border-box;
-    border: none !important; /* Remove all borders on mobile */
-    border-radius: 0 !important; /* Remove border radius for edge-to-edge */
-  }
-  .mobile-header-actions {
-    gap: var(--spacing-xs);
-    margin-left: auto;
-  }
-
-  .mobile-mitmachen-btn {
-    display: inline-block;
-    padding: 8px 14px;
-    font-size: 0.9rem;
-    min-height: 36px;
-    border-radius: 22px;
-  }
-
-  #header-logo {
-    flex: 0 1 auto;
-  }
-
-  #header-logo svg {
-    max-width: 130px;
-    height: auto;
-  }
-
-  .mobile-menu-toggle {
-    padding: 6px;
-    margin-left: var(--spacing-sm);
-  }
-
-  .tri-hamburger-icon {
-    width: 32px;
-    height: 28px;
   }
 }
 
