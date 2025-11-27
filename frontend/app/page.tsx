@@ -8,6 +8,7 @@ import { CTA } from '@/components/CTA'
 import { getAktuellesItems, getEventItems, AktuellesItem } from '@/components/AktuellesData'
 import { AktuellesItemComponent } from '@/components/AktuellesItem'
 import { ItemDetailModal } from '@/components/ItemDetailModal'
+import { PeaBullet } from '@/components/PeaBullet'
 import Image from 'next/image'
 import Link from 'next/link'
 
@@ -55,11 +56,11 @@ export default function Home() {
             </div>
             <div className="card-body">
               <p className="card-text">Wöchentlich erhalten unsere Mitglieder einen Gemüsekorb mit frischem, saisonalem Gemüse in Demeter-Qualität.</p>
-              <ul>
-                <li>Wöchentlicher Gemüsekorb</li>
-                <li>Saisonalität – das Gemüse der Jahreszeit</li>
-                <li>Demeter-Qualität – höchste Bio-Standards</li>
-              </ul>
+              <div className="pea-bullet-list">
+                <PeaBullet>Wöchentlicher Gemüsekorb</PeaBullet>
+                <PeaBullet>Saisonalität – das Gemüse der Jahreszeit</PeaBullet>
+                <PeaBullet>Demeter-Qualität – höchste Bio-Standards</PeaBullet>
+              </div>
             </div>
           </section>
 
@@ -80,12 +81,20 @@ export default function Home() {
                   />
                 </div>
                 <p className="card-text">biocò basiert auf den Prinzipien der Solidarischen Landwirtschaft.</p>
-                <ul>
-                  <li><strong>Mitarbeit</strong> – <Link href="/anpacken">Anpacken auf dem Feld</Link></li>
-                  <li><strong>Transparenz</strong> – Solidarische Landwirtschaft</li>
-                  <li><strong>Gemeinschaft</strong> – Jede(r) bringt sich ein</li>
-                  <li><strong>Lokal/Region</strong> – <Link href="/wir">Hof: Geisshof</Link></li>
-                </ul>
+                <div className="pea-bullet-list">
+                  <PeaBullet>
+                    <strong>Mitarbeit</strong> – <Link href="/anpacken">Anpacken auf dem Feld</Link>
+                  </PeaBullet>
+                  <PeaBullet>
+                    <strong>Transparenz</strong> – Solidarische Landwirtschaft
+                  </PeaBullet>
+                  <PeaBullet>
+                    <strong>Gemeinschaft</strong> – Jede(r) bringt sich ein
+                  </PeaBullet>
+                  <PeaBullet>
+                    <strong>Lokal/Region</strong> – <Link href="/wir">Hof: Geisshof</Link>
+                  </PeaBullet>
+                </div>
               </div>
             </section>
 

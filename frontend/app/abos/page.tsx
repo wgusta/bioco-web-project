@@ -186,7 +186,7 @@ export default function AbosPage() {
               <h3>Nächste Events</h3>
             </div>
             <div className="card-body">
-              <EventsBanner />
+              <EventsBanner showTitle={false} variant="embedded" />
             </div>
           </section>
 
