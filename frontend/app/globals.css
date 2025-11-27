@@ -1701,6 +1701,11 @@ header .header-nav-container .beet-leaves {
     padding: 0 var(--spacing-xs);
   }
 
+  .main-content {
+    padding-top: var(--spacing-xs) !important; /* Drastically reduced from 140px to minimal spacing */
+    margin-top: calc(-1 * var(--spacing-xl)) !important; /* Pull content up closer to hero */
+  }
+
   .hero-image-card {
     min-height: 300px;
     order: 1;

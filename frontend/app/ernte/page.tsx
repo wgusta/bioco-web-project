@@ -26,7 +26,7 @@ export default function ErntePage() {
       <main className="main-content">
         <div className="bento-grid">
           {/* Erste Zeile: Saisonkalender (2/3) und Events (1/3) */}
-          <div className="ernte-top-row" style={{ gridTemplateColumns: '2fr 1fr' }}>
+          <div className="ernte-top-row">
             <section id="B-04" className="bento-card">
               <div className="plant-pattern"></div>
               <div className="card-header">

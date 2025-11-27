@@ -26,7 +26,7 @@ export default function StandortePage() {
       <main className="main-content">
         <div className="standorte-layout">
           {/* Events und Geisshof nebeneinander */}
-          <div className="ernte-top-row" style={{ gridTemplateColumns: '1fr 2fr' }}>
+          <div className="ernte-top-row">
             <section className="bento-card events-card">
               <div className="plant-pattern"></div>
               <div className="card-header">
