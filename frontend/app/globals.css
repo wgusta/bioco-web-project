@@ -938,7 +938,7 @@ a:hover {
 .secondary-nav {
   background: var(--bg-secondary);
   border-bottom: 2px solid var(--bioco-green);
-  padding: var(--spacing-md) var(--spacing-md);
+  padding: var(--spacing-xs) var(--spacing-md);
   position: fixed;
   top: 0;
   left: 0;
@@ -946,7 +946,7 @@ a:hover {
   z-index: 1001;
   display: none; /* Hidden on mobile by default, shown in mobile menu */
   box-sizing: border-box;
-  min-height: 80px; /* Increased height for more space */
+  min-height: 60px; /* Reduced height */
 }
 
 .secondary-nav-container {
@@ -956,26 +956,27 @@ a:hover {
   padding: 0 150px;
   display: flex;
   align-items: center;
-  gap: var(--spacing-lg);
+  gap: var(--spacing-md);
 }
 
 .secondary-nav-logo {
   flex-shrink: 0;
+  margin-right: auto; /* Push logo to the left */
 }
 
 .secondary-nav-logo img {
-  max-height: 50px;
+  max-height: 40px;
   width: auto;
 }
 
 .secondary-nav ul {
   list-style: none;
   display: flex;
-  gap: var(--spacing-sm);
+  gap: var(--spacing-xs);
   margin: 0;
   padding: 0;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   flex-wrap: wrap;
 }
 
@@ -1123,12 +1124,12 @@ header {
   
   /* Position header below secondary-nav */
   header {
-    top: 96px;
+    top: 76px;
   }
    
    /* Add padding for both navbars on desktop */
    .main-content {
-     padding-top: 100px !important; /* Reduced spacing above content */
+     padding-top: 90px !important; /* Reduced spacing above content */
    }
 }
 
@@ -1569,9 +1570,9 @@ header .header-nav-container .beet-leaves {
 /* Hero Section - Bento Card Style */
 .hero {
   background: transparent;
-  padding: var(--spacing-lg) 0;
+  padding: var(--spacing-lg) 0 0 0;
   margin-top: calc(var(--spacing-xl) / 2);
-  margin-bottom: calc(var(--spacing-md) / 2);
+  margin-bottom: 0;
   max-width: 100%;
   width: 100%;
 }
@@ -1677,9 +1678,9 @@ header .header-nav-container .beet-leaves {
 
 @media (max-width: 767px) {
   .hero {
-    padding: var(--spacing-md) 0;
+    padding: var(--spacing-md) 0 0 0;
     margin-top: calc(var(--spacing-md) / 2);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0;
   }
 
   .hero-container {
@@ -3433,7 +3434,7 @@ footer a:hover {
   /* secondary-nav display moved to header positioning section */
 
   .secondary-nav ul {
-    justify-content: flex-end;
+    justify-content: flex-start;
   }
 
   .bento-grid {
@@ -3554,7 +3555,7 @@ footer a:hover {
   }
 
   .hero {
-    padding: var(--spacing-xl) 0;
+    padding: var(--spacing-xl) 0 0 0;
   }
 
   .hero-title {
